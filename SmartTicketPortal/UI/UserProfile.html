@@ -1,0 +1,1532 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="myApp" ng-controller="myCtrl">
+<!--<![endif]-->
+<head>
+    <!-- Page Title -->
+    <title>INTER BUS</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="css/style.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="css/updates.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+</head>
+<body ng-init="GetCountry();">
+
+    <div id="page-wrapper">
+        <header id="header" class="navbar-static-top">
+            <div class="topnav hidden-xs">
+                <div class="container">
+                    <ul class="quick-menu pull-left">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                    </ul>
+                    <ul class="quick-menu pull-right">
+                        <li class="ribbon">
+                            <a ng-hide="username == null" href="#">Hello, {{username}}</a>
+                            <ul class="menu mini uppercase">
+
+                                <li><a href="UserProfile.html" class="location-reload">Profile</a></li>
+                                <li><a href="BookedTicketHistory.html" class="location-reload">Bookings</a></li>
+                                <li><a href="Cancellation.html" class="location-reload">cancellation</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">card</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">app</a></li>
+                                <li><a href="Refund.html" class="location-reload">refund</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> ewallet</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> feedback/enquery</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">settings</a></li>
+                                <li><a href="#" ng-click="SignOutUser();">signout</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+
+                        <li><a href="Registation.html" class="">SIGNUP</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="main-header">
+
+                <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                    Mobile Menu Toggle
+                </a>
+
+                <div class="container">
+                    <h1 class="logo navbar-brand">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </h1>
+
+                    <nav id="main-menu" role="navigation">
+                        <ul class="menu">
+                            <li class="menu-item-has-children">
+                                <a href="../index.html">Home</a>
+
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="fares_and_payments.html">Fares/Payments</a>
+                                <ul>
+                                    <li><a href="shedules.html">Schedules</a></li>
+                                    <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                    <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                    <li><a href="refund.html">refund</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="cancellation.html">Cancle/Modify</a>
+                                <ul>
+                                    <li><a href="cancellation.html">Cancle Ticket</a></li>
+                                    <li><a href="cancellation.html">Modify Ticket</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="Status_and_Updates.html">Status</a></li>
+                                    <li><a href="pages-coming-soon1.html">plans</a></li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="shortcode-pricing-tables.html">Products</a>
+                                <ul>
+                                    <li><a href="Licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="Licensepage.html">BT Licence</a></li>
+                                    <li><a href="Licensepage.html">APP Licence</a></li>
+                                    <li><a href="Licensepage.html">Advt Licence</a></li>
+                                    <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="apps.html">Mobile App</a></li>
+                                    <li><a href="products.html">products</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="AboutUs.html">About us</a>
+                                <ul>
+                                    <li><a href="ContactUs.html">contacts</a></li>
+                                    <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <nav id="mobile-menu-01" class="mobile-menu collapse">
+                    <ul id="mobile-primary-menu" class="menu">
+                        <li class="menu-item-has-children">
+                            <a href="../index.html">Home</a>
+
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="fares_and_payments.html">Fares/Payments</a>
+                            <ul>
+                                <li><a href="shedules.html">Schedules</a></li>
+                                <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                <li><a href="refund.html">refund</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="cancellation.html">Cancle/Modify</a>
+                            <ul>
+                                <li><a href="cancellation.html">Cancle Ticket</a></li>
+                                <li><a href="cancellation.html">Modify Ticket</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="Status_and_Updates.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="Status_and_Updates.html">Status</a></li>
+                                <li><a href="pages-coming-soon1.html">plans</a></li>
+                                
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="shortcode-pricing-tables.html">Products</a>
+                            <ul>
+                                <li><a href="Licensepage.html">Fleet Owner Licence</a></li>
+                                <li><a href="Licensepage.html">BT Licence</a></li>
+                                <li><a href="Licensepage.html">APP Licence</a></li>
+                                <li><a href="Licensepage.html">Advt Licence</a></li>
+                                <li><a href="cards.html">Cards</a></li>
+                                <li><a href="apps.html">Mobile App</a></li>
+                                <li><a href="products.html">products</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="AboutUs.html">About us</a>
+                            <ul>
+                                <li><a href="ContactUs.html">contacts</a></li>
+                                <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    <ul class="mobile-topnav container">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li class="ribbon currency menu-color-skin">
+                            <a href="#">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div id="travelo-login" class="travelo-login-box travelo-box">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="input-text full-width" placeholder="email address" ng-model="UserName">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="Signin()" class="btn btn-success">
+                            Log In
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="forgot-password pull-right">Forgot password?</a>
+                        <div class="checkbox checkbox-inline">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="seperator"></div>
+                <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+            </div>
+        </header>
+        <div class="page-title-container">
+            <div class="container">
+                <div class="page-title pull-left">
+                    <h2 class="entry-title">My Account</h2>
+                </div>
+                <ul class="breadcrumbs pull-right">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li class="active">My Account</li>
+                </ul>
+            </div>
+        </div>
+        <section id="content" class="gray-area">
+            <div class="container">
+                <div id="main">
+                    <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+                        <ol class="breadcrumb page-breadcrumb pull-right " style="padding:0px">
+                            <li>Hello, {{username}}!&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="#" ng-click="LogoutUser();">Sign Out</a>&nbsp;&nbsp;</li>
+                        </ol>
+
+                        <div class="clearfix"></div>
+                        <div class="tab-container full-width-style arrow-left dashboard">
+                            <ul class="tabs">
+                                <!--<li class="active"><a data-toggle="tab" href="#dashboard"><i class="soap-icon-anchor circle"></i>Dashboard</a></li>-->
+                                <li class="active"><a data-toggle="tab" href="#profile" ng-click="GetHistory();"><i class="soap-icon-user circle"></i>Profile</a></li>
+                                <li class=""><a data-toggle="tab" href="#booking"><i class="soap-icon-businessbag circle"></i>Booking</a></li>
+                                <li class=""><a data-toggle="tab" href="#CANCELLATION"><i class="soap-icon-restricted"></i>cancellation</a></li>
+                                <li class=""><a data-toggle="tab" href="#Card"><i class="soap-icon-card"></i>card</a></li>
+                                <li class=""><a data-toggle="tab" href="#app"><i class="soap-icon-googleplay"></i>app</a></li>
+                                <li class=""><a data-toggle="tab" href="#refund"><i class="soap-icon-user circle"></i>refund</a></li>
+                                <li class=""><a data-toggle="tab" href="#ewallet"><i class="soap-icon-businessbag"></i> ewallet</a></li>
+                                <li class=""><a data-toggle="tab" href="#feedback"><i class="soap-icon-conference"></i> feedback/enquiry</a></li>
+                                <li class=""><a data-toggle="tab" href="#settings"><i class="soap-icon-settings circle"></i>Settings</a></li>
+                            </ul>
+                            <div class="tab-content">
+
+                                <div id="profile" class="tab-pane fade in active">
+                                    <div class="view-profile">
+                                        <article class="image-box style2 box innerstyle personal-details">
+                                            <figure>
+                                                <a title="" href="#"><img width="270" height="263" alt="" src="http://placehold.it/270x263"></a>
+                                            </figure>
+                                            <div class="details">
+                                                <a href="#" class="button btn-mini pull-right edit-profile-btn">EDIT PROFILE</a>
+
+                                                <table class="table table-striped table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>User Name</td>
+                                                            <td>{{userdetails.UserName}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Mobile</td>
+                                                            <td>{{userdetails.Mobile}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Email Address</td>
+                                                            <td>{{userdetails.EmailAddress}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Address</td>
+                                                            <td>{{userdetails.Address}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Status</td>
+                                                            <td><span class="label label-success">Active</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Member Since</td>
+                                                            <td> {{userdetails.CreatedOn}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <!--</dl>-->
+                                            </div>
+                                        </article>
+                                        <hr>
+                                        <h2>About You</h2>
+                                        <div class="intro">
+                                            <p>Vestibulum tristique, justo eu sollicitudin sagittis, metus dolor eleifend urna, quis scelerisque purus quam nec ligula. Suspendisse iaculis odio odio, ac vehicula nisi faucibus eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere semper sem ac aliquet. Duis vel bibendum tellus, eu hendrerit sapien. Proin fringilla, enim vel lobortis viverra, augue orci fringilla diam, sed cursus elit mi vel lacus. Nulla facilisi. Fusce sagittis, magna non vehicula gravida, ante arcu pulvinar arcu, aliquet luctus arcu purus sit amet sem. Mauris blandit odio sed nisi porttitor egestas. Mauris in quam interdum purus vehicula rutrum quis in sem. Integer interdum lectus at nulla dictum luctus. Sed risus felis, posuere id condimentum non, egestas pulvinar enim. Praesent pretium risus eget nisi ullamcorper fermentum. Duis lacinia nisi ac rhoncus vestibulum.</p>
+                                        </div>
+                                        <hr>
+                                        <h2>Today’s Suggestions</h2>
+                                        <div class="suggestions image-carousel style2" data-animation="slide" data-item-width="170" data-item-margin="22">
+                                            <ul class="slides">
+                                                <li>
+                                                    <a href="#" class="hover-effect">
+                                                        <img src="http://placehold.it/170x170" alt="" />
+                                                    </a>
+                                                    <h5 class="caption">Adventure</h5>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="hover-effect">
+                                                        <img src="http://placehold.it/170x170" alt="" />
+                                                    </a>
+                                                    <h5 class="caption">Beaches &amp; Sun</h5>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="hover-effect">
+                                                        <img src="http://placehold.it/170x170" alt="" />
+                                                    </a>
+                                                    <h5 class="caption">Casinos</h5>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="hover-effect">
+                                                        <img src="http://placehold.it/170x170" alt="" />
+                                                    </a>
+                                                    <h5 class="caption">Family Fun</h5>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="hover-effect">
+                                                        <img src="http://placehold.it/170x170" alt="" />
+                                                    </a>
+                                                    <h5 class="caption">History</h5>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="hover-effect">
+                                                        <img src="http://placehold.it/170x170" alt="" />
+                                                    </a>
+                                                    <h5 class="caption">Adventure</h5>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h4>Benefits of Tavelo Account</h4>
+                                                <ul class="benefits triangle hover">
+                                                    <li><a href="#">Faster bookings with lesser clicks</a></li>
+                                                    <li><a href="#">Track travel history &amp; manage bookings</a></li>
+                                                    <li class="active"><a href="#">Manage profile &amp; personalize experience</a></li>
+                                                    <li><a href="#">Receive alerts &amp; recommendations</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4 previous-bookings image-box style14">
+                                                <h4>Your Previous Bookings</h4>
+                                                <article class="box">
+                                                    <figure class="no-padding">
+                                                        <a title="" href="#">
+                                                            <img alt="" src="http://placehold.it/63x59" width="63" height="59">
+                                                        </a>
+                                                    </figure>
+                                                    <div class="details">
+                                                        <h5 class="box-title"><a href="#">Half-Day Island Tour</a><small class="fourty-space"><span class="price">$35</span> Family Package</small></h5>
+                                                    </div>
+                                                </article>
+                                                <article class="box">
+                                                    <figure class="no-padding">
+                                                        <a title="" href="#">
+                                                            <img alt="" src="http://placehold.it/63x59" width="63" height="59">
+                                                        </a>
+                                                    </figure>
+                                                    <div class="details">
+                                                        <h5 class="box-title"><a href="#">Ocean Park Tour</a><small class="fourty-space"><span class="price">$26</span> Per Person</small></h5>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <h4>Need Travelo Help?</h4>
+                                                <div class="contact-box">
+                                                    <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+                                                    <address class="contact-details">
+                                                        <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                                        <br>
+                                                        <a class="contact-email" href="#">help@travelo.com</a>
+                                                    </address>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="edit-profile">
+                                        <form class="edit-profile-form">
+                                            <h2>Personal Details</h2>
+                                            <div class="col-sm-9 no-padding no-float">
+                                                <div class="row form-group">
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>First Name</label>
+                                                        <input type="text" class="input-text full-width" placeholder="" ng-model="userdetails.FirstName">
+                                                    </div>
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>Last Name</label>
+                                                        <input type="text" class="input-text full-width" placeholder="" ng-model="userdetails.LastName">
+                                                    </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>Email Address</label>
+                                                        <input type="text" class="input-text full-width" placeholder="" ng-model="userdetails.EmailAddress">
+                                                    </div>
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>Is Email Veified</label>
+                                                        <input type="text" class="input-text full-width" placeholder="" ng-checked="userdetails.IsMobileVerified==1" ng-model="userdetails.IsEmailVerified" disabled><input type="text" /><button>Verify Now</button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row form-group">
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>Country Code</label>
+                                                        <div class="selector">
+                                                            <select class="form-control" ng-options="C.Name for C in Country track by C.Id" ng-model="register.Country">
+                                                                <option value="">Select Country</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>Mobile Phone</label>
+                                                        <input type="text" class="input-text full-width" placeholder="" ng-model="userdetails.Mobile">
+                                                    </div>
+                                                </div>
+                                                <label>Date of Birth</label>
+                                                <div class="row form-group">
+                                                    <div class="col-sms-4 col-sm-2">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">date</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sms-4 col-sm-2">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">month</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sms-4 col-sm-2">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">year</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h2>Contact Details</h2>
+                                                <div class="row form-group">
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>Street Name</label>
+                                                        <input type="text" class="input-text full-width">
+                                                    </div>
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>Address</label>
+                                                        <input type="text" class="input-text full-width">
+                                                    </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>City</label>
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Select...</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>Country</label>
+                                                        <div class="selector">
+                                                            <select class="form-control" ng-options="C.Name for C in Country track by C.Id" ng-model="register.Country">
+                                                                <option value="">Select Country</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                    <div class="col-sms-6 col-sm-6">
+                                                        <label>Region State</label>
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Select...</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h2>Upload Profile Photo</h2>
+                                                <div class="row form-group">
+                                                    <div class="col-sms-12 col-sm-6 no-float">
+                                                        <div class="fileinput full-width">
+                                                            <input type="file" class="input-text" data-placeholder="select image/s">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h2>Describe Yourself</h2>
+                                                <div class="form-group">
+                                                    <textarea rows="5" class="input-text full-width" placeholder="please tell us about you"></textarea>
+                                                </div>
+                                                <div class="from-group">
+                                                    <button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="LogoutUser();">UPDATE SETTINGS</button>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="booking" class="tab-pane fade" ng-show="bookedHistory.length == 0" ng-init="GetHistory();">
+                                    <h2>Booking</h2>
+                                    <div class="filter-section gray-area clearfix">
+                                        <form>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" checked="checked" />
+                                                All Types
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Hotels
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Flights
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Cars
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Cruises
+                                            </label>
+                                            <div class="pull-right col-md-6 action">
+                                                <h5 class="pull-left no-margin col-md-4">Sort results by:</h5>
+                                                <button class="btn-small white gray-color">UPCOMING</button>
+                                                <button class="btn-small white gray-color">CANCELLED</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                        <thead>
+                                            <tr>
+                                                <th>Ticket No</th>
+                                                <th>Booked On</th>
+                                                <th>From - To</th>
+                                                <th>Journey date</th>
+                                                <th>No. Of seats</th>
+                                                <th>Amount</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="B in bookedHistory">
+
+                                                <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                <td>{{B.BookedOn}}</td>
+                                                <td>{{B.Src}} - {{B.Dest}}</td>
+                                                <td>{{B.DepartureTime}}</td>
+                                                <td>{{B.NoOfSeats}}</td>
+                                                <td>{{B.Amount}}</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div id="CANCELLATION" class="tab-pane fade">
+                                    <h2>CANCELLATION</h2>
+                                    <div class="filter-section gray-area clearfix">
+                                        <form>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" checked="checked" />
+                                                All Types
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Hotels
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Flights
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Cars
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Cruises
+                                            </label>
+                                            <div class="pull-right col-md-6 action">
+                                                <h5 class="pull-left no-margin col-md-4">Sort results by:</h5>
+                                                <button class="btn-small white gray-color">UPCOMING</button>
+                                                <button class="btn-small white gray-color">CANCELLED</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                        <thead>
+                                            <tr>
+                                                <th>Ticket No</th>
+                                                <th>Booked On</th>
+                                                <th>From - To</th>
+                                                <th>Journey date</th>
+                                                <th>No. Of seats</th>
+                                                <th>Amount</th>
+                                                <th>Cancelled</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="B in bookedHistory">
+
+                                                <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                <td>{{B.BookedOn}}</td>
+                                                <td>{{B.Src}} - {{B.Dest}}</td>
+                                                <td>{{B.DepartureTime}}</td>
+                                                <td>{{B.NoOfSeats}}</td>
+                                                <td>{{B.Amount}}</td>
+                                                <td><button type="button" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-default btn-xs" ng-click="setCompany(cmp);">
+    <i class="fa fa-edit"></i>&nbsp;
+                                                        Cancelled
+</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div id="Card" class="tab-pane fade">
+                                    <h2>Card</h2>
+                                    <div class="col-sm-9 no-float no-padding">
+                                        <form>
+                                            <div class="row form-group">
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Cardholder name</label>
+                                                    <input type="text" class="input-text full-width" placeholder="cardholder name">
+                                                </div>
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>card number</label>
+                                                    <div class="selector full-width">
+                                                        <select>
+                                                            <option></option>
+                                                            <option>*************</option>
+                                                            <option>*************</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Select Category</label>
+                                                    <div class="selector full-width">
+                                                        <select>
+                                                            <option value="">Adventure, Romance, Beach</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-sm-5 col-md-4 no-float no-padding no-margin">
+                                                <button type="submit" class="btn-medium full-width">SUBMIT REVIEW</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="app" class="tab-pane fade">
+                                    <h2>APP</h2>
+                                    
+                                        <form action="cruise-list-view.html" method="post">
+
+                                            <a class="button btn-extra blue" href="pages-coming-soon1.html"><i class="soap-icon-apple"></i><span>Download from<br><em>apple store</em></span></a>
+                                            <a class="button btn-extra yellow" href="pages-coming-soon1.html"><i class="soap-icon-googleplay"></i><span>Download from<br><em>google play</em></span></a>
+                                            <a class="button btn-extra blue" href="pages-coming-soon1.html"><i class="soap-icon-globe"></i><span>Download from<br><em>windows store</em></span></a>
+                                            <a class="button btn-extra yellow" href="pages-coming-soon1.html"><i class="soap-icon-dribble"></i><span>Download from<br><em>APP </em></span></a>
+                                        </form>
+                                    
+                                </div>
+                                <div id="refund" class="tab-pane fade">
+                                    <h2>Refund</h2>
+                                    <div class="table-container">
+                                        <div class="row mbm">
+
+                                            <div id="imgTd1" style="display:none" class="seatlayoutDropDown">
+                                                <div class="seatLayoutMain">
+                                                    <div class="seatLayoutBox">
+                                                        <div class="low-rating-window">
+                                                            This bus has been rated low by travellers on bus quality, punctuality or staff behaviour.
+                                                        </div>
+                                                        <div class="lowRatingMessage Hide">
+                                                            <div class="summary">
+                                                                <i class="icon-alert"></i>
+                                                                This bus has been rated low on
+                                                                <a class="bqLink">Bus quality</a>
+                                                                <span class="comma1 Hide">, </span><span class="and1 Hide">and </span>
+                                                                <a class="punLink">Punctuality</a>
+                                                                <span class="comma2 Hide">, </span><span class="and2 Hide">and </span>
+                                                                <a class="stLink">Staff behaviour</a>
+                                                                based on
+                                                                <span class="numRating">10 customer</span>
+                                                                ratings.
+                                                            </div>
+
+                                                            <ul>
+                                                                <li class="busQuality">
+                                                                    <span class="ratingType">Bus quality</span>
+                                                                    <div class="ratingStars">
+                                                                        <span class="icon-rating_star_blank"></span>
+                                                                        <span class="icon-rating_star_red Rating"></span>
+                                                                    </div>
+                                                                    <span class="ratingValue">2.4</span>
+                                                                    <span class="ratingMessage">(signifies that the bus may not be clean or amenities like water are not provided)</span>
+                                                                </li>
+
+                                                                <li class="punctuality">
+                                                                    <span class="ratingType">Punctuality</span>
+                                                                    <div class="ratingStars">
+                                                                        <span class="icon-rating_star_blank"></span>
+                                                                        <span class="icon-rating_star_red Rating"></span>
+                                                                    </div>
+                                                                    <span class="ratingValue">2.4</span>
+                                                                    <span class="ratingMessage">(signifies that the bus may not depart/arrive on the scheduled time)</span>
+                                                                </li>
+
+                                                                <li class="staffBehaviour">
+                                                                    <span class="ratingType">Staff behaviour</span>
+                                                                    <div class="ratingStars">
+                                                                        <span class="icon-rating_star_blank"></span>
+                                                                        <span class="icon-rating_star_red Rating"></span>
+                                                                    </div>
+                                                                    <span class="ratingValue">2.4</span>
+                                                                    <span class="ratingMessage">(signifies that the staff may not be very well behaved/cooperative)</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="seatlayoutContainer clearfix"></div>
+
+                                                        <div class="routeNote XGrey TextCenter Hide">
+                                                            <i class="icon-routeNote"></i>
+                                                            <span class="TextBold">Please note : </span>
+                                                            <span class="content"></span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <tr>
+
+                                                    <td>
+                                                        <strong> Transaction Id</strong>
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong>pnr number</strong>
+
+
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                        <strong> From</strong>
+
+
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong> To </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Total amount </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Refund Amount </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Cancelled On </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Type Of Ticket </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        <strong>
+                                                            <a href="cancelticketinformation.html" style="color:blue">
+                                                                <u>
+                                                                    185456
+                                                                </u>
+                                                        </strong>
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong>12854769</strong>
+
+
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                        <strong>chennai</strong>
+
+
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>hyderabad </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>600 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>300 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>29-09-2015 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>E-Ticket </strong>
+                                                            </div>
+                                                        </div>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+
+
+
+
+
+
+
+
+
+                                                <tr>
+
+                                                    <td>
+                                                        <strong><a href="cancelticketinformation.html" style="color:blue"><u>845742</u></strong>
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong>33585967</strong>
+
+
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                        <strong>tirupathi</strong>
+
+
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong> vijayawada </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>800 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>600 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>14-01-2015 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>E-ticket </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        <strong><a href="cancelticketinformation.html" style="color:blue"> <u>212278</u></strong>
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong> 33585967</strong>
+
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                        <strong>kadapa</strong>
+
+
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>delhi </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>1250 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>850 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>15-04-2015 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Eticket</strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="ewallet" class="tab-pane fade">
+                                    <h2>EWallet</h2>
+                                    <div class="filter-section gray-area clearfix">
+                                        <form>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" checked="checked" />
+                                                All Types
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Hotels
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Flights
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Cars
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input type="radio" name="filter" />
+                                                Cruises
+                                            </label>
+                                            <div class="pull-right col-md-6 action">
+                                                <h5 class="pull-left no-margin col-md-4">Sort results by:</h5>
+                                                <button class="btn-small white gray-color">UPCOMING</button>
+                                                <button class="btn-small white gray-color">CANCELLED</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="booking-history">
+                                        <div class="booking-info clearfix">
+                                            <div class="date">
+                                                <label class="month">NOV</label>
+                                                <label class="date">23</label>
+                                                <label class="day">SAT</label>
+                                            </div>
+                                            <h4 class="box-title"><i class="icon soap-icon-plane-right takeoff-effect yellow-color circle"></i>Indianapolis to Paris<small>you are flying</small></h4>
+                                            <dl class="info">
+                                                <dt>TRIP ID</dt>
+                                                <dd>5754-8dk8-8ee</dd>
+                                                <dt>booked on</dt>
+                                                <dd>saturday, nov 23, 2013</dd>
+                                            </dl>
+                                            <button class="btn-mini status">UPCOMMING</button>
+                                        </div>
+                                        <div class="booking-info clearfix">
+                                            <div class="date">
+                                                <label class="month">NOV</label>
+                                                <label class="date">30</label>
+                                                <label class="day">SAT</label>
+                                            </div>
+                                            <h4 class="box-title"><i class="icon soap-icon-plane-right takeoff-effect yellow-color circle"></i>England to Rome<small>you are flying</small></h4>
+                                            <dl class="info">
+                                                <dt>TRIP ID</dt>
+                                                <dd>5754-8dk8-8ee</dd>
+                                                <dt>booked on</dt>
+                                                <dd>saturday, nov 30, 2013</dd>
+                                            </dl>
+                                            <button class="btn-mini status">UPCOMMING</button>
+                                        </div>
+                                        <div class="booking-info clearfix">
+                                            <div class="date">
+                                                <label class="month">DEC</label>
+                                                <label class="date">11</label>
+                                                <label class="day">MON</label>
+                                            </div>
+                                            <h4 class="box-title"><i class="icon soap-icon-hotel blue-color circle"></i>Hilton Hotel &amp; Resorts<small>2 adults staying</small></h4>
+                                            <dl class="info">
+                                                <dt>TRIP ID</dt>
+                                                <dd>5754-8dk8-8ee</dd>
+                                                <dt>booked on</dt>
+                                                <dd>monday, dec 11, 2013</dd>
+                                            </dl>
+                                            <button class="btn-mini status">UPCOMMING</button>
+                                        </div>
+                                        <div class="booking-info clearfix">
+                                            <div class="date">
+                                                <label class="month">DEC</label>
+                                                <label class="date">18</label>
+                                                <label class="day">THU</label>
+                                            </div>
+                                            <h4 class="box-title"><i class="icon soap-icon-car red-color circle"></i>Economy Car<small>you are driving</small></h4>
+                                            <dl class="info">
+                                                <dt>TRIP ID</dt>
+                                                <dd>5754-8dk8-8ee</dd>
+                                                <dt>booked on</dt>
+                                                <dd>thursday, dec 18, 2013</dd>
+                                            </dl>
+                                            <button class="btn-mini status">UPCOMMING</button>
+                                        </div>
+                                        <div class="booking-info clearfix">
+                                            <div class="date">
+                                                <label class="month">DEC</label>
+                                                <label class="date">22</label>
+                                                <label class="day">SUN</label>
+                                            </div>
+                                            <h4 class="box-title"><i class="icon soap-icon-cruise green-color circle"></i>Baja Mexico<small>3 adults going on cruise</small></h4>
+                                            <dl class="info">
+                                                <dt>TRIP ID</dt>
+                                                <dd>5754-8dk8-8ee</dd>
+                                                <dt>booked on</dt>
+                                                <dd>sunday, dec 22, 2013</dd>
+                                            </dl>
+                                            <button class="btn-mini status">UPCOMMING</button>
+                                        </div>
+                                        <div class="booking-info clearfix cancelled">
+                                            <div class="date">
+                                                <label class="month">NOV</label>
+                                                <label class="date">30</label>
+                                                <label class="day">SAT</label>
+                                            </div>
+                                            <h4 class="box-title"><i class="icon soap-icon-plane-right takeoff-effect circle"></i>England to Rome<small>you are flying</small></h4>
+                                            <dl class="info">
+                                                <dt>TRIP ID</dt>
+                                                <dd>5754-8dk8-8ee</dd>
+                                                <dt>booked on</dt>
+                                                <dd>saturday, nov 30, 2013</dd>
+                                            </dl>
+                                            <button class="btn-mini status">CANCELLED</button>
+                                        </div>
+                                        <div class="booking-info clearfix cancelled">
+                                            <div class="date">
+                                                <label class="month">DEC</label>
+                                                <label class="date">18</label>
+                                                <label class="day">THU</label>
+                                            </div>
+                                            <h4 class="box-title"><i class="icon soap-icon-car circle"></i>Economy Car<small>you are driving</small></h4>
+                                            <dl class="info">
+                                                <dt>TRIP ID</dt>
+                                                <dd>5754-8dk8-8ee</dd>
+                                                <dt>booked on</dt>
+                                                <dd>thursday, dec 18, 2013</dd>
+                                            </dl>
+                                            <button class="btn-mini status">CANCELLED</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div id="feedback" class="tab-pane fade">
+                                    <h2>feedback/enquery</h2>
+                                    <div class="col-sm-9 no-float no-padding">
+                                        <form>
+                                            <div class="row form-group">
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Your Id</label>
+                                                    <input type="text" class="input-text full-width">
+                                                </div>
+                                                <div class="col-sms-6 col-sm-6">
+                                                    <label>Name</label>
+                                                    <input type="text" class="input-text full-width">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label>please enter your feedback</label>
+                                                <textarea rows="6" class="input-text full-width" placeholder="please tell us about you"></textarea>
+                                            </div>
+
+                                            <div>
+                                                <ul class="social-icons icon-circle clearfix">
+                                                    <li class="twitter"><a title="Twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                                    <li class="facebook"><a title="Facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                                    <li class="googleplus"><a title="GooglePlus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                                    <li class="pinterest"><a title="Pinterest" href="#" data-toggle="tooltip"><i class="soap-icon-pinterest"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <br>
+                                            <div class="form-group col-sm-5 col-md-4 no-float no-padding no-margin">
+                                                <button type="submit" class="btn-medium full-width">SUBMIT REVIEW</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <
+                                </div>
+                                <div id="settings" class="tab-pane fade">
+                                    <h2>Account Settings</h2>
+                                    <h5 class="skin-color">Change Your Password</h5>
+                                    <form>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                                <label>Old Password</label>
+                                                <input type="text" class="input-text full-width">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                                <label>Enter New Password</label>
+                                                <input type="text" class="input-text full-width">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                                <label>Confirm New password</label>
+                                                <input type="text" class="input-text full-width">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn-medium">UPDATE PASSWORD</button>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                    <h5 class="skin-color">Change Your Email</h5>
+                                    <form>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                                <label>Old email</label>
+                                                <input type="text" class="input-text full-width">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                                <label>Enter New Email</label>
+                                                <input type="text" class="input-text full-width">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                                <label>Confirm New Email</label>
+                                                <input type="text" class="input-text full-width">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn-medium">UPDATE EMAIL ADDRESS</button>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                    <h5 class="skin-color">Send Me Emails When</h5>
+                                    <form>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Travelo has periodic offers and deals on really cool destinations.
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Travelo has fun company news, as well as periodic emails.
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> I have an upcoming reservation.
+                                            </label>
+                                        </div>
+                                        <button class="btn-medium uppercase">Update All Settings</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                </div>
+        </section>
+
+
+        <footer id="footer" style="background-color: #2d3e52;">
+
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Discover</h2>
+                            <ul class="discover triangle hover row">
+                                <li class="col-xs-6"><a href="#">contacts</a></li>
+                                <li class="col-xs-6"><a href="#">About</a></li>
+                                <li class="col-xs-6"><a href="#">Careers</a></li>
+                                <li class="col-xs-6"><a href="#">Safety</a></li>
+                                <li class="active col-xs-6"><a href="#">security</a></li>
+                                <li class="col-xs-6"><a href="#">Transparency</a></li>
+                                <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
+                                <li class="col-xs-6"><a href="#">Gift Shop</a></li>
+                                <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
+                                <li class="col-xs-6"><a href="#">Help</a></li>
+                                <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
+                                <li class="col-xs-6"><a href="#">Media</a></li>
+                                <li class="col-xs-6"><a href="#">Business</a></li>
+                                <li class="col-xs-6"><a href="#">commercial</a></li>
+
+                                <li class="col-xs-6"><a href="#">Schools</a></li>
+                                <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
+                                <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
+                                <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
+                                <li class="col-xs-6"><a href="#">Urban planning</a></li>
+                                <li class="col-xs-6"><a href="#">construction</a></li>
+                                <li class="col-xs-6"><a href="#">Information for...</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Interbus News</h2>
+                            <ul class="travel-news">
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="images/img1.jpg" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                        <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
+                                        <span class="date">25 Sep, 2013</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="images/img11.jpg" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                        <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
+                                        <span class="date">24 Sep, 2013</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Mailing List</h2>
+                            <p>Sign up for our mailing list to get latest updates and offers.</p>
+                            <br />
+                            <div class="icon-check">
+                                <input type="text" class="input-text full-width" placeholder="your email" />
+                            </div>
+                            <br />
+                            <span style="color:white">We respect your privacy</span>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">About Interbus</h2>
+                            <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
+                            <br />
+                            <address class="contact-details">
+                                <span class="contact-phone" style="color:white"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                <br />
+                                <a href="#" class="contact-email">help@interbus.com</a>
+                            </address>
+                            <ul class="social-icons clearfix" style="padding-left:25px">
+                                <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                
+                               
+                                
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom gray-area">
+                <div class="container">
+                    <div class="logo pull-left">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </div>
+                    <div class="pull-right">
+                        <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                    </div>
+                    <div class="copyright pull-right">
+                        <p>&copy; 2017 Interbus</p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- Flex Slider -->
+    <script type="text/javascript" src="components/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="js/theme-scripts.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/UserProfile.js"></script>
+
+
+    <script type="text/javascript">
+        tjq(document).ready(function () {
+            tjq("#profile .edit-profile-btn").click(function (e) {
+                e.preventDefault();
+                tjq(".view-profile").fadeOut();
+                tjq(".edit-profile").fadeIn();
+            });
+
+            setTimeout(function () {
+                tjq(".notification-area").append('<div class="info-box block"><span class="close"></span><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ab quis a dolorem, placeat eos doloribus esse repellendus quasi libero illum dolore. Esse minima voluptas magni impedit, iusto, obcaecati dignissimos.</p></div>');
+            }, 10000);
+        });
+        tjq('a[href="#profilel"]').on('shown.bs.tab', function (e) {
+            tjq(".view-profile").show();
+            tjq(".edit-profile").hide();
+        });
+    </script>
+</body>
+</html>

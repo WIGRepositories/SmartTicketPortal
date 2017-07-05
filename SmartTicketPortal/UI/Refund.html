@@ -1,0 +1,868 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="myApp" ng-controller="myCtrl">
+<!--<![endif]-->
+<head>
+    <!-- Page Title -->
+    <title>INTER BUS</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="css/style.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="css/updates.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        section#content {
+            min-height: 700px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #main {
+            padding-top: 250px;
+        }
+
+        .page-title, .page-description {
+            color: #fff;
+        }
+
+        .page-title {
+            font-size: 4.1667em;
+            font-weight: bold;
+        }
+
+        .page-description {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+
+        .featured {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            z-index: 9;
+            margin-bottom: 0;
+            text-align: right;
+        }
+
+            .featured figure a {
+                border: 2px solid #fff;
+            }
+
+            .featured .details {
+                margin-right: 10px;
+            }
+
+                .featured .details > * {
+                    color: #fff;
+                    line-height: 1.25em;
+                    margin: 0;
+                    font-weight: bold;
+                    text-shadow: 2px -2px rgba(0, 0, 0, 0.2);
+                }
+    </style>
+
+
+
+</head>
+<body>
+
+    <div id="page-wrapper">
+        <header id="header" class="navbar-static-top">
+            <div class="topnav hidden-xs">
+                <div class="container">
+                    <ul class="quick-menu pull-left">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                    </ul>
+                    <ul class="quick-menu pull-right">
+                        <li class="ribbon">
+                            <a ng-hide="username == null" href="#">Hello, {{username}}</a>
+                            <ul class="menu mini uppercase">
+
+                                <li><a href="UserProfile.html" class="location-reload">Profile</a></li>
+                                <li><a href="BookedTicketHistory.html" class="location-reload">Bookings</a></li>
+                                <li><a href="Cancellation.html" class="location-reload">cancellation</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">card</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">app</a></li>
+                                <li><a href="Refund.html" class="location-reload">refund</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> ewallet</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> feedback/enquery</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">settings</a></li>
+                                <li><a href="#" ng-click="SignOutUser();">signout</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+
+                        <li><a href="Registation.html" class="">SIGNUP</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="main-header">
+
+                <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                    Mobile Menu Toggle
+                </a>
+
+                <div class="container">
+                    <h1 class="logo navbar-brand">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </h1>
+
+                    <nav id="main-menu" role="navigation">
+                        <ul class="menu">
+                            <li class="menu-item-has-children">
+                                <a href="../index.html">Home</a>
+
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="fares_and_payments.html">Fares/Payments</a>
+                                <ul>
+                                    <li><a href="shedules.html">Schedules</a></li>
+                                    <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                    <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                    <li><a href="refund.html">refund</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="cancellation.html">Cancle/Modify</a>
+                                <ul>
+                                    <li><a href="cancellation.html">Cancle Ticket</a></li>
+                                    <li><a href="cancellation.html">Modify Ticket</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="Status_and_Updates.html">Status</a></li>
+                                    <li><a href="pages-coming-soon1.html">plans</a></li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="shortcode-pricing-tables.html">Products</a>
+                                <ul>
+                                    <li><a href="Licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="Licensepage.html">BT Licence</a></li>
+                                    <li><a href="Licensepage.html">APP Licence</a></li>
+                                    <li><a href="Licensepage.html">Advt Licence</a></li>
+                                    <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="apps.html">Mobile App</a></li>
+                                    <li><a href="products.html">products</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="AboutUs.html">About us</a>
+                                <ul>
+                                    <li><a href="ContactUs.html">contacts</a></li>
+                                    <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <nav id="mobile-menu-01" class="mobile-menu collapse">
+                    <ul id="mobile-primary-menu" class="menu">
+                        <li class="menu-item-has-children">
+                            <a href="../index.html">Home</a>
+
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="fares_and_payments.html">Fares/Payments</a>
+                            <ul>
+                                <li><a href="shedules.html">Schedules</a></li>
+                                <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                <li><a href="refund.html">refund</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="cancellation.html">Cancle/Modify</a>
+                            <ul>
+                                <li><a href="cancellation.html">Cancle Ticket</a></li>
+                                <li><a href="cancellation.html">Modify Ticket</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="Status_and_Updates.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="Status_and_Updates.html">Status</a></li>
+                                <li><a href="pages-coming-soon1.html">plans</a></li>
+                                
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="shortcode-pricing-tables.html">Products</a>
+                            <ul>
+                                <li><a href="Licensepage.html">Fleet Owner Licence</a></li>
+                                <li><a href="Licensepage.html">BT Licence</a></li>
+                                <li><a href="Licensepage.html">APP Licence</a></li>
+                                <li><a href="Licensepage.html">Advt Licence</a></li>
+                                <li><a href="cards.html">Cards</a></li>
+                                <li><a href="apps.html">Mobile App</a></li>
+                                <li><a href="products.html">products</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="AboutUs.html">About us</a>
+                            <ul>
+                                <li><a href="ContactUs.html">contacts</a></li>
+                                <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    <ul class="mobile-topnav container">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li class="ribbon currency menu-color-skin">
+                            <a href="#">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div id="travelo-login" class="travelo-login-box travelo-box">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="input-text full-width" placeholder="email address" ng-model="UserName">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="Signin()" class="btn btn-success">
+                            Log In
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="forgot-password pull-right">Forgot password?</a>
+                        <div class="checkbox checkbox-inline">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="seperator"></div>
+                <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+            </div>
+        </header>
+
+
+
+
+
+        <!--BEGIN TITLE & BREADCRUMB PAGE-->
+        <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+            <ol class="breadcrumb page-breadcrumb pull-right " style="padding:0px">
+                <li>Hello, {{username}}!&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="#" ng-click="LogoutUser();">Sign Out</a>&nbsp;&nbsp;</li>
+            </ol>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-lg-12">
+            <div class="page-content">
+                <div id="tableactionTabContent" class="tab-content" ng-show="bookedHistory.length == 0">
+
+                    <div class="table-container">
+                        <div class="row mbm">
+
+                            <div id="imgTd1" style="display:none" class="seatlayoutDropDown">
+                                <div class="seatLayoutMain">
+                                    <div class="seatLayoutBox">
+                                        <div class="low-rating-window">
+                                            This bus has been rated low by travellers on bus quality, punctuality or staff behaviour.
+                                        </div>
+                                        <div class="lowRatingMessage Hide">
+                                            <div class="summary">
+                                                <i class="icon-alert"></i>
+                                                This bus has been rated low on
+                                                <a class="bqLink">Bus quality</a>
+                                                <span class="comma1 Hide">, </span><span class="and1 Hide">and </span>
+                                                <a class="punLink">Punctuality</a>
+                                                <span class="comma2 Hide">, </span><span class="and2 Hide">and </span>
+                                                <a class="stLink">Staff behaviour</a>
+                                                based on
+                                                <span class="numRating">10 customer</span>
+                                                ratings.
+                                            </div>
+
+                                            <ul>
+                                                <li class="busQuality">
+                                                    <span class="ratingType">Bus quality</span>
+                                                    <div class="ratingStars">
+                                                        <span class="icon-rating_star_blank"></span>
+                                                        <span class="icon-rating_star_red Rating"></span>
+                                                    </div>
+                                                    <span class="ratingValue">2.4</span>
+                                                    <span class="ratingMessage">(signifies that the bus may not be clean or amenities like water are not provided)</span>
+                                                </li>
+
+                                                <li class="punctuality">
+                                                    <span class="ratingType">Punctuality</span>
+                                                    <div class="ratingStars">
+                                                        <span class="icon-rating_star_blank"></span>
+                                                        <span class="icon-rating_star_red Rating"></span>
+                                                    </div>
+                                                    <span class="ratingValue">2.4</span>
+                                                    <span class="ratingMessage">(signifies that the bus may not depart/arrive on the scheduled time)</span>
+                                                </li>
+
+                                                <li class="staffBehaviour">
+                                                    <span class="ratingType">Staff behaviour</span>
+                                                    <div class="ratingStars">
+                                                        <span class="icon-rating_star_blank"></span>
+                                                        <span class="icon-rating_star_red Rating"></span>
+                                                    </div>
+                                                    <span class="ratingValue">2.4</span>
+                                                    <span class="ratingMessage">(signifies that the staff may not be very well behaved/cooperative)</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="seatlayoutContainer clearfix"></div>
+
+                                        <div class="routeNote XGrey TextCenter Hide">
+                                            <i class="icon-routeNote"></i>
+                                            <span class="TextBold">Please note : </span>
+                                            <span class="content"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                <tr>
+
+                                    <td>
+                                        <strong> Transaction Id</strong>
+                                        <div class="message-inner">
+
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <strong>pnr number</strong>
+
+
+                                        <div class="message-inner">
+
+
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                        <strong> From</strong>
+
+
+
+                                    </td>
+
+
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong> To </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>Total amount </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>Refund Amount </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>Cancelled On </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>Type Of Ticket </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            <a href="cancelticketinformation.html" style="color:blue">
+                                                <u>
+                                                    185456
+                                                </u>
+                                        </strong>
+                                        <div class="message-inner">
+
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <strong>12854769</strong>
+
+
+                                        <div class="message-inner">
+
+
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                        <strong>chennai</strong>
+
+
+
+                                    </td>
+
+
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>hyderabad </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>600 </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>300 </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>29-09-2015 </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>E-Ticket </strong>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </td>
+                                </tr>
+
+
+
+
+
+
+
+
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong><a href="cancelticketinformation.html" style="color:blue"><u>845742</u></strong>
+                                        <div class="message-inner">
+
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <strong>33585967</strong>
+
+
+                                        <div class="message-inner">
+
+
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                        <strong>tirupathi</strong>
+
+
+
+                                    </td>
+
+
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong> vijayawada </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>800 </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>600 </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>14-01-2015 </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>E-ticket </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <strong><a href="cancelticketinformation.html" style="color:blue"> <u>212278</u></strong>
+                                        <div class="message-inner">
+
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <strong> 33585967</strong>
+
+                                        <div class="message-inner">
+
+
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                        <strong>kadapa</strong>
+
+
+
+                                    </td>
+
+
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>delhi </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>1250 </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>850 </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>15-04-2015 </strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong>Eticket</strong>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="row">
+                                <div class="col-lg-6">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!--END FOOTER-->
+
+
+
+        <footer id="footer" style="background-color: #2d3e52;">
+
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Discover</h2>
+                            <ul class="discover triangle hover row">
+                                <li class="col-xs-6"><a href="#">contacts</a></li>
+                                <li class="col-xs-6"><a href="#">About</a></li>
+                                <li class="col-xs-6"><a href="#">Careers</a></li>
+                                <li class="col-xs-6"><a href="#">Safety</a></li>
+                                <li class="active col-xs-6"><a href="#">security</a></li>
+                                <li class="col-xs-6"><a href="#">Transparency</a></li>
+                                <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
+                                <li class="col-xs-6"><a href="#">Gift Shop</a></li>
+                                <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
+                                <li class="col-xs-6"><a href="#">Help</a></li>
+                                <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
+                                <li class="col-xs-6"><a href="#">Media</a></li>
+                                <li class="col-xs-6"><a href="#">Business</a></li>
+                                <li class="col-xs-6"><a href="#">commercial</a></li>
+
+                                <li class="col-xs-6"><a href="#">Schools</a></li>
+                                <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
+                                <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
+                                <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
+                                <li class="col-xs-6"><a href="#">Urban planning</a></li>
+                                <li class="col-xs-6"><a href="#">construction</a></li>
+                                <li class="col-xs-6"><a href="#">Information for...</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Interbus News</h2>
+                            <ul class="travel-news">
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="images/img1.jpg" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                        <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
+                                        <span class="date">25 Sep, 2013</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="images/img11.jpg" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                        <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
+                                        <span class="date">24 Sep, 2013</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Mailing List</h2>
+                            <p>Sign up for our mailing list to get latest updates and offers.</p>
+                            <br />
+                            <div class="icon-check">
+                                <input type="text" class="input-text full-width" placeholder="your email" />
+                            </div>
+                            <br />
+                            <span style="color:white">We respect your privacy</span>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">About Interbus</h2>
+                            <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
+                            <br />
+                            <address class="contact-details">
+                                <span class="contact-phone" style="color:white"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                <br />
+                                <a href="#" class="contact-email">help@interbus.com</a>
+                            </address>
+                            <ul class="social-icons clearfix" style="padding-left:25px">
+                                <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                
+                               
+                                
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom gray-area">
+                <div class="container">
+                    <div class="logo pull-left">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </div>
+                    <div class="pull-right">
+                        <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                    </div>
+                    <div class="copyright pull-right">
+                        <p>&copy; 2017 Interbus</p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- Javascript -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- Flex Slider -->
+    <script type="text/javascript" src="components/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/Refund.js"></script>
+</body>
+</html>

@@ -1,0 +1,985 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Page Title -->
+    <title>Travelo - Travel, Tour Booking HTML5 Template</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="css/style.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="css/updates.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+   
+    <style>
+        section#content {
+            min-height: 700px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #main {
+            padding-top: 250px;
+        }
+
+        .page-title, .page-description {
+            color: #fff;
+        }
+
+        .page-title {
+            font-size: 4.1667em;
+            font-weight: bold;
+        }
+
+        .page-description {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+
+        .featured {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            z-index: 9;
+            margin-bottom: 0;
+            text-align: right;
+        }
+
+            .featured figure a {
+                border: 2px solid #fff;
+            }
+
+            .featured .details {
+                margin-right: 10px;
+            }
+
+                .featured .details > * {
+                    color: #fff;
+                    line-height: 1.25em;
+                    margin: 0;
+                    font-weight: bold;
+                    text-shadow: 2px -2px rgba(0, 0, 0, 0.2);
+                }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetAvailableServices();" ng-model="Booking">
+    <div id="page-wrapper">
+        <header id="header" class="navbar-static-top">
+            <div class="topnav hidden-xs">
+                <div class="container">
+                    <ul class="quick-menu pull-left">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                    </ul>
+                    <ul class="quick-menu pull-right">
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li class="ribbon currency">
+                            <a href="#" title="">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-header">
+
+                <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                    Mobile Menu Toggle
+                </a>
+
+                <div class="container">
+                    <h1 class="logo navbar-brand">
+                        <a href="index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </h1>
+
+                    <nav id="main-menu" role="navigation">
+                        <ul class="menu">
+                            <li class="menu-item-has-children">
+                                <a href="index.html">Home</a>
+
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="pages-coming-soon1.html">Fares/Payments</a>
+                                <ul>
+                                    <li><a href="pages-coming-soon1.html">Schedules</a></li>
+                                    <li><a href="pages-coming-soon1.html">Check Fares</a></li>
+                                    <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                    <li><a href="pages-coming-soon1.html">refund</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="pages-coming-soon1.html">Cancle/Modify</a>
+                                <ul>
+                                    <li><a href="pages-coming-soon1.html">Change date</a></li>
+                                    <li><a href="pages-coming-soon1.html">chande plan</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="pages-coming-soon1.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="pages-coming-soon1.html">Status</a></li>
+                                    <li><a href="pages-coming-soon1.html">plans</a></li>
+                                    <li><a href="pages-coming-soon1.html">massage</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="shortcode-pricing-tables.html">Products</a>
+                                <ul>
+                                    <li><a href="shortcode-pricing-tables.html">Fleet Owner Licence</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">BT Licence</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">APP Licence</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">Advt Licence</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">Cards</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">Mobile App</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="pages-coming-soon1.html">About us</a>
+                                <ul>
+                                    <li><a href="pages-coming-soon1.html">contacts</a></li>
+                                    <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <nav id="mobile-menu-01" class="mobile-menu collapse">
+                    <ul id="mobile-primary-menu" class="menu">
+                        <li class="menu-item-has-children">
+                            <a href="index.html">Home</a>
+
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="pages-coming-soon1.html">Fares/Payments</a>
+                            <ul>
+                                <li><a href="pages-coming-soon1.html">Schedules</a></li>
+                                <li><a href="pages-coming-soon1.html">Check Fares</a></li>
+                                <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                <li><a href="pages-coming-soon1.html">refund</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="pages-coming-soon1.html">Cancle/Modify</a>
+                            <ul>
+                                <li><a href="pages-coming-soon1.html">Change date</a></li>
+                                <li><a href="pages-coming-soon1.html">chande plan</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="pages-coming-soon1.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="pages-coming-soon1.html">Status</a></li>
+                                <li><a href="pages-coming-soon1.html">plans</a></li>
+                                <li><a href="pages-coming-soon1.html">massage</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="shortcode-pricing-tables.html">Products</a>
+                            <ul>
+                                <li><a href="shortcode-pricing-tables.html">Fleet Owner Licence</a></li>
+                                <li><a href="shortcode-pricing-tables.html">BT Licence</a></li>
+                                <li><a href="shortcode-pricing-tables.html">APP Licence</a></li>
+                                <li><a href="shortcode-pricing-tables.html">Advt Licence</a></li>
+                                <li><a href="shortcode-pricing-tables.html">Cards</a></li>
+                                <li><a href="shortcode-pricing-tables.html">Mobile App</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="pages-coming-soon1.html">About us</a>
+                            <ul>
+                                <li><a href="pages-coming-soon1.html">contacts</a></li>
+                                <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                            </ul>
+                    </ul>
+
+                    <ul class="mobile-topnav container">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li class="ribbon currency menu-color-skin">
+                            <a href="#">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div id="travelo-signup" class="travelo-signup-box travelo-box">
+                <div class="login-social">
+                    <a href="#" class="button login-facebook"><i class="soap-icon-facebook"></i>Login with Facebook</a>
+                    <a href="#" class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login with Google+</a>
+                </div>
+                <div class="seperator"><label>OR</label></div>
+                <div class="simple-signup">
+                    <div class="text-center signup-email-section">
+                        <a href="#" class="signup-email"><i class="soap-icon-letter"></i>Sign up with Email</a>
+                    </div>
+                    <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund olicy, and Host Guarantee Terms.</p>
+                </div>
+                <div class="email-signup">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="input-text full-width" placeholder="first name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="input-text full-width" placeholder="last name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="input-text full-width" placeholder="email address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="input-text full-width" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="input-text full-width" placeholder="confirm password">
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Tell me about Travelo news
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund Policy, and Host Guarantee Terms.</p>
+                        </div>
+                        <button type="submit" class="full-width btn-medium">SIGNUP</button>
+                    </form>
+                </div>
+                <div class="seperator"></div>
+                <p>Already a Travelo member? <a href="#travelo-login" class="goto-login soap-popupbox">Login</a></p>
+            </div>
+            <div id="travelo-login" class="travelo-login-box travelo-box">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="input-text full-width" placeholder="email address" ng-model="UserName">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="Signin()" class="btn btn-success">
+                            Log In
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="forgot-password pull-right">Forgot password?</a>
+                        <div class="checkbox checkbox-inline">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="seperator"></div>
+                <p>Don't have an account? <a href="Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+            </div>
+
+            <div class="page-title-container">
+                <div class="container">
+                    <div class="page-title pull-left" style="padding-right:0px">
+                        <h6 class="entry-title">Bus Search</h6>
+                    </div>
+                    <ul class="breadcrumbs pull-right">
+                        <li><a href="index">HOME</a></li>
+                        <li class="active">Bus Search Results</li>
+                    </ul>
+                    <div class="col-md-2" style="padding-top:5px">
+                        <div style="text-align: left; height: 40px; background-color: <!--#2d3e52-->; padding: 10px">
+                            <font style="color:white;" size="3">Oneway Journey</font>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="padding-top:15px">
+                        <font style="color: white;" size="6">  {{src.Name}} - {{dest.Name}} </font>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:5px;padding-right:0px">
+
+                <div ng-show="services.length != 0" style=" width: 100%; z-index: 1; background-color: white;">
+                    <div style="position: fixed; width: 100%; z-index: 1; background-color: #d84e55; margin-left: 10px">
+                        <!--<table class="table table-advanced" style="border: none; background-color: aliceblue; margin-right: -50px">
+
+                            <tr style="border:none">
+                                <td width="50%" style="text-align:center;" colspan="3"> Src-dest</td>
+                                <td style="text-align:center">Dest-src</td>
+                            </tr>
+
+
+
+                        </table>-->
+                        <!--<div class="row" style="height:70px" ng-if="triptype == 'oneway'">
+                            <div class="col-md-8" style="padding:15px">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-3">
+                                    <div style="text-align: center; height: 40px; background-color: firebrick; padding: 10px">
+                                        <font style="color:white;">Onward Journey</font>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <font style="color:white;" size="4">  {{src.Name}} - {{dest.Name}} </font>
+                                </div>
+                                <div class="col-md-2">
+                                    <font style="color:white;" size="4">  </font>
+                                </div>
+                            </div>-->
+                        <!--<div class="col-md-3" style="padding:15px;text-align:center">-->
+                        <!--<div class="col-md-6">
+                            <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#AddReturnDetails" data-toggle="modal">
+                                <font style="color:white;">+Return Journey</font>
+                            </div>
+                        </div>-->
+                        <!--<div class="col-md-6">
+                                    <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#ModifyJourneydetails" data-toggle="modal" ng-if="triptype == 'oneway'">
+                                        <font style="color:white;">Modify</font>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>-->
+                        <div class="row" style="height:70px" ng-if="triptype == 'twoway'">
+                            <div class="col-md-6" style="padding:15px">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-2">
+                                    <div style="text-align:center; height:40px;background-color:firebrick;padding:10px">
+                                        <font style="color:white;">Onward Journey</font>
+
+                                    </div>
+                                    <br /><font style="color:white;" size="4"> <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div> </font>
+                                </div>
+                                <div class="col-md-6">
+                                    <font style="color:white;" size="4">  {{S.Name}} - {{D.Name}} </font>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding:15px">
+
+                                <div class="col-md-2">
+                                    <button ng-click="testAlert();">
+                                        <div style="text-align:center; height:40px;background-color:firebrick;padding:10px">
+                                            <font style="color:white;">Return Journey</font>
+
+
+                                        </div>
+                                    </button>
+                                    <br /><font style="color:white;" size="4">  <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div> </font>
+                                </div>
+                                <div class="col-md-6">
+                                    <font style="color:white;" size="4">  {{D.Name}} - {{S.Name}} </font>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-6">
+                                        <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px">
+                                            <!--<font style="color:white;">Modify</font>-->
+
+                                            <a href="#" data-target="#ModifyJourneydetails" data-toggle="modal" class="btn btn-info btn-sm" ng-if="triptype == 'oneway'">Modify</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div style="width: 100%; z-index: 1; background-color: white;padding-top:100px">
+
+                        <div class="col-md-12" ng-repeat="b in services">
+                            <table class="col-md-12" style="border:solid 1px;padding-top:30px">
+                                <tr>
+                                    <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                        <div class=" col-md-4" style="text-align:center">
+                                            <img src="Images/busimages/nonac.jpg" />
+                                            <strong>  {{b.cmpName}}</strong>
+                                            <div class="message-inner">
+                                                <div class="qa-message-content">
+                                                    {{b.VehicleType}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="Images/busimages/time.jpg" /><strong> {{b.ArrivalTime}} -  {{b.DepartureTime}}</strong>
+
+
+                                            <div class="message-inner">
+
+                                                <div class="qa-message-content">
+                                                    {{b.Duration}} hours
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                        <div class="col-md-3">
+                                            <img src="Images/busimages/seat.jpg" />
+                                            <strong>  {{b.AvailableSeats}} Seats </strong><br />
+                                            <strong>  {{b.WindowSeats}} Window Seats</strong>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="col-md-3 col-sm-4">
+                                                <strong>Rs.{{b.Amount}}</strong>
+                                            </div>
+                                            <br />
+                                            <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
+                                                select seats
+                                            </button>
+                                        </div>
+
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center"></td>
+                                </tr>
+                            </table>
+
+                            <div class="col-md-12" id="t_{{$index}}" style="display:none;text-align:center;padding:20px">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4">
+                                    <div style="width: 100%; z-index: 1; margin-left: 5px">
+                                        <div class="col-md-6" style="background-color: aliceblue;">
+                                            <table>
+                                                <tr>
+                                                    <td colspan="10" style="text-align:right"><img src="Images/busimages/driver.png" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="10" style="text-align:right;height:5px"></td>
+                                                </tr>
+                                                <tr ng-repeat="s in seatstest track by $index">
+
+                                                    <td ng-repeat="c in s track by $index" style="padding: 2px">
+                                                        <!--<div ng-hide="c.status == 0" ng-style="{'background-color':c.status == 2 ?  'grey': 'green'}" ng-click="AddSeats(c);"></div>-->
+                                                        <div data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"> <img src="Images/busimages/Aseat.png" ng-hide="c.status == 0" ng-if="c.status == 1" ng-click="AddSeats(c);" /></div>
+
+                                                        <img src="Images/busimages/BSeat.png" ng-hide="c.status == 0" ng-if="c.status == 2" />
+                                                        <img src="Images/busimages/SSeat.png" ng-hide="c.status == 0" ng-if="c.status == 3" ng-click="AddSeats(c);" data-hover="tooltip" />
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <table>
+                                                <tr>
+                                                    <td>Legend:</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="Images/busimages/Aseat.png" style="padding: 5px"> Available seat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="Images/busimages/BSeat.png" style="padding: 5px"> Already booked seat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="Images/busimages/SSeat.png" style="padding: 5px"> Selected seat</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-4">
+                                    <table>
+                                        <tr>
+                                            <td id="imgTd" colspan="6">
+                                                <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                    <tr>
+                                                        <td>
+                                                            <table>
+                                                                <tr><td><label>Seat(s):<strong>{{selectedSeatsList}}</strong></label></td></tr>
+                                                                <tr><td><label>Total Seat(s):{{count}}</label></td></tr>
+                                                                <tr><td><label>Base Fare:{{b.Price}}</label></td></tr>
+                                                                <tr><td><label><strong>Total Fare:{{count*b.Price}}</strong></label></td></tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+
+                                                            <div class="actions">
+                                                                <button type="button" class="btn btn-primary" ng-click="savedata(b);" ng-if="triptype == 'twoway'">Proceed</button>
+                                                                <button type="button" ng-click="savedata(b);" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-info btn-sm" ng-if="triptype == 'oneway'">Checkout</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row" style="margin-top:80px;min-height:500px;" ng-show="services.length == 0">
+                    <div class="row">
+                        <div class="container boxed-layout">
+                            <div class="page-title-container " style="background-color: #01b7f2; padding-bottom: 20px;">
+
+
+
+                                <div class="col-md-3" style="padding-top:20px;">
+
+                                    <font style="color:white;">No services available. Please refine the search.</font>
+                                </div>
+
+
+
+                            </div>
+
+
+
+                            <!--<div class="panel-body" >
+                                <div class="alert alert-danger" >No services available. Please refine the search.</div>
+
+                            </div>-->
+
+
+                            <div class="panel panel-default ">
+                                <div class="panel-heading ">
+                                    Edit Search options
+                                </div>
+
+
+                                <div class="panel-body">
+                                    <div class="col-lg-6">
+                                        <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                            <div class="panel-heading" style="background-color: #2d3e52; text-align: center; color: white; ">Plan a journey</div>
+                                            <div class="panel-body form-actions text-right pal" style="background-color: #01b7f2; " ng-init="testClick();">
+
+                                                <div class="row">
+
+                                                    <div class="form-group">
+                                                        <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                            <option value="">Select Source</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+
+                                                    <div class="form-group">
+                                                        <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                            <option value="">Select Destination</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div style="text-align:left">
+                                                        <p>
+
+                                                            <b><font color="black"> Leaving:</font></b>
+
+                                                            <input id="currTime" value="Now" type="radio" name="timing" ng-model="timing" checked ng-change="ChangeTravelType('0');" /> <font color="black">
+                                                                Now
+                                                            </font>
+                                                            <input id="dtTime" value="Later" type="radio" name="timing" ng-model="timing" ng-change="ChangeTravelType('1');" /> <font color="black"> Change Time</font>
+
+                                                        </p>
+
+                                                        <div ng-hide="timing == 'Now'" style="display:none">
+
+                                                            <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
+                                                            <!--<input type="text" name="timepicker" class="timepicker" />-->
+                                                        </div>
+                                                        <br />
+                                                        <div>
+                                                            <b><font color="black">Travel Type:</font></b>
+                                                            <input value="oneway" type="radio" name="tt" ng-change="RadioChange('oneway')" ng-model="triptype" checked /> <font color="black">
+                                                                One way
+                                                            </font>
+                                                            <input value="twoway" type="radio" name="tt" ng-change="RadioChange('twoway')" ng-model="triptype" /><font color="black"> Two way</font>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group pull-left">
+                                                        <br />
+                                                        <a href="UI/traveloptions.html"><font color="blue"> <u>Travel options & accessibility</u></font></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="form-group pull-left col-lg-12">
+                                                        <input type="button" ng-click="GetServices();" class="btn btn-blue panel-heading" value="Plan my journey" style="width: 100%; background-color: #2d3e52;color:white;" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="vertical-button-container">
+                                            <a href="UI/Construction.html" class="plain-button">Stations, stops &amp; piers</a>
+                                            <a href="UI/Construction.html" class="plain-button">Timetables</a>
+                                            <a href="UI/Construction.html" class="plain-button">Help &amp; contacts</a>
+                                            <a href="UI/Construction.html" class="plain-button">Shop for Products online</a>
+                                            <a href="UI/Construction.html" class="plain-button">Transport accessibility</a>
+                                            <a href="UI/Construction.html" class="plain-button">Social media &amp; email updates</a>
+                                            <a href="UI/Construction.html" class="plain-button">Interbus Digital Blog</a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br />
+            <br />
+
+
+            <div id="Modal-header-primary" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal fade">
+                <div class="modal-dialog modal-lg" ng-model="currGroup">
+                    <div class="modal-content">
+                        <div class="modal-header modal-header-primary">
+                            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                            <h4 id="modal-header-primary-label" class="modal-title">Passenger Details</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row" ng-repeat="seat in onwarddetails.BookedSeats">
+
+
+                                <div class="col-md-2">
+                                    <label for="Name" class="control-label" style="color:red;float:left" ng-if="$index == 0"> Primary passenger:<span class='require'>*</span></label>
+                                    <label for="Name" class="control-label" style="color:red;float:left" ng-if="$index != 0"> Co-passenger {{$index}}:<span class='require'>*</span></label>
+
+                                </div>
+                                <div class="col-md-10" style="text-align:left">
+                                    <div class="col-md-3"><input id="inputFirstName" type="text" ng-model="seat.FName" class="form-control" placeholder="First Name" /><span class="help-block"></span></div>
+                                    <div class="col-md-3"><input id="code" type="text" ng-model="seat.LName" class="form-control" placeholder="Last Name" /><span class="help-block"></span></div>
+
+                                    <div class="col-md-3">
+                                        <select class="form-control" ng-model="seat.Age">
+                                            <option value="" selected>Age</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                            <option value="32">32</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control" ng-model="seat.Gender">
+                                            <option value="" selected>Gender</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                            <option value="3">Neutral</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row" style="margin-top:10px">
+                                <div class="col-md-6">
+                                    <div class="row">
+
+                                        <label for="Fax" class="col-md-4 control-label" style="color: red;float: left">E-mail Id:<span class='require'></span></label>
+                                        <div class="col-md-8"><input id="EmailId" type="text" ng-model="currGroup.EmailId" class="form-control" /><span class="help-block"></span></div>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <label for="ContactNo1" class="col-md-4 control-label" style="color: red;float: left">Contact No.1:<span class='require'></span></label>
+                                        <div class="col-md-8"><input id="ContactNo1" type="text" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo1" class="form-control" maxlength="10" /><span class="help-block"></span></div>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <label for="ContactNo2" class="col-md-4 control-label" style="float:left">Contact No.2:<span class='require'></span></label>
+                                        <div class="col-md-8">
+                                            <input type="text" id="ContactNo2" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo2" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." class="form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]">
+                                            <!--<input id="ContactNo2" type="text" ng-model="currGroup.ContactNo2" class="form-control" maxlength="10" />-->
+                                            <span class="help-block">
+                                            </span>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div>
+                                        <label for="Address Id" class="col-md-4 control-label" style="color: red; float: left">Address:</label>
+
+                                        <div class="col-md-8"><textarea rows="4" class="form-control" ng-model="currGroup.Address"></textarea></div>
+                                        <br />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+                            <div style="text-align:center">
+                                <button type="button" class="btn btn-green" ng-click="ProceedToPayment(currGroup);">Proceed to payment</button>
+                                <button type="button" data-dismiss="modal" class="btn btn-primary">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+        </header>
+    </div>
+    
+    <footer id="footer">
+
+        <div style="background-color: #2d3e52;">
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Discover</h2>
+                            <ul class="discover triangle hover row">
+                                <li class="col-xs-6"><a href="#">Safety</a></li>
+                                <li class="col-xs-6"><a href="#">About</a></li>
+                                <li class="col-xs-6"><a href="#">Interbus Picks</a></li>
+                                <li class="col-xs-6"><a href="#">Latest Jobs</a></li>
+                                <li class="active col-xs-6"><a href="#">Mobile</a></li>
+                                <li class="col-xs-6"><a href="#">Press Releases</a></li>
+                                <li class="col-xs-6"><a href="#">Why Host</a></li>
+                                <li class="col-xs-6"><a href="#">Blog Posts</a></li>
+                                <li class="col-xs-6"><a href="#">Social Connect</a></li>
+                                <li class="col-xs-6"><a href="#">Help Topics</a></li>
+                                <li class="col-xs-6"><a href="#">Site Map</a></li>
+                                <li class="col-xs-6"><a href="#">Policies</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Interbus News</h2>
+                            <ul class="travel-news">
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                        <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                        <span class="date">25 Sep, 2013</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                        <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                        <span class="date">24 Sep, 2013</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Mailing List</h2>
+                            <p>Sign up for our mailing list to get latest updates and offers.</p>
+                            <br />
+                            <div class="icon-check">
+                                <input type="text" class="input-text full-width" placeholder="your email" />
+                            </div>
+                            <br />
+                            <span>We respect your privacy</span>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>About Interbus</h2>
+                            <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massaidp nequetiam lore elerisque.</p>
+                            <br />
+                            <address class="contact-details">
+                                <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                <br />
+                                <a href="#" class="contact-email">help@interbus.com</a>
+                            </address>
+                            <ul class="social-icons clearfix">
+                                <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
+                                <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
+                                <li class="dribble"><a title="dribble" href="#" data-toggle="tooltip"><i class="soap-icon-dribble"></i></a></li>
+                                <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom gray-area">
+            <div class="container">
+                <div class="logo pull-left">
+                    <a href="index.html" title="Travelo - home">
+                        <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                </div>
+                <div class="copyright pull-right">
+                    <p>&copy; 2017 Interbus</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+
+
+    <!-- load revolution slider scripts -->
+    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- Flex Slider -->
+    <script type="text/javascript" src="components/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- load BXSlider scripts -->
+    <script type="text/javascript" src="components/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="js/theme-scripts.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <!--<script src="js/tooltip.js"></script>-->
+
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/moment.js"></script>
+    <!--<script src="js/bootstrap-datetimepicker.js"></script>-->
+
+    <script src="js/booking.js"></script>
+
+
+    <!--<script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        $('.datetimepicker-disable-date').datetimepicker({
+            pickDate: true
+        });
+    </script>-->
+</body>
+</html>

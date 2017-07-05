@@ -1,0 +1,873 @@
+﻿<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<head>
+    <title>INTER BUS TicketCheckout</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="css/style.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="css/updates.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        section#content {
+            min-height: 700px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #main {
+            padding-top: 25px;
+        }
+
+        .page-title, .page-description {
+            color: #fff;
+        }
+
+        .page-title {
+            font-size: 4.1667em;
+            font-weight: bold;
+        }
+
+        .page-description {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+
+        .featured {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            z-index: 9;
+            margin-bottom: 0;
+            text-align: right;
+        }
+
+            .featured figure a {
+                border: 2px solid #fff;
+            }
+
+            .featured .details {
+                margin-right: 10px;
+            }
+
+                .featured .details > * {
+                    color: #fff;
+                    line-height: 1.25em;
+                    margin: 0;
+                    font-weight: bold;
+                    text-shadow: 2px -2px rgba(0, 0, 0, 0.2);
+                }
+    </style>
+</head>
+<body ng-init="getcheckoutdetails();">
+    <div id="page-wrapper">
+        <header id="header" class="navbar-static-top">
+            <div class="topnav hidden-xs">
+                <div class="container">
+                    <ul class="quick-menu pull-left">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                    </ul>
+                    <ul class="quick-menu pull-right">
+                        <li class="ribbon">
+                            <a ng-hide="username == null" href="#">Hello, {{username}}</a>
+                            <ul class="menu mini uppercase">
+
+                                <li><a href="UserProfile.html" class="location-reload">Profile</a></li>
+                                <li><a href="BookedTicketHistory.html" class="location-reload">Bookings</a></li>
+                                <li><a href="Cancellation.html" class="location-reload">cancellation</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">card</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">app</a></li>
+                                <li><a href="Refund.html" class="location-reload">refund</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> ewallet</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> feedback/enquery</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">settings</a></li>
+                                <li><a href="#" ng-click="SignOutUser();">signout</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+
+                        <li><a href="Registation.html" class="">SIGNUP</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="main-header">
+
+                <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                    Mobile Menu Toggle
+                </a>
+
+                <div class="container">
+                    <h1 class="logo navbar-brand">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </h1>
+
+                    <nav id="main-menu" role="navigation">
+                        <ul class="menu">
+                            <li class="menu-item-has-children">
+                                <a href="../index.html">Home</a>
+
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="fares_and_payments.html">Fares/Payments</a>
+                                <ul>
+                                    <li><a href="shedules.html">Schedules</a></li>
+                                    <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                    <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                    <li><a href="refund.html">refund</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="cancellation.html">Cancle/Modify</a>
+                                <ul>
+                                    <li><a href="cancellation.html">Cancle Ticket</a></li>
+                                    <li><a href="cancellation.html">Modify Ticket</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="Status_and_Updates.html">Status</a></li>
+                                    <li><a href="pages-coming-soon1.html">plans</a></li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="shortcode-pricing-tables.html">Products</a>
+                                <ul>
+                                    <li><a href="Licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="Licensepage.html">BT Licence</a></li>
+                                    <li><a href="Licensepage.html">APP Licence</a></li>
+                                    <li><a href="Licensepage.html">Advt Licence</a></li>
+                                    <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="apps.html">Mobile App</a></li>
+                                    <li><a href="products.html">products</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="AboutUs.html">About us</a>
+                                <ul>
+                                    <li><a href="ContactUs.html">contacts</a></li>
+                                    <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <nav id="mobile-menu-01" class="mobile-menu collapse">
+                    <ul id="mobile-primary-menu" class="menu">
+                        <li class="menu-item-has-children">
+                            <a href="../index.html">Home</a>
+
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="fares_and_payments.html">Fares/Payments</a>
+                            <ul>
+                                <li><a href="shedules.html">Schedules</a></li>
+                                <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                <li><a href="refund.html">refund</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="cancellation.html">Cancle/Modify</a>
+                            <ul>
+                                <li><a href="cancellation.html">Cancle Ticket</a></li>
+                                <li><a href="cancellation.html">Modify Ticket</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="Status_and_Updates.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="Status_and_Updates.html">Status</a></li>
+                                <li><a href="pages-coming-soon1.html">plans</a></li>
+                                
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="shortcode-pricing-tables.html">Products</a>
+                            <ul>
+                                <li><a href="Licensepage.html">Fleet Owner Licence</a></li>
+                                <li><a href="Licensepage.html">BT Licence</a></li>
+                                <li><a href="Licensepage.html">APP Licence</a></li>
+                                <li><a href="Licensepage.html">Advt Licence</a></li>
+                                <li><a href="cards.html">Cards</a></li>
+                                <li><a href="apps.html">Mobile App</a></li>
+                                <li><a href="products.html">products</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="AboutUs.html">About us</a>
+                            <ul>
+                                <li><a href="ContactUs.html">contacts</a></li>
+                                <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    <ul class="mobile-topnav container">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li class="ribbon currency menu-color-skin">
+                            <a href="#">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div id="travelo-login" class="travelo-login-box travelo-box">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="input-text full-width" placeholder="email address" ng-model="UserName">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="Signin()" class="btn btn-success">
+                            Log In
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="forgot-password pull-right">Forgot password?</a>
+                        <div class="checkbox checkbox-inline">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="seperator"></div>
+                <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+            </div>
+        </header>
+        <div class="page-title-container">
+            <div class="container">
+                <div class="page-title pull-left">
+                    <h7 class="entry-title">CheckOut</h7>
+                </div>
+                <ul class="breadcrumbs pull-right">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li class="active">Checkout</li>
+                </ul>
+            </div>
+        </div>
+        <section id="content" class="gray-area">
+            <div class="container">
+                <div class="row">
+                    <div id="main" class="col-sms-6 col-sm-8 col-md-9">
+                        <div class="booking-section travelo-box">
+
+                            <form class="booking-form">
+                                
+
+                                <div class="container" style="margin-top:10Px;min-height:380px;">
+                                    <h2 style="margin-left:30px">Checkout</h2>
+
+                                    <div class="col-md-7">
+                                        <div class="panel panel-grey">
+                                            
+                                            <div class="panel-body pan">
+
+                                                <div class="form-body pal">
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-3 col-md-4">
+                                                            <label>first name</label>
+                                                                <div ><input id="inputFirstName" type="text" value={{userdetails.FirstName}} placeholder="First Name" class="form-control" ></div>
+                                                            
+                                                        </div>
+                                                        <div class="col-sm-3 col-md-3">
+                                                            <label>middle name</label>
+                                                                <div><input id="inputMiddlename" type="text" value={{userdetails.middlename}} placeholder="First Name" class="form-control" /></div>
+                                                            
+                                                        </div>
+                                                        <div class="col-sm-3 col-md-3">
+                                                            <label>last name</label>
+                                                                <div><input id="inputLastName" type="text" value={{userdetails.LastName}} placeholder="Last Name" class="form-control" /></div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-6 col-md-5">
+                                                            <label>email</label>
+                                                            <div><input id="inputEmail" value={{userdetails.EmailAddress}} type="text" placeholder="E-mail" class="form-control" /></div>
+
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-5">
+                                                            <label>Phone Number</label>
+                                                            <div><input id="inputPhone" value={{userdetails.Mobile}} type="text" placeholder="Phone" class="form-control" /></div>
+
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="row" style="margin-top:0px;background-color:aliceblue">
+
+                                                        <div class="col-lg-12">
+                                                            <h3>Payment options</h3>
+                                                            <div class="tabbable tabs-left" style="margin-top:0px;background-color:aliceblue">
+                                                                <ul id="myTab2" class="nav nav-tabs">
+
+                                                                    <li><a href="#debtcard" data-toggle="tab">Debt card</a></li>
+                                                                    <li class="active"><a href="#creditcard" data-toggle="tab">Credit card</a></li>
+                                                                    <li><a href="#netbanking" data-toggle="tab">Net banking</a></li>
+                                                                    <li><a href="#paypal" data-toggle="tab">Paypal</a></li>
+                                                                </ul>
+                                                                <div id="myTabContent2" class="tab-content" style="background-color: aliceblue">
+                                                                    <div id="paypal" class="tab-pane fade in active">
+                                                                        <div class="form-group"><input id="inputNameCard" type="text" value="Test User" placeholder="Name on card" class="form-control" /></div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-9">
+                                                                                <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" placeholder="Card number" class="form-control" /></div>
+                                                                            </div>
+                                                                            <div class="col-md-3">
+                                                                                <div class="form-group"><input id="inputCVV2" type="text" value="874" placeholder="CVV2" class="form-control" /></div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="row">
+                                                                            <div class="col-md-11">
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group"><label class="pts">Expiration date:</label></div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="form-group">
+                                                                                        <select class="form-control">
+                                                                                            <option>11</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="form-group">
+                                                                                        <select class="form-control">
+                                                                                            <option>2018</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div id="debtcard" class="tab-pane fade">
+                                                                        <div class="form-group"><input id="inputNameCard" type="text" value="Test User" placeholder="Name on card" class="form-control" /></div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-9">
+                                                                                <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" placeholder="Card number" class="form-control" /></div>
+                                                                            </div>
+                                                                            <div class="col-md-3">
+                                                                                <div class="form-group"><input id="inputCVV2" type="text" value="874" placeholder="CVV2" class="form-control" /></div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="row">
+                                                                            <div class="col-md-11">
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group"><label class="pts">Expiration date:</label></div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="form-group">
+                                                                                        <select class="form-control">
+                                                                                            <option>11</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="form-group">
+                                                                                        <select class="form-control">
+                                                                                            <option>2018</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="creditcard" class="tab-pane fade">
+                                                                        <div class="form-group"><input id="inputNameCard" type="text" value="Test User" placeholder="Name on card" class="form-control" /></div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-9">
+                                                                                <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" placeholder="Card number" class="form-control" /></div>
+                                                                            </div>
+                                                                            <div class="col-md-3">
+                                                                                <div class="form-group"><input id="inputCVV2" type="text" value="874" placeholder="CVV2" class="form-control" /></div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="row">
+                                                                            <div class="col-md-11">
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group"><label class="pts">Expiration date:</label></div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="form-group">
+                                                                                        <select class="form-control">
+                                                                                            <option>11</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="form-group">
+                                                                                        <select class="form-control">
+                                                                                            <option>2018</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="netbanking" class="tab-pane fade">
+
+                                                                        <div class="row">
+
+                                                                            <div class="col-md-9">
+
+                                                                                <select class="form-control col-md-8">
+                                                                                    <option value="" selected>----select Bank----</option>
+                                                                                    <option value="21">Bank1</option>
+                                                                                    <option value="22">Bank12</option>
+                                                                                    <option value="23">Bank13</option>
+                                                                                    <option value="24">Bank14</option>
+                                                                                </select>
+                                                                            </div>
+
+                                                                            <div class="col-md-3">
+                                                                                <button class="btn btn-primary" ng-click="GoToNetbanking();">Submit</button>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <!--<div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group mbn"><label class="pts">Expiration date</label></div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Month</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group mbn"><input id="inputYear" type="text" placeholder="Year" class="form-control" /></div>
+                            </div>
+                        </div>-->
+                                                </div>
+                                                <div class="text-right pal">
+                                                    <button class="btn btn-primary" ng-click="ProceedToPayment();">Make payment</button>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                   
+                                </div>
+                                
+                                
+                               
+                               
+                               
+                            </form>
+                        </div>
+                    </div>
+                    <div class="sidebar col-sms-6 col-sm-4 col-md-3" id="main">
+                        <div class="booking-details travelo-box">
+                            <h4>Order Summary</h4>
+                            <article class="car-detail">
+
+                                <div class="details">
+                                    <div class="icon-box style11 full-width">
+                                        <div class="icon-wrapper">
+                                            <i class="soap-icon-passed"></i>
+                                        </div>
+                                        <dl class="details">
+                                            <!--<dt class="skin-color">Date</dt>-->
+                                            <dd>Per unit price: ${{onwarddetails.perunitprice}}</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="icon-box style11 full-width">
+                                        <div class="icon-wrapper">
+                                            <i class="soap-icon-myspace"></i>
+                                        </div>
+                                        <dl class="details">
+                                            <!--<dt class="skin-color">Time</dt>-->
+                                            <dd>No. Of Seats: {{onwarddetails.NoOfSeats}}</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="icon-box style11 full-width">
+                                        <div class="icon-wrapper">
+                                            <i class="soap-icon-passenger"></i>
+                                        </div>
+                                        <dl class="details">
+                                            <!--<dt class="skin-color">Location</dt>-->
+                                            <dd>Selected Seats: {{onwarddetails.Seats}}</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="icon-box style11 full-width">
+                                        <div class="icon-wrapper">
+                                            <i class="soap-icon-passed"></i>
+                                        </div>
+                                        <dl class="details">
+                                            <!--<dt class="skin-color">Location</dt>-->
+                                            <dd>Sub Total: ${{onwarddetails.amount}}</dd>
+                                        </dl>
+                                    </div>
+                                   
+                                </div>
+
+
+
+                                <dl class="other-details">
+
+                                    <dd class="total-price-value">Total amount payable: ${{onwarddetails.amount}}</dd>
+                                </dl>
+                            </article>
+                        </div>
+
+                        <!--<div class="travelo-box contact-box">
+            <h4>Need Travelo Help?</h4>
+            <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+            <address class="contact-details">
+                <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                <br>
+                <a class="contact-email" href="#">help@travelo.com</a>
+            </address>
+        </div>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <div id="Modal-header-new" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal" style="align-content:center;text-align:center">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        Initiating payment.....
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div id="Modal-header-new1" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal" style="align-content:center;text-align:center">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        Processing payment.....
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div style="background-color: white;">
+                <div class="footer-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3">
+                                <h2>Discover</h2>
+                                <ul class="discover triangle hover row">
+                                    <li class="col-xs-6"><a href="#">contacts</a></li>
+                                    <li class="col-xs-6"><a href="#">About</a></li>
+                                    <li class="col-xs-6"><a href="#">Careers</a></li>
+                                    <li class="col-xs-6"><a href="#">Safety</a></li>
+                                    <li class="active col-xs-6"><a href="#">security</a></li>
+                                    <li class="col-xs-6"><a href="#">Transparency</a></li>
+                                    <li class="col-xs-6"><a href="#">reports</a></li>
+                                    <li class="col-xs-6"><a href="#">Gift Shop</a></li>
+                                    <li class="col-xs-6"><a href="#">Email updates</a></li>
+                                    <li class="col-xs-6"><a href="#">Help</a></li>
+                                    <li class="col-xs-6"><a href="#">Other languages</a></li>
+                                    <li class="col-xs-6"><a href="#">Media</a></li>
+                                    <li class="col-xs-6"><a href="#">Business</a></li>
+                                    <li class="col-xs-6"><a href="#">commercial</a></li>
+                                    <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
+                                    <li class="col-xs-6"><a href="#">Schools</a></li>
+                                    <li class="col-xs-6"><a href="#">young people</a></li>
+                                    <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
+                                    <li class="col-xs-6"><a href="#">Urban planning</a></li>
+                                    <li class="col-xs-6"><a href="#">construction</a></li>
+                                    <li class="col-xs-6"><a href="#">Information for...</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-6 col-md-3">
+                                <h2>Interbus News</h2>
+                                <ul class="travel-news">
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                            </a>
+                                        </div>
+                                        <div class="description">
+                                            <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                            <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                            <span class="date">25 Sep, 2013</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                            </a>
+                                        </div>
+                                        <div class="description">
+                                            <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                            <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                            <span class="date">24 Sep, 2013</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <h2>Mailing List</h2>
+                                <p>Sign up for our mailing list to get latest updates and offers.</p>
+                                <br />
+                                <div class="icon-check">
+                                    <input type="text" class="input-text full-width" placeholder="your email" />
+                                </div>
+                                <br />
+                                <span>We respect your privacy</span>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <h2>About Interbus</h2>
+                                <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massaidp nequetiam lore elerisque.</p>
+                                <br />
+                                <address class="contact-details">
+                                    <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                    <br />
+                                    <a href="#" class="contact-email">help@interbus.com</a>
+                                </address>
+                                <ul class="social-icons clearfix" style="padding-left:25px">
+                                    <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                    <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                    <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                    
+                                   
+                                    
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom gray-area">
+                <div class="container">
+                    <div class="logo pull-left">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </div>
+                    <div class="pull-right">
+                        <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                    </div>
+                    <div class="copyright pull-right">
+                        <p>&copy; 2017 Interbus</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script type="text/ng-template" id="myModalContent.html" data-backdrop="static">
+
+            <div class="modal-header">
+                <center> <h2 class="modal-title">Payment confirmation!</h2></center>
+            </div>
+
+            <div class="modal-body">
+                <div><h2> Your payment for license is successful and below are the details:</h2></div>
+                <div><h3>Transaction Id : <b> {{confirm.transId}}</b></h3></div>
+                <div><h3> license code  : {{confirm.licenseCode}}</h3></div>
+                <div><h3> Activated on  : {{confirm.startdate}}</h3></div>
+                <div><h3> Expiry on     : {{confirm.expiryon}}</h3></div>
+                <br />
+                <div><h3> Shipping order for BT POS units: {{confirm.shipOrder}}</h3></div>
+                <div><h3> No.of BTPOS units to be shipped: {{confirm.noofunits}}</h3></div>
+                <br />
+                <div><h3> Your Smart Ticket dashboard login user name            : {{confirm.username}}</h3></div>
+                <div> <h3>Password will be sent to your registered e-mail address: {{confirm.emailid}}</h3></div>
+                <br />
+                <div><h3>Please contact interbus admin for any further information!</h3></div>
+                <center><div><h3> Happy ticketing!</h3></div></center>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                <button class="btn btn-primary" type="button" ng-click="ok()">print</button>
+                <button class="btn btn-primary" type="button" ng-click="preview()">Email Preview(only for demo)</button>
+            </div>
+
+        </script>
+
+        <script type="text/ng-template" id="email.html" data-backdrop="static" class="col-md-12">
+
+            <div class="modal-header">
+                <center> <h2 class="modal-title">Sample email!</h2></center>
+            </div>
+
+            <div class="modal-body">
+                <div><h2> From: admin@interbus.com                          Date:10/08/2016</h2></div>
+                <div><h3> To: <b> a@b.c</b></h3></div>
+                <br />
+                <div><h3> Subject: License confirmation</h3></div>
+                <br />
+                <br />
+                <div><h2>Congratulations!</h2></div>
+                <br />
+                <div><h3>Your license payment is processed successfully!</h3></div>
+                <br />
+                <div>
+                    <h3> Your license code is: LC001.</h3><br />
+                    <h3> Please use this for all further correspondences</h3>
+                </div>
+                <br />
+                <div><h3> License Activated on  : 1/1/2016</h3></div>
+                <div><h3> License Expiry on     : 1/1/2017</h3></div>
+                <br />
+                <div><h3> Shipping order for BT POS units: SH001</h3></div>
+                <div><h3> No.of BTPOS units to be shipped: 10</h3></div>
+                <br />
+                <div><h3> Your Smart Ticket dashboard login user name            : FL0044</h3></div>
+                <div><h3> Your Smart Ticket dashboard login one time password is   : FL0044</h3></div>
+                <br />
+                <div><h3>Please contact interbus admin for any further information!</h3></div>
+                <center><div><h3> Happy ticketing!</h3></div></center>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+
+        </script>
+
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- load revolution slider scripts -->
+    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- Flex Slider -->
+    <script type="text/javascript" src="components/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- load BXSlider scripts -->
+    <script type="text/javascript" src="components/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+
+    <!--<script src="js/main.js"></script>-->
+    <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <script src="js/treasure-overlay-spinner.js"></script>
+    <script src="js/TicketCheckOut.js"></script>
+
+
+</body>
+</html>
+
+
+

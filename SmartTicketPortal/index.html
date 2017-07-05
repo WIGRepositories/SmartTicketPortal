@@ -1,0 +1,1188 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+    <!-- Page Title -->
+    <title>INTER BUS</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="UI/image/x-icon">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="UI/css/bootstrap.min.css">
+    <link rel="stylesheet" href="UI/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="UI/css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="UI/components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="UI/components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="UI/components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="UI/components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="UI/css/style.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="UI/css/updates.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="UI/css/custom.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="UI/css/responsive.css">
+
+      <style>
+        section#content {
+            min-height: 700px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #main {
+            padding-top: 250px;
+        }
+
+        .page-title, .page-description {
+            color: #fff;
+        }
+
+        .page-title {
+            font-size: 4.1667em;
+            font-weight: bold;
+        }
+
+        .page-description {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+
+        .featured {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            z-index: 9;
+            margin-bottom: 0;
+            text-align: right;
+        }
+
+            .featured figure a {
+                border: 2px solid #fff;
+            }
+
+            .featured .details {
+                margin-right: 10px;
+            }
+
+                .featured .details > * {
+                    color: #fff;
+                    line-height: 1.25em;
+                    margin: 0;
+                    font-weight: bold;
+                    text-shadow: 2px -2px rgba(0, 0, 0, 0.2);
+                }
+          .tp-leftarrow .tp-rightarrow {
+              cursor: pointer;
+          }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" ng-model="Booking" ng-init="GetStops();">
+    <div id="page-wrapper">
+        <header id="header" class="navbar-static-top">
+            <div class="topnav hidden-xs">
+                <div class="container">
+                    <ul class="quick-menu pull-left">
+                        <li><a href="ui/UserProfile.html">MY ACCOUNT</a></li>
+                    </ul>
+                    <ul class="quick-menu pull-right">
+                        <li class="ribbon">
+                            <a ng-hide="username == null" href="#">Hello, {{username}}</a>
+                            <ul class="menu mini uppercase">
+                                
+                                <li><a href="UI/UserProfile.html" class="location-reload">Profile</a></li>
+                                <li><a href="UI/BookedTicketHistory.html" class="location-reload">Bookings</a></li>
+                                <li><a href="UI/Cancellation.html" class="location-reload">cancellation</a></li>
+                                <li><a href="UI/UserProfile.html" class="location-reload">card</a></li>
+                                <li><a href="UI/UserProfile.html" class="location-reload">app</a></li>
+                                <li><a href="UI/Refund.html" class="location-reload">refund</a></li>
+                                <li><a href="UI/UserProfile.html" class="location-reload"> ewallet</a></li>
+                                <li><a href="UI/UserProfile.html" class="location-reload"> feedback/enquery</a></li>
+                                <li><a href="UI/UserProfile.html" class="location-reload">settings</a></li>
+                                <li><a href="#" ng-click="SignOutUser();">signout</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        
+                        <li><a href="UI/Registation.html" class="">SIGNUP</a></li>
+                      
+                    </ul>
+                   
+                </div>
+            </div>
+
+            
+            <div class="main-header">
+
+                <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                    Mobile Menu Toggle
+                </a>
+
+                <div class="container">
+                    <h1 class="logo navbar-brand">
+                        <a href="" title="Travelo - home">
+                            <img src="UI/images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </h1>
+
+                    <nav id="main-menu" role="navigation">
+                        <ul class="menu">
+                            <li class="menu-item-has-children">
+                                <a href="index.html">Home</a>
+
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="ui/fares_and_payments.html">Fares/Payments</a>
+                                <ul>
+                                    <li><a href="UI/shedules.html">Schedules</a></li>
+                                    <li><a href="UI/Fares_and_payments.html">Check Fares</a></li>
+                                    <li><a href="UI/pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="UI/pages-coming-soon1.html">Renvals</a></li>
+                                    <li><a href="UI/refund.html">refund</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="UI/Cancellation.html">Cancel/Modify</a>
+                                <ul>
+                                    <li><a href="ui/cancellation.html">Cancle Ticket</a></li>
+                                    <li><a href="ui/cancellation.html">Modify Ticket</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="UI/Status_and_Updates.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="UI/Status_and_Updates.html">Status</a></li>
+                                    <li><a href="UI/pages-coming-soon1.html">plans</a></li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="UI/shortcode-pricing-tables.html">Products</a>
+                                <ul>
+                                    <li><a href="UI/licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="UI/licensepage.html">BT Licence</a></li>
+                                    <li><a href="UI/licensepage.html">APP Licence</a></li>
+                                    <li><a href="UI/licensepage.html">Advt Licence</a></li>
+                                    <li><a href="UI/cards.html">Cards</a></li>
+                                    <li><a href="UI/apps.html">Mobile App</a></li>
+                                    <li><a href="UI/products.html">products</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="UI/AboutUs.html">About us</a>
+                                <ul>
+                                    <li><a href="UI/ContactUs.html">contacts</a></li>
+                                    <li><a href="UI/pages-coming-soon1.html">complants</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <nav id="mobile-menu-01" class="mobile-menu collapse " >
+                    <ul id="mobile-primary-menu" class="menu">
+                        <li class="menu-item-has-children">
+                            <a href="index.html">Home</a>
+
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="ui/fares_and_payments.html">Fares/Payments</a>
+                            <ul>
+                                <li><a href="UI/shedules.html">Schedules</a></li>
+                                <li><a href="UI/pages-coming-soon1.html">Check Fares</a></li>
+                                <li><a href="UI/pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="UI/pages-coming-soon1.html">Renvals</a></li>
+                                <li><a href="UI/refund.html">refund</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="UI/Cancellation.html">Cancel/Modify</a>
+                            <ul>
+                                <li><a href="ui/cancellation.html">Cancle Ticket</a></li>
+                                <li><a href="ui/cancellation.html">Modify Ticket</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="UI/Status_and_Updates.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="UI/Status_and_Updates.html">Status</a></li>
+                                <li><a href="UI/pages-coming-soon1.html">plans</a></li>
+                                
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="UI/shortcode-pricing-tables.html">Products</a>
+                            <ul>
+                                <li><a href="UI/licensepage.html">Fleet Owner Licence</a></li>
+                                <li><a href="UI/licensepage.html">BT Licence</a></li>
+                                <li><a href="UI/licensepage.html">APP Licence</a></li>
+                                <li><a href="UI/Licensepage.html">Advt Licence</a></li>
+                                <li><a href="UI/cards.html">Cards</a></li>
+                                <li><a href="UI/apps.html">Mobile App</a></li>
+                                <li><a href="UI/products.html">products</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="UI/AboutUs.html">About us</a>
+                            <ul>
+                                <li><a href="UI/ContactUs.html">contacts</a></li>
+                                <li><a href="UI/pages-coming-soon1.html">complants</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="mobile-topnav container">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+
+                         <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                      
+                        <li><a href="UI/Registation.html" class="soap-popupbox">SIGNUP</a></li>
+                       
+                    </ul>
+
+                </nav>
+            </div>
+           
+            <div id="travelo-login" class="travelo-login-box travelo-box">
+                 <form>
+                    <div class="form-group">
+                        <input type="text" class="input-text full-width" placeholder="email address" ng-model="UserName">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="Signin()" class="btn btn-success">
+                            Log In                           
+                        </button>
+                    </div>
+                        <div class="form-group">
+                            <a href="#" class="forgot-password pull-right">Forgot password?</a>
+                            <div class="checkbox checkbox-inline">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                 </form>
+                <div class="seperator"></div>
+                <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+            </div>
+
+         
+        </header>
+        <section id="content" class="slideshow-bg">
+           
+                <div id="slideshow" >
+                    <div class="flexslider" >
+
+                        <ul class="slides">
+                            <li>
+                                <div class="slidebg" style="background-image: url('UI/images//img11.jpg');"></div>
+                            </li>
+                            <li>
+                                <div class="slidebg" style="background-image: url('UI/images//img6.jpg');"></div>
+                            </li>
+                            <li>
+                                <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"></div>
+                            </li>
+                            <li>
+                                <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"></div>
+                            </li>
+                            <li>
+                                <div class="slidebg" style="background-image: url('UI/images//img8.jpg');"></div>
+                            </li>
+                            <li>
+                                <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"></div>
+                            </li>
+                            <li>
+                                <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tp-leftarrow tparrows default  " style="top: 50%; transform: matrix(1, 0, 0, 1, 20, -20); left: 0px;"></div>
+                    <div class="tp-rightarrow tparrows default  " style="top: 50%; transform: matrix(1, 0, 0, 1, -60, -20); left: 100%;"></div>
+                    
+            </div>
+                <div class="container">
+                    <div id="main">
+                        <h1 class="page-title">Travel with us in Comfort!</h1>
+                        <h2 class="page-description col-md-6 no-float no-padding">Modern, Comfortable and hassle free travel experience.</h2>
+                        <div class="search-box-wrapper style2">
+                            <div class="search-box">
+                                <ul class="search-tabs clearfix">
+                                    <li class="active"><a href="#hotels-tab" data-toggle="tab"><i class="soap-icon-stories"></i><span>Book Ticket</span></a></li>
+                                    <li><a href="#flights-tab" data-toggle="tab"><i class="soap-icon-pickanddrop"></i><span>Hire Vehicle</span></a></li>
+                                    <li><a href="#flight-and-hotel-tab" data-toggle="tab"><i class="soap-icon-card"></i><span>Cards/Licence</span></a></li>
+                                    <li><a href="#cars-tab" data-toggle="tab"><i class="soap-icon-businessbag"></i><span>Recharge/Renewal</span></a></li>
+                                    <li><a href="#cruises-tab" data-toggle="tab"><i class="soap-icon-googleplay"></i><span>MobileApp</span></a></li>
+                                    <li><a href="#flight-status-tab" data-toggle="tab"><i class="soap-icon-user"></i><span>Login/Register</span></a></li>
+
+                                    <li class="advanced-search visible-lg"><a href="#advanced-search-tab" data-toggle="tab"><span>Search</span></a></li>
+                                </ul>
+                                <div class="visible-mobile">
+                                    <ul id="mobile-search-tabs" class="search-tabs clearfix">
+                                        <li class="active"><a href="#hotels-tab">Book Ticket</a></li>
+                                        <li><a href="#flights-tab">Hire Vichcle</a></li>
+                                        <li><a href="#flight-and-hotel-tab">Cards/Licence</a></li>
+                                        <li><a href="#cars-tab">Recharge/Renewal</a></li>
+                                        <li><a href="#cruises-tab">MobileApp</a></li>
+                                        <li><a href="#flight-status-tab">Login/Register</a></li>
+
+                                        <li><a href="#advanced-search-tab">Search</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="search-tab-content">
+                                    <div class="tab-pane fade active in" id="hotels-tab">
+                                        <form action="UI/booking.html" method="post">
+                                            <h4 class="title">Book Ticket</h4>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                            <option value="">Select Source</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                            <option value="">Select Destination</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-2">
+                                                    <div class="datepicker-wrap">
+                                                        <input type="text" name="date_to" class="input-text full-width" placeholder="Check Out" />
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group col-md-5">
+                                                    <div class="row">
+                                                        <div class="col-xs-4">
+                                                            <div class="selector">
+                                                                <select class="full-width">
+                                                                    <option value="1">Way</option>
+                                                                    <option value="2">1 Way</option>
+                                                                    <option value="3">2 Way</option>
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-xs-4">
+
+                                                            <button type="button" ng-click="GetServices();">Submit</button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="flights-tab">
+                                        <form action="UI/hirevehicle.html">
+                                            <h4 class="title">Hire Vichcle</h4>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                            <option value="">Select Source</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                            <option value="">Select Destination</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-6">
+                                                            <div class="datepicker-wrap">
+                                                                <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="selector">
+                                                                <select class="full-width">
+                                                                    <option value="1">anytime</option>
+                                                                    <option value="2">morning</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-3">
+                                                            <div class="selector">
+                                                                <select class="full-width">
+                                                                    <option value="">Adults</option>
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-3">
+                                                            <div class="selector">
+                                                                <select class="full-width">
+                                                                    <option value="">Kids</option>
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+
+                                                            <div class="col-xs-6 pull-right">
+                                                                <button class="full-width">SERACH NOW</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="flight-and-hotel-tab">
+                                        <form action="UI/pages-coming-soon1.html">
+                                            <h4 class="title">Where do you want to go?</h4>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <input type="text" class="input-text full-width" placeholder="Leaving From (city, distirct or specific airpot)" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" class="input-text full-width" placeholder="Going To (city, distirct or specific airpot)" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-6">
+                                                            <div class="datepicker-wrap">
+                                                                <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="selector">
+                                                                <select class="full-width">
+                                                                    <option value="1">anytime</option>
+                                                                    <option value="2">morning</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-6">
+                                                            <div class="datepicker-wrap">
+                                                                <input type="text" name="date_to" class="input-text full-width" placeholder="Arriving On" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="selector">
+                                                                <select class="full-width">
+                                                                    <option value="1">anytime</option>
+                                                                    <option value="2">morning</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-3">
+                                                            <div class="selector">
+                                                                <select class="full-width">
+                                                                    <option value="">Adults</option>
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-3">
+                                                            <div class="selector">
+                                                                <select class="full-width">
+                                                                    <option value="">Kids</option>
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <input type="text" class="input-text full-width" placeholder="Promo Code" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-3">
+                                                            <div class="selector">
+                                                                <select class="full-width">
+                                                                    <option value="">Infants</option>
+                                                                    <option value="1">01</option>
+                                                                    <option value="2">02</option>
+                                                                    <option value="3">03</option>
+                                                                    <option value="4">04</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6 pull-right">
+                                                            <button class="full-width">SERACH NOW</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="cars-tab">
+                                        <form action="UI/pages-coming-soon1.html">
+                                            <h4 class="title">Recharge/Renewal</h4>
+                                            <a class="button btn-medium dark-blue1" href="UI/pages-coming-soon1.html">Recharge</a>
+                                            <a class="button btn-medium light-purple" href="UI/pages-coming-soon1.html">Renewal</a>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="cruises-tab">
+                                        <form action="cruise-list-view.html" method="post">
+
+                                            <a class="button btn-extra blue" href="UI/pages-coming-soon1.html"><i class="soap-icon-apple"></i><span>Download from<br><em>apple store</em></span></a>
+                                            <a class="button btn-extra yellow" href="UI/pages-coming-soon1.html"><i class="soap-icon-googleplay"></i><span>Download from<br><em>google play</em></span></a>
+                                            <a class="button btn-extra blue" href="UI/pages-coming-soon1.html"><i class="soap-icon-globe"></i><span>Download from<br><em>windows store</em></span></a>
+                                            <a class="button btn-extra yellow" href="UI/pages-coming-soon1.html"><i class="soap-icon-dribble"></i><span>Download from<br><em>APP </em></span></a>
+                                        </form>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="flight-status-tab">
+                                        <form action="#travelo-login">
+                                            <h4 class="title">Login/Register</h4>
+
+                                            <div class="row" ng-show="username == null">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-6">
+                                                            <input type="text" class="input-text full-width" placeholder="username or mobilenumber" />
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <input type="password" class="input-text full-width" placeholder="password" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-2">
+                                                    <button class="full-width" ng-click="Signin()">Login</button>
+                                                </div>
+                                        </form>
+                                        <form action="UI/Registation.html">
+                                            <div class="form-group col-md-2">
+                                                <button class="full-width" onclick="Registation.html">Register</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-pane fade" id="advanced-search-tab">
+                                    <form action="UI/pages-coming-soon1.html">
+                                        <h4 class="title">Where do you want to go?</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="input-text full-width" placeholder="Leaving From (city, distirct or specific airpot)" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="input-text full-width" placeholder="Going To (city, distirct or specific airpot)" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-6">
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" class="input-text full-width" placeholder="Departing On" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="1">anytime</option>
+                                                                <option value="2">morning</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-6">
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" class="input-text full-width" placeholder="Arriving On" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="1">anytime</option>
+                                                                <option value="2">morning</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Adults</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Kids</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="input-text full-width" placeholder="Promo Code" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Infants</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6 pull-right">
+                                                        <button class="full-width">SERACH NOW</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</section>
+
+        <div style="background-color:white;">
+
+            <div class=" section container ">
+                <!--<div style=" padding-top: 20px; padding-bottom: 40px;">-->
+                <h2 style="color:orange;">Inter Bus Applications</h2>
+                <div class="row image-box style5">
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="ui/images/logos/chihuta-homepage-icon.png"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Recharge Chihuta Card</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <!--<div class="details">
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$30</span>
+                                <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$120</span>
+                                <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$360</span>
+                                <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                            </div>
+                        </div>-->
+
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="ui/images/logos/cycle-hire-homepage-icon.png"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Download Smart Tickets App</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <!--<div class="details">
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$30</span>
+                                <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$120</span>
+                                <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$360</span>
+                                <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                            </div>
+                        </div>-->
+
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="ui/images/logos/congestion-homepage-charge-icon.png"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Check In</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <!--<div class="details">
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$30</span>
+                                <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$120</span>
+                                <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$360</span>
+                                <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                            </div>
+                        </div>-->
+
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="ui/images/logos/airline-homepage-icon.png"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Inquiries</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <!--<div class="details">
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$30</span>
+                                <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$120</span>
+                                <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$360</span>
+                                <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                            </div>
+                        </div>-->
+
+                        </article>
+                    </div>
+                </div>
+
+                <h2 style="color:orange;">Featured Holiday Activities</h2>
+                <div class="row image-box style5">
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">India</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <div class="details">
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$30</span>
+                                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$120</span>
+                                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$360</span>
+                                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Singapore</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <div class="details">
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$30</span>
+                                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$120</span>
+                                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$360</span>
+                                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Singapore</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <div class="details">
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$30</span>
+                                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$120</span>
+                                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$360</span>
+                                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Singapore</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <div class="details">
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$30</span>
+                                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$120</span>
+                                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$360</span>
+                                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="background-color: #96989b;">
+
+        <!--<div class=; " global-map-area mobile-section parallax" data-stellar-background-ratio="0.5">-->
+        <div class="container">
+            <div class=" section container ">
+                <!--<div style=" padding-top: 10px; padding-bottom: 40px;">-->
+                <h2 style="color:orange;">Popular <i>Cruise</i> Deals</h2>
+                <div class="row image-box style3">
+                    <div class="col-sms-6 col-sm-6 col-md-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
+                            </figure>
+                            <div class="details text-center">
+                                <h4 class="box-title">Greece</h4>
+                                <p class="offers-content">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                    <span style="width: 80%;" class="five-stars"></span>
+                                </div>
+                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
+                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sms-6 col-sm-6 col-md-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
+                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
+                            </figure>
+                            <div class="details text-center">
+                                <h4 class="box-title">Singapore</h4>
+                                <p class="offers-content">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                    <span style="width: 80%;" class="five-stars"></span>
+                                </div>
+                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
+                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sms-6 col-sm-6 col-md-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
+                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
+                            </figure>
+                            <div class="details text-center">
+                                <h4 class="box-title">Malaysia</h4>
+                                <p class="offers-content">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                    <span style="width: 80%;" class="five-stars"></span>
+                                </div>
+                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
+                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sms-6 col-sm-6 col-md-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
+                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
+                            </figure>
+                            <div class="details text-center">
+                                <h4 class="box-title">Europe</h4>
+                                <p class="offers-content">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                    <span style="width: 80%;" class="five-stars"></span>
+                                </div>
+                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
+                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer id="footer" style="background-color: white;">
+        
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Discover</h2>
+                            <ul class="discover triangle hover row">
+                                <li class="col-xs-6"><a href="#">contacts</a></li>
+                                <li class="col-xs-6"><a href="#">About</a></li>
+                                <li class="col-xs-6"><a href="#">Careers</a></li>
+                                <li class="col-xs-6"><a href="#">Safety</a></li>
+                                <li class="active col-xs-6"><a href="#">security</a></li>
+                                <li class="col-xs-6"><a href="#">Transparency</a></li>
+                                <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
+                                <li class="col-xs-6"><a href="#">Gift Shop</a></li>
+                                <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
+                                <li class="col-xs-6"><a href="#">Help</a></li>
+                                <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
+                                <li class="col-xs-6"><a href="#">Media</a></li>
+                                <li class="col-xs-6"><a href="#">Business</a></li>
+                                <li class="col-xs-6"><a href="#">commercial</a></li>
+
+                                <li class="col-xs-6"><a href="#">Schools</a></li>
+                                <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
+                                <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
+                                <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
+                                <li class="col-xs-6"><a href="#">Urban planning</a></li>
+                                <li class="col-xs-6"><a href="#">construction</a></li>
+                                <li class="col-xs-6"><a href="#">Information for...</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Interbus News</h2>
+                            <ul class="travel-news">
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="ui/images/img1.jpg" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                        <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
+                                        <span class="date">25 Sep, 2013</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="ui/images/img11.jpg" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                        <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
+                                        <span class="date">24 Sep, 2013</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Mailing List</h2>
+                            <p>Sign up for our mailing list to get latest updates and offers.</p>
+                            <br />
+                            <div class="icon-check">
+                                <input type="text" class="input-text full-width" placeholder="your email" />
+                            </div>
+                            <br />
+                            <span>We respect your privacy</span>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>About Interbus</h2>
+                            <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
+                            <br />
+                            <address class="contact-details">
+                                <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                <br />
+                                <a href="#" class="contact-email">help@interbus.com</a>
+                            </address>
+                            <ul class="social-icons clearfix" style="padding-left:25px">
+                                <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                
+                               
+                                
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="bottom gray-area">
+            <div class="container">
+                <div class="logo pull-left">
+                    <a href="index.html" title="Travelo - home">
+                        <img src="UI/images/logo.png" alt="Travelo HTML5 Template" />
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                </div>
+                <div class="copyright pull-right">
+                    <p>&copy; 2017 Interbus</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="UI/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="UI/js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="UI/js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="UI/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="UI/js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="UI/js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="UI/js/bootstrap.js"></script>
+
+    <!-- load revolution slider scripts -->
+    <script type="text/javascript" src="UI/components/revolution_slider/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="UI/components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- Flex Slider -->
+    <script type="text/javascript" src="UI/components/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- load BXSlider scripts -->
+    <script type="text/javascript" src="UI/components/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="UI/js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="UI/js/waypoints.min.js"></script>
+
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="UI/js/theme-scripts.js"></script>
+    <script type="text/javascript" src="UI/js/scripts.js"></script>
+    <script src="UI/js/angular.js"></script>
+    <script src="UI/js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="UI/js/ngStorage.js"></script>
+    <script src="UI/js/index.js"></script>
+
+
+    <script type="text/javascript">
+        tjq(".flexslider").flexslider({
+            animation: "fade",
+            controlNav: false,
+            animationLoop: true,
+            directionNav: false,
+            slideshow: true,
+            slideshowSpeed: 5000
+        });
+    </script>
+</body>
+</html>

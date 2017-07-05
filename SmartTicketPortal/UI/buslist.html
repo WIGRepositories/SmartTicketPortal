@@ -1,0 +1,1452 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+ <!--<![endif]-->
+<head>
+    <!-- Page Title -->
+    <title>INTER BUS, Tour Booking HTML5 Template</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="css/style.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="css/updates.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- CSS for IE -->
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <style>
+
+        .page-title-container1 {
+            height: 70px;
+            background: #2d3e52;
+            line-height: 70px;
+            color: #fff;
+            margin: 0;
+            height: 70%;
+            color: inherit;
+            
+           
+            
+        }
+        </style>
+</head>
+<body>
+
+    <div id="page-wrapper" >
+        <header id="header" class="navbar-static-top">
+            <div class="topnav hidden-xs">
+                <div class="container">
+                    <ul class="quick-menu pull-left">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                    </ul>
+                    <ul class="quick-menu pull-right">
+                        <li class="ribbon">
+                            <a ng-hide="username == null" href="#">Hello, {{username}}</a>
+                            <ul class="menu mini uppercase">
+
+                                <li><a href="UserProfile.html" class="location-reload">Profile</a></li>
+                                <li><a href="BookedTicketHistory.html" class="location-reload">Bookings</a></li>
+                                <li><a href="Cancellation.html" class="location-reload">cancellation</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">card</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">app</a></li>
+                                <li><a href="Refund.html" class="location-reload">refund</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> ewallet</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> feedback/enquery</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">settings</a></li>
+                                <li><a href="#" ng-click="SignOutUser();">signout</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+
+                        <li><a href="Registation.html" class="">SIGNUP</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="main-header">
+
+                <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                    Mobile Menu Toggle
+                </a>
+
+                <div class="container">
+                    <h1 class="logo navbar-brand">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </h1>
+
+                    <nav id="main-menu" role="navigation">
+                        <ul class="menu">
+                            <li class="menu-item-has-children">
+                                <a href="../index.html">Home</a>
+
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="fares_and_payments.html">Fares/Payments</a>
+                                <ul>
+                                    <li><a href="shedules.html">Schedules</a></li>
+                                    <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                    <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                    <li><a href="refund.html">refund</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="cancellation.html">Cancle/Modify</a>
+                                <ul>
+                                    <li><a href="cancellation.html">Cancle Ticket</a></li>
+                                    <li><a href="cancellation.html">Modify Ticket</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="Status_and_Updates.html">Status</a></li>
+                                    <li><a href="pages-coming-soon1.html">plans</a></li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="shortcode-pricing-tables.html">Products</a>
+                                <ul>
+                                    <li><a href="Licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="Licensepage.html">BT Licence</a></li>
+                                    <li><a href="Licensepage.html">APP Licence</a></li>
+                                    <li><a href="Licensepage.html">Advt Licence</a></li>
+                                    <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="apps.html">Mobile App</a></li>
+                                    <li><a href="products.html">products</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="AboutUs.html">About us</a>
+                                <ul>
+                                    <li><a href="ContactUs.html">contacts</a></li>
+                                    <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <nav id="mobile-menu-01" class="mobile-menu collapse">
+                    <ul id="mobile-primary-menu" class="menu">
+                        <li class="menu-item-has-children">
+                            <a href="../index.html">Home</a>
+
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="fares_and_payments.html">Fares/Payments</a>
+                            <ul>
+                                <li><a href="shedules.html">Schedules</a></li>
+                                <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                <li><a href="refund.html">refund</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="cancellation.html">Cancle/Modify</a>
+                            <ul>
+                                <li><a href="cancellation.html">Cancle Ticket</a></li>
+                                <li><a href="cancellation.html">Modify Ticket</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="Status_and_Updates.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="Status_and_Updates.html">Status</a></li>
+                                <li><a href="pages-coming-soon1.html">plans</a></li>
+                                
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="shortcode-pricing-tables.html">Products</a>
+                            <ul>
+                                <li><a href="Licensepage.html">Fleet Owner Licence</a></li>
+                                <li><a href="Licensepage.html">BT Licence</a></li>
+                                <li><a href="Licensepage.html">APP Licence</a></li>
+                                <li><a href="Licensepage.html">Advt Licence</a></li>
+                                <li><a href="cards.html">Cards</a></li>
+                                <li><a href="apps.html">Mobile App</a></li>
+                                <li><a href="products.html">products</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="AboutUs.html">About us</a>
+                            <ul>
+                                <li><a href="ContactUs.html">contacts</a></li>
+                                <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    <ul class="mobile-topnav container">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li class="ribbon currency menu-color-skin">
+                            <a href="#">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div id="travelo-login" class="travelo-login-box travelo-box">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="input-text full-width" placeholder="email address" ng-model="UserName">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="Signin()" class="btn btn-success">
+                            Log In
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="forgot-password pull-right">Forgot password?</a>
+                        <div class="checkbox checkbox-inline">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="seperator"></div>
+                <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+            </div>
+        </header>
+        <div style="position: fixed; width: 100%; z-index: 1; background-color:; margin-left: 0px" >
+            <div class="page-title-container ">
+                <div class="container">
+                    <div class="page-title pull-left">
+                        <h2 class="entry-title">Bus Search Results</h2>
+
+                    </div>
+                    <div class="col-md-2 ">
+                        <div style="text-align:center; height:40px;background-color:firebrick;padding:10px">
+                            <font style="color:white;">Onward Journey</font>
+
+                        </div>
+
+                        <!--<ul class="breadcrumbs pull-right">
+                    <li><a href="#">HOME</a></li>
+                    <li class="active">Bus Search Results</li>
+                </ul>-->
+                    </div>
+                    <div class="col-md-5">
+                        <font style="color:white;" size="5">  hyderabad - guntur </font>
+                    </div>
+
+                    <div class=" col-md-2">
+                        <div style="text-align: center; height: 40px; background-color: firebrick; padding: 10px" data-target="#ModifyJourneydetails" data-toggle="modal" ng-if="triptype == 'oneway'">
+                            <font style="color:white;">Modify</font>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <section id="content" class="gray-area">
+            <div class="container">
+                <div id="main">
+
+                    <div class="row" style="margin-top:53px;padding-right:0px">
+
+                        <div ng-show="services.length != 0" style=" width: 100%; z-index: 1; background-color: white;">
+                            <div style="position: fixed; width: 100%; z-index: 1; background-color: #d84e55; margin-left: 10px">
+                                <!--<table class="table table-advanced" style="border: none; background-color: aliceblue; margin-right: -50px">
+
+                    <tr style="border:none">
+                        <td width="50%" style="text-align:center;" colspan="3"> Src-dest</td>
+                        <td style="text-align:center">Dest-src</td>
+                    </tr>
+
+
+
+                </table>-->
+                                <div class="row" style="height:70px" ng-if="triptype == 'oneway'">
+                                    <div class="col-md-8" style="padding:15px">
+                                        <div class="col-md-3">
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div style="text-align:center; height:40px;background-color:firebrick;padding:10px">
+                                                <font style="color:white;">Onward Journey</font>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <font style="color:white;" size="4">  {{src.Name}} - {{dest.Name}} </font>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <font style="color:white;" size="4">  </font>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-3" style="padding:15px;text-align:center">
+
+                                        <!--<div class="col-md-6">
+                            <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#AddReturnDetails" data-toggle="modal">
+                                <font style="color:white;">+Return Journey</font>
+                            </div>
+                        </div>-->
+                                        <div class="col-md-6">
+                                            <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#ModifyJourneydetails" data-toggle="modal" ng-if="triptype == 'oneway'">
+                                                <font style="color:white;">Modify</font>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                
+
+
+                            </div>
+
+                            <div style="width: 100%; z-index: 1; background-color: white;padding-top:100px">
+
+                                <div class="col-md-12" ng-repeat="b in services">
+                                    <table class="col-md-12" style="border:solid 1px;padding-top:30px">
+                                        <tr>
+                                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                                <div class=" col-md-4" style="text-align:center">
+                                                    <img src="Images/busimages/nonac.jpg" />
+                                                    <strong>  test</strong>
+                                                    <div class="message-inner">
+                                                        <div class="qa-message-content">
+                                                            AC
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/time.jpg" /><strong> Hyd - Vij</strong>
+
+
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            3 hours
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/seat.jpg" />
+                                                    <strong>  2 Seats </strong><br />
+                                                    <strong> 1 Window Seats</strong>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <strong>Rs.100</strong>
+                                                    </div>
+                                                    <br />
+                                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary" >
+                                                        select seats</a>
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                                <div class=" col-md-4" style="text-align:center">
+                                                    <img src="Images/busimages/nonac.jpg" />
+                                                    <strong>  test</strong>
+                                                    <div class="message-inner">
+                                                        <div class="qa-message-content">
+                                                            AC
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/time.jpg" /><strong> Hyd - Vij</strong>
+
+
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            3 hours
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/seat.jpg" />
+                                                    <strong>  2 Seats </strong><br />
+                                                    <strong> 1 Window Seats</strong>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <strong>Rs.100</strong>
+                                                    </div>
+                                                    <br />
+                                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
+                                                        select seats
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                                <div class=" col-md-4" style="text-align:center">
+                                                    <img src="Images/busimages/nonac.jpg" />
+                                                    <strong>  test</strong>
+                                                    <div class="message-inner">
+                                                        <div class="qa-message-content">
+                                                            AC
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/time.jpg" /><strong> Hyd - Vij</strong>
+
+
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            3 hours
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/seat.jpg" />
+                                                    <strong>  2 Seats </strong><br />
+                                                    <strong> 1 Window Seats</strong>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <strong>Rs.100</strong>
+                                                    </div>
+                                                    <br />
+                                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
+                                                        select seats
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                                <div class=" col-md-4" style="text-align:center">
+                                                    <img src="Images/busimages/nonac.jpg" />
+                                                    <strong>  test</strong>
+                                                    <div class="message-inner">
+                                                        <div class="qa-message-content">
+                                                            AC
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/time.jpg" /><strong> Hyd - Vij</strong>
+
+
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            3 hours
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/seat.jpg" />
+                                                    <strong>  2 Seats </strong><br />
+                                                    <strong> 1 Window Seats</strong>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <strong>Rs.100</strong>
+                                                    </div>
+                                                    <br />
+                                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
+                                                        select seats
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                                <div class=" col-md-4" style="text-align:center">
+                                                    <img src="Images/busimages/nonac.jpg" />
+                                                    <strong>  test</strong>
+                                                    <div class="message-inner">
+                                                        <div class="qa-message-content">
+                                                            AC
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/time.jpg" /><strong> Hyd - Vij</strong>
+
+
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            3 hours
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/seat.jpg" />
+                                                    <strong>  2 Seats </strong><br />
+                                                    <strong> 1 Window Seats</strong>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <strong>Rs.100</strong>
+                                                    </div>
+                                                    <br />
+                                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
+                                                        select seats
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                                <div class=" col-md-4" style="text-align:center">
+                                                    <img src="Images/busimages/nonac.jpg" />
+                                                    <strong>  test</strong>
+                                                    <div class="message-inner">
+                                                        <div class="qa-message-content">
+                                                            AC
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/time.jpg" /><strong> Hyd - Vij</strong>
+
+
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            3 hours
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/seat.jpg" />
+                                                    <strong>  2 Seats </strong><br />
+                                                    <strong> 1 Window Seats</strong>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <strong>Rs.100</strong>
+                                                    </div>
+                                                    <br />
+                                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
+                                                        select seats
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                                <div class=" col-md-4" style="text-align:center">
+                                                    <img src="Images/busimages/nonac.jpg" />
+                                                    <strong>  test</strong>
+                                                    <div class="message-inner">
+                                                        <div class="qa-message-content">
+                                                            AC
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/time.jpg" /><strong> Hyd - Vij</strong>
+
+
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            3 hours
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/seat.jpg" />
+                                                    <strong>  2 Seats </strong><br />
+                                                    <strong> 1 Window Seats</strong>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <strong>Rs.100</strong>
+                                                    </div>
+                                                    <br />
+                                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
+                                                        select seats
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                                <div class=" col-md-4" style="text-align:center">
+                                                    <img src="Images/busimages/nonac.jpg" />
+                                                    <strong>  test</strong>
+                                                    <div class="message-inner">
+                                                        <div class="qa-message-content">
+                                                            AC
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/time.jpg" /><strong> Hyd - Vij</strong>
+
+
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            3 hours
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/seat.jpg" />
+                                                    <strong>  2 Seats </strong><br />
+                                                    <strong> 1 Window Seats</strong>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <strong>Rs.100</strong>
+                                                    </div>
+                                                    <br />
+                                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
+                                                        select seats
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                                <div class=" col-md-4" style="text-align:center">
+                                                    <img src="Images/busimages/nonac.jpg" />
+                                                    <strong>  {{b.cmpName}}</strong>
+                                                    <div class="message-inner">
+                                                        <div class="qa-message-content">
+                                                            {{b.VehicleType}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/time.jpg" /><strong> {{b.ArrivalTime}} -  {{b.DepartureTime}}</strong>
+
+
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            {{b.Duration}} hours
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>-->
+                                                <div class="col-md-3">
+                                                    <img src="Images/busimages/seat.jpg" />
+                                                    <strong>  {{b.AvailableSeats}} Seats </strong><br />
+                                                    <strong>  {{b.WindowSeats}} Window Seats</strong>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <strong>Rs.{{b.Amount}}</strong>
+                                                    </div>
+                                                    <br />
+                                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
+                                                        select seats
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center"></td>
+                                        </tr>
+                                    </table>
+                                    <!--<div class="col-md-12" id="t_{{$index}}" style="display:none;text-align:center;padding:20px">-->
+                                    <div class="col-md-12" id="1234" style="display:inline;text-align:center;padding:20px">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4">
+                                            <div style="width: 100%; z-index: 1; margin-left: 5px">
+                                                <div class="col-md-6" style="background-color: aliceblue;">
+                                                    <table>
+                                                        <tr>
+                                                            <td colspan="10" style="text-align:right"><img src="Images/busimages/driver.png" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="10" style="text-align:right;height:5px"></td>
+                                                        </tr>
+                                                        <tr ng-repeat="s in seatstest track by $index">
+
+                                                            <td ng-repeat="c in s track by $index" style="padding: 2px">
+                                                                <!--<div ng-hide="c.status == 0" ng-style="{'background-color':c.status == 2 ?  'grey': 'green'}" ng-click="AddSeats(c);"></div>-->
+                                                                <div data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"> <img src="Images/busimages/Aseat.png" ng-hide="c.status == 0" ng-if="c.status == 1" ng-click="AddSeats(c);" /></div>
+
+                                                                <img src="Images/busimages/BSeat.png" ng-hide="c.status == 0" ng-if="c.status == 2" />
+                                                                <img src="Images/busimages/SSeat.png" ng-hide="c.status == 0" ng-if="c.status == 3" ng-click="AddSeats(c);" data-hover="tooltip" />
+                                                            </td>
+
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <table>
+                                                        <tr>
+                                                            <td>Legend:</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><img src="Images/busimages/Aseat.png" style="padding: 5px"> Available seat</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><img src="Images/busimages/BSeat.png" style="padding: 5px"> Already booked seat</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><img src="Images/busimages/SSeat.png" style="padding: 5px"> Selected seat</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <table>
+                                                <tr>
+                                                    <td id="imgTd" colspan="6">
+                                                        <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                            <tr>
+                                                                <td>
+                                                                    <table>
+                                                                        <tr><td><label>Seat(s):<strong>{{selectedSeatsList}}</strong></label></td></tr>
+                                                                        <tr><td><label>Total Seat(s):{{count}}</label></td></tr>
+                                                                        <tr><td><label>Base Fare:{{b.Price}}</label></td></tr>
+                                                                        <tr><td><label><strong>Total Fare:{{count*b.Price}}</strong></label></td></tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="actions">
+                                                                        <button type="button" class="btn btn-primary" ng-click="savedata(b);" ng-if="triptype == 'twoway'">Proceed</button>
+                                                                        <button type="button" ng-click="savedata(b);" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-info btn-sm" ng-if="triptype == 'oneway'">Checkout</button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        
+                        <div class="col-sm-8 col-md-9">
+                            <div class="sort-by-section clearfix">
+                                <h4 class="sort-by-title block-sm">Sort results by:</h4>
+                                <ul class="sort-bar clearfix block-sm">
+                                    <li class="sort-by-name"><a class="sort-by-container" href="#"><span>name</span></a></li>
+                                    <li class="sort-by-price"><a class="sort-by-container" href="#"><span>price</span></a></li>
+                                    <li class="clearer visible-sms"></li>
+                                    <li class="sort-by-rating active"><a class="sort-by-container" href="#"><span>rating</span></a></li>
+                                    <li class="sort-by-popularity"><a class="sort-by-container" href="#"><span>popularity</span></a></li>
+                                </ul>
+
+                                <ul class="swap-tiles clearfix block-sm">
+                                    <li class="swap-list active">
+                                        <a href="car-list-view.html"><i class="soap-icon-list"></i></a>
+                                    </li>
+                                    <li class="swap-grid">
+                                        <a href="car-grid-view.html"><i class="soap-icon-grid"></i></a>
+                                    </li>
+                                    <li class="swap-block">
+                                        <a href="car-block-view.html"><i class="soap-icon-block"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="car-list listing-style3 car">
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Economy Car<small>bmw mini</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl class="">
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>3000 miles</dd>
+                                                
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price">$45.39</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Full Size<small>Holden sv6</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl class="">
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>3000 miles</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$100</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Luxury Elite<small>bmw 5 series</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl>
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>3000 miles</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$79.39</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Mini Car<small>Fiat 500</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl>
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>unlimited</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$15.39</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Intermediate<small>Renault grand scenic</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl>
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>unlimited</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$30.21</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Economy Car<small>vokswagen polo</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl>
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>8000 miles</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$40.55</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Full Size<small>Holden sv6</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl>
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>unlimited</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$100</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Luxury Elite<small>bmw 5 series</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl>
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>12000 miles</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$79.39</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Mini Car<small>Fiat 500</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl>
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>unlimited</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$15.39</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Intermediate<small>Renault grand scenic</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl>
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>unlimited</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$30.21</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="box">
+                                    <figure class="col-xs-3">
+                                        <span><img alt="" src="http://placehold.it/270x160"></span>
+                                    </figure>
+                                    <div class="details col-xs-9 clearfix">
+                                        <div class="col-sm-8">
+                                            <div class="clearfix">
+                                                <h4 class="box-title">Economy Car<small>vokswagen polo</small></h4>
+                                                <div class="logo">
+                                                    <img src="http://placehold.it/110x25" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="amenities">
+                                                <ul>
+                                                    <li><i class="soap-icon-user circle"></i>4</li>
+                                                    <li><i class="soap-icon-suitcase circle"></i>3</li>
+                                                    <li><i class="soap-icon-aircon circle"></i>AC</li>
+                                                    <li><i class="soap-icon-fueltank circle"></i>12</li>
+                                                    <li><i class="soap-icon-fmstereo circle"></i>YES</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-2 character">
+                                            <dl>
+                                                <dt class="skin-color">mileage</dt>
+                                                <dd>8000 miles</dd>
+                                                <dt class="skin-color">Pickup Time</dt>
+                                                <dd>5:45 pm</dd>
+                                                <dt class="skin-color">Location</dt>
+                                                <dd>London city</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="action col-xs-6 col-sm-2">
+                                            <span class="price"><small>per day</small>$40.55</span>
+                                            <a href="bus-booking.html" class="button btn-small full-width">select</a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <a href="#" class="button uppercase full-width btn-large">load more listings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer" style="background-color: #2d3e52;">
+
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Discover</h2>
+                            <ul class="discover triangle hover row">
+                                <li class="col-xs-6"><a href="#">contacts</a></li>
+                                <li class="col-xs-6"><a href="#">About</a></li>
+                                <li class="col-xs-6"><a href="#">Careers</a></li>
+                                <li class="col-xs-6"><a href="#">Safety</a></li>
+                                <li class="active col-xs-6"><a href="#">security</a></li>
+                                <li class="col-xs-6"><a href="#">Transparency</a></li>
+                                <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
+                                <li class="col-xs-6"><a href="#">Gift Shop</a></li>
+                                <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
+                                <li class="col-xs-6"><a href="#">Help</a></li>
+                                <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
+                                <li class="col-xs-6"><a href="#">Media</a></li>
+                                <li class="col-xs-6"><a href="#">Business</a></li>
+                                <li class="col-xs-6"><a href="#">commercial</a></li>
+
+                                <li class="col-xs-6"><a href="#">Schools</a></li>
+                                <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
+                                <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
+                                <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
+                                <li class="col-xs-6"><a href="#">Urban planning</a></li>
+                                <li class="col-xs-6"><a href="#">construction</a></li>
+                                <li class="col-xs-6"><a href="#">Information for...</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Interbus News</h2>
+                            <ul class="travel-news">
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="images/img1.jpg" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                        <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
+                                        <span class="date">25 Sep, 2013</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="images/img11.jpg" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                        <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
+                                        <span class="date">24 Sep, 2013</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Mailing List</h2>
+                            <p>Sign up for our mailing list to get latest updates and offers.</p>
+                            <br />
+                            <div class="icon-check">
+                                <input type="text" class="input-text full-width" placeholder="your email" />
+                            </div>
+                            <br />
+                            <span style="color:white">We respect your privacy</span>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">About Interbus</h2>
+                            <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
+                            <br />
+                            <address class="contact-details">
+                                <span class="contact-phone" style="color:white"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                <br />
+                                <a href="#" class="contact-email">help@interbus.com</a>
+                            </address>
+                            <ul class="social-icons clearfix" style="padding-left:25px">
+                                <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                
+                               
+                                
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom gray-area">
+                <div class="container">
+                    <div class="logo pull-left">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </div>
+                    <div class="pull-right">
+                        <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                    </div>
+                    <div class="copyright pull-right">
+                        <p>&copy; 2017 Interbus</p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- load revolution slider scripts -->
+    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- load BXSlider scripts -->
+    <script type="text/javascript" src="components/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+    <!-- load FlexSlider scripts -->
+    <script type="text/javascript" src="components/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- Google Map Api -->
+    <script type='text/javascript' src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+    <script type="text/javascript" src="js/gmap3.min.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="js/theme-scripts.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+    <script type="text/javascript">
+        tjq(document).ready(function () {
+            tjq("#price-range").slider({
+                range: true,
+                min: 0,
+                max: 1000,
+                values: [100, 800],
+                slide: function (event, ui) {
+                    tjq(".min-price-label").html("$" + ui.values[0]);
+                    tjq(".max-price-label").html("$" + ui.values[1]);
+                }
+            });
+            tjq(".min-price-label").html("$" + tjq("#price-range").slider("values", 0));
+            tjq(".max-price-label").html("$" + tjq("#price-range").slider("values", 1));
+        });
+    </script>
+</body>
+</html>
+
