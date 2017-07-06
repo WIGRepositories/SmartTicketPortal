@@ -1,0 +1,494 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Page Title -->
+    <!-- Page Title -->
+    <title>INTER BUS</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="css/style.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="css/updates.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        section#content {
+            min-height: 700px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #main {
+            padding-top: 25px;
+            padding-bottom: 15px;
+        }
+
+        .page-title, .page-description {
+            color: #fff;
+        }
+
+        .page-title {
+            font-size: 4.1667em;
+            font-weight: bold;
+        }
+
+        .page-description {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+
+        .featured {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            z-index: 9;
+            margin-bottom: 0;
+            text-align: right;
+        }
+
+            .featured figure a {
+                border: 2px solid #fff;
+            }
+
+            .featured .details {
+                margin-right: 10px;
+            }
+
+                .featured .details > * {
+                    color: #fff;
+                    line-height: 1.25em;
+                    margin: 0;
+                    font-weight: bold;
+                    text-shadow: 2px -2px rgba(0, 0, 0, 0.2);
+                }
+    </style>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="FillFOConfirmDetails();">
+    <!--<treasure-overlay-spinner active='spinner.active'>-->
+    <div id="page-wrapper">
+        <header id="header" class="navbar-static-top">
+            <div class="topnav hidden-xs">
+                <div class="container">
+                    <ul class="quick-menu pull-left">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                    </ul>
+                    <ul class="quick-menu pull-right">
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li class="ribbon currency">
+                            <a href="#" title="">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-header">
+
+                <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                    Mobile Menu Toggle
+                </a>
+
+                <div class="container">
+                    <h1 class="logo navbar-brand">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </h1>
+
+                    <nav id="main-menu" role="navigation">
+                        <ul class="menu">
+                            <li class="menu-item-has-children">
+                                <a href="../index.html">Home</a>
+
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="pages-coming-soon1.html">Fares/Payments</a>
+                                <ul>
+                                    <li><a href="pages-coming-soon1.html">Schedules</a></li>
+                                    <li><a href="pages-coming-soon1.html">Check Fares</a></li>
+                                    <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                    <li><a href="pages-coming-soon1.html">refund</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="Cancellation.html">Cancel/Modify</a>
+                                <ul>
+                                    <li><a href="pages-coming-soon1.html">Change date</a></li>
+                                    <li><a href="pages-coming-soon1.html">change plan</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="Status_and_Updates.html">Status</a></li>
+                                    <li><a href="pages-coming-soon1.html">plans</a></li>
+                                    <li><a href="pages-coming-soon1.html">massage</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">Products</a>
+                                <ul>
+                                    <li><a href="shortcode-pricing-tables.html">Fleet Owner Licence</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">BT Licence</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">APP Licence</a></li>
+                                    <li><a href="Licensepage.html">Advt Licence</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">Cards</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">Mobile App</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="AboutUs.html">About us</a>
+                                <ul>
+                                    <li><a href="ContactUs.html">contacts</a></li>
+                                    <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <nav id="mobile-menu-01" class="mobile-menu collapse">
+                    <ul id="mobile-primary-menu" class="menu">
+                        <li class="menu-item-has-children">
+                            <a href="../index.html">Home</a>
+
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="pages-coming-soon1.html">Fares/Payments</a>
+                            <ul>
+                                <li><a href="pages-coming-soon1.html">Schedules</a></li>
+                                <li><a href="pages-coming-soon1.html">Check Fares</a></li>
+                                <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="pages-coming-soon1.html">Renvals</a></li>
+                                <li><a href="pages-coming-soon1.html">refund</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="Cancellation.html">Cancel/Modify</a>
+                            <ul>
+                                <li><a href="pages-coming-soon1.html">Change date</a></li>
+                                <li><a href="pages-coming-soon1.html">change plan</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="Status_and_Updates.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="Status_and_Updates.html">Status</a></li>
+                                <li><a href="pages-coming-soon1.html">plans</a></li>
+                                <li><a href="pages-coming-soon1.html">massage</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Products</a>
+                            <ul>
+                                <li><a href="shortcode-pricing-tables.html">Fleet Owner Licence</a></li>
+                                <li><a href="shortcode-pricing-tables.html">BT Licence</a></li>
+                                <li><a href="shortcode-pricing-tables.html">APP Licence</a></li>
+                                <li><a href="Licensepage.html">Advt Licence</a></li>
+                                <li><a href="shortcode-pricing-tables.html">Cards</a></li>
+                                <li><a href="shortcode-pricing-tables.html">Mobile App</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="AboutUs.html">About us</a>
+                            <ul>
+                                <li><a href="ContactUs.html">contacts</a></li>
+                                <li><a href="pages-coming-soon1.html">complants</a></li>
+
+                            </ul>
+                    </ul>
+
+                    <ul class="mobile-topnav container">
+                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li class="ribbon currency menu-color-skin">
+                            <a href="#">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+    
+
+    </header>
+        
+    
+    <div class="page-title-container">
+        <div class="container">
+            <div class="page-title pull-left">
+                <h7 class="entry-title">FleetownerRegister</h7>
+            </div>
+            <ul class="breadcrumbs pull-right">
+                <li><a href="../index.html">HOME</a></li>
+                <li class="active">FleetownerRegister</li>
+            </ul>
+        </div>
+    </div>
+        <div class="container" style="margin-top:80px;">
+            <h2 style="text-align:center">Fleet owner registration confirmation!</h2>
+            <div class="col-md-10" style="margin-left:-100px;">
+                <div class="container col-md-offset-2">
+
+                    <table class="table table-bordered" style="background-color: white;">
+                        <tbody>
+                            <tr>
+                                <td style="font-family:'Zurich bt',arial,helvetica,sans-serif;font-size:15px;text-align:center;line-height:normal;">
+                                    <div style='padding:10px;border:#0000FF solid 2px;'>
+                                        <h3 style="text-align:center">Congratulations!!</h3>
+                                        <h3>Your are registered as a fleet owner with INTERBUS successfully.</h3>
+                                        <br />
+                                        <h4> Your Fleet Owner code is:<b> {{NewFOCode}}</b></h4>
+
+                                        <br />
+                                        please use the code to buy license and for future correspondence with INTERBUS.
+                                        <br />
+                                        <br />
+                                        <a href="LicensePage.html" style="color:red">Click here</a> to proceed to license buying
+                                        <br />
+                                        <br />
+                                        <h5>Please contact interbus admin for any further information!</h5>
+
+                                        <center><h4> The same details are sent to your registered email id: {{FOemailid}}</h4></center>
+
+
+                                        <center><h3> Happy ticketing!</h3></center>
+
+
+                                        For any queries/concerns please contact INTERBUS adminitrator - admin@interbus.com
+
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+  
+    <footer id="footer">
+        <div style="background-color: #2d3e52;">
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <h2 style="color:white">Discover</h2>
+                            <ul class="discover triangle hover row">
+                                <li class="col-xs-6"><a href="#">Safety</a></li>
+                                <li class="col-xs-6"><a href="#">About</a></li>
+                                <li class="col-xs-6"><a href="#">Interbus Picks</a></li>
+                                <li class="col-xs-6"><a href="#">Latest Jobs</a></li>
+                                <li class="active col-xs-6"><a href="#">Mobile</a></li>
+                                <li class="col-xs-6"><a href="#">Press Releases</a></li>
+                                <li class="col-xs-6"><a href="#">Why Host</a></li>
+                                <li class="col-xs-6"><a href="#">Blog Posts</a></li>
+                                <li class="col-xs-6"><a href="#">Social Connect</a></li>
+                                <li class="col-xs-6"><a href="#">Help Topics</a></li>
+                                <li class="col-xs-6"><a href="#">Site Map</a></li>
+                                <li class="col-xs-6"><a href="#">Policies</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Interbus News</h2>
+                            <ul class="travel-news">
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                        <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                        <span class="date">25 Sep, 2013</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                        <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                        <span class="date">24 Sep, 2013</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>Mailing List</h2>
+                            <p>Sign up for our mailing list to get latest updates and offers.</p>
+                            <br />
+                            <div class="icon-check">
+                                <input type="text" class="input-text full-width" placeholder="your email" />
+                            </div>
+                            <br />
+                            <span>We respect your privacy</span>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <h2>About Interbus</h2>
+                            <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massaidp nequetiam lore elerisque.</p>
+                            <br />
+                            <address class="contact-details">
+                                <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                <br />
+                                <a href="#" class="contact-email">help@interbus.com</a>
+                            </address>
+                            <ul class="social-icons clearfix">
+                                <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
+                                <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
+                                <li class="dribble"><a title="dribble" href="#" data-toggle="tooltip"><i class="soap-icon-dribble"></i></a></li>
+                                <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom gray-area">
+                <div class="container">
+                    <div class="logo pull-left">
+                        <a href="../index.html" title="Travelo - home">
+                            <img src="images/logo.png" alt="Interbus HTML5 Template" />
+                        </a>
+                    </div>
+                    <div class="pull-right">
+                        <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                    </div>
+                    <div class="copyright pull-right">
+                        <p>&copy;  2017 Interbus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/ng-template" id="statusPopup.html" data-backdrop="static">
+
+        <div class="modal-header">
+            <h3 class="modal-title">Validation!</h3>
+        </div>
+        <div class="modal-body">
+            {{mssg}}
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+
+    </script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- Flex Slider -->
+    <script type="text/javascript" src="components/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/fileupload/angular-file-upload.js"></script>
+    <script src="js/fileupload/angular-file-upload-shim.js"></script>
+
+    <script src="js/CreateFleetOwner.js"></script>
+
+    <script src="js/fileupload/Upload.js"></script>
+
+</body>
+
+</html>

@@ -277,6 +277,7 @@
     <Content Include="UI\EmailTemplates\TicketFormat.html" />
     <Content Include="UI\Fares_and_payments.html" />
     <Content Include="UI\FleetOwnerRequest.html" />
+    <Content Include="UI\FOConfirmation.html" />
     <Content Include="UI\fonts\fontawesome-webfont.svg" />
     <Content Include="UI\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="UI\fonts\NexaBlack.svg" />
@@ -1451,7 +1452,9 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogTraceWriter.cs" />
     <Compile Include="Controllers\MOTPverificationController.cs" />
-    <Compile Include="Controllers\PassengerController.cs" />
+    <Compile Include="Controllers\PassengerController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\PasswordverificationController.cs" />
     <Compile Include="Controllers\RegisterUserController.cs" />
     <Compile Include="Controllers\ResetPwdController.cs" />

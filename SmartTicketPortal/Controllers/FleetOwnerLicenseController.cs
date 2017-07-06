@@ -362,14 +362,18 @@ Use the above fleet owner code to buy/renew license and for any further correspo
                             SmtpServer.UseDefaultCredentials = false;
 
                             SmtpServer.Credentials = new System.Net.NetworkCredential(eusername, pwd);
-                            string enablessl = string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["EnableSsl"]) ? "false" : System.Configuration.ConfigurationManager.AppSettings["EnableSsl"].ToString();
-                            string TargetName = string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["TargetName"]) ? "" : System.Configuration.ConfigurationManager.AppSettings["TargetName"].ToString();
+                            //string enablessl = string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["EnableSsl"]) ? "false" : System.Configuration.ConfigurationManager.AppSettings["EnableSsl"].ToString();
+                            //string TargetName = string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["TargetName"]) ? "" : System.Configuration.ConfigurationManager.AppSettings["TargetName"].ToString();
 
-                            SmtpServer.EnableSsl = Convert.ToBoolean(enablessl);
+                            //SmtpServer.EnableSsl = Convert.ToBoolean(enablessl);
+                            SmtpServer.EnableSsl = true;
+                            //SmtpServer.TargetName = "STARTTLS/smtp.gmail.com";
+                           // SmtpServer.Send(mail);
+
                             //user these setting for sending using gmail server
                             //SmtpServer.EnableSsl = true;
-                            if (TargetName != "")
-                                SmtpServer.TargetName = TargetName;
+                            //if (TargetName != "")
+                            //    SmtpServer.TargetName = TargetName;
                             SmtpServer.Send(mail);
                             status = 1;
                         }
