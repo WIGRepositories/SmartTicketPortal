@@ -219,14 +219,6 @@ namespace SmartTicketPortal.Models
         public int Agreetotermsandconditions { get; set; }
 
 
-
-
-
-
-        //General details
-
-
-
         public string CmpLogo { get; set; }
 
         public string insupdflag { get; set; }
