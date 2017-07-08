@@ -8,7 +8,7 @@
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="description" content="InterBus, Tour Booking HTML5 Template">
     <meta name="author" content="SoapTheme">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,8 +135,8 @@
 
                 <div class="container">
                     <h1 class="logo navbar-brand">
-                        <a href="../index.html" title="Travelo - home">
-                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        <a href="../index.html" title="InterBus - home">
+                            <img src="images/logo.png" alt="InterBus HTML5 Template" />
                         </a>
                     </h1>
 
@@ -170,7 +170,7 @@
                                 <ul>
                                     <li><a href="Status_and_Updates.html">Status</a></li>
                                     <li><a href="pages-coming-soon1.html">plans</a></li>
-                                    
+
 
                                 </ul>
                             </li>
@@ -190,7 +190,7 @@
                                 <a href="AboutUs.html">About us</a>
                                 <ul>
                                     <li><a href="ContactUs.html">contacts</a></li>
-                                    <li><a href="pages-coming-soon1.html">complants</a></li>
+                                    <li><a href="AddTroubleTicketingDetails.html">complants</a></li>
 
                                 </ul>
                             </li>
@@ -229,7 +229,7 @@
                             <ul>
                                 <li><a href="Status_and_Updates.html">Status</a></li>
                                 <li><a href="pages-coming-soon1.html">plans</a></li>
-                                
+
 
                             </ul>
                         </li>
@@ -249,7 +249,7 @@
                             <a href="AboutUs.html">About us</a>
                             <ul>
                                 <li><a href="ContactUs.html">contacts</a></li>
-                                <li><a href="pages-coming-soon1.html">complants</a></li>
+                                <li><a href="AddTroubleTicketingDetails.html">complants</a></li>
 
                             </ul>
                         </li>
@@ -305,181 +305,182 @@
                         </div>
                     </div>
                 </form>
-                <div class="seperator"></div>
-                <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+                <div class="seperator">
+                    <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+                </div>
             </div>
         </header>
 
-    </div>
 
-    <section id="content" class="gray-area" style="padding-left:250px;">
-        <div class="container">
-            <div class="row" ng-show="registeredUseId == 0">
-                <div id="main" class="col-sms-6 col-sm-8 col-md-9">
-                    <div class="booking-section travelo-box">
 
-                        <form class="booking-form">
-                            <div class="person-information">
-                                <h1>Register</h1>
-                                <div class="form-group row">
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>first name*</label>
-                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.FirstName" />
-                                    </div>
+        <section id="content" class="gray-area" style="padding-left:250px;">
+            <div class="container">
+                <div class="row" ng-show="registeredUseId == 0">
+                    <div id="main" class="col-sms-6 col-sm-8 col-md-9">
+                        <div class="booking-section travelo-box">
 
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>last name*</label>
-                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.LastName" />
-                                    </div>
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>middle name*</label>
-                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.MiddleName" />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>User name</label>
-                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.UserName" />
-                                    </div>
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>email address</label>
-                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.EmailAddress" />
-                                    </div>
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>Phone number</label>
-                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.Mobile" />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>Country code</label>
-                                        <div class="selector">
-                                            <select class="form-control" ng-options="C.Name for C in Country track by C.Id" ng-model="register.Country">
-                                                <option value="">Select Country</option>
+                            <form class="booking-form">
+                                <div class="person-information">
+                                    <h1>Register</h1>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>first name*</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.FirstName" />
+                                        </div>
 
-                                            </select>
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>last name*</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.LastName" />
+                                        </div>
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>middle name*</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.MiddleName" />
                                         </div>
                                     </div>
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>Password</label>
-                                        <input type="password" class="input-text full-width" value="" placeholder="" ng-model="register.Password" />
+                                    <div class="form-group row">
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>User name</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.UserName" />
+                                        </div>
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>email address</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.EmailAddress" />
+                                        </div>
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>Phone number</label>
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="register.Mobile" />
+                                        </div>
                                     </div>
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>Re-enter Pssword</label>
-                                        <input type="password" class="input-text full-width" value="" placeholder="" ng-model="register.RePassword" />
-                                    </div>
-                                </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>Country code</label>
+                                            <div class="selector">
+                                                <select class="form-control" ng-options="C.Name for C in Country track by C.Id" ng-model="register.Country">
+                                                    <option value="">Select Country</option>
 
-                                <div class="form-group row">
-                                    <div class="col-sm-3 col-md-4">
-                                        <label>Gender</label>
-                                        <div class="selector full-width">
-                                            <select ng-model="register.Gender">
-                                                <option value="">Select...</option>
-                                                <option value="1">male</option>
-                                                <option value="2">female</option>
-                                            </select>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>Password</label>
+                                            <input type="password" class="input-text full-width" value="" placeholder="" ng-model="register.Password" />
+                                        </div>
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>Re-enter Pssword</label>
+                                            <input type="password" class="input-text full-width" value="" placeholder="" ng-model="register.RePassword" />
                                         </div>
                                     </div>
 
+                                    <div class="form-group row">
+                                        <div class="col-sm-3 col-md-4">
+                                            <label>Gender</label>
+                                            <div class="selector full-width">
+                                                <select ng-model="register.Gender">
+                                                    <option value="">Select...</option>
+                                                    <option value="1">male</option>
+                                                    <option value="2">female</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
 
-                                    <div class="col-sm-3 col-md-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input id="agreement" type="checkbox"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
-                                            </label>
+
+                                        <div class="col-sm-3 col-md-4">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input id="agreement" type="checkbox"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row" style="padding-left:300px">
+                                        <div class="col-sm-4 col-md-5">
+                                            <button type="submit" class="full-width btn-large" ng-click="saveUser(register);">submit</button>
                                         </div>
                                     </div>
-
                                 </div>
-                                <div class="form-group row" style="padding-left:300px">
-                                    <div class="col-sm-4 col-md-5">
-                                        <button type="submit" class="full-width btn-large" ng-click="saveUser(register);">submit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
+
                 </div>
-
-            </div>
-            <div class="container" style="margin-top:60px;min-height:380px;font-size:medium" ng-show="registeredUseId != 0">
-                <!--<div class="container" style="margin-top:60px;min-height:380px;font-size:medium" >-->
-                <div class="row">
-                    <h2 style="text-align:center">Verify Email Address</h2>
+                <div class="container" style="margin-top:60px;min-height:380px;font-size:medium" ng-show="registeredUseId != 0">
+                    <!--<div class="container" style="margin-top:60px;min-height:380px;font-size:medium" >-->
+                    <div class="row">
+                        <h2 style="text-align:center">Verify Email Address</h2>
 
 
-                    <div class="col-lg-7 col-lg-offset-2">
-                        <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                        <div class="col-lg-7 col-lg-offset-2">
+                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
 
-                            <tr>
-                                <td valign="top" style="padding-left:15px;padding-right:15px;">
-
-
-                                    <div class="col-lg-12">
-                                        <h2>Enter verification code </h2>
-                                        <div class="content">
-                                            <div class="cancinfo">Please check your email and enter the email verification code</div>
-                                            <font style="padding-top: 10px;color:red" ng-show="codeVerified == 0">
-                                                <h5>
-                                                    Invalid code. Please re-enter to verify.
-                                                </h5>
-                                            </font>
-                                            <div class="row" style="padding-top:15px;padding-bottom:15px">
+                                <tr>
+                                    <td valign="top" style="padding-left:15px;padding-right:15px;">
 
 
-                                                <div class="col-md-10">
-                                                    <div class="form-group">
-                                                        <label for="inputFirstName" class="col-md-4 control-label">Verificaion code:</label>
-                                                        <div class="col-md-7" style="text-align:left"><input id="inputFirstName" type="text" placeholder="E-mail verification code" class="form-control" ng-model="emailAddrCode" /></div>
+                                        <div class="col-lg-12">
+                                            <h2>Enter verification code </h2>
+                                            <div class="content">
+                                                <div class="cancinfo">Please check your email and enter the email verification code</div>
+                                                <font style="padding-top: 10px;color:red" ng-show="codeVerified == 0">
+                                                    <h5>
+                                                        Invalid code. Please re-enter to verify.
+                                                    </h5>
+                                                </font>
+                                                <div class="row" style="padding-top:15px;padding-bottom:15px">
+
+
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <label for="inputFirstName" class="col-md-4 control-label">Verificaion code:</label>
+                                                            <div class="col-md-7" style="text-align:left"><input id="inputFirstName" type="text" placeholder="E-mail verification code" class="form-control" ng-model="emailAddrCode" /></div>
+                                                        </div>
+
                                                     </div>
+                                                    <button class="btn btn-info pull-right" ng-click="VerifyEmailAddress();">
+                                                        Submit
+                                                        &nbsp;<i class="fa fa-chevron-circle-right"></i>
+                                                    </button>
 
                                                 </div>
-                                                <button class="btn btn-info pull-right" ng-click="VerifyEmailAddress();">
-                                                    Submit
-                                                    &nbsp;<i class="fa fa-chevron-circle-right"></i>
-                                                </button>
+                                                <font style="padding-top: 10px;">
+                                                    <h5>
+                                                        Note:You will not be able to receive e-tickets and other updates from interbus if the email id is not verified.
+                                                        <br />  Did not receive the code/resend verification code? please <a href="Fleetownerrequest.html" style="color:red">
+                                                            click here
+                                                        </a> to re-send the code
+                                                    </h5>
+                                                </font>
+
+
+
+                                                <div class="form-group mbn">
+
+                                                    <a href="../index.html" class="btn btn-warning">
+                                                        <i class="fa fa-chevron-circle-left"></i>&nbsp;
+                                                        Later
+                                                    </a>
+
+                                                </div>
 
                                             </div>
-                                            <font style="padding-top: 10px;">
-                                                <h5>
-                                                    Note:You will not be able to receive e-tickets and other updates from interbus if the email id is not verified.
-                                                    <br />  Did not receive the code/resend verification code? please <a href="Fleetownerrequest.html" style="color:red">
-                                                        click here
-                                                    </a> to re-send the code
-                                                </h5>
-                                            </font>
-
-
-
-                                            <div class="form-group mbn">
-
-                                                <a href="../index.html" class="btn btn-warning">
-                                                    <i class="fa fa-chevron-circle-left"></i>&nbsp;
-                                                    Later
-                                                </a>
-
-                                            </div>
-
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
 
-                        </table>
+                            </table>
+
+                        </div>
+
+
+
 
                     </div>
-
-
-
-
                 </div>
+
             </div>
-
-        </div>
-    </section>
-
+        </section>
+    </div>
     <footer id="footer" style="background-color: #2d3e52;">
 
         <div class="footer-wrapper">
@@ -576,8 +577,8 @@
         <div class="bottom gray-area">
             <div class="container">
                 <div class="logo pull-left">
-                    <a href="../index.html" title="Travelo - home">
-                        <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                    <a href="../index.html" title="InterBus - home">
+                        <img src="images/logo.png" alt="InterBus HTML5 Template" />
                     </a>
                 </div>
                 <div class="pull-right">

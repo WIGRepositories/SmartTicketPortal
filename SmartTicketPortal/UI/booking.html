@@ -9,7 +9,7 @@
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="description" content="InterBus, Tour Booking HTML5 Template">
     <meta name="author" content="SoapTheme">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,8 +134,8 @@
 
                 <div class="container">
                     <h1 class="logo navbar-brand">
-                        <a href="../index.html" title="Travelo - home">
-                            <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                        <a href="../index.html" title="InterBus - home">
+                            <img src="images/logo.png" alt="InterBus HTML5 Template" />
                         </a>
                     </h1>
 
@@ -305,7 +305,7 @@
                     </div>
                 </form>
                 <div class="seperator"></div>
-                <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+                <p>Don't have an account? <a href="Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
             </div>
         </header>
     </div>
@@ -403,7 +403,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <img src="Images/busimages/time.jpg" /><strong> {{b.StartTime}} -  {{b.EndTime}}</strong>
+                                    <img src="Images/busimages/time.jpg" /><strong> {{b.ArrivalTime}} -  {{b.DepartureTime}}</strong>
 
 
                                     <div class="message-inner">
@@ -421,7 +421,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="col-md-3 col-sm-4">
-                                        <strong>Rs.{{b.Price}}</strong>
+                                        <strong>Rs.{{b.Amount}}</strong>
                                     </div>
                                     <br />
                                     <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
@@ -492,8 +492,8 @@
                                                     <table>
                                                         <tr><td><label>Seat(s):<strong>{{selectedSeatsList}}</strong></label></td></tr>
                                                         <tr><td><label>Total Seat(s):{{count}}</label></td></tr>
-                                                        <tr><td><label>Base Fare:{{b.Price}}</label></td></tr>
-                                                        <tr><td><label><strong>Total Fare:{{count*b.Price}}</strong></label></td></tr>
+                                                        <tr><td><label>Base Fare:{{b.Amount}}</label></td></tr>
+                                                        <tr><td><label><strong>Total Fare:{{count*b.Amount}}</strong></label></td></tr>
                                                     </table>
                                                 </td>
                                             </tr>
@@ -846,8 +846,8 @@
         <div class="bottom gray-area">
             <div class="container">
                 <div class="logo pull-left">
-                    <a href="../index.html" title="Travelo - home">
-                        <img src="images/logo.png" alt="Travelo HTML5 Template" />
+                    <a href="../index.html" title="InterBus - home">
+                        <img src="images/logo.png" alt="InterBus HTML5 Template" />
                     </a>
                 </div>
                 <div class="pull-right">

@@ -231,6 +231,57 @@ namespace SmartTicketPortal.Models
 
         public string insupdflag { get; set; }
     }
+    public class UserLicenseDetails
+    {
+        public List<ULLicense> checkSchedule { get; set; }
+        public int Id { set; get; }
+        public int UserId { set; get; }
+        public int FOId { set; get; }
+        public string FOCode { set; get; }
+        public int LicenseTypeId { set; get; }
+        public DateTime? StartDate { set; get; }
+        public DateTime? ExpiryOn { set; get; }
+        public int GracePeriod { set; get; }
+        public DateTime? ActualExpiry { set; get; }
+        public DateTime? LastUpdatedOn { set; get; }
+        public int Active { set; get; }
+        public int RenewFreqTypeId { set; get; }
+        public int StatusId { set; get; }
+
+        public string insupddelflag { set; get; }
+
+    }
+    public class ULLicense
+    {
+        public int Id { set; get; }
+        public int ULId { set; get; }
+        public string TransId { set; get; }
+        public DateTime? CreatedOn { set; get; }
+        public decimal Amount { set; get; }
+        public decimal UnitPrice { set; get; }
+        public decimal Units { set; get; }
+        public int StatusId { set; get; }
+        public int LicensePymtTransId { set; get; }
+        public int IsRenewal { set; get; }
+        public string insupddelflag { set; get; }
+    }
+    public class ULConfirmDetails
+    {
+        public int Id { set; get; }
+        public int ULId { set; get; }
+        public int ULPymtId { set; get; }
+        public int foId { set; get; }
+        public int userId { set; get; }
+        public string TransId { set; get; }
+        public string GatewayTransId { set; get; }
+        public int itemId { set; get; }
+        public string address { set; get; }
+        public decimal Amount { set; get; }
+        public decimal Units { set; get; }
+        public decimal POSUnits { set; get; }
+        public int IsRenewal { set; get; }
+        public string insupddelflag { set; get; }
+    }
 }
 
 

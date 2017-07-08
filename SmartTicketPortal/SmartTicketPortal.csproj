@@ -75,11 +75,11 @@
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="UI\AboutUs.html" />
+    <Content Include="UI\AddTroubleTicketingDetails.html" />
     <Content Include="UI\ajax\cruise-slideshow-popup.html" />
     <Content Include="UI\ajax\slideshow-popup.html" />
     <Content Include="UI\apps.html" />
     <Content Include="UI\BookedTicketHistory.html" />
-    <Content Include="UI\booking - Copy.html" />
     <Content Include="UI\booking.html" />
     <Content Include="UI\bus-block-view.html" />
     <Content Include="UI\bus-booking.html" />
@@ -283,7 +283,6 @@
     <Content Include="UI\fonts\NexaBlack.svg" />
     <Content Include="UI\fonts\soap-icons.svg" />
     <Content Include="UI\hirevehicle.html" />
-    <Content Include="UI\homepage10.html" />
     <Content Include="UI\images\404-style1.png" />
     <Content Include="UI\images\busimages\acbus.jpg" />
     <Content Include="UI\images\busimages\ASeat.png" />
@@ -1464,6 +1463,8 @@
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\UsercardsController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Controllers\UserLicensePaymentsController.cs" />
+    <Compile Include="Controllers\UserLicensesController.cs" />
     <Compile Include="Controllers\UserpreferencesController.cs" />
     <Compile Include="Controllers\ValidateCredentialsController.cs" />
     <Compile Include="Controllers\websiteuserinfoController.cs" />

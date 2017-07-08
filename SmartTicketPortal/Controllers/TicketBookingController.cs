@@ -25,7 +25,7 @@ namespace SmartTicketPortal.Controllers
 
             //connect to database
             SqlConnection conn = new SqlConnection();
-            //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+          
             conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
 
             SqlCommand cmd = new SqlCommand();
@@ -555,8 +555,7 @@ namespace SmartTicketPortal.Controllers
             catch (SqlException sqlEx)
             {
                 transaction.Rollback();
-                //traceWriter.Trace(Request, "1", TraceLevel.Info, "{0}", "Error in SaveAssetDetails:" + sqlEx.Message);
-                //return Request.CreateErrorResponse(HttpStatusCode.NotFound, sqlEx);
+               
                 return -1;
 
             }
@@ -569,8 +568,7 @@ namespace SmartTicketPortal.Controllers
                 }
                 string str = ex.Message;
                 return -1;
-                //traceWriter.Trace(Request, "1", TraceLevel.Info, "{0}", "Error in SaveAssetDetails:" + ex.Message);
-                //return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+               
             }
             finally
             {

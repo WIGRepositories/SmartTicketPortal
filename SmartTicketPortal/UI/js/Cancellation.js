@@ -30,7 +30,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.GetTicketsForCancellation = function () {
 
         if (($scope.ticketNo == null || $scope.ticketNo == '' ) && ($scope.emailIdmobileno ==null || $scope.emailIdmobileno == '')) {
-            alert('Please enter the ticke number or registered email address or mobile number');
+         //   alert('Please enter the ticke number or registered email address or mobile number');
         return;
         }
         var tickenum = ($scope.ticketNo == null || $scope.ticketNo == '') ? '' : $scope.ticketNo;

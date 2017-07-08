@@ -52,9 +52,9 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         $localStorage.timing = ($scope.timing == 'Now') ? Date() : $scope.timing;
 
         $localStorage.triptype = $scope.triptype;
-        // $scope.GetAvailableServices();
+         $scope.GetAvailableServices();
 
-        $scope.services = [
+        $scope.services1 = [
             { "Id": 1, "Company": "CMP1", "VehicleType": "AC", "AvailableSeats": "10", "WindowSeats": "3", "StartTime": "11:00 AM", "EndTime": "12:30 PM", "Rating": "3", "Price": "10", "luggageCrg": "", "Discount": "" }
             , { "Id": 2, "Company": "CMP2", "VehicleType": "Non-AC", "AvailableSeats": "12", "WindowSeats": "3", "StartTime": "11:10 AM", "EndTime": "12:30 PM", "Rating": "4", "Price": "12", "luggageCrg": "", "Discount": "" }
             , { "Id": 3, "Company": "CMP3", "VehicleType": "AC", "AvailableSeats": "4", "WindowSeats": "4", "StartTime": "12:00 PM", "EndTime": "12:30 PM", "Rating": "3", "Price": "10", "luggageCrg": "", "Discount": "" }
@@ -260,7 +260,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         if (selectList.length == 0) {
             alert('Please select the seats.');
         }
-        $scope.perunitprice = b.Price;
+        $scope.perunitprice = b.Amount;
     }
 
     $scope.savedata1 = function (b) {
