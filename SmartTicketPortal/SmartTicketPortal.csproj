@@ -419,6 +419,7 @@
     <Content Include="UI\js\Carousle\js-core.js" />
     <Content Include="UI\js\Carousle\jwplayer.js" />
     <Content Include="UI\js\Carousle\thirdparty.js" />
+    <Content Include="UI\js\Cartdetails.js" />
     <Content Include="UI\js\CheckOut.js" />
     <Content Include="UI\js\contact.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
