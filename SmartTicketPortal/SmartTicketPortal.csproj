@@ -79,6 +79,10 @@
     <Content Include="UI\ajax\cruise-slideshow-popup.html" />
     <Content Include="UI\ajax\slideshow-popup.html" />
     <Content Include="UI\apps.html" />
+    <Content Include="UI\APP\AppleStore.html" />
+    <Content Include="UI\APP\GooglePlayStore.html" />
+    <Content Include="UI\APP\MicrosoftAppStore.html" />
+    <Content Include="UI\APP\paysmart.png" />
     <Content Include="UI\BookedTicketHistory.html" />
     <Content Include="UI\booking.html" />
     <Content Include="UI\bus-block-view.html" />
@@ -1630,6 +1634,7 @@
     <Content Include="UI\fonts\soap-icons.woff" />
     <None Include="Properties\PublishProfiles\TicketPortal.pubxml" />
     <Content Include="web.config" />
+    <Content Include="UI\APP\app-debug.apk" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
