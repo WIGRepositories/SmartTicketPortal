@@ -1634,7 +1634,7 @@
     <Content Include="UI\fonts\soap-icons.woff" />
     <None Include="Properties\PublishProfiles\TicketPortal.pubxml" />
     <Content Include="web.config" />
-    <Content Include="UI\APP\app-debug.apk" />
+    <None Include="UI\APP\app-debug.apk" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
