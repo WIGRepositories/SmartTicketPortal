@@ -503,6 +503,7 @@
     <Content Include="UI\js\waypoints.min.js" />
     <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\Licensepage.html" />
+    <Content Include="UI\Licenses.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\MeteredTaxi.html" />
     <Content Include="UI\pages-coming-soon1.html" />
