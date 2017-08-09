@@ -344,6 +344,7 @@
                                         <th>From - To</th>
                                         <th>Journey date</th>
                                         <th>No. Of seats</th>
+                                        <th>Seats</th>
                                         <th>Amount</th>
                                         <th>Journey Type</th>
                                         <th>Cancel</th>
@@ -357,6 +358,7 @@
                                         <td>{{B.Src}} - {{B.Dest}}</td>
                                         <td>{{B.DepartureTime}}</td>
                                         <td>{{B.NoOfSeats}}</td>
+                                        <td>{{B.Seats}}</td>
                                         <td>{{B.Amount}}</td>
                                         <td>{{B.JourneyType}}</td>
                                         <td>
@@ -528,8 +530,8 @@
                                                                 <table>
                                                                     <tr><td><label>Seat(s):<strong>{{selectedSeatsList}}</strong></label></td></tr>
                                                                     <tr><td><label>Total Seat(s):{{count}}</label></td></tr>
-                                                                    <tr><td><label>Base Fare:{{b.Price}}</label></td></tr>
-                                                                    <tr><td><label><strong>Total Fare:{{count*b.Price}}</strong></label></td></tr>
+                                                                    <tr><td><label>Base Fare:{{b.Amount}}</label></td></tr>
+                                                                    <tr><td><label><strong>Total Fare:{{count*b.Amount}}</strong></label></td></tr>
                                                                 </table>
                                                             </td>
                                                         </tr>

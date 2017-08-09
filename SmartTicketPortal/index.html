@@ -160,8 +160,8 @@
                             <li class="menu-item-has-children">
                                 <a href="UI/Cancellation.html">Cancel/Modify</a>
                                 <ul>
-                                    <li><a href="ui/cancellation.html">Cancle Ticket</a></li>
-                                    <li><a href="ui/cancellation.html">Modify Ticket</a></li>
+                                    <li><a href="UI/cancellation.html">Cancle Ticket</a></li>
+                                    <li><a href="UI/cancellation.html">Modify Ticket</a></li>
 
                                 </ul>
                             </li>
@@ -207,7 +207,7 @@
 
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="ui/fares_and_payments.html">Fares/Payments</a>
+                            <a href="UI/fares_and_payments.html">Fares/Payments</a>
                             <ul>
                                 <li><a href="UI/shedules.html">Schedules</a></li>
                                 <li><a href="UI/pages-coming-soon1.html">Check Fares</a></li>
@@ -414,24 +414,24 @@
                                             <div class="row">
                                                 <div class="col-md-2">
                                                     <div class="form-group">
-                                                        <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                        <select class="form-control" ng-options="SD.Name for SD in Stops track by SD.Id" ng-model="SD">
                                                             <option value="">Select Source</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <div class="form-group">
-                                                        <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                        <select class="form-control" ng-options="DS.Name for DS in Stops track by DS.Id" ng-model="DS">
                                                             <option value="">Select Destination</option>
                                                         </select>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-4">
+                                                <div class="col-md-3">
                                                     <div class="form-group row">
                                                         <div class="col-xs-6">
                                                             <div class="datepicker-wrap">
-                                                                <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
+                                                                <input type="text" class="input-text full-width" placeholder="Departing On" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
@@ -470,11 +470,10 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group row">
+                                                        <div class="col-xs-4">
 
-                                                            <div class="col-xs-6 pull-right">
-                                                                <button class="full-width">SERACH NOW</button>
-                                                            </div>
+                                                            <button type="button" ng-click="GetHireVehicle();">SERACH NOW</button>
+
                                                         </div>
 
                                                     </div>

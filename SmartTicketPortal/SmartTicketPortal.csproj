@@ -432,6 +432,7 @@
     <Content Include="UI\js\gmap3.infobox.js" />
     <Content Include="UI\js\gmap3.js" />
     <Content Include="UI\js\gmap3.min.js" />
+    <Content Include="UI\js\HireVehicle.js" />
     <Content Include="UI\js\homepage10.js" />
     <Content Include="UI\js\ie8.js" />
     <Content Include="UI\js\index.js" />
@@ -466,6 +467,7 @@
     <Content Include="UI\js\pace.min.js" />
     <Content Include="UI\js\page-loading.js" />
     <Content Include="UI\js\Refund.js" />
+    <Content Include="UI\js\RegisterDriver.js" />
     <Content Include="UI\js\schedule.js" />
     <Content Include="UI\js\script.slider.js" />
     <Content Include="UI\js\scripts.js" />
@@ -488,6 +490,7 @@
     <Content Include="UI\products.html" />
     <Content Include="UI\Refund.html" />
     <Content Include="UI\Registation.html" />
+    <Content Include="UI\RegisterDriver.html" />
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\shedules.html" />
     <Content Include="UI\shortcode-pricing-tables.html" />
@@ -1438,6 +1441,7 @@
     <Compile Include="App_Start\Trace.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AvailableSeatsController.cs" />
+    <Compile Include="Controllers\BookAVehicleController.cs" />
     <Compile Include="Controllers\bookingController.cs" />
     <Compile Include="Controllers\CancellationController.cs" />
     <Compile Include="Controllers\ChangePwdController.cs" />
@@ -1448,6 +1452,8 @@
     <Compile Include="Controllers\FaqsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\ForgotpasswordController.cs" />
+    <Compile Include="Controllers\HireVehicleController.cs" />
+    <Compile Include="Controllers\HourBasedPricingController.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogTraceWriter.cs" />
@@ -1456,6 +1462,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\PasswordverificationController.cs" />
+    <Compile Include="Controllers\RegisterDriverController.cs" />
     <Compile Include="Controllers\RegisterUserController.cs" />
     <Compile Include="Controllers\ResetPwdController.cs" />
     <Compile Include="Controllers\scheduleController.cs" />
