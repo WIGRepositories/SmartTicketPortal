@@ -64,6 +64,28 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $localStorage.triptype = $scope.triptype;
         window.location.href = "UI/booking.html";
     }
+    $scope.GetHireVehicle = function () {
+        if ($scope.SD == null) {
+            // alert('Please select source.');
+
+            $scope.showDialog('Please select source.');
+            return;
+        }
+
+        if ($scope.DS == null) {
+            $scope.showDialog('Please select destination.');
+            return;
+        }
+
+        $localStorage.src = $scope.SD;
+        $localStorage.dest = $scope.DS;
+
+        //$rootscope.src = $scope.RS;
+        //$rootscope.dest = $scope.RD;
+        // $localStorage.timing = ($scope.timing == 'Now') ? Date() : $scope.timing;
+      //  $localStorage.triptype = $scope.triptype;
+        window.location.href = "UI/hirevehicle.html";
+    }
     $scope.Signin = function () {
 
         var u = $scope.UserName;

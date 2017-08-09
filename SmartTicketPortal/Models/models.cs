@@ -274,6 +274,55 @@ namespace SmartTicketPortal.Models
         public int IsRenewal { set; get; }
         public string insupddelflag { set; get; }
     }
+    public class UserLocation
+    {
+        public string flag { get; set; }
+
+        public int BNo { get; set; }
+        public string BookingType { get; set; }
+
+        public string ReqVehicle { get; set; }
+        public string Customername { get; set; }
+        public string CusID { get; set; }
+        public string PhoneNo { get; set; }
+        public string AltPhoneNo { get; set; }
+        public string CAddress { get; set; }
+        public string PickupAddress { get; set; }
+        public string LandMark { get; set; }
+        public string Package { get; set; }
+        public string PickupPalce { get; set; }
+        public string DropPalce { get; set; }
+        public string ReqType { get; set; }
+        public int ExtraCharge { get; set; }
+        public int NoofVehicle { get; set; }
+        public string ExecutiveName { get; set; }
+        public int VID { get; set; }
+        public string BookingStatus { get; set; }
+        public string CustomerSMS { get; set; }
+        public string CancelReason { get; set; }
+        public decimal CBNo { get; set; }
+        public string ModifiedBy { get; set; }
+        public string CancelBy { get; set; }
+        public string ReconfirmedBy { get; set; }
+        public string AssignedBy { get; set; }
+
+        public float lat { get; set; }
+        public float lng { get; set; }
+
+        public object Mobileotp { get; set; }
+    }
+    public class HourBase
+    {
+        public string insupddelflag { get; set; }
+        public int Id { get; set; }
+        public int VehicleModelId { get; set; }
+        //public string VehicleModel { get; set; }
+        public string Hours { get; set; }
+        public DateTime FromTime { get; set; }
+        public DateTime ToTime { get; set; }
+        public decimal Price { get; set; }
+
+    }
 }
 
 
@@ -459,6 +508,38 @@ namespace Paysmart.Models
         public string Password { get; set; }
 
         public string NewPassword { get; set; }
+    }
+    public class DriverAccount
+    {
+
+        public string flag { get; set; }
+        public int id { get; set; }
+        public string Username { get; set; }
+
+        public string Email { get; set; }
+        public string Mobilenumber { get; set; }
+        public string Password { get; set; }
+        public String EVerificationCode { get; set; }
+        public DateTime EVerifiedOn { get; set; }
+        public int IsEmailVerified { get; set; }
+        public String MVerificationCode { get; set; }
+        public string Passwordotp { get; set; }
+        public DateTime MVerifiedOn { get; set; }
+        public int IsMobileVerified { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+        public int ENoOfAttempts { get; set; }
+        public int MNoOfAttempts { get; set; }
+        public string Firstname { get; set; }
+        public string lastname { get; set; }
+        public int AuthTypeId { get; set; }
+        public string AltPhonenumber { get; set; }
+        public string Altemail { get; set; }
+        public string AccountNo { get; set; }
+        public string NewPassword { get; set; }
+        public object Mobileotp { get; set; }
+
+        public object Emailotp { get; set; }
     }
 }
 
