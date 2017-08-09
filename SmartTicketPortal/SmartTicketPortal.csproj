@@ -408,6 +408,15 @@
     <Content Include="UI\images\promos\contactless-homepage-promo.jpg" />
     <Content Include="UI\images\promos\images.jpeg" />
     <Content Include="UI\images\promos\InterBusNewLogo.png" />
+    <Content Include="UI\images\promos\Payment\Ambulance.png" />
+    <Content Include="UI\images\promos\Payment\Bank.png" />
+    <Content Include="UI\images\promos\Payment\busbo.png" />
+    <Content Include="UI\images\promos\Payment\couries.png" />
+    <Content Include="UI\images\promos\Payment\GetLyft.png" />
+    <Content Include="UI\images\promos\Payment\help.png" />
+    <Content Include="UI\images\promos\Payment\metered.png" />
+    <Content Include="UI\images\promos\Payment\TwoTruck.png" />
+    <Content Include="UI\images\promos\Payment\User.png" />
     <Content Include="UI\images\promos\santanderfreehire-hp-1400x700.jpg" />
     <Content Include="UI\images\promos\taxi.jpg" />
     <Content Include="UI\images\promos\thames-clipper_rdax_400x200.jpg" />
