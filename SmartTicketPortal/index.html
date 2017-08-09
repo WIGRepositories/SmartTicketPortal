@@ -152,7 +152,7 @@
                                     <li><a href="UI/shedules.html">Schedules</a></li>
                                     <li><a href="UI/Fares_and_payments.html">Check Fares</a></li>
                                     <li><a href="UI/pages-coming-soon1.html">Recharge</a></li>
-                                    <li><a href="UI/pages-coming-soon1.html">Renvals</a></li>
+                                    <li><a href="UI/pages-coming-soon1.html">Renewals</a></li>
                                     <li><a href="UI/refund.html">refund</a></li>
 
                                 </ul>
@@ -160,8 +160,8 @@
                             <li class="menu-item-has-children">
                                 <a href="UI/Cancellation.html">Cancel/Modify</a>
                                 <ul>
-                                    <li><a href="UI/cancellation.html">Cancle Ticket</a></li>
-                                    <li><a href="UI/cancellation.html">Modify Ticket</a></li>
+                                    <li><a href="ui/cancellation.html">cancel Ticket</a></li>
+                                    <li><a href="ui/cancellation.html">Modify Ticket</a></li>
 
                                 </ul>
                             </li>
@@ -175,7 +175,7 @@
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="UI/shortcode-pricing-tables.html">Products</a>
+                                <a href="UI/shortcode-pricing-tables.html">Products/Licenses</a>
                                 <ul>
                                     <li><a href="UI/licensepage.html">Fleet Owner Licence</a></li>
                                     <li><a href="UI/licensepage.html">BT Licence</a></li>
@@ -207,12 +207,12 @@
 
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="UI/fares_and_payments.html">Fares/Payments</a>
+                            <a href="ui/fares_and_payments.html">Fares/Payments</a>
                             <ul>
                                 <li><a href="UI/shedules.html">Schedules</a></li>
                                 <li><a href="UI/pages-coming-soon1.html">Check Fares</a></li>
                                 <li><a href="UI/pages-coming-soon1.html">Recharge</a></li>
-                                <li><a href="UI/pages-coming-soon1.html">Renvals</a></li>
+                                <li><a href="UI/pages-coming-soon1.html">Renewals</a></li>
                                 <li><a href="UI/refund.html">refund</a></li>
 
                             </ul>
@@ -220,7 +220,7 @@
                         <li class="menu-item-has-children">
                             <a href="UI/Cancellation.html">Cancel/Modify</a>
                             <ul>
-                                <li><a href="ui/cancellation.html">Cancle Ticket</a></li>
+                                <li><a href="ui/cancellation.html">cancel Ticket</a></li>
                                 <li><a href="ui/cancellation.html">Modify Ticket</a></li>
 
                             </ul>
@@ -336,9 +336,11 @@
                         <div class="search-box-wrapper style2">
                             <div class="search-box">
                                 <ul class="search-tabs clearfix">
-                                    <li class="active"><a href="#hotels-tab" data-toggle="tab"><i class="soap-icon-stories"></i><span>Book Ticket</span></a></li>
+                                    <li class="active"><a href="#Book-Service" data-toggle="tab"><i class="soap-icon-stories"></i><span>Book Service</span></a></li>
+                                    <li><a href="#hotels-tab" data-toggle="tab"><i class="soap-icon-stories"></i><span>Book Ticket</span></a></li>
                                     <li><a href="#flights-tab" data-toggle="tab"><i class="soap-icon-pickanddrop"></i><span>Hire Vehicle</span></a></li>
-                                    <li><a href="#flight-and-hotel-tab" data-toggle="tab"><i class="soap-icon-card"></i><span>Cards/Licence</span></a></li>
+                                    <li><a href="#flight-and-hotel-tab" data-toggle="tab"><i class="soap-icon-car-2"></i><span>Taxi/Combi</span></a></li>
+                                    <li><a href="#mated-taxi" data-toggle="tab"><i class="soap-icon-car-1"></i><span>Metered Taxi</span></a></li>
                                     <li><a href="#cars-tab" data-toggle="tab"><i class="soap-icon-businessbag"></i><span>Recharge/Renewal</span></a></li>
                                     <li><a href="#cruises-tab" data-toggle="tab"><i class="soap-icon-googleplay"></i><span>MobileApp</span></a></li>
                                     <li><a href="#flight-status-tab" data-toggle="tab"><i class="soap-icon-user"></i><span>Login/Register</span></a></li>
@@ -347,9 +349,11 @@
                                 </ul>
                                 <div class="visible-mobile">
                                     <ul id="mobile-search-tabs" class="search-tabs clearfix">
-                                        <li class="active"><a href="#hotels-tab">Book Ticket</a></li>
+                                        <li class="active"><a href="#Book-Service">Book Service</a></li>
+                                        <li><a href="#hotels-tab">Book Ticket</a></li>
                                         <li><a href="#flights-tab">Hire Vichcle</a></li>
-                                        <li><a href="#flight-and-hotel-tab">Cards/Licence</a></li>
+                                        <li><a href="#flight-and-hotel-tab">Taxi/Combi</a></li>
+                                        <li><a href="#mated-taxi">Metered Taxi</a></li>
                                         <li><a href="#cars-tab">Recharge/Renewal</a></li>
                                         <li><a href="#cruises-tab">MobileApp</a></li>
                                         <li><a href="#flight-status-tab">Login/Register</a></li>
@@ -359,7 +363,56 @@
                                 </div>
 
                                 <div class="search-tab-content">
-                                    <div class="tab-pane fade active in" id="hotels-tab">
+                                    <div class="tab-pane fade active in" id="Book-Service">
+                                        
+                                        <form action="cruise-list-view.html" method="post">
+                                            <div class="row">
+                                                <div class="col-md-2" style="font-size: 1.500em; font-weight: bold;  ">
+                                                    <a href="ui/meteredtaxi.html">
+                                                        <img src="ui/images/icon/hire_vehicle.png" style="margin-left:20px" />
+                                                        <p>Hire Vechicle</p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-2" style="font-size: 1.500em; font-weight: bold;  ">
+                                                    <a href="">
+                                                        <img src="ui/images/icon/metered_taxi.png" style="margin-left:20px" />
+                                                        <p>Metered Taxi<br> Services</p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-2" style="font-size: 1.500em; font-weight: bold;  ">
+                                                    <a href="">
+                                                        <img src="ui/images/icon/ticket.png" style="margin-left:20px" />
+                                                        <p>Book Ticket</p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-2" style="font-size: 1.500em; font-weight: bold;  ">
+                                                    <a href="">
+                                                        <img src="ui/images/icon/ambulance.png" style="margin-left:20px" />
+                                                        <p>Ambulance <br>Services</p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-2" style="font-size: 1.500em; font-weight: bold;  ">
+                                                    <a href="">
+                                                        <img src="ui/images/icon/towing.png" style="margin-left:20px" />
+                                                        <p>Break Down Services</p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-2" style="font-size: 1.500em; font-weight: bold;  ">
+                                                    <a href="">
+                                                        <img src="ui/images/icon/parcel_service.png" style="margin-left:20px" />
+                                                        <p>Parcel Services</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                          
+                                            
+                                           
+
+                                           
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade " id="hotels-tab">
                                         <form action="UI/booking.html" method="post">
                                             <h4 class="title">Book Ticket</h4>
                                             <div class="row">
@@ -414,24 +467,24 @@
                                             <div class="row">
                                                 <div class="col-md-2">
                                                     <div class="form-group">
-                                                        <select class="form-control" ng-options="SD.Name for SD in Stops track by SD.Id" ng-model="SD">
+                                                        <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
                                                             <option value="">Select Source</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <div class="form-group">
-                                                        <select class="form-control" ng-options="DS.Name for DS in Stops track by DS.Id" ng-model="DS">
+                                                        <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
                                                             <option value="">Select Destination</option>
                                                         </select>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-3">
+                                                <div class="col-md-4">
                                                     <div class="form-group row">
                                                         <div class="col-xs-6">
                                                             <div class="datepicker-wrap">
-                                                                <input type="text" class="input-text full-width" placeholder="Departing On" />
+                                                                <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
@@ -470,10 +523,11 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="col-xs-4">
+                                                        <div class="form-group row">
 
-                                                            <button type="button" ng-click="GetHireVehicle();">SERACH NOW</button>
-
+                                                            <div class="col-xs-6 pull-right">
+                                                                <button class="full-width">SERACH NOW</button>
+                                                            </div>
                                                         </div>
 
                                                     </div>
@@ -576,61 +630,22 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="tab-pane fade" id="cars-tab">
-                                        <form action="UI/pages-coming-soon1.html">
-                                            <h4 class="title">Recharge/Renewal</h4>
-                                            <a class="button btn-medium dark-blue1" href="UI/pages-coming-soon1.html">Recharge</a>
-                                            <a class="button btn-medium light-purple" href="UI/pages-coming-soon1.html">Renewal</a>
-                                        </form>
-                                    </div>
-                                    <div class="tab-pane fade" id="cruises-tab">
-                                        <form action="cruise-list-view.html" method="post">
-
-                                            <a class="button btn-extra blue" href="UI/pages-coming-soon1.html"><i class="soap-icon-apple"></i><span>Download from<br><em>apple store</em></span></a>
-                                            <a class="button btn-extra yellow" href="UI/pages-coming-soon1.html"><i class="soap-icon-googleplay"></i><span>Download from<br><em>google play</em></span></a>
-                                            <a class="button btn-extra blue" href="UI/pages-coming-soon1.html"><i class="soap-icon-globe"></i><span>Download from<br><em>windows store</em></span></a>
-                                            <a class="button btn-extra yellow" href="UI/pages-coming-soon1.html"><i class="soap-icon-dribble"></i><span>Download from<br><em>APP </em></span></a>
-                                        </form>
-                                    </div>
-
-                                    <div class="tab-pane fade" id="flight-status-tab">
-                                        <form action="#travelo-login">
-                                            <h4 class="title">Login/Register</h4>
-
-                                            <div class="row" ng-show="username  == null">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <div class="col-xs-6">
-                                                            <input type="text" class="input-text full-width" placeholder="UserName" ng-model="UserName" />
-                                                        </div>
-                                                        <div class="col-xs-6">
-                                                            <input type="password" class="input-text full-width" placeholder="password" ng-model="Password" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <button class="full-width" ng-click="Signin()">Login</button>
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <button class="full-width"><a href="UI/Registation.html">Register</a></button>
-                                                </div>
-                                            </div>
-                                        </form>
-
-                                    </div>
-
-
-
-                                    <div class="tab-pane fade" id="advanced-search-tab">
-                                        <form action="UI/pages-coming-soon1.html">
-                                            <h4 class="title">Where do you want to go?</h4>
+                                    <div class="tab-pane fade" id="mated-taxi">
+                                        <form action="UI/hirevehicle.html">
+                                            <h4 class="title">Metered Taxi</h4>
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-md-2">
                                                     <div class="form-group">
-                                                        <input type="text" class="input-text full-width" placeholder="Leaving From (city, distirct or specific airpot)" />
+                                                        <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                            <option value="">Select Source</option>
+                                                        </select>
                                                     </div>
+                                                </div>
+                                                <div class="col-md-2">
                                                     <div class="form-group">
-                                                        <input type="text" class="input-text full-width" placeholder="Going To (city, distirct or specific airpot)" />
+                                                        <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                            <option value="">Select Destination</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
@@ -638,7 +653,7 @@
                                                     <div class="form-group row">
                                                         <div class="col-xs-6">
                                                             <div class="datepicker-wrap">
-                                                                <input type="text" class="input-text full-width" placeholder="Departing On" />
+                                                                <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
@@ -650,21 +665,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <div class="col-xs-6">
-                                                            <div class="datepicker-wrap">
-                                                                <input type="text" class="input-text full-width" placeholder="Arriving On" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-6">
-                                                            <div class="selector">
-                                                                <select class="full-width">
-                                                                    <option value="1">anytime</option>
-                                                                    <option value="2">morning</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
                                                 </div>
 
                                                 <div class="col-md-4">
@@ -691,33 +692,161 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="col-xs-6">
-                                                            <input type="text" class="input-text full-width" placeholder="Promo Code" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <div class="col-xs-3">
-                                                            <div class="selector">
-                                                                <select class="full-width">
-                                                                    <option value="">Infants</option>
-                                                                    <option value="1">01</option>
-                                                                    <option value="2">02</option>
-                                                                    <option value="3">03</option>
-                                                                    <option value="4">04</option>
-                                                                </select>
+                                                        <div class="form-group row">
+
+                                                            <div class="col-xs-6 pull-right">
+                                                                <button class="full-width">SERACH NOW</button>
                                                             </div>
                                                         </div>
-                                                        <div class="col-xs-6 pull-right">
-                                                            <button class="full-width">SERACH NOW</button>
-                                                        </div>
+
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
+                                    <div class="tab-pane fade" id="cars-tab">
+                                        <form action="UI/pages-coming-soon1.html">
+                                            <h4 class="title">Recharge/Renewal</h4>
+                                            <a class="button btn-medium dark-blue1" href="UI/pages-coming-soon1.html">Recharge</a>
+                                            <a class="button btn-medium light-purple" href="UI/pages-coming-soon1.html">Renewal</a>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="cruises-tab">
+                                        <form action="cruise-list-view.html" method="post">
+
+                                            <a class="button btn-extra blue" href="ui/app/applestore.html"><i class="soap-icon-apple"></i><span>Download from<br><em>apple store</em></span></a>
+                                            <a class="button btn-extra yellow" href="ui/app/googleplaystore.html"><i class="soap-icon-googleplay"></i><span>Download from<br><em>google play</em></span></a>
+                                            <a class="button btn-extra blue" href="ui/app/microsoftappstore.html"><i class="soap-icon-globe"></i><span>Download from<br><em>windows store</em></span></a>
+                                            <a class="button btn-extra yellow" href="#"><i class="soap-icon-dribble"></i><span>Download from<br><em>APP </em></span></a>
+                                        </form>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="flight-status-tab">
+                                        <form action="#travelo-login">
+                                            <h4 class="title">Login/Register</h4>
+
+                                            <div class="row" ng-show="username == null">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-6">
+                                                            <input type="text" class="input-text full-width" placeholder="username or mobilenumber" />
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <input type="password" class="input-text full-width" placeholder="password" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-2">
+                                                    <button class="full-width" ng-click="Signin()">Login</button>
+                                                </div>
+                                        </form>
+                                        <form action="UI/Registation.html">
+                                            <div class="form-group col-md-2">
+                                                <button class="full-width" onclick="Registation.html">Register</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-pane fade" id="advanced-search-tab">
+                                    <form action="UI/pages-coming-soon1.html">
+                                        <h4 class="title">Where do you want to go?</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="input-text full-width" placeholder="Leaving From (city, distirct or specific airpot)" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="input-text full-width" placeholder="Going To (city, distirct or specific airpot)" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-6">
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" class="input-text full-width" placeholder="Departing On" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="1">anytime</option>
+                                                                <option value="2">morning</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-6">
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" class="input-text full-width" placeholder="Arriving On" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="1">anytime</option>
+                                                                <option value="2">morning</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Adults</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Kids</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="input-text full-width" placeholder="Promo Code" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Infants</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6 pull-right">
+                                                        <button class="full-width">SERACH NOW</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
 </section>

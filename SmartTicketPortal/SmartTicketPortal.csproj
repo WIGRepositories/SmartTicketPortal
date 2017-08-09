@@ -79,6 +79,10 @@
     <Content Include="UI\ajax\cruise-slideshow-popup.html" />
     <Content Include="UI\ajax\slideshow-popup.html" />
     <Content Include="UI\apps.html" />
+    <Content Include="UI\APP\AppleStore.html" />
+    <Content Include="UI\APP\GooglePlayStore.html" />
+    <Content Include="UI\APP\MicrosoftAppStore.html" />
+    <Content Include="UI\APP\paysmart.png" />
     <Content Include="UI\BookedTicketHistory.html" />
     <Content Include="UI\booking.html" />
     <Content Include="UI\bus-block-view.html" />
@@ -297,16 +301,30 @@
     <Content Include="UI\images\cards\card.jpg" />
     <Content Include="UI\images\cards\card1.jpg" />
     <Content Include="UI\images\favicon.png" />
+    <Content Include="UI\images\icon\ambulance.png" />
     <Content Include="UI\images\icon\back-to-top.png" />
     <Content Include="UI\images\icon\blank.png" />
+    <Content Include="UI\images\icon\bus_small.png" />
     <Content Include="UI\images\icon\calendar.png" />
+    <Content Include="UI\images\icon\cancelticket.png" />
+    <Content Include="UI\images\icon\car_small.png" />
     <Content Include="UI\images\icon\discount.png" />
+    <Content Include="UI\images\icon\driver.png" />
+    <Content Include="UI\images\icon\feedback.png" />
     <Content Include="UI\images\icon\flags\au.png" />
     <Content Include="UI\images\icon\flags\en-us.png" />
+    <Content Include="UI\images\icon\hire_vehicle.png" />
     <Content Include="UI\images\icon\hover-effect.png" />
     <Content Include="UI\images\icon\icon-check.png" />
+    <Content Include="UI\images\icon\ic_ticket.png" />
+    <Content Include="UI\images\icon\ic_wallet.png" />
+    <Content Include="UI\images\icon\logout.png" />
+    <Content Include="UI\images\icon\metered_taxi.png" />
     <Content Include="UI\images\icon\minus.png" />
     <Content Include="UI\images\icon\mobile-menu.png" />
+    <Content Include="UI\images\icon\parcel_service.png" />
+    <Content Include="UI\images\icon\ticket.png" />
+    <Content Include="UI\images\icon\towing.png" />
     <Content Include="UI\images\img.jpg" />
     <Content Include="UI\images\img1.jpg" />
     <Content Include="UI\images\img10.jpg" />
@@ -381,6 +399,8 @@
     <Content Include="UI\images\promos\53-fares-and-payment-oyster-icon.png" />
     <Content Include="UI\images\promos\7.jpg" />
     <Content Include="UI\images\promos\7.png" />
+    <Content Include="UI\images\promos\ambulances.jpg" />
+    <Content Include="UI\images\promos\browkdown.png" />
     <Content Include="UI\images\promos\bus1.jpg" />
     <Content Include="UI\images\promos\bus3.jpg" />
     <Content Include="UI\images\promos\bus4.jpg" />
@@ -389,6 +409,7 @@
     <Content Include="UI\images\promos\images.jpeg" />
     <Content Include="UI\images\promos\InterBusNewLogo.png" />
     <Content Include="UI\images\promos\santanderfreehire-hp-1400x700.jpg" />
+    <Content Include="UI\images\promos\taxi.jpg" />
     <Content Include="UI\images\promos\thames-clipper_rdax_400x200.jpg" />
     <Content Include="UI\images\promos\travel-disruptions_rdax_400x200.jpg" />
     <Content Include="UI\images\promos\x001-00080-checking-machine-oyster_rdax_400x200 - Copy.jpg" />
@@ -461,6 +482,7 @@
     <Content Include="UI\js\main.js" />
     <Content Include="UI\js\maps\gmap.js" />
     <Content Include="UI\js\maps\gmap1.js" />
+    <Content Include="UI\js\MeteredTaxi.js" />
     <Content Include="UI\js\modernizr.2.7.1.min.js" />
     <Content Include="UI\js\moment.js" />
     <Content Include="UI\js\ngStorage.js" />
@@ -484,7 +506,9 @@
     <Content Include="UI\js\waypoints.min.js" />
     <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\Licensepage.html" />
+    <Content Include="UI\Licenses.html" />
     <Content Include="UI\Login.html" />
+    <Content Include="UI\MeteredTaxi.html" />
     <Content Include="UI\pages-coming-soon1.html" />
     <Content Include="UI\posandroid.html" />
     <Content Include="UI\products.html" />
@@ -1638,6 +1662,7 @@
     <Content Include="UI\fonts\soap-icons.woff" />
     <None Include="Properties\PublishProfiles\TicketPortal.pubxml" />
     <Content Include="web.config" />
+    <None Include="UI\APP\app-debug.apk" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
