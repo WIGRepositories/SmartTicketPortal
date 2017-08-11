@@ -491,6 +491,7 @@
     <Content Include="UI\js\main.js" />
     <Content Include="UI\js\maps\gmap.js" />
     <Content Include="UI\js\maps\gmap1.js" />
+    <Content Include="UI\js\maps\maping.js" />
     <Content Include="UI\js\MeteredTaxi.js" />
     <Content Include="UI\js\modernizr.2.7.1.min.js" />
     <Content Include="UI\js\moment.js" />

@@ -27,7 +27,7 @@
     <!-- Updated Styles -->
     <link rel="stylesheet" href="css/updates.css">
 
-    <!-- Custom Styles -->
+    <!-- Custom Styles -->googleapis
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Responsive Styles -->
@@ -38,9 +38,11 @@
         <link rel="stylesheet" type="text/css" href="css/ie.css" />
     <![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-   
-    <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvjzroTvKlmWDxJn2ZCNvv_12jGA6XadU"></script>-->
+
+     <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <![endif]
 
 </head>
@@ -281,8 +283,21 @@
     </div>
     <!--End Header-->
     <!--Start Container-->
-    <div class="container" style="padding-top:70px">
-        <h2 style="text-align:center">Status and updates</h2>
+    <div class="container" style="padding-top:10px">
+        <h2 style="text-align:center">Metered Taxi</h2>
+        <form>
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label for="ex1">From</label>
+                    <input class="form-control" id="ex1" type="text" placeholder="Current location">
+                </div>
+                <div class="col-xs-3">
+                    <label for="ex2">To</label>
+                    <input class="form-control" id="ex2" type="text" placeholder="Enter drop for ride estimate">
+                </div>
+                <button type="submit" class="btn btn-default" style="margin-top:23px">Submit</button>
+            </div>
+        </form>
         <div id="full-width-content">
 
             <div class="main">
@@ -293,7 +308,9 @@
                                 <script src='js/maps/gmap1.js'></script>
 
                                 <div style='overflow: hidden; height: 400px; width: 100%;'>
-                                    <div id='gmap_canvas' style='height: 400px; width:100% ;'></div>
+                                    <div id='gmap_canvas' style='height: 400px; width:100% ;'>
+
+                                    </div>
                                     <style>
                                         #gmap_canvas img {
                                             max-width: none !important;
@@ -355,168 +372,23 @@
                 <div class="main-and-aside r">
                     <div class="main">
                         <div class="small-medium" data-set="widget"></div>
-                        <!--<div class="primary-teaser landing-page-teaser">
-                            <div class="news-teaser ">
-                                <a class="external-link" data-img-alt="Contactless account promo image" data-img-breakpoint="medium" data-img="Images/promos/contactless-homepage-promo.jpg" href="#" target="_parent">
-                                    <img width="711" height="356" src="Images/promos/contactless-homepage-promo.jpg" alt="Contactless account promo image">
-                                    <div class="text-link sit-top">
-                                        <h2>Check your contactless travel spend</h2>
-                                        <p>Create a contactless account to see your contactless journey and payment history</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>-->
+                        
                         <div class="clearfix"></div>
                         <div class="module-grid clearfix">
                             <div>
-
-                                <div class="vertical-button-container">
-                                    <a href="/fares-and-payments/contactless?intcmp=8257">
-                                        <img alt="Using a contactless payment card on buses" src="Images/promos/images.jpeg" style="width:100%;height:35%">
-                                        <!--<div class="text-link" style="border:5px;border-color:black">
-                                            <h2>Contactless</h2>
-                                            <p>Use contactless for value, flexibility and convenience</p>
-                                        </div>-->
-                                        <h2 class=" active">Contactless</h2>
-
-                                        <div class="panel">
-
-
-
-                                            <p>Use contactless for value, flexibility and convenience</p>
-
-                                        </div>
-
-                                    </a>
-                                </div>
-
-
-
-                                <!--<div class="vertical-button-container" style="background-color:ButtonFace">
-                                    <a href="/fares-and-payments/fares?intcmp=1648">
-                                        <div class="text-link">
-                                            <h2>Fares</h2>
-                                            <p>Find out the cost of your journeys before you travel</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="vertical-button-container" style="background-color:ButtonFace">
-                                    <a href="/fares-and-payments/fares/single-fare-finder?intcmp=1660">
-                                        <div class="text-link">
-                                            <h2>Single fare finder</h2>
-                                            <p>Find the cost of a single journey between two stations</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="vertical-button-container" style="background-color:ButtonFace">
-                                    <a class="plain-button" href="/fares-and-payments/where-to-top-up-and-buy-tickets">Where to top up and buy tickets</a>
-                                    <a class="plain-button" href="/corporate/terms-and-conditions/ticketing-and-travel-conditions-of-carriage">Travel terms & conditions</a>
-                                    <a class="plain-button" href="/fares-and-payments/penalties-and-enforcement">Penalties & enforcement</a>
-                                    <a class="plain-button" href="/travel-information/visiting-london/visitor-oyster-card">Buy a Visitor Chihuta Card</a>
-                                </div>
-
-
-                                <div class="vertical-button-container" style="background-color:ButtonFace">
-                                    <a class="plain-button" href="/fares-and-payments/ways-to-pay">Ways to pay</a>
-                                    <a class="plain-button" href="/fares-and-payments/adult-discounts-and-concessions">Adult discounts & concessions</a>
-                                    <a class="plain-button" href="/fares-and-payments/replacements-and-refunds">Refunds & replacements </a>
-                                    <a class="plain-button" href="/fares-and-payments/travel-for-under-18s">Under 18 travel</a>
-                                </div>
-
-                                <div class="related-links" style="background-color:ButtonFace">
-
-                                    <h3>News</h3>
-                                    <p>The latest developments to help make paying for your travel easier </p>
-                                    <div class="vertical-button-container">
-                                        <a class="plain-button" href="/fares-and-payments/contactless/other-methods-of-contactless-payment/android-pay">Android Pay now accepted</a>
-                                        <a class="plain-button" href="/fares-and-payments/fares/river">Contactless accepted on River Bus</a>
-                                    </div>
-                                </div>-->
-                                <div class="toggle-container">
+                                <h2 class="active">Payments</h2>
+                                 <div class="toggle-container">
                                     <div class="panel ">
                                         <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Fares</a>
+                                            <a href="#" class="collapsed">Fares <p style="text-align:right;margin-top:-25px;">Rs:150</p></a>
+                                            
                                         </h4>
 
                                     </div>
 
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Single fare finder</a>
-                                        </h4>
-
-                                    </div>
-
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Where to top up and buy tickets</a>
-                                        </h4>
-
-                                    </div>
-
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Travel terms & conditions</a>
-                                        </h4>
-
-                                    </div>
-
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Penalties & enforcement</a>
-                                        </h4>
-
-                                    </div>
-
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Buy a Visitor Chihuta Card</a>
-                                        </h4>
-
-                                    </div>
-
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Ways to pay</a>
-                                        </h4>
-
-                                    </div>
-
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Adult discounts & concessions</a>
-                                        </h4>
-
-                                    </div>
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Refunds & replacements</a>
-                                        </h4>
-
-                                    </div>
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Under 18 travel</a>
-                                        </h4>
-
-                                    </div>
+                                  
                                 </div>
-                                <h2>NEWS</h2>
-                                <div class="toggle-container">
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Android Pay now accepted</a>
-                                        </h4>
-
-                                    </div>
-                                    <div class="panel">
-                                        <h4 class="panel-title">
-                                            <a href="pages-coming-soon1.html" class="collapsed">Contactless accepted on River Bus</a>
-                                        </h4>
-
-                                    </div>
-
-                                </div>
+                               
                             </div>
 
                         </div>
@@ -527,24 +399,7 @@
 
             <div class="col-md-6">
                 <div>
-                    <div class="vertical-button-container">
-                        <a data-img-alt="Scanning an Chihuta Card" data-img-breakpoint="medium" data-img="Images/promos/x001-00080-checking-machine-chihuta_rdax_400x200.jpg" href="/fares-and-payments/oyster?intcmp=1683">
-                            <img src="images/promos/x001-00080-checking-machine-oyster_rdax_400x200%20-%20copy.jpg" alt="Scanning an Chihuta Card" style="width:100%;">
-                            <!--<div class="text-link">
-                                <h2>Chihuta</h2>
-                                <p>Find out how you can save time and money with an Chihuta Card </p>
-                            </div>-->
-                            <h2 class=" active">Chihuta</h2>
-
-                            <div class="panel">
-
-
-
-                                <p>Find out how you can save time and money with an Chihuta Card</p>
-
-                            </div>
-                        </a>
-                    </div>
+                    
 
                     <div class="aside">
                         <div class="large" data-set="widget">
@@ -554,95 +409,60 @@
                                         <div class="content">
                                             <div class="always-visible widget-heading">
                                                 <div class="controls"> </div>
-                                                <h2 class="active">Payments</h2>
+                                                <h2 class="active">Confirm Booking</h2>
                                             </div>
-                                            <!--<div class="start-hidden widget-content payments-widget clearfix">
-                                                <div class="vertical-button-container" style="background-color:ButtonFace">
-                                                    <div>
-                                                        <div class="text-only">
-                                                            <h2>Contactless online</h2>
-                                                            <div class="action-icon">
-                                                                <img alt="Contactless online icon" src="Images/logos/contactless-icon.png">
-                                                            </div>
-
-                                                            <p>Manage your contactless payment cards and see your journey and payment history</p>
-                                                        </div>
-
-                                                        <div class="call-to-action-button">
-                                                            <a class="secondary-button external-link" href="" target="_parent">Manage your cards</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vertical-button-container" style="background-color:ButtonFace">
-                                                    <div>
-                                                        <div class="text-only">
-                                                            <h2>Chihuta online</h2>
-                                                            <div class="action-icon">
-                                                                <img alt="Oyster online icon" src="Images/promos/53-fares-and-payment-oyster-icon.png">
-                                                            </div>
-                                                            <p>Top up, add or renew a Travelcard and see your journey history</p>
-                                                        </div>
-                                                        <div class="call-to-action-button">
-                                                            <a class="secondary-button external-link" href="https://oyster.com" target="_parent">Manage your Chihuta Card</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vertical-button-container" style="background-color:ButtonFace">
-                                                    <div>
-                                                        <div class="text-only">
-                                                            <h2>Chihuta photocards online</h2>
-                                                            <div class="action-icon">
-                                                                <img alt="Chihuta photocards online icon" src="Images/logos/48-fares-and-payment-zipoyster-icon.png">
-                                                            </div>
-                                                            <p>Query with your Chihuta photocard? Sign into your account</p>
-                                                        </div>
-                                                        <div class="call-to-action-button">
-                                                            <a class="secondary-button external-link" href="#" target="_parent">Manage your Oyster photocard</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>-->
-                                            <h2>Contactless online</h2>
+                                           
+                                           
                                             <div class="toggle-container">
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-6">
+                                                            <label for="ex1">Enter Mobile Number</label>
+                                                            <input class="form-control input-medium bfh-phone" id="ex1" type="text"  data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number">
+                                                        </div>
+                                                        <!--<div class="col-xs-3">
+                                                            <label for="ex2">To</label>
+                                                            <input class="form-control" id="ex2" type="text">
+                                                        </div>-->
+                                                        <button type="submit" class="btn btn-default" style="margin-top:23px">Submit</button>
+                                                    </div>
+                                                </form>
+
+
+
+                                               
+
                                                 <div class="panel">
-                                                    <p>Top up, add or renew a Travelcard and see your journey history</p>
-                                                    <h4 class="panel-title">
-                                                        <a href="pages-coming-soon1.html" class="collapsed">Manage your cards</a>
-                                                    </h4>
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <div class="col-xs-6">
+                                                                <label for="ex1">Enter OTP</label>
+                                                                <input class="form-control" id="ex1" type="text" placeholder="OTP">
+                                                            </div>
+                                                            <!--<div class="col-xs-3">
+                <label for="ex2">To</label>
+                <input class="form-control" id="ex2" type="text">
+            </div>-->
+                                                            <button type="submit" class="btn btn-default" style="margin-top:23px">Submit</button>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                                <div class="panel">
+                                                    
+                                                        
+                                                            <button type="submit" class="btn btn-default" style="margin:5px 0px 10px 60px">Go TO Payment</button>
+                                                        </div>
+                                                    
 
                                                 </div>
 
+                                               
 
+                                              
+                                               
 
-                                                <h2>Chihuta online</h2>
-
-                                                <div class="panel">
-                                                    <p> Manage your contactless payment cards and see your journey and payment history</p>
-                                                    <h4 class="panel-title">
-                                                        <a href="pages-coming-soon1.html" class="collapsed">Manage your Chihuta Card</a>
-                                                    </h4>
-
-                                                </div>
-
-                                                <h2>Chihuta photocards online</h2>
-
-                                                <div class="panel">
-                                                    <p>Query with your Chihuta photocard? Sign into your account</p>
-                                                    <h4 class="panel-title">
-                                                        <a href="pages-coming-soon1.html" class="collapsed">Manage your Oyster photocard</a>
-                                                    </h4>
-
-                                                </div>
-                                                <h2>Follow us on Twitter</h2>
-
-                                                <div class="panel">
-                                                    <p>Advance information about disruption and planned works on public transport</p>
-                                                    <h4 class="panel-title">
-                                                        <a href="https://twitter.com" class="collapsed">Follow @Interbus Alertsd</a>
-                                                    </h4>
-
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -839,7 +659,7 @@
     <script src="js/ngStorage.js"></script>
     <script src="js/Index.js"></script>
 
-
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js'></script>
 
 </body>
 
