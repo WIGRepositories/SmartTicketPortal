@@ -78,6 +78,7 @@
     <Content Include="UI\AddTroubleTicketingDetails.html" />
     <Content Include="UI\ajax\cruise-slideshow-popup.html" />
     <Content Include="UI\ajax\slideshow-popup.html" />
+    <Content Include="UI\Ambulance.html" />
     <Content Include="UI\apps.html" />
     <Content Include="UI\APP\AppleStore.html" />
     <Content Include="UI\APP\GooglePlayStore.html" />
@@ -89,6 +90,7 @@
     <Content Include="UI\bus-booking.html" />
     <Content Include="UI\bus-grid-view.html" />
     <Content Include="UI\bus-list-view.html" />
+    <Content Include="UI\FleetOwnerLicense.html" />
     <Content Include="UI\buslist.html" />
     <Content Include="UI\Cancellation.html" />
     <Content Include="UI\cancelticketinformation.html" />
@@ -490,8 +492,6 @@
     <Content Include="UI\js\Login.js" />
     <Content Include="UI\js\main.js" />
     <Content Include="UI\js\maps\gmap.js" />
-    <Content Include="UI\js\maps\gmap1.js" />
-    <Content Include="UI\js\maps\maping.js" />
     <Content Include="UI\js\MeteredTaxi.js" />
     <Content Include="UI\js\modernizr.2.7.1.min.js" />
     <Content Include="UI\js\moment.js" />
