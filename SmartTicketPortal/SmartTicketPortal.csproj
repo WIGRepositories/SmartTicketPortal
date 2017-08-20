@@ -290,6 +290,8 @@
     <Content Include="UI\fonts\soap-icons.svg" />
     <Content Include="UI\hirevehicle.html" />
     <Content Include="UI\images\404-style1.png" />
+    <Content Include="UI\images\Ambulanc.png" />
+    <Content Include="UI\images\breakdown2.jpg" />
     <Content Include="UI\images\busimages\acbus.jpg" />
     <Content Include="UI\images\busimages\ASeat.png" />
     <Content Include="UI\images\busimages\BSeat.png" />
@@ -1474,6 +1476,7 @@
   <ItemGroup>
     <Compile Include="App_Start\Trace.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdvertisementController.cs" />
     <Compile Include="Controllers\AvailableSeatsController.cs" />
     <Compile Include="Controllers\BookAVehicleController.cs" />
     <Compile Include="Controllers\bookingController.cs" />
