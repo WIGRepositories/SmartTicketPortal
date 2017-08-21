@@ -58,7 +58,7 @@
             <div class="topnav hidden-xs">
                 <div class="container">
                     <ul class="quick-menu pull-left">
-                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                        <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
 
                     </ul>
                     <ul class="quick-menu pull-right">
@@ -136,7 +136,7 @@
                             <li class="menu-item-has-children">
                                 <a href="#">Products</a>
                                 <ul>
-                                   <li><a href="fleetownerlicense.html">Fleet Owner Licence</a></li>
+                                   <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                     <li><a href="Licenses.html">BT Licence</a></li>
                                     <li><a href="Licenses.html">APP Licence</a></li>
                                    <li><a href="Licenses.html">Advt Licence</a></li>
@@ -346,7 +346,7 @@
                         <li class="menu-item-has-children">
                             <a href="#">Products</a>
                             <ul>
-                               <li><a href="fleetownerlicense.html">Fleet Owner Licence</a></li>
+                               <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                 <li><a href="Licenses.html">BT Licence</a></li>
                                 <li><a href="Licenses.html">APP Licence</a></li>
                                <li><a href="Licenses.html">Advt Licence</a></li>
@@ -514,7 +514,7 @@
                     </ul>
 
                     <ul class="mobile-topnav container">
-                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                        <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
                         
                         <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
                         <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>

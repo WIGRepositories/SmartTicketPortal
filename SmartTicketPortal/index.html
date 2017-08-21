@@ -98,7 +98,17 @@
             <div class="topnav hidden-xs">
                 <div class="container">
                     <ul class="quick-menu pull-left">
-                        <li><a href="ui/UserProfile.html">MY ACCOUNT</a></li>
+                        <li ><a ng-hide="username == null" href="ui/UserProfile.html" >MY ACCOUNT</a></li>
+                        <li class="ribbon">
+                            <a href="#">Countries</a>
+                            <ul class="menu mini">
+                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                <li><select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%">
+    
+</select></li>
+                                
+                            </ul>
+                        </li>
                     </ul>
                     <ul class="quick-menu pull-right">
                         <li class="ribbon">
@@ -117,7 +127,7 @@
                                 <li><a href="#" ng-click="SignOutUser();">signout</a></li>
                             </ul>
                         </li>
-                         <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                         <li><a ng-hide="username == 0" ng-show="username == 1" href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
                         
                         <li><a href="UI/Registation.html" class="">SIGNUP</a></li>
                       
@@ -160,8 +170,8 @@
                             <li class="menu-item-has-children">
                                 <a href="UI/Cancellation.html">Cancel/Modify</a>
                                 <ul>
-                                    <li><a href="ui/cancellation.html">cancel Ticket</a></li>
-                                    <li><a href="ui/cancellation.html">Modify Ticket</a></li>
+                                    <li><a href="ui/cancellation.html">Cancel/Modify Ticket</a></li>
+                                    
 
                                 </ul>
                             </li>
@@ -177,7 +187,7 @@
                             <li class="menu-item-has-children">
                                 <a href="UI/shortcode-pricing-tables.html">Products/Licenses</a>
                                 <ul>
-                                    <li><a href="ui/fleetownerlicense.html">Fleet Owner Licence</a></li>
+                                    <li><a href="ui/licensepage.html">Fleet Owner Licence</a></li>
                                     <li><a href="UI/Licenses.html">BT Licence</a></li>
                                     <li><a href="UI/Licenses.html">APP Licence</a></li>
                                     <li><a href="UI/Licenses.html">Advt Licence</a></li>
@@ -221,8 +231,8 @@
                         <li class="menu-item-has-children">
                             <a href="UI/Cancellation.html">Cancel/Modify</a>
                             <ul>
-                                <li><a href="ui/cancellation.html">cancel Ticket</a></li>
-                                <li><a href="ui/cancellation.html">Modify Ticket</a></li>
+                                <li><a href="ui/cancellation.html">Cancel/Modify Ticket</a></li>
+                                
 
                             </ul>
                         </li>
@@ -236,9 +246,9 @@
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="UI/shortcode-pricing-tables.html">Products</a>
+                            <a href="UI/shortcode-pricing-tables.html">Products/Licenses</a>
                             <ul>
-                                <li><a href="ui/fleetownerlicense.html">Fleet Owner Licence</a></li>
+                                <li><a href="ui/licensepage.html">Fleet Owner Licence</a></li>
                                 <li><a href="UI/Licenses.html">BT Licence</a></li>
                                 <li><a href="UI/Licenses.html">APP Licence</a></li>
                                 <li><a href="UI/Licenses.html">Advt Licence</a></li>
@@ -258,9 +268,18 @@
                     </ul>
 
                     <ul class="mobile-topnav container">
-                        <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                        <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
+                        <li class="ribbon">
+                            <a href="#">Countries</a>
+                            <ul class="menu mini">
+                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                <li>
+                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                </li>
 
-                         <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                            </ul>
+                        </li>
+                         <li><a ng-hide="username==1" href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
                       
                         <li><a href="UI/Registation.html" class="soap-popupbox">SIGNUP</a></li>
                        
@@ -272,7 +291,7 @@
             <div id="travelo-login" class="travelo-login-box travelo-box">
                  <form>
                     <div class="form-group">
-                        <input type="text" class="input-text full-width" placeholder="email address" ng-model="UserName">
+                        <input type="text" class="input-text full-width" placeholder="Email / UserName" ng-model="UserName">
                     </div>
                     <div class="form-group">
                         <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
@@ -283,7 +302,7 @@
                         </button>
                     </div>
                         <div class="form-group">
-                            <a href="#" class="forgot-password pull-right">Forgot password?</a>
+                            <a href="ui/forgotpassword.html" class="forgot-password pull-right">Forgot password?</a>
                             <div class="checkbox checkbox-inline">
                                 <label>
                                     <input type="checkbox"> Remember me

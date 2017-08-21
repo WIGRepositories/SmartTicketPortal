@@ -90,7 +90,6 @@
     <Content Include="UI\bus-booking.html" />
     <Content Include="UI\bus-grid-view.html" />
     <Content Include="UI\bus-list-view.html" />
-    <Content Include="UI\FleetOwnerLicense.html" />
     <Content Include="UI\buslist.html" />
     <Content Include="UI\Cancellation.html" />
     <Content Include="UI\cancelticketinformation.html" />
@@ -288,6 +287,7 @@
     <Content Include="UI\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="UI\fonts\NexaBlack.svg" />
     <Content Include="UI\fonts\soap-icons.svg" />
+    <Content Include="UI\ForgotPassword.html" />
     <Content Include="UI\hirevehicle.html" />
     <Content Include="UI\images\404-style1.png" />
     <Content Include="UI\images\Ambulanc.png" />

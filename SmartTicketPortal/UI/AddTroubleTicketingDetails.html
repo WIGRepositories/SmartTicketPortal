@@ -51,7 +51,7 @@
                 <div class="topnav hidden-xs">
                     <div class="container">
                         <ul class="quick-menu pull-left">
-                            <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                            <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
                         </ul>
                         <ul class="quick-menu pull-right">
                             <li class="ribbon">
@@ -112,8 +112,8 @@
                                 <li class="menu-item-has-children">
                                     <a href="cancellation.html">cancel/Modify</a>
                                     <ul>
-                                        <li><a href="cancellation.html">cancel Ticket</a></li>
-                                        <li><a href="cancellation.html">Modify Ticket</a></li>
+                                        <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
+                                       
 
                                     </ul>
                                 </li>
@@ -127,9 +127,9 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="shortcode-pricing-tables.html">Products</a>
+                                    <a href="shortcode-pricing-tables.html">Products/Licenses</a>
                                     <ul>
-                                       <li><a href="fleetownerlicense.html">Fleet Owner Licence</a></li>
+                                       <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                         <li><a href="Licenses.html">BT Licence</a></li>
                                         <li><a href="Licenses.html">APP Licence</a></li>
                                         <li><a href="Licenses.html">Advt Licence</a></li>
@@ -171,8 +171,8 @@
                             <li class="menu-item-has-children">
                                 <a href="cancellation.html">cancel/Modify</a>
                                 <ul>
-                                    <li><a href="cancellation.html">cancel Ticket</a></li>
-                                    <li><a href="cancellation.html">Modify Ticket</a></li>
+                                    <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
+                                   
 
                                 </ul>
                             </li>
@@ -186,9 +186,9 @@
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="shortcode-pricing-tables.html">Products</a>
+                                <a href="shortcode-pricing-tables.html">Products/Licenses</a>
                                 <ul>
-                                   <li><a href="fleetownerlicense.html">Fleet Owner Licence</a></li>
+                                   <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                     <li><a href="Licenses.html">BT Licence</a></li>
                                     <li><a href="Licenses.html">APP Licence</a></li>
                                     <li><a href="Licenses.html">Advt Licence</a></li>
@@ -209,7 +209,7 @@
                         </ul>
 
                         <ul class="mobile-topnav container">
-                            <li><a href="UserProfile.html">MY ACCOUNT</a></li>
+                            <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
 
                             <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
                             <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
@@ -238,7 +238,7 @@
                 <div id="travelo-login" class="travelo-login-box travelo-box">
                     <form>
                         <div class="form-group">
-                            <input type="text" class="input-text full-width" placeholder="email address" ng-model="UserName">
+                            <input type="text" class="input-text full-width" placeholder="Email / UserName" ng-model="UserName">
                         </div>
                         <div class="form-group">
                             <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
