@@ -524,6 +524,7 @@
     <Content Include="UI\pages-coming-soon1.html" />
     <Content Include="UI\posandroid.html" />
     <Content Include="UI\products.html" />
+    <Content Include="UI\Productsshown.html" />
     <Content Include="UI\Refund.html" />
     <Content Include="UI\Registation.html" />
     <Content Include="UI\RegisterDriver.html" />

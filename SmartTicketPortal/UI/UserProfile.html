@@ -48,7 +48,17 @@
             <div class="topnav hidden-xs">
                 <div class="container">
                     <ul class="quick-menu pull-left">
-                        <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
+                        <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
+                        <li class="ribbon">
+                            <a href="#">Countries</a>
+                            <ul class="menu mini">
+                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                <li>
+                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                </li>
+
+                            </ul>
+                        </li>
                     </ul>
                     <ul class="quick-menu pull-right">
                         <li class="ribbon">
@@ -96,51 +106,46 @@
 
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="fares_and_payments.html">Fares/Payments</a>
+                                <a href="ui/fares_and_payments.html">Fares/Payments</a>
                                 <ul>
-                                    <li><a href="shedules.html">Schedules</a></li>
                                     <li><a href="Fares_and_payments.html">Check Fares</a></li>
                                     <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="refund.html">Refund</a></li>
                                     <li><a href="pages-coming-soon1.html">Renewals</a></li>
-                                    <li><a href="refund.html">refund</a></li>
-
+                                    <li><a href="shedules.html">Schedules</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="cancellation.html">cancel/Modify</a>
+                                <a href="Cancellation.html">Cancel/Modify</a>
                                 <ul>
+                                    <li><a href="cancellation.html">Cancel Journey</a></li>
                                     <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
-                                   
-
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="Status_and_Updates.html">Status &amp;Update</a>
                                 <ul>
+                                    <li><a href="pages-coming-soon1.html">Plans</a></li>
                                     <li><a href="Status_and_Updates.html">Status</a></li>
-                                    <li><a href="pages-coming-soon1.html">plans</a></li>
-                                    
-
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="shortcode-pricing-tables.html">Products/Licenses</a>
+                                <a href="productsshown.html">Products/Licenses</a>
                                 <ul>
-                                   <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                    <li><a href="Licenses.html">BT Licence</a></li>
-                                    <li><a href="Licenses.html">APP Licence</a></li>
                                     <li><a href="Licenses.html">Advt Licence</a></li>
+                                    <li><a href="Licenses.html">APP Licence</a></li>
+                                    <li><a href="Licenses.html">BT Licence</a></li>
                                     <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                     <li><a href="apps.html">Mobile App</a></li>
-                                    <li><a href="products.html">products</a></li>
+                                    <li><a href="products.html">Products</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="AboutUs.html">About us</a>
                                 <ul>
+                                    <li><a href="pages-coming-soon1.html">complants</a></li>
                                     <li><a href="ContactUs.html">contacts</a></li>
-                                    <li><a href="AddTroubleTicketingDetails.html">complants</a></li>
-
                                 </ul>
                             </li>
 
@@ -155,59 +160,63 @@
 
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="fares_and_payments.html">Fares/Payments</a>
+                            <a href="ui/fares_and_payments.html">Fares/Payments</a>
                             <ul>
-                                <li><a href="shedules.html">Schedules</a></li>
                                 <li><a href="Fares_and_payments.html">Check Fares</a></li>
                                 <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="refund.html">Refund</a></li>
                                 <li><a href="pages-coming-soon1.html">Renewals</a></li>
-                                <li><a href="refund.html">refund</a></li>
-
+                                <li><a href="shedules.html">Schedules</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="cancellation.html">cancel/Modify</a>
+                            <a href="Cancellation.html">Cancel/Modify</a>
                             <ul>
+                                <li><a href="cancellation.html">Cancel Journey</a></li>
                                 <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
-                               
-
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="Status_and_Updates.html">Status &amp;Update</a>
                             <ul>
+                                <li><a href="pages-coming-soon1.html">Plans</a></li>
                                 <li><a href="Status_and_Updates.html">Status</a></li>
-                                <li><a href="pages-coming-soon1.html">plans</a></li>
-                                
-
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="shortcode-pricing-tables.html">Products/Licenses</a>
+                            <a href="productsshown.html">Products/Licenses</a>
                             <ul>
-                               <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                <li><a href="Licenses.html">BT Licence</a></li>
-                                <li><a href="Licenses.html">APP Licence</a></li>
                                 <li><a href="Licenses.html">Advt Licence</a></li>
+                                <li><a href="Licenses.html">APP Licence</a></li>
+                                <li><a href="Licenses.html">BT Licence</a></li>
                                 <li><a href="cards.html">Cards</a></li>
+                                <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                 <li><a href="apps.html">Mobile App</a></li>
-                                <li><a href="products.html">products</a></li>
+                                <li><a href="products.html">Products</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="AboutUs.html">About us</a>
                             <ul>
+                                <li><a href="pages-coming-soon1.html">complants</a></li>
                                 <li><a href="ContactUs.html">contacts</a></li>
-                                <li><a href="AddTroubleTicketingDetails.html">complants</a></li>
-
                             </ul>
                         </li>
 
                     </ul>
 
                     <ul class="mobile-topnav container">
-                        <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
+                        <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
+                        <li class="ribbon">
+                            <a href="#">Countries</a>
+                            <ul class="menu mini">
+                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                <li>
+                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                </li>
 
+                            </ul>
+                        </li>
                         <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
                         <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
                         <li class="ribbon currency menu-color-skin">
@@ -246,7 +255,7 @@
                         </button>
                     </div>
                     <div class="form-group">
-                        <a href="forgotpassword.html" class="forgot-password pull-right">Forgot password?</a>
+                        <a href="#" class="forgot-password pull-right">Forgot password?</a>
                         <div class="checkbox checkbox-inline">
                             <label>
                                 <input type="checkbox"> Remember me
@@ -555,123 +564,443 @@
                                 </div>
                                 <div id="booking" class="tab-pane fade" ng-show="bookedHistory.length == 0" ng-init="GetHistory();">
                                     <h2>Booking</h2>
-                                    <div class="filter-section gray-area clearfix">
+
+                                    <div class="filter-section gray-area clearfix" style="background-color:">
                                         <form>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" checked="checked" />
-                                                All Types
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Hotels
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Flights
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Cars
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Cruises
-                                            </label>
-                                            <div class="pull-right col-md-6 action">
-                                                <h5 class="pull-left no-margin col-md-4">Sort results by:</h5>
-                                                <button class="btn-small white gray-color">UPCOMING</button>
-                                                <button class="btn-small white gray-color">CANCELLED</button>
-                                            </div>
+                                            <ul class="search-tabs ">
+                                                <li ><a href="#All-Service" data-toggle="tab"><i class="soap-icon-stories"></i><span>All Service</span></a></li>
+                                                <li><a href="#Hire-Vechicle" data-toggle="tab"><i class="soap-icon-stories"></i><span>Hire Vechicle</span></a></li>
+                                                <li><a href="#Matered-Taxi" data-toggle="tab"><i class="soap-icon-stories"></i><span>Matered Taxi</span></a></li>
+                                                <li><a href="#Book-Ticket" data-toggle="tab"><i class="soap-icon-stories"></i><span>Book Ticket</span></a></li>
+                                                <li><a href="#Ambulance-Service" data-toggle="tab"><i class="soap-icon-stories"></i><span>Ambulance Service</span></a></li>
+                                                <li><a href="#Towner-Service" data-toggle="tab"><i class="soap-icon-stories"></i><span>Towner Service</span></a></li>
+                                                <li><a href="#Parcel-Service" data-toggle="tab"><i class="soap-icon-stories"></i><span>Parcel Service</span></a></li>
+                                            </ul>
+                                           
                                         </form>
                                     </div>
-                                    <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
-                                        <thead>
-                                            <tr>
-                                                <th>Ticket No</th>
-                                                <th>Booked On</th>
-                                                <th>From - To</th>
-                                                <th>Journey date</th>
-                                                <th>No. Of seats</th>
-                                                <th>Amount</th>
+                                    <div class="search-tab-content" style="margin-top:-80px">
+                                        <div class="tab-pane fade " id="All-Service">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+                                                        
+                                                        <th>Booking Number</th>
+                                                        <th>Booking Type</th>
+                                                        <th>Booking Date</th>
+                                                        <th>Date of Journey</th>
+                                                        <th>Amount</th>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="B in bookedHistory">
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
 
-                                                <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
-                                                <td>{{B.BookedOn}}</td>
-                                                <td>{{B.Src}} - {{B.Dest}}</td>
-                                                <td>{{B.DepartureTime}}</td>
-                                                <td>{{B.NoOfSeats}}</td>
-                                                <td>{{B.Amount}}</td>
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
 
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="Hire-Vechicle">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
 
-                                </div>
-                                <div id="CANCELLATION" class="tab-pane fade">
-                                    <h2>CANCELLATION</h2>
-                                    <div class="filter-section gray-area clearfix">
+                                                        <th>Booked On</th>
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+                                                        <th>No. Of seats</th>
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="Matered-Taxi">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+                                                        <th>Taxi Number</th>
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+                                                        <th>No. Of seats</th>
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="Book-Ticket">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+                                                        
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+                                                        <th>No. Of seats</th>
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="Ambulance-Service">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+                                                        
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="Towner-Service">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="Parcel-Service">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+
+                                                        <th>Parcel From Date</th>
+                                                        <th>Parcel To Date</th>
+                                                        
+
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        </div>
+                                    </div>
+                                <div id="CANCELLATION" class="tab-pane fade" ng-show="bookedHistory.length == 0" ng-init="GetHistory();">
+                                    <h2>Booking</h2>
+
+                                    <div class="filter-section gray-area clearfix" style="background-color:">
                                         <form>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" checked="checked" />
-                                                All Types
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Hotels
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Flights
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Cars
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Cruises
-                                            </label>
-                                            <div class="pull-right col-md-6 action">
-                                                <h5 class="pull-left no-margin col-md-4">Sort results by:</h5>
-                                                <button class="btn-small white gray-color">UPCOMING</button>
-                                                <button class="btn-small white gray-color">CANCELLED</button>
-                                            </div>
+                                            <ul class="search-tabs ">
+                                                <li><a href="#AllService" data-toggle="tab"><i class="soap-icon-stories"></i><span>All Service</span></a></li>
+                                                <li><a href="#HireVechicle" data-toggle="tab"><i class="soap-icon-stories"></i><span>Hire Vechicle</span></a></li>
+                                                <li><a href="#MateredTaxi" data-toggle="tab"><i class="soap-icon-stories"></i><span>Matered Taxi</span></a></li>
+                                                <li><a href="#BookTicket" data-toggle="tab"><i class="soap-icon-stories"></i><span>Book Ticket</span></a></li>
+                                                <li><a href="#AmbulanceService" data-toggle="tab"><i class="soap-icon-stories"></i><span>Ambulance Service</span></a></li>
+                                                <li><a href="#TownerService" data-toggle="tab"><i class="soap-icon-stories"></i><span>Towner Service</span></a></li>
+                                                <li><a href="#ParcelService" data-toggle="tab"><i class="soap-icon-stories"></i><span>Parcel Service</span></a></li>
+                                            </ul>
+                                            
                                         </form>
                                     </div>
-                                    <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
-                                        <thead>
-                                            <tr>
-                                                <th>Ticket No</th>
-                                                <th>Booked On</th>
-                                                <th>From - To</th>
-                                                <th>Journey date</th>
-                                                <th>No. Of seats</th>
-                                                <th>Amount</th>
-                                                <th>Cancelled</th>
+                                    <div class="search-tab-content" style="margin-top:-80px">
+                                        <div class="tab-pane fade " id="AllService">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="B in bookedHistory">
+                                                        <th>Booking Number</th>
+                                                        <th>Booking Type</th>
+                                                        <th>Booking Date</th>
+                                                        <th>Date of Journey</th>
+                                                        <th>Amount</th>
 
-                                                <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
-                                                <td>{{B.BookedOn}}</td>
-                                                <td>{{B.Src}} - {{B.Dest}}</td>
-                                                <td>{{B.DepartureTime}}</td>
-                                                <td>{{B.NoOfSeats}}</td>
-                                                <td>{{B.Amount}}</td>
-                                                <td><button type="button" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-default btn-xs" ng-click="setCompany(cmp);">
-    <i class="fa fa-edit"></i>&nbsp;
-                                                        Cancelled
-</button></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
 
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="HireVechicle">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+                                                        <th>No. Of seats</th>
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="MateredTaxi">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+                                                        <th>Taxi Number</th>
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+                                                        <th>No. Of seats</th>
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="BookTicket">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+                                                        <th>No. Of seats</th>
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="AmbulanceService">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="TownerService">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+
+                                                        <th>From - To</th>
+                                                        <th>Journey date</th>
+                                                        <th>Journey Time</th>
+
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="ParcelService">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Booked On</th>
+
+                                                        <th>Parcel From Date</th>
+                                                        <th>Parcel To Date</th>
+
+
+                                                        <th>Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="Card" class="tab-pane fade">
                                     <h2>Card</h2>
@@ -1114,140 +1443,125 @@
                                 </div>
                                 <div id="ewallet" class="tab-pane fade">
                                     <h2>EWallet</h2>
-                                    <div class="filter-section gray-area clearfix">
+                                    <div class="filter-section gray-area clearfix" style="background-color:">
                                         <form>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" checked="checked" />
-                                                All Types
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Hotels
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Flights
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Cars
-                                            </label>
-                                            <label class="radio radio-inline">
-                                                <input type="radio" name="filter" />
-                                                Cruises
-                                            </label>
-                                            <div class="pull-right col-md-6 action">
-                                                <h5 class="pull-left no-margin col-md-4">Sort results by:</h5>
-                                                <button class="btn-small white gray-color">UPCOMING</button>
-                                                <button class="btn-small white gray-color">CANCELLED</button>
-                                            </div>
+                                            <ul class="search-tabs ">
+                                                <li><a href="#Account-Details" data-toggle="tab"><i class="soap-icon-stories"></i><span>Account Details</span></a></li>
+                                                <li><a href="#Recharges" data-toggle="tab"><i class="soap-icon-stories"></i><span>Recharges/Refunds</span></a></li>
+                                                <li><a href="#Payments" data-toggle="tab"><i class="soap-icon-stories"></i><span>Payments</span></a></li>
+                                                <li><a href="#Transaction" data-toggle="tab"><i class="soap-icon-stories"></i><span>Transaction</span></a></li>
+                                               
+                                            </ul>
+
                                         </form>
                                     </div>
-                                    <div class="booking-history">
-                                        <div class="booking-info clearfix">
-                                            <div class="date">
-                                                <label class="month">NOV</label>
-                                                <label class="date">23</label>
-                                                <label class="day">SAT</label>
+                                    <div class="search-tab-content" >
+                                        <div class="tab-pane fade " id="Account-Details">
+                                            <div class="col-sm-9 no-float no-padding">
+                                                <h2>Account Details</h2>
+                                                <h3>Current Balance:$ 200</h3>
+                                                <form>
+                                                    <div class="row form-group">
+                                                        <div class="col-sms-6 col-sm-6">
+                                                            <label>Bank Accounts Linked</label>
+                                                            <input type="text" class="input-text full-width" placeholder="Bank Accounts Number">
+                                                        </div>
+                                                       
+                                                    </div>
+
+                                                    <div class="row form-group">
+                                                        <div class="col-sms-6 col-sm-6">
+                                                            <label>Cards Linked</label>
+                                                            <input type="text" class="input-text full-width" placeholder="Card Number">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group col-sm-5 col-md-4 no-float no-padding no-margin">
+                                                        <button type="submit" class="btn-medium full-width">SUBMIT </button>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <h4 class="box-title"><i class="icon soap-icon-plane-right takeoff-effect yellow-color circle"></i>Indianapolis to Paris<small>you are flying</small></h4>
-                                            <dl class="info">
-                                                <dt>TRIP ID</dt>
-                                                <dd>5754-8dk8-8ee</dd>
-                                                <dt>booked on</dt>
-                                                <dd>saturday, nov 23, 2013</dd>
-                                            </dl>
-                                            <button class="btn-mini status">UPCOMMING</button>
                                         </div>
-                                        <div class="booking-info clearfix">
-                                            <div class="date">
-                                                <label class="month">NOV</label>
-                                                <label class="date">30</label>
-                                                <label class="day">SAT</label>
-                                            </div>
-                                            <h4 class="box-title"><i class="icon soap-icon-plane-right takeoff-effect yellow-color circle"></i>England to Rome<small>you are flying</small></h4>
-                                            <dl class="info">
-                                                <dt>TRIP ID</dt>
-                                                <dd>5754-8dk8-8ee</dd>
-                                                <dt>booked on</dt>
-                                                <dd>saturday, nov 30, 2013</dd>
-                                            </dl>
-                                            <button class="btn-mini status">UPCOMMING</button>
+                                        <div class="tab-pane fade" id="Recharges">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Transaction Number</th>
+                                                        <th>Recharge/Refund</th>
+                                                        <th>Transaction Date</th>
+                                                        <th>Transaction Time</th>
+                                                        <th>Amount</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div class="booking-info clearfix">
-                                            <div class="date">
-                                                <label class="month">DEC</label>
-                                                <label class="date">11</label>
-                                                <label class="day">MON</label>
-                                            </div>
-                                            <h4 class="box-title"><i class="icon soap-icon-hotel blue-color circle"></i>Hilton Hotel &amp; Resorts<small>2 adults staying</small></h4>
-                                            <dl class="info">
-                                                <dt>TRIP ID</dt>
-                                                <dd>5754-8dk8-8ee</dd>
-                                                <dt>booked on</dt>
-                                                <dd>monday, dec 11, 2013</dd>
-                                            </dl>
-                                            <button class="btn-mini status">UPCOMMING</button>
+                                        <div class="tab-pane fade" id="Payments">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Transaction Number</th>
+                                                        <th>Payment Type</th>
+                                                        <th>Transaction Date</th>
+                                                        <th>Transaction Time</th>
+                                                        <th>Amount</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div class="booking-info clearfix">
-                                            <div class="date">
-                                                <label class="month">DEC</label>
-                                                <label class="date">18</label>
-                                                <label class="day">THU</label>
-                                            </div>
-                                            <h4 class="box-title"><i class="icon soap-icon-car red-color circle"></i>Economy Car<small>you are driving</small></h4>
-                                            <dl class="info">
-                                                <dt>TRIP ID</dt>
-                                                <dd>5754-8dk8-8ee</dd>
-                                                <dt>booked on</dt>
-                                                <dd>thursday, dec 18, 2013</dd>
-                                            </dl>
-                                            <button class="btn-mini status">UPCOMMING</button>
-                                        </div>
-                                        <div class="booking-info clearfix">
-                                            <div class="date">
-                                                <label class="month">DEC</label>
-                                                <label class="date">22</label>
-                                                <label class="day">SUN</label>
-                                            </div>
-                                            <h4 class="box-title"><i class="icon soap-icon-cruise green-color circle"></i>Baja Mexico<small>3 adults going on cruise</small></h4>
-                                            <dl class="info">
-                                                <dt>TRIP ID</dt>
-                                                <dd>5754-8dk8-8ee</dd>
-                                                <dt>booked on</dt>
-                                                <dd>sunday, dec 22, 2013</dd>
-                                            </dl>
-                                            <button class="btn-mini status">UPCOMMING</button>
-                                        </div>
-                                        <div class="booking-info clearfix cancelled">
-                                            <div class="date">
-                                                <label class="month">NOV</label>
-                                                <label class="date">30</label>
-                                                <label class="day">SAT</label>
-                                            </div>
-                                            <h4 class="box-title"><i class="icon soap-icon-plane-right takeoff-effect circle"></i>England to Rome<small>you are flying</small></h4>
-                                            <dl class="info">
-                                                <dt>TRIP ID</dt>
-                                                <dd>5754-8dk8-8ee</dd>
-                                                <dt>booked on</dt>
-                                                <dd>saturday, nov 30, 2013</dd>
-                                            </dl>
-                                            <button class="btn-mini status">CANCELLED</button>
-                                        </div>
-                                        <div class="booking-info clearfix cancelled">
-                                            <div class="date">
-                                                <label class="month">DEC</label>
-                                                <label class="date">18</label>
-                                                <label class="day">THU</label>
-                                            </div>
-                                            <h4 class="box-title"><i class="icon soap-icon-car circle"></i>Economy Car<small>you are driving</small></h4>
-                                            <dl class="info">
-                                                <dt>TRIP ID</dt>
-                                                <dd>5754-8dk8-8ee</dd>
-                                                <dt>booked on</dt>
-                                                <dd>thursday, dec 18, 2013</dd>
-                                            </dl>
-                                            <button class="btn-mini status">CANCELLED</button>
+                                        <div class="tab-pane fade" id="Transaction">
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Transaction Number</th>
+                                                        <th>Transaction Type</th>
+                                                        <th>Transaction Date</th>
+                                                        <th>Transaction Time</th>
+                                                        <th>Amount</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="B in bookedHistory">
+
+                                                        <td><a href="#" ng-click="PrintTicket(B)"><u> {{B.TicketNo}}</u></a></td>
+                                                        <td>{{B.BookedOn}}</td>
+                                                        <td>{{B.Src}} - {{B.Dest}}</td>
+                                                        <td>{{B.DepartureTime}}</td>
+                                                        <td>{{B.NoOfSeats}}</td>
+                                                        <td>{{B.Amount}}</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
 

@@ -55,7 +55,17 @@
             <div class="topnav hidden-xs">
                 <div class="container">
                     <ul class="quick-menu pull-left">
-                        <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
+                        <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
+                        <li class="ribbon">
+                            <a href="#">Countries</a>
+                            <ul class="menu mini">
+                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                <li>
+                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                </li>
+
+                            </ul>
+                        </li>
                     </ul>
                     <ul class="quick-menu pull-right">
                         <li class="ribbon">
@@ -103,51 +113,46 @@
 
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="fares_and_payments.html">Fares/Payments</a>
+                                <a href="ui/fares_and_payments.html">Fares/Payments</a>
                                 <ul>
-                                    <li><a href="shedules.html">Schedules</a></li>
                                     <li><a href="Fares_and_payments.html">Check Fares</a></li>
                                     <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="refund.html">Refund</a></li>
                                     <li><a href="pages-coming-soon1.html">Renewals</a></li>
-                                    <li><a href="refund.html">refund</a></li>
-
+                                    <li><a href="shedules.html">Schedules</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="cancellation.html">cancel/Modify</a>
+                                <a href="Cancellation.html">Cancel/Modify</a>
                                 <ul>
+                                    <li><a href="cancellation.html">Cancel Journey</a></li>
                                     <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
-                                   
-
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="Status_and_Updates.html">Status &amp;Update</a>
                                 <ul>
+                                    <li><a href="pages-coming-soon1.html">Plans</a></li>
                                     <li><a href="Status_and_Updates.html">Status</a></li>
-                                    <li><a href="pages-coming-soon1.html">plans</a></li>
-
-
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="shortcode-pricing-tables.html">Products/Licenses</a>
+                                <a href="productsshown.html">Products/Licenses</a>
                                 <ul>
-                                   <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                    <li><a href="Licenses.html">BT Licence</a></li>
-                                    <li><a href="Licenses.html">APP Licence</a></li>
                                     <li><a href="Licenses.html">Advt Licence</a></li>
+                                    <li><a href="Licenses.html">APP Licence</a></li>
+                                    <li><a href="Licenses.html">BT Licence</a></li>
                                     <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                     <li><a href="apps.html">Mobile App</a></li>
-                                    <li><a href="products.html">products</a></li>
+                                    <li><a href="products.html">Products</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="AboutUs.html">About us</a>
                                 <ul>
+                                    <li><a href="pages-coming-soon1.html">complants</a></li>
                                     <li><a href="ContactUs.html">contacts</a></li>
-                                    <li><a href="AddTroubleTicketingDetails.html">complants</a></li>
-
                                 </ul>
                             </li>
 
@@ -162,59 +167,63 @@
 
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="fares_and_payments.html">Fares/Payments</a>
+                            <a href="ui/fares_and_payments.html">Fares/Payments</a>
                             <ul>
-                                <li><a href="shedules.html">Schedules</a></li>
                                 <li><a href="Fares_and_payments.html">Check Fares</a></li>
                                 <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="refund.html">Refund</a></li>
                                 <li><a href="pages-coming-soon1.html">Renewals</a></li>
-                                <li><a href="refund.html">refund</a></li>
-
+                                <li><a href="shedules.html">Schedules</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="cancellation.html">cancel/Modify</a>
+                            <a href="Cancellation.html">Cancel/Modify</a>
                             <ul>
+                                <li><a href="cancellation.html">Cancel Journey</a></li>
                                 <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
-                               
-
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="Status_and_Updates.html">Status &amp;Update</a>
                             <ul>
+                                <li><a href="pages-coming-soon1.html">Plans</a></li>
                                 <li><a href="Status_and_Updates.html">Status</a></li>
-                                <li><a href="pages-coming-soon1.html">plans</a></li>
-
-
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="shortcode-pricing-tables.html">Products/Licenses</a>
+                            <a href="productsshown.html">Products/Licenses</a>
                             <ul>
-                               <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                <li><a href="Licenses.html">BT Licence</a></li>
-                                <li><a href="Licenses.html">APP Licence</a></li>
                                 <li><a href="Licenses.html">Advt Licence</a></li>
+                                <li><a href="Licenses.html">APP Licence</a></li>
+                                <li><a href="Licenses.html">BT Licence</a></li>
                                 <li><a href="cards.html">Cards</a></li>
+                                <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                 <li><a href="apps.html">Mobile App</a></li>
-                                <li><a href="products.html">products</a></li>
+                                <li><a href="products.html">Products</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="AboutUs.html">About us</a>
                             <ul>
+                                <li><a href="pages-coming-soon1.html">complants</a></li>
                                 <li><a href="ContactUs.html">contacts</a></li>
-                                <li><a href="AddTroubleTicketingDetails.html">complants</a></li>
-
                             </ul>
                         </li>
 
                     </ul>
 
                     <ul class="mobile-topnav container">
-                        <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
+                        <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
+                        <li class="ribbon">
+                            <a href="#">Countries</a>
+                            <ul class="menu mini">
+                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                <li>
+                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                </li>
 
+                            </ul>
+                        </li>
                         <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
                         <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
                         <li class="ribbon currency menu-color-skin">

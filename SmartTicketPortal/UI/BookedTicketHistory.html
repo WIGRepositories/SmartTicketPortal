@@ -51,14 +51,14 @@
             padding-top: 250px;
         }
 
-        .page-title, .page-description {
+        /*.page-title, .page-description {
             color: #fff;
         }
 
         .page-title {
             font-size: 4.1667em;
             font-weight: bold;
-        }
+        }*/
 
         .page-description {
             font-size: 2.5em;
@@ -101,26 +101,41 @@
             <div class="topnav hidden-xs">
                 <div class="container">
                     <ul class="quick-menu pull-left">
-                        <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
-                    </ul>
-                    <ul class="quick-menu pull-right">
+                        <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
                         <li class="ribbon">
-                            <a href="#">Hello, {{username}}</a>
-                            <ul class="menu mini uppercase">
-                                <!--<li><a href="dashboard1.html#dashboard" class="location-reload">Dashboard</a></li>-->
-                                <li><a href="UserProfile.html" class="location-reload">Profile</a></li>
-                                <li><a href="dashboard1.html#booking" class="location-reload">Bookings</a></li>
-                                <li><a href="dashboard1.html#wishlist" class="location-reload">cancellation</a></li>
-                                <li><a href="dashboard1.html#travel-stories" class="location-reload">card</a></li>
-                                <li><a href="dashboard1.html#app" class="location-reload">app</a></li>
-                                <li><a href="dashboard1.html#refund" class="location-reload">refund</a></li>
-                                <li><a href="dashboard1.html#ewallet" class="location-reload"> ewallet</a></li>
-                                <li><a href="dashboard1.html#feedback" class="location-reload"> feedback/enquery</a></li>
-                                <li><a href="dashboard1.html#settings" class="location-reload">settings</a></li>
-                                <li><a href="#">signout</a></li>
+                            <a href="#">Countries</a>
+                            <ul class="menu mini">
+                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                <li>
+                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
+                    <ul class="quick-menu pull-right">
+                        <li class="ribbon">
+                            <a ng-hide="username == null" href="#">Hello, {{username}}</a>
+                            <ul class="menu mini uppercase">
+
+                                <li><a href="UserProfile.html" class="location-reload">Profile</a></li>
+                                <li><a href="BookedTicketHistory.html" class="location-reload">Bookings</a></li>
+                                <li><a href="Cancellation.html" class="location-reload">cancellation</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">card</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">app</a></li>
+                                <li><a href="Refund.html" class="location-reload">refund</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> ewallet</a></li>
+                                <li><a href="UserProfile.html" class="location-reload"> feedback/enquery</a></li>
+                                <li><a href="UserProfile.html" class="location-reload">settings</a></li>
+                                <li><a href="#" ng-click="SignOutUser();">signout</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+
+                        <li><a href="Registation.html" class="">SIGNUP</a></li>
+
+                    </ul>
+
                 </div>
             </div>
 
@@ -132,8 +147,8 @@
 
                 <div class="container">
                     <h1 class="logo navbar-brand">
-                        <a href="../index.html" title="Inter Bus - home">
-                            <img src="images/logo.png" alt="Inter Bus HTML5 Template" />
+                        <a href="../index.html" title="InterBus - home">
+                            <img src="images/logo.png" alt="InterBus HTML5 Template" />
                         </a>
                     </h1>
 
@@ -144,53 +159,49 @@
 
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="pages-coming-soon1.html">Fares/Payments</a>
+                                <a href="ui/fares_and_payments.html">Fares/Payments</a>
                                 <ul>
-                                    <li><a href="pages-coming-soon1.html">Schedules</a></li>
-                                    <li><a href="pages-coming-soon1.html">Check Fares</a></li>
+                                    <li><a href="Fares_and_payments.html">Check Fares</a></li>
                                     <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                    <li><a href="refund.html">Refund</a></li>
                                     <li><a href="pages-coming-soon1.html">Renewals</a></li>
-                                    <li><a href="pages-coming-soon1.html">refund</a></li>
-
+                                    <li><a href="shedules.html">Schedules</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="Cancellation.html">Cancel/Modify</a>
                                 <ul>
-                                    <li><a href="pages-coming-soon1.html">Change date</a></li>
-                                    <li><a href="pages-coming-soon1.html">change plan</a></li>
-
+                                    <li><a href="cancellation.html">Cancel Journey</a></li>
+                                    <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="Status_and_Updates.html">Status &amp;Update</a>
                                 <ul>
+                                    <li><a href="pages-coming-soon1.html">Plans</a></li>
                                     <li><a href="Status_and_Updates.html">Status</a></li>
-                                    <li><a href="pages-coming-soon1.html">plans</a></li>
-                                    
-
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Products</a>
+                                <a href="productsshown.html">Products/Licenses</a>
                                 <ul>
-                                   <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                    <li><a href="Licenses.html">BT Licence</a></li>
-                                    <li><a href="Licenses.html">APP Licence</a></li>
                                     <li><a href="Licenses.html">Advt Licence</a></li>
-                                    <li><a href="shortcode-pricing-tables.html">Cards</a></li>
+                                    <li><a href="Licenses.html">APP Licence</a></li>
+                                    <li><a href="Licenses.html">BT Licence</a></li>
+                                    <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                     <li><a href="apps.html">Mobile App</a></li>
-                                    <li><a href="products.html">products</a></li>
+                                    <li><a href="products.html">Products</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="AboutUs.html">About us</a>
                                 <ul>
+                                    <li><a href="pages-coming-soon1.html">complants</a></li>
                                     <li><a href="ContactUs.html">contacts</a></li>
-                                    <li><a href="AddTroubleTicketingDetails.html">complants</a></li>
-
                                 </ul>
                             </li>
+
                         </ul>
                     </nav>
                 </div>
@@ -202,61 +213,83 @@
 
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="pages-coming-soon1.html">Fares/Payments</a>
+                            <a href="ui/fares_and_payments.html">Fares/Payments</a>
                             <ul>
-                                <li><a href="pages-coming-soon1.html">Schedules</a></li>
-                                <li><a href="pages-coming-soon1.html">Check Fares</a></li>
+                                <li><a href="Fares_and_payments.html">Check Fares</a></li>
                                 <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                <li><a href="refund.html">Refund</a></li>
                                 <li><a href="pages-coming-soon1.html">Renewals</a></li>
-                                <li><a href="pages-coming-soon1.html">refund</a></li>
-
+                                <li><a href="shedules.html">Schedules</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="Cancellation.html">Cancel/Modify</a>
                             <ul>
-                                <li><a href="pages-coming-soon1.html">Change date</a></li>
-                                <li><a href="pages-coming-soon1.html">change plan</a></li>
-
+                                <li><a href="cancellation.html">Cancel Journey</a></li>
+                                <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="Status_and_Updates.html">Status &amp;Update</a>
                             <ul>
+                                <li><a href="pages-coming-soon1.html">Plans</a></li>
                                 <li><a href="Status_and_Updates.html">Status</a></li>
-                                <li><a href="pages-coming-soon1.html">plans</a></li>
-                                
-
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">Products</a>
+                            <a href="productsshown.html">Products/Licenses</a>
                             <ul>
-                               <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                <li><a href="Licenses.html">BT Licence</a></li>
-                                <li><a href="Licenses.html">APP Licence</a></li>
                                 <li><a href="Licenses.html">Advt Licence</a></li>
-                                <li><a href="shortcode-pricing-tables.html">Cards</a></li>
+                                <li><a href="Licenses.html">APP Licence</a></li>
+                                <li><a href="Licenses.html">BT Licence</a></li>
+                                <li><a href="cards.html">Cards</a></li>
+                                <li><a href="licensepage.html">Fleet Owner Licence</a></li>
                                 <li><a href="apps.html">Mobile App</a></li>
-                                <li><a href="products.html">products</a></li>
+                                <li><a href="products.html">Products</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="AboutUs.html">About us</a>
                             <ul>
+                                <li><a href="pages-coming-soon1.html">complants</a></li>
                                 <li><a href="ContactUs.html">contacts</a></li>
-                                <li><a href="AddTroubleTicketingDetails.html">complants</a></li>
-
                             </ul>
                         </li>
 
                     </ul>
 
                     <ul class="mobile-topnav container">
-                        <li><a ng-hide="username == null" href="UserProfile.html" >MY ACCOUNT</a></li>
+                        <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
+                        <li class="ribbon">
+                            <a href="#">Countries</a>
+                            <ul class="menu mini">
+                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                <li>
+                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                </li>
 
+                            </ul>
+                        </li>
                         <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
-                        <li><a href="Registation.html" class="soap-popupbox">SIGNUP</a></li>
+                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                        <li class="ribbon currency menu-color-skin">
+                            <a href="#">USD</a>
+                            <ul class="menu mini">
+                                <li><a href="#" title="AUD">AUD</a></li>
+                                <li><a href="#" title="BRL">BRL</a></li>
+                                <li class="active"><a href="#" title="USD">USD</a></li>
+                                <li><a href="#" title="CAD">CAD</a></li>
+                                <li><a href="#" title="CHF">CHF</a></li>
+                                <li><a href="#" title="CNY">CNY</a></li>
+                                <li><a href="#" title="CZK">CZK</a></li>
+                                <li><a href="#" title="DKK">DKK</a></li>
+                                <li><a href="#" title="EUR">EUR</a></li>
+                                <li><a href="#" title="GBP">GBP</a></li>
+                                <li><a href="#" title="HKD">HKD</a></li>
+                                <li><a href="#" title="HUF">HUF</a></li>
+                                <li><a href="#" title="IDR">IDR</a></li>
+                            </ul>
+                        </li>
                     </ul>
 
                 </nav>
@@ -286,13 +319,12 @@
                 <div class="seperator"></div>
                 <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
             </div>
-
         </header>
     </div>
     <div class="page-title-container">
         <div class="container">
             <div class="page-title pull-left">
-                <h7 class="entry-title">BookedTicketHistory</h7>
+                <h2 class="entry-title">BookedTicketHistory</h2>
             </div>
             <ul class="breadcrumbs pull-right">
                 <li><a href="../index.html">HOME</a></li>
@@ -357,83 +389,94 @@
         </div>
     </div>
         
-    <footer id="footer">
+    <footer id="footer" style="background-color: #2d3e52;">
+
         <div class="footer-wrapper">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-3">
-                        <h2>Discover</h2>
+                        <h2 style="color:white">Discover</h2>
                         <ul class="discover triangle hover row">
-                            <li class="col-xs-6"><a href="#">Safety</a></li>
+                            <li class="col-xs-6"><a href="#">contacts</a></li>
                             <li class="col-xs-6"><a href="#">About</a></li>
-                            <li class="col-xs-6"><a href="#">Interbus Picks</a></li>
-                            <li class="col-xs-6"><a href="#">Latest Jobs</a></li>
-                            <li class="active col-xs-6"><a href="#">Mobile</a></li>
-                            <li class="col-xs-6"><a href="#">Press Releases</a></li>
-                            <li class="col-xs-6"><a href="#">Why Host</a></li>
-                            <li class="col-xs-6"><a href="#">Blog Posts</a></li>
-                            <li class="col-xs-6"><a href="#">Social Connect</a></li>
-                            <li class="col-xs-6"><a href="#">Help Topics</a></li>
-                            <li class="col-xs-6"><a href="#">Site Map</a></li>
-                            <li class="col-xs-6"><a href="#">Policies</a></li>
+                            <li class="col-xs-6"><a href="#">Careers</a></li>
+                            <li class="col-xs-6"><a href="#">Safety</a></li>
+                            <li class="active col-xs-6"><a href="#">security</a></li>
+                            <li class="col-xs-6"><a href="#">Transparency</a></li>
+                            <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
+                            <li class="col-xs-6"><a href="#">Gift Shop</a></li>
+                            <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
+                            <li class="col-xs-6"><a href="#">Help</a></li>
+                            <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
+                            <li class="col-xs-6"><a href="#">Media</a></li>
+                            <li class="col-xs-6"><a href="#">Business</a></li>
+                            <li class="col-xs-6"><a href="#">commercial</a></li>
+
+                            <li class="col-xs-6"><a href="#">Schools</a></li>
+                            <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
+                            <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
+                            <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
+                            <li class="col-xs-6"><a href="#">Urban planning</a></li>
+                            <li class="col-xs-6"><a href="#">construction</a></li>
+                            <li class="col-xs-6"><a href="#">Information for...</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3">
-                        <h2>Interbus News</h2>
+                        <h2 style="color:white">Interbus News</h2>
                         <ul class="travel-news">
                             <li>
                                 <div class="thumb">
                                     <a href="#">
-                                        <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                        <img src="images/img1.jpg" alt="" width="63" height="63" />
                                     </a>
                                 </div>
                                 <div class="description">
                                     <h5 class="s-title"><a href="#">Amazing Places</a></h5>
-                                    <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                    <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
                                     <span class="date">25 Sep, 2013</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="thumb">
                                     <a href="#">
-                                        <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                        <img src="images/img11.jpg" alt="" width="63" height="63" />
                                     </a>
                                 </div>
                                 <div class="description">
                                     <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
-                                    <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                    <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
                                     <span class="date">24 Sep, 2013</span>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3">
-                        <h2>Mailing List</h2>
+                        <h2 style="color:white">Mailing List</h2>
                         <p>Sign up for our mailing list to get latest updates and offers.</p>
                         <br />
                         <div class="icon-check">
                             <input type="text" class="input-text full-width" placeholder="your email" />
                         </div>
                         <br />
-                        <span>We respect your privacy</span>
+                        <span style="color:white">We respect your privacy</span>
                     </div>
                     <div class="col-sm-6 col-md-3">
-                        <h2>About Interbus</h2>
-                        <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massaidp nequetiam lore elerisque.</p>
+                        <h2 style="color:white">About Interbus</h2>
+                        <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
                         <br />
                         <address class="contact-details">
-                            <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                            <span class="contact-phone" style="color:white"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
                             <br />
                             <a href="#" class="contact-email">help@interbus.com</a>
                         </address>
-                        <ul class="social-icons clearfix">
+                        <ul class="social-icons clearfix" style="padding-left:25px">
                             <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
                             <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
                             <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
-                            <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
-                            <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
-                            <li class="dribble"><a title="dribble" href="#" data-toggle="tooltip"><i class="soap-icon-dribble"></i></a></li>
-                            <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
+
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -454,6 +497,7 @@
                 </div>
             </div>
         </div>
+
     </footer>
 
 
