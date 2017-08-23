@@ -94,10 +94,12 @@
     <Content Include="UI\Cancellation.html" />
     <Content Include="UI\cancelticketinformation.html" />
     <Content Include="UI\cancel_ticket.html" />
+    <Content Include="UI\CancleJourney.html" />
     <Content Include="UI\carbooking.html" />
     <Content Include="UI\cards.html" />
     <Content Include="UI\Cartdetails.html" />
     <Content Include="UI\CheckOut.html" />
+    <Content Include="UI\Complants.html" />
     <Content Include="UI\components\flexslider\flexslider-rtl.css" />
     <Content Include="UI\components\flexslider\flexslider.css" />
     <Content Include="UI\components\flexslider\flexslider2.css" />
@@ -521,6 +523,7 @@
     <Content Include="UI\Licenses.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\MeteredTaxi.html" />
+    <Content Include="UI\MyTicket.html" />
     <Content Include="UI\pages-coming-soon1.html" />
     <Content Include="UI\posandroid.html" />
     <Content Include="UI\products.html" />

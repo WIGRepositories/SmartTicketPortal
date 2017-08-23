@@ -28,13 +28,9 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     };
     $scope.GetCountry = function () {
 
-        $scope.checkedArr = [];
-        $scope.uncheckedArr = [];
-
-        $http.get('/api/Country/GetCountry?active=1').then(function (response, req) {
+         $http.get('/api/Country/GetCountry?active=1').then(function (response, req) {
             $scope.Countries = response.data;
-            $scope.checkedArr = $filter('filter')($scope.Countries, { HasOperations: "1" });
-            $scope.uncheckedArr = $filter('filter')($scope.Countries, { HasOperations: "0" });
+           
         });
     }
     $scope.GetStops = function () {

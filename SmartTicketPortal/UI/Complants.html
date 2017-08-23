@@ -33,7 +33,7 @@
 
     <!-- Responsive Styles -->
     <link rel="stylesheet" href="css/responsive.css">
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvjzroTvKlmWDxJn2ZCNvv_12jGA6XadU"></script>
     <!-- CSS for IE -->
     <!--[if lte IE 9]>
         <link rel="stylesheet" type="text/css" href="css/ie.css" />
@@ -271,39 +271,109 @@
                 <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
             </div>
         </header>
-        <div class="page-title-container">
-            <div class="container">
-                <div class="page-title pull-left">
-                    <h2 class="entry-title">ABOUT US</h2>
+        <div class="gray-area">
+            <div class="page-title-container">
+                <div class="container">
+                    <div class="page-title pull-left">
+                        <h2 class="entry-title">CONTACT US</h2>
+                    </div>
+                    <ul class="breadcrumbs pull-right">
+                        <li><a href="../index.html">HOME</a></li>
+
+
+                        <li class="active">CONTACT US</li>
+                    </ul>
                 </div>
-                <ul class="breadcrumbs pull-right">
-                    <li><a href="../index.html">HOME</a></li>
+            </div>
+            <div class="clearfix"></div>
+
+            <!--End Menu-->
+        </div>
+
+        <!--End Header-->
 
 
-                    <li class="active">ABOUT US</li>
-                </ul>
+    </div>
+    <div class="travelo-google-map full-box"></div>
+    <section id="content" class="white-bg">
+        <div class="container">
+            <div id="main">
+                <div class="col-md-9 no-float no-padding center-block">
+                    <div class="intro text-center block">
+                        <h2>Complants</h2>
+                        <p>If you have any issues feel free to ask. Here you can post your complaints</p>
+                    </div>
+                    <form class="contact-form" action="contact-us-handler.php" method="post" onsubmit="return false;">
+                        <div class="alert small-box" style="display: none;"></div>
+                        <div class="row form-group">
+                            <div class="col-xs-6">
+                                <label>Your Name</label>
+                                <input type="text" name="name" class="input-text full-width">
+                            </div>
+                            <div class="col-xs-6">
+                                <label>Your Email</label>
+                                <input type="text" name="email" class="input-text full-width">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-xs-6">
+                                <label>Subject</label>
+                                <input type="text" name="subject" class="input-text full-width">
+                            </div>
+                            <div class="col-xs-6">
+                                <label>Booking Number</label>
+                                <input type="text" name="website" class="input-text full-width">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-xs-6">
+                                <label>Category</label>
+
+                                <select class="input-text full-width" ng-model="seat.Age">
+                                    <option value="" selected>Select</option>
+                                    <option value="21">Suggestion</option>
+                                    <option value="22">Complaint</option>
+                                    <option value="23">Booking issue</option>
+                                    <option value="24">cancellation issue</option>
+                                    <option value="25">Scheduling issue</option>
+                                    <option value="26">Card issue</option>
+                                    <option value="27">Print issue</option>
+                                    <option value="28">License renewal issue</option>
+                                    <option value="29">Payment related issue</option>
+                                    <option value="30">Refund issue</option>
+                                    <option value="31">Others</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-6">
+                                <label>Category</label>
+
+                                <select class="input-text full-width" ng-model="seat.Age">
+                                    <option value="" selected>Select</option>
+                                    <option value="21">Suggestion</option>
+                                    <option value="22">Complaint</option>
+                                    <option value="23">Booking issue</option>
+                                    <option value="24">cancellation issue</option>
+                                    <option value="25">Scheduling issue</option>
+                                    <option value="26">Card issue</option>
+                                    <option value="27">Print issue</option>
+                                    <option value="28">License renewal issue</option>
+                                    <option value="29">Payment related issue</option>
+                                    <option value="30">Refund issue</option>
+                                    <option value="31">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea name="message" rows="6" class="input-text full-width" placeholder="write message here"></textarea>
+                        </div>
+                        <button type="submit" class="btn-large full-width">SEND MESSAGE</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="clearfix"></div>
-
-        <!--End Menu-->
-    </div>
-    <!--End Header-->
-    <div class="container" style="margin-top:50px;min-height:380px;font-size:medium">
-        <div class="row">
-            <h2 style="text-align:center">ABOUT US</h2>
-            <p style="color:black;"><strong>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. INTERBUS became an icon providing efficient and hassle free transport ticket booking srevices to passengers and ticketing management services to transport providers. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</strong></p>
-
-            <p style="color:black"><strong>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS online services are backed up by cutting edge technology, well trained man power and infrastructure to ensure the highest standards of operating efficiency. With excellent support by INTERBUS’S own state of the art technology implementations, transport provides can offer the best of the services to passengers.</strong></p>
-
-            <p style="color:black"><strong>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction. Every INTERBUS employee is groomed to be smart, friendly, proficient and well-informed ensuring that their interaction will make the service providers and the passengers feel welcomed and looked after.</strong></p>
-            <p style="text-align:center; color:black;">
-                <strong>INTERBUS "Driven by Dedication"</strong>
-            </p>
-        </div>
-    </div>
-
-
+       
+    </section>
     <!--END CONTENT--><!--BEGIN FOOTER-->
     <footer id="footer" style="background-color: #2d3e52;">
 
@@ -416,8 +486,6 @@
 
     </footer>
 
-
-
     <!-- Javascript -->
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.noconflict.js"></script>
@@ -444,12 +512,35 @@
 
     <!-- waypoint -->
     <script type="text/javascript" src="js/waypoints.min.js"></script>
-
     <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+
+    <script type="text/javascript" src="js/theme-scripts.js"></script>
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
     <script src="js/ngStorage.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/Index.js"></script>
+    <script src="js/maps/gmap.js"></script>
+    <script type="text/javascript">
+        tjq(".travelo-google-map").gmap3({
+            map: {
+                options: {
+                    center: [-17.8295, 31.0337, 4],
+                    zoom: 12
+                }
+            },
+            marker: {
+                values: [
+                    { latLng: [-17.8295, 31.0337, 4], data: "Harare" }
+
+                ],
+                options: {
+                    draggable: false
+                },
+            }
+        });
+    </script>
 </body>
 </html>
