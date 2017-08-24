@@ -7,7 +7,7 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
     
    
     $scope.GetCountry = function () {
-        $http.get('/api/Country/GetCountry').then(function (response, req) {
+        $http.get('/api/Country/GetCountry?active=1').then(function (response, req) {
             $scope.Country = response.data;
         });
     }
