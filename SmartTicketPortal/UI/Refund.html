@@ -48,17 +48,17 @@
         }
 
         #main {
-            padding-top: 250px;
+            padding-top: 50px;
         }
 
-        .page-title, .page-description {
+        /*.page-title, .page-description {
             color: #fff;
         }
 
         .page-title {
             font-size: 4.1667em;
             font-weight: bold;
-        }
+        }*/
 
         .page-description {
             font-size: 2.5em;
@@ -321,533 +321,555 @@
             </div>
         </header>
 
+        <div class="gray-area">
+            <div class="page-title-container">
+                <div class="container">
+                    <div class="page-title pull-left">
+                        <h1 class="entry-title">Refund</h1>
+                    </div>
+                    <ul class="breadcrumbs pull-right">
+                        <li><a href="../index.html">HOME</a></li>
 
+
+                        <li class="active">Refund</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <!--End Menu-->
+        </div>
 
 
 
         <!--BEGIN TITLE & BREADCRUMB PAGE-->
-        <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+        <!--<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
             <ol class="breadcrumb page-breadcrumb pull-right " style="padding:0px">
                 <li>Hello, {{username}}!&nbsp;&nbsp;&nbsp;&nbsp;</li>
                 <li><a href="#" ng-click="LogoutUser();">Sign Out</a>&nbsp;&nbsp;</li>
             </ol>
 
             <div class="clearfix"></div>
-        </div>
-        <div class="col-lg-12">
-            <div class="page-content">
-                <div id="tableactionTabContent" class="tab-content" ng-show="bookedHistory.length == 0">
+        </div>-->
+        <section id="content">
+            <div class="container">
+                <div id="main">
+                    <div class="col-lg-12">
+                        <div class="page-content">
+                            <div id="tableactionTabContent" class="tab-content" ng-show="bookedHistory.length == 0">
 
-                    <div class="table-container">
-                        <div class="row mbm">
+                                <div class="table-container">
+                                    <div class="row mbm">
 
-                            <div id="imgTd1" style="display:none" class="seatlayoutDropDown">
-                                <div class="seatLayoutMain">
-                                    <div class="seatLayoutBox">
-                                        <div class="low-rating-window">
-                                            This bus has been rated low by travellers on bus quality, punctuality or staff behaviour.
+                                        <div id="imgTd1" style="display:none" class="seatlayoutDropDown">
+                                            <div class="seatLayoutMain">
+                                                <div class="seatLayoutBox">
+                                                    <div class="low-rating-window">
+                                                        This bus has been rated low by travellers on bus quality, punctuality or staff behaviour.
+                                                    </div>
+                                                    <div class="lowRatingMessage Hide">
+                                                        <div class="summary">
+                                                            <i class="icon-alert"></i>
+                                                            This bus has been rated low on
+                                                            <a class="bqLink">Bus quality</a>
+                                                            <span class="comma1 Hide">, </span><span class="and1 Hide">and </span>
+                                                            <a class="punLink">Punctuality</a>
+                                                            <span class="comma2 Hide">, </span><span class="and2 Hide">and </span>
+                                                            <a class="stLink">Staff behaviour</a>
+                                                            based on
+                                                            <span class="numRating">10 customer</span>
+                                                            ratings.
+                                                        </div>
+
+                                                        <ul>
+                                                            <li class="busQuality">
+                                                                <span class="ratingType">Bus quality</span>
+                                                                <div class="ratingStars">
+                                                                    <span class="icon-rating_star_blank"></span>
+                                                                    <span class="icon-rating_star_red Rating"></span>
+                                                                </div>
+                                                                <span class="ratingValue">2.4</span>
+                                                                <span class="ratingMessage">(signifies that the bus may not be clean or amenities like water are not provided)</span>
+                                                            </li>
+
+                                                            <li class="punctuality">
+                                                                <span class="ratingType">Punctuality</span>
+                                                                <div class="ratingStars">
+                                                                    <span class="icon-rating_star_blank"></span>
+                                                                    <span class="icon-rating_star_red Rating"></span>
+                                                                </div>
+                                                                <span class="ratingValue">2.4</span>
+                                                                <span class="ratingMessage">(signifies that the bus may not depart/arrive on the scheduled time)</span>
+                                                            </li>
+
+                                                            <li class="staffBehaviour">
+                                                                <span class="ratingType">Staff behaviour</span>
+                                                                <div class="ratingStars">
+                                                                    <span class="icon-rating_star_blank"></span>
+                                                                    <span class="icon-rating_star_red Rating"></span>
+                                                                </div>
+                                                                <span class="ratingValue">2.4</span>
+                                                                <span class="ratingMessage">(signifies that the staff may not be very well behaved/cooperative)</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="seatlayoutContainer clearfix"></div>
+
+                                                    <div class="routeNote XGrey TextCenter Hide">
+                                                        <i class="icon-routeNote"></i>
+                                                        <span class="TextBold">Please note : </span>
+                                                        <span class="content"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
-                                        <div class="lowRatingMessage Hide">
-                                            <div class="summary">
-                                                <i class="icon-alert"></i>
-                                                This bus has been rated low on
-                                                <a class="bqLink">Bus quality</a>
-                                                <span class="comma1 Hide">, </span><span class="and1 Hide">and </span>
-                                                <a class="punLink">Punctuality</a>
-                                                <span class="comma2 Hide">, </span><span class="and2 Hide">and </span>
-                                                <a class="stLink">Staff behaviour</a>
-                                                based on
-                                                <span class="numRating">10 customer</span>
-                                                ratings.
+
+                                        <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                            <tr>
+
+                                                <td>
+                                                    <strong> Transaction Id</strong>
+                                                    <div class="message-inner">
+
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <strong>pnr number</strong>
+
+
+                                                    <div class="message-inner">
+
+
+                                                    </div>
+                                                </td>
+                                                <td>
+
+                                                    <strong> From</strong>
+
+
+
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong> To </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>Total amount </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>Refund Amount </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>Cancelled On </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>Type Of Ticket </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>
+                                                    <strong>
+                                                        <a href="cancelticketinformation.html" style="color:blue">
+                                                            <u>
+                                                                185456
+                                                            </u>
+                                                    </strong>
+                                                    <div class="message-inner">
+
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <strong>12854769</strong>
+
+
+                                                    <div class="message-inner">
+
+
+                                                    </div>
+                                                </td>
+                                                <td>
+
+                                                    <strong>chennai</strong>
+
+
+
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>hyderabad </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>600 </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>300 </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>29-09-2015 </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>E-Ticket </strong>
+                                                        </div>
+                                                    </div>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+
+
+
+
+
+
+
+
+
+                                            <tr>
+
+                                                <td>
+                                                    <strong><a href="cancelticketinformation.html" style="color:blue"><u>845742</u></strong>
+                                                    <div class="message-inner">
+
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <strong>33585967</strong>
+
+
+                                                    <div class="message-inner">
+
+
+                                                    </div>
+                                                </td>
+                                                <td>
+
+                                                    <strong>tirupathi</strong>
+
+
+
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong> vijayawada </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>800 </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>600 </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>14-01-2015 </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>E-ticket </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>
+                                                    <strong><a href="cancelticketinformation.html" style="color:blue"> <u>212278</u></strong>
+                                                    <div class="message-inner">
+
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <strong> 33585967</strong>
+
+                                                    <div class="message-inner">
+
+
+                                                    </div>
+                                                </td>
+                                                <td>
+
+                                                    <strong>kadapa</strong>
+
+
+
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>delhi </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>1250 </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>850 </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>15-04-2015 </strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="message-inner">
+
+                                                        <div class="qa-message-content">
+                                                            <strong>Eticket</strong>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+
                                             </div>
 
-                                            <ul>
-                                                <li class="busQuality">
-                                                    <span class="ratingType">Bus quality</span>
-                                                    <div class="ratingStars">
-                                                        <span class="icon-rating_star_blank"></span>
-                                                        <span class="icon-rating_star_red Rating"></span>
-                                                    </div>
-                                                    <span class="ratingValue">2.4</span>
-                                                    <span class="ratingMessage">(signifies that the bus may not be clean or amenities like water are not provided)</span>
-                                                </li>
-
-                                                <li class="punctuality">
-                                                    <span class="ratingType">Punctuality</span>
-                                                    <div class="ratingStars">
-                                                        <span class="icon-rating_star_blank"></span>
-                                                        <span class="icon-rating_star_red Rating"></span>
-                                                    </div>
-                                                    <span class="ratingValue">2.4</span>
-                                                    <span class="ratingMessage">(signifies that the bus may not depart/arrive on the scheduled time)</span>
-                                                </li>
-
-                                                <li class="staffBehaviour">
-                                                    <span class="ratingType">Staff behaviour</span>
-                                                    <div class="ratingStars">
-                                                        <span class="icon-rating_star_blank"></span>
-                                                        <span class="icon-rating_star_red Rating"></span>
-                                                    </div>
-                                                    <span class="ratingValue">2.4</span>
-                                                    <span class="ratingMessage">(signifies that the staff may not be very well behaved/cooperative)</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="seatlayoutContainer clearfix"></div>
-
-                                        <div class="routeNote XGrey TextCenter Hide">
-                                            <i class="icon-routeNote"></i>
-                                            <span class="TextBold">Please note : </span>
-                                            <span class="content"></span>
                                         </div>
                                     </div>
-
-                                </div>
-                            </div>
-
-                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
-                                <tr>
-
-                                    <td>
-                                        <strong> Transaction Id</strong>
-                                        <div class="message-inner">
-
-
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <strong>pnr number</strong>
-
-
-                                        <div class="message-inner">
-
-
-                                        </div>
-                                    </td>
-                                    <td>
-
-                                        <strong> From</strong>
-
-
-
-                                    </td>
-
-
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong> To </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>Total amount </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>Refund Amount </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>Cancelled On </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>Type Of Ticket </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>
-                                        <strong>
-                                            <a href="cancelticketinformation.html" style="color:blue">
-                                                <u>
-                                                    185456
-                                                </u>
-                                        </strong>
-                                        <div class="message-inner">
-
-
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <strong>12854769</strong>
-
-
-                                        <div class="message-inner">
-
-
-                                        </div>
-                                    </td>
-                                    <td>
-
-                                        <strong>chennai</strong>
-
-
-
-                                    </td>
-
-
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>hyderabad </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>600 </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>300 </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>29-09-2015 </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>E-Ticket </strong>
-                                            </div>
-                                        </div>
-                                        </a>
-                                    </td>
-                                </tr>
-
-
-
-
-
-
-
-
-
-
-                                <tr>
-
-                                    <td>
-                                        <strong><a href="cancelticketinformation.html" style="color:blue"><u>845742</u></strong>
-                                        <div class="message-inner">
-
-
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <strong>33585967</strong>
-
-
-                                        <div class="message-inner">
-
-
-                                        </div>
-                                    </td>
-                                    <td>
-
-                                        <strong>tirupathi</strong>
-
-
-
-                                    </td>
-
-
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong> vijayawada </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>800 </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>600 </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>14-01-2015 </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>E-ticket </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-                                    <td>
-                                        <strong><a href="cancelticketinformation.html" style="color:blue"> <u>212278</u></strong>
-                                        <div class="message-inner">
-
-
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <strong> 33585967</strong>
-
-                                        <div class="message-inner">
-
-
-                                        </div>
-                                    </td>
-                                    <td>
-
-                                        <strong>kadapa</strong>
-
-
-
-                                    </td>
-
-
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>delhi </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>1250 </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>850 </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>15-04-2015 </strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>
-                                        <div class="message-inner">
-
-                                            <div class="qa-message-content">
-                                                <strong>Eticket</strong>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="row">
-                                <div class="col-lg-6">
-
                                 </div>
 
                             </div>
+
+
+
                         </div>
                     </div>
-
                 </div>
+                </div>
+</section>
+            <!--END FOOTER-->
 
 
 
-            </div>
-        </div>
+            <footer id="footer" style="background-color: #2d3e52;">
 
-        <!--END FOOTER-->
+                <div class="footer-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3">
+                                <h2 style="color:white">Discover</h2>
+                                <ul class="discover triangle hover row">
+                                    <li class="col-xs-6"><a href="#">contacts</a></li>
+                                    <li class="col-xs-6"><a href="#">About</a></li>
+                                    <li class="col-xs-6"><a href="#">Careers</a></li>
+                                    <li class="col-xs-6"><a href="#">Safety</a></li>
+                                    <li class="active col-xs-6"><a href="#">security</a></li>
+                                    <li class="col-xs-6"><a href="#">Transparency</a></li>
+                                    <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
+                                    <li class="col-xs-6"><a href="#">Gift Shop</a></li>
+                                    <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
+                                    <li class="col-xs-6"><a href="#">Help</a></li>
+                                    <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
+                                    <li class="col-xs-6"><a href="#">Media</a></li>
+                                    <li class="col-xs-6"><a href="#">Business</a></li>
+                                    <li class="col-xs-6"><a href="#">commercial</a></li>
 
-
-
-        <footer id="footer" style="background-color: #2d3e52;">
-
-            <div class="footer-wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3">
-                            <h2 style="color:white">Discover</h2>
-                            <ul class="discover triangle hover row">
-                                <li class="col-xs-6"><a href="#">contacts</a></li>
-                                <li class="col-xs-6"><a href="#">About</a></li>
-                                <li class="col-xs-6"><a href="#">Careers</a></li>
-                                <li class="col-xs-6"><a href="#">Safety</a></li>
-                                <li class="active col-xs-6"><a href="#">security</a></li>
-                                <li class="col-xs-6"><a href="#">Transparency</a></li>
-                                <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
-                                <li class="col-xs-6"><a href="#">Gift Shop</a></li>
-                                <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
-                                <li class="col-xs-6"><a href="#">Help</a></li>
-                                <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
-                                <li class="col-xs-6"><a href="#">Media</a></li>
-                                <li class="col-xs-6"><a href="#">Business</a></li>
-                                <li class="col-xs-6"><a href="#">commercial</a></li>
-
-                                <li class="col-xs-6"><a href="#">Schools</a></li>
-                                <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
-                                <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
-                                <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
-                                <li class="col-xs-6"><a href="#">Urban planning</a></li>
-                                <li class="col-xs-6"><a href="#">construction</a></li>
-                                <li class="col-xs-6"><a href="#">Information for...</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <h2 style="color:white">Interbus News</h2>
-                            <ul class="travel-news">
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="images/img1.jpg" alt="" width="63" height="63" />
-                                        </a>
-                                    </div>
-                                    <div class="description">
-                                        <h5 class="s-title"><a href="#">Amazing Places</a></h5>
-                                        <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
-                                        <span class="date">25 Sep, 2013</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="images/img11.jpg" alt="" width="63" height="63" />
-                                        </a>
-                                    </div>
-                                    <div class="description">
-                                        <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
-                                        <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
-                                        <span class="date">24 Sep, 2013</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <h2 style="color:white">Mailing List</h2>
-                            <p>Sign up for our mailing list to get latest updates and offers.</p>
-                            <br />
-                            <div class="icon-check">
-                                <input type="text" class="input-text full-width" placeholder="your email" />
+                                    <li class="col-xs-6"><a href="#">Schools</a></li>
+                                    <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
+                                    <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
+                                    <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
+                                    <li class="col-xs-6"><a href="#">Urban planning</a></li>
+                                    <li class="col-xs-6"><a href="#">construction</a></li>
+                                    <li class="col-xs-6"><a href="#">Information for...</a></li>
+                                </ul>
                             </div>
-                            <br />
-                            <span style="color:white">We respect your privacy</span>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <h2 style="color:white">About Interbus</h2>
-                            <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
-                            <br />
-                            <address class="contact-details">
-                                <span class="contact-phone" style="color:white"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                            <div class="col-sm-6 col-md-3">
+                                <h2 style="color:white">Interbus News</h2>
+                                <ul class="travel-news">
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img src="images/img1.jpg" alt="" width="63" height="63" />
+                                            </a>
+                                        </div>
+                                        <div class="description">
+                                            <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                            <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
+                                            <span class="date">25 Sep, 2013</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img src="images/img11.jpg" alt="" width="63" height="63" />
+                                            </a>
+                                        </div>
+                                        <div class="description">
+                                            <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                            <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
+                                            <span class="date">24 Sep, 2013</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <h2 style="color:white">Mailing List</h2>
+                                <p>Sign up for our mailing list to get latest updates and offers.</p>
                                 <br />
-                                <a href="#" class="contact-email">help@interbus.com</a>
-                            </address>
-                            <ul class="social-icons clearfix" style="padding-left:25px">
-                                <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
-                                <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
-                                <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
-                                
-                               
-                                
-                               
-                            </ul>
+                                <div class="icon-check">
+                                    <input type="text" class="input-text full-width" placeholder="your email" />
+                                </div>
+                                <br />
+                                <span style="color:white">We respect your privacy</span>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <h2 style="color:white">About Interbus</h2>
+                                <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
+                                <br />
+                                <address class="contact-details">
+                                    <span class="contact-phone" style="color:white"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                    <br />
+                                    <a href="#" class="contact-email">help@interbus.com</a>
+                                </address>
+                                <ul class="social-icons clearfix" style="padding-left:25px">
+                                    <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                    <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                    <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+
+
+
+
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bottom gray-area">
-                <div class="container">
-                    <div class="logo pull-left">
-                        <a href="../index.html" title="InterBus - home">
-                            <img src="images/logo.png" alt="InterBus HTML5 Template" />
-                        </a>
-                    </div>
-                    <div class="pull-right">
-                        <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
-                    </div>
-                    <div class="copyright pull-right">
-                        <p>&copy; 2017 Interbus</p>
+                <div class="bottom gray-area">
+                    <div class="container">
+                        <div class="logo pull-left">
+                            <a href="../index.html" title="InterBus - home">
+                                <img src="images/logo.png" alt="InterBus HTML5 Template" />
+                            </a>
+                        </div>
+                        <div class="pull-right">
+                            <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                        </div>
+                        <div class="copyright pull-right">
+                            <p>&copy; 2017 Interbus</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </footer>
+            </footer>
 
-    </div>
+</div>
     <!-- Javascript -->
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.noconflict.js"></script>

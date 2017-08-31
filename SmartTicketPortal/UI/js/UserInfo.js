@@ -25,10 +25,6 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             return;
         }
 
-        if (type.FirstName == null || type.FirstName == "") {
-            alert('Please enter FirstName.');
-            return;
-        }
 
         if (type.LastName == null || type.LastName == "") {
             alert('Please enter LastName.');
@@ -51,8 +47,7 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             alert('Please re-enter Password.');
             return;
         }
-        if (type.Password != type.RePassword)
-        {
+        if (type.Password != type.RePassword) {
             alert('Passwords do not match');
             return;
         }
@@ -78,14 +73,13 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             alert('Please select Gender.');
             return;
         }
-       
+
         var agreement = document.getElementById('agreement');
-        if (agreement.checked == false)
-        {
+        if (agreement.checked == false) {
             alert('Please accept the terms and conditions.');
             return;
         }
-      
+
 
         var userinfo = {
             FirstName: type.FirstName,
@@ -96,16 +90,16 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             EmailAddress: type.EmailAddress,
             Mobile: type.Mobile,
             CountryId: type.Country.Id,
-            Gender:type.Gender,    
-            UserTypeId:1,
-            UserId:null,
+            Gender: type.Gender,
+            UserTypeId: 1,
+            UserId: null,
             Active: 1,
-            IsEmailVerified:0,
-            InsUpdDelFlag:'I'
+            IsEmailVerified: 0,
+            InsUpdDelFlag: 'I'
         };
 
-        
-            
+
+
         var req = {
             method: 'POST',
             url: '/api/UserInfo/saveUserInfo',
@@ -121,20 +115,19 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
         $http(req).then(function (response) {
 
             if (response.data.length == 0) {
-               $scope.registeredUseId = 0;
+                $scope.registeredUseId = 0;
                 alert('User name or email address or mobile already exists or could not be registered. Please contact INTERBUS administrator.')
-           }
-        else
-        {
-            //if the user has role, then get the details and save in session
+            }
+            else {
+                //if the user has role, then get the details and save in session
                 //$localStorage.uname = response.data[0].name;
                 //$localStorage.userdetails = response.data;
 
                 $scope.registeredUseId = 1;
-                
-            alert("Saved successfully!!. Please enter the Email verification code sent to email address to complete registration.");
-            $scope.type = null;
-        }
+
+                alert("Saved successfully!!. Please enter the Email verification code sent to email address to complete registration.");
+                $scope.type = null;
+            }
 
             //$scope.registeredUseId = response.data;
 
@@ -145,7 +138,7 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             //    // $scope.GetWebsiteUserInfo();
             //}
             //else {
-               
+
             //}
 
         }, function (errres) {
@@ -153,7 +146,7 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             var errmssg = "";
             $scope.registeredUseId = 0;
             errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
-            $scope.showDialog(errmssg);            
+            $scope.showDialog(errmssg);
         });
 
     }

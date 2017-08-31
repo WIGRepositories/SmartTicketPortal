@@ -45,7 +45,7 @@
       <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
 
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -343,7 +343,7 @@
                                         </div>
                                     </div>-->
                                 </div>
-                                <hr/>
+                                <hr />
                                 <div class="person-information">
                                     <h2>Your Personal Information</h2>
                                     <div class="form-group row">
@@ -589,14 +589,14 @@
 
                                     </div>
                                 </div>-->
-                                
-                                
+
+
                                 <section id="content" class="gray-area" style="padding-top:0px">
-                                    <h3 >Payment options</h3>
+                                    <h3>Payment options</h3>
                                     <div class="container">
                                         <div id="main" style="width:820px">
                                             <div class="tab-container full-width-style arrow-left dashboard">
-                                                <ul class="tabs" >
+                                                <ul class="tabs">
                                                     <li class="active"><a data-toggle="tab" href="#Debitcard" style="height:50px;"><!--<i class="soap-icon-anchor"></i>-->Debit card</a></li>
                                                     <li class=""><a data-toggle="tab" href="#Creditcard" style="height:50px"><!--<i class="soap-icon-user circle"></i>-->Credit card</a></li>
                                                     <li class=""><a data-toggle="tab" href="#Netbanking" style="height:50px"><!--<i class="soap-icon-businessbag circle"></i>-->Net banking</a></li>
@@ -609,7 +609,7 @@
                                                             <label>Card Holder Name</label>
                                                             <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
                                                         </div>
-                                                       
+
                                                         <div class="row col-md-12">
                                                             <div class=" col-md-9">
                                                                 <label>Card Number</label>
@@ -619,7 +619,7 @@
                                                                 <label>CVV</label>
                                                                 <input type="text" class="input-text full-width" value="" placeholder="CVV" />
                                                             </div>
-                                                            
+
                                                         </div>
 
                                                         <div class="row">
@@ -758,7 +758,7 @@
                                                         <button class=" btn-large" ng-click="ProceedToPayment();">Make payment</button>
 
                                                     </div>
-</section>
+                                </section>
                                 <hr>
                                 <div class="form-group">
                                     <div class="checkbox">
@@ -991,5 +991,8 @@
 
     <!-- load page Javascript -->
     <script type="text/javascript" src="js/theme-scripts.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/products.js"></script>
 </body>
 </html>
