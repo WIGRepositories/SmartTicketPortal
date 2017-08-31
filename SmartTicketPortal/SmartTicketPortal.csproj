@@ -84,8 +84,11 @@
     <Content Include="UI\APP\GooglePlayStore.html" />
     <Content Include="UI\APP\MicrosoftAppStore.html" />
     <Content Include="UI\APP\paysmart.png" />
+    <Content Include="UI\BookAmbulance.html" />
     <Content Include="UI\BookedTicketHistory.html" />
+    <Content Include="UI\BookHireVechicle.html" />
     <Content Include="UI\booking.html" />
+    <Content Include="UI\BookTowing.html" />
     <Content Include="UI\bus-block-view.html" />
     <Content Include="UI\bus-booking.html" />
     <Content Include="UI\bus-grid-view.html" />
@@ -502,6 +505,7 @@
     <Content Include="UI\js\ngStorage.js" />
     <Content Include="UI\js\pace.min.js" />
     <Content Include="UI\js\page-loading.js" />
+    <Content Include="UI\js\Products.js" />
     <Content Include="UI\js\Refund.js" />
     <Content Include="UI\js\RegisterDriver.js" />
     <Content Include="UI\js\schedule.js" />

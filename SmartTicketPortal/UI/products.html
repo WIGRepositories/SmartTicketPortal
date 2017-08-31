@@ -45,7 +45,7 @@
       <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
             <div class="topnav hidden-xs">
@@ -277,13 +277,13 @@
                 </div>
                 <ul class="breadcrumbs pull-right">
                     <li><a href="ui/index.html">HOME</a></li>
-                    
+
                     <li class="active">Products</li>
                 </ul>
             </div>
         </div>
         <section id="content" class="tour">
-           
+
             <div class="section">
                 <div class="container">
                     <h2>Products</h2>
@@ -657,7 +657,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </section>
 
         <footer id="footer" style="background-color: #2d3e52;">
@@ -807,6 +807,9 @@
             slideshowSpeed: 5000
         });
     </script>
+    <script src="js/angular.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/products.js"></script>
 </body>
 </html>
 

@@ -80,7 +80,7 @@
                                     <li><a href="#" ng-click="SignOutUser();">signout</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                            <li><a ng-hide="username == 0" ng-show="username == 1" href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
 
                             <li><a href="Registation.html" class="">SIGNUP</a></li>
 
@@ -739,5 +739,6 @@
     <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
     <script src="js/ngStorage.js"></script>
     <script src="js/Cancellation.js"></script>
+    
 </body>
 </html>
