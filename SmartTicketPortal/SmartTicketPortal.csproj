@@ -89,10 +89,7 @@
     <Content Include="UI\BookHireVechicle.html" />
     <Content Include="UI\booking.html" />
     <Content Include="UI\BookTowing.html" />
-    <Content Include="UI\bus-block-view.html" />
     <Content Include="UI\bus-booking.html" />
-    <Content Include="UI\bus-grid-view.html" />
-    <Content Include="UI\bus-list-view.html" />
     <Content Include="UI\buslist.html" />
     <Content Include="UI\Cancellation.html" />
     <Content Include="UI\cancelticketinformation.html" />
