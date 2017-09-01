@@ -372,7 +372,7 @@
                             <span ng-repeat="p in License.Table2 | filter:{ LicenseId: Lt.Id }" class="price"><small>monthly</small>${{p.UnitPrice}}</span>
                         </div>
                         <p class="description">
-                            Basic plane everyday onetrip oneway
+                            Basic plan everyday onetrip oneway
                         </p>
                         <ul class="check-square features" ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }" ng-init="selType=f">
                             <li>{{f.FeatureLabel}}</li>
