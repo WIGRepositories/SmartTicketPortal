@@ -94,7 +94,7 @@
 
 
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
 
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -424,7 +424,7 @@
             </div>
 
         </div>
-        
+
 
     </center>
     <footer id="footer">
@@ -543,12 +543,15 @@
 
     <!-- parallax -->
     <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
-
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="js/theme-scripts.js"></script>
     <!-- waypoint -->
     <script type="text/javascript" src="js/waypoints.min.js"></script>
     <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="js/ngStorage.js"></script>
     <script src="js/SeatSelection.js"></script>
 </body>
 </html>
