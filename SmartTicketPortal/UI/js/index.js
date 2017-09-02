@@ -1,7 +1,7 @@
 ﻿
-var app = angular.module('myApp', ['ngStorage', 'ui.bootstrap'])
+var app = angular.module('myApp', ['ngStorage', 'ui.bootstrap', 'angularFileUpload'])
 
-var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, fileReader,$upload) {
 
     $scope.selectedOp = 0;
 
@@ -47,7 +47,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         });
     }
+    $scope.GetAdvertisment = function () {
 
+        $http.get('/api/Advertisement/GetAdvertisment').then(function (response, req) {
+            $scope.advertisement = response.data;
+        });
+    }
     $scope.GetServices = function () {
         if ($scope.S == null) {
             // alert('Please select source.');

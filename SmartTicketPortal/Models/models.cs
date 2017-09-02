@@ -541,5 +541,6 @@ namespace Paysmart.Models
 
         public object Emailotp { get; set; }
     }
+  
 }
 
