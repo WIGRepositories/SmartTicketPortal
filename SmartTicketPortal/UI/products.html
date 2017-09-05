@@ -45,7 +45,7 @@
       <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
 </head>
-<body ng-app="myApp" ng-controller="myCtrl">
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetInventoryItems()">
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
             <div class="topnav hidden-xs">
@@ -290,369 +290,38 @@
                     <div class="image-carousel style2 flexslider" data-animation="slide" data-item-width="270" data-item-margin="30">
                         <ul class="slides tour-locations">
                             <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/android.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Hawaii City Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
+                               
+                                    <article class="box" ng-repeat="l in InventoryItems">
+                                        <figure>
+                                            <a href="#" class="hover-effect">
+                                                <img ng-src="{{l.ItemImage}}" alt="">
+                                            </a>
+                                        </figure>
+                                        <div class="details">
+                                            <span class="price">${{l.Price}}</span>
+                                            <h4 class="box-title">{{l.ItemName}}</h4>
+                                            <hr>
+                                            <ul class="features check">
+                                                <li>{{l.Code}}</li>
+                                                <li>{{l.Description}}</li>
+                                                <li>{{l.ItemModel}}</li>
+                                                <li>{{l.Features}}</li>
+                                                
+                                            </ul>
+                                            <hr>
+                                            <div class="text-center">
+                                                <div class="time">
+                                                    <i class="soap-icon-clock yellow-color"></i>
+                                                    <span>{{l.PublishDate}}</span>
+                                                </div>
                                             </div>
+                                            <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
                                         </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/pos%20big.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$534</span>
-                                        <h4 class="box-title">Italy Family Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/pos.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$718</span>
-                                        <h4 class="box-title">Chicago Long Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/pos1.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$426</span>
-                                        <h4 class="box-title">Sydney Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/pos2.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Florida Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/pos3.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Florida Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/pos4.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Florida Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/pos%20charger.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Florida Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/pos%20charger1.png" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Florida Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/poscard.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Florida Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/poscard1.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Florida Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/posfinger.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Florida Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <article class="box">
-                                    <figure>
-                                        <a href="#" class="hover-effect">
-                                            <img src="images/products/posfinger1.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="details">
-                                        <span class="price">$620</span>
-                                        <h4 class="box-title">Florida Tour</h4>
-                                        <hr>
-                                        <ul class="features check">
-                                            <li>City Tour In 3 Hours</li>
-                                            <li>Enjoy World Famous Restaurant</li>
-                                            <li>Wine Tester Trips</li>
-                                            <li>Night Street Life in Downtown </li>
-                                        </ul>
-                                        <hr>
-                                        <div class="text-center">
-                                            <div class="time">
-                                                <i class="soap-icon-clock yellow-color"></i>
-                                                <span>01 Nov 2014 - 08 Nov 2014</span>
-                                            </div>
-                                        </div>
-                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                    </div>
-                                </article>
-                            </li>
+                                    </article>
+                                
+
+</li>
+                           
                         </ul>
                     </div>
                 </div>

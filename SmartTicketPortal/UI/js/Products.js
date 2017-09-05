@@ -6,7 +6,14 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $scope.username = $localStorage.uname;
     }
    
+    $scope.GetInventoryItems = function () {
 
+        $http.get('/api/Inventory/GetInventoryItem?subCatId=-1').then(function (response, req) {
+            $scope.InventoryItems = response.data;
+            //  $scope.getselectval();
+
+        });
+    }
   
    
     $scope.Signin = function () {

@@ -1496,6 +1496,7 @@
     <Compile Include="Controllers\ForgotpasswordController.cs" />
     <Compile Include="Controllers\HireVehicleController.cs" />
     <Compile Include="Controllers\HourBasedPricingController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogTraceWriter.cs" />
@@ -1511,6 +1512,7 @@
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Controllers\TypesController.cs" />
     <Compile Include="Controllers\UsercardsController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Controllers\UserLicensePaymentsController.cs" />

@@ -181,16 +181,17 @@
                                     <li><a href="#">My Ticket</a></li>
                                 </ul>
                             </li>
+
                             <li class="menu-item-has-children">
                                 <a href="ui/productsshown.html">Products/Licenses</a>
                                 <ul>
-                                    <li><a href="UI/Licenses.html">Advt Licence</a></li>
-                                    <li><a href="UI/Licenses.html">APP Licence</a></li>
-                                    <li><a href="UI/Licenses.html">BT Licence</a></li>
-                                    <li><a href="UI/cards.html">Cards</a></li>
-                                    <li><a href="ui/licensepage.html">Fleet Owner Licence</a></li>
-                                    <li><a href="UI/apps.html">Mobile App</a></li>
-                                    <li><a href="UI/products.html">Products</a></li>
+                                    <li><a href="UI/licensepage.html" ng-repeat="l in licenses">{{l.Name}}</a></li>
+                                    <li><a href="UI/Licenses.html">{{l.Name}}</a></li>
+                                    <li><a href="UI/Licenses.html">{{l.Name}}</a></li>
+                                    <li><a href="UI/Licenses.html">{{l.Name}}</a></li>
+                                    <li><a href="ui/apps.html">{{l.Name}}</a></li>
+                                    <li><a href="UI/products.html">{{l.Name}}</a></li>
+                                    <li><a href="UI/cards.html">{{l.Name}}</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
@@ -938,9 +939,10 @@
             <h2 style="color:orange;">Featured Holiday Activities</h2>
             <div class="row image-box style5" ng-init="GetAdvertisment()">
                 <div class="col-sm-3" ng-repeat="a in advertisement">
+
                     <article class="box">
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                            <a class="pull-left" href="#" target="_parent"><img alt="image" width="370" height="160" class="img-responsive" ng-src="{{a.Image}}"></a>
+                            <a class="pull-left" href="#" target="_parent"><img alt="image" width="100" height="100" class="img-responsive" ng-src="{{a.Image}}"></a>
                             <figcaption>
                                 <h3 class="caption-title">{{a.AdvertisementTitle}}</h3>
                                 <span>3 activities</span>
