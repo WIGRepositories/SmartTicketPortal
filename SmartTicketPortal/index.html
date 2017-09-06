@@ -250,33 +250,56 @@
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="UI/AboutUs.html">About us</a>
+                            <a href="ui/productsshown.html">Products/Licenses</a>
                             <ul>
-                                <li><a href="ui/complants.html">complants</a></li>
-                                <li><a href="UI/ContactUs.html">contacts</a></li>
+                                <li><a href="UI/Licenses.html">Advt Licence</a></li>
+                                <li><a href="UI/Licenses.html">APP Licence</a></li>
+                                <li><a href="UI/Licenses.html">BT Licence</a></li>
+                                <li><a href="UI/cards.html">Cards</a></li>
+                                <li><a href="ui/licensepage.html">Fleet Owner Licence</a></li>
+                                <li><a href="UI/apps.html">Mobile App</a></li>
+                                <li><a href="UI/products.html">Products</a></li>
                             </ul>
                         </li>
-                    </ul>
-
-                    <ul class="mobile-topnav container">
-                        <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
-                        <li class="ribbon">
-                            <a href="#">Countries</a>
-                            <ul class="menu mini">
-                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
-                                <li>
-                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                        <li class="menu-item-has-children">
+                            <a href="ui/productsshown.html" >Products</a>
+                            <ul>
+                                <li><a href="UI/Licenses.html" ng-repeat="l in licenses">{{l.Name}}</a></li>
+                                <!--<li><a href="UI/Licenses.html">{{l.Name}}</a></li>
+                                <li><a href="UI/Licenses.html">{{l.Name}}</a></li>
+                                <li><a href="UI/cards.html">{{l.Name}}</a></li>
+                                <li><a href="ui/licensepage.html">{{l.Name}}</a></li>
+                                <li><a href="UI/apps.html">{{l.Name}}</a></li>
+                                <li><a href="UI/products.html">{{l.Name}}</a></li>-->
+                                <li class="menu-item-has-children">
+                                    <a href="UI/AboutUs.html">About us</a>
+                                    <ul>
+                                        <li><a href="ui/complants.html">complants</a></li>
+                                        <li><a href="UI/ContactUs.html">contacts</a></li>
+                                    </ul>
                                 </li>
-
                             </ul>
                         </li>
-                        <li><a ng-hide="username==1" href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                            <ul class="mobile-topnav container">
+                                <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
+                                <li class="ribbon">
+                                    <a href="#">Countries</a>
+                                    <ul class="menu mini">
+                                        <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                        <li>
+                                            <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                        </li>
 
-                        <li><a href="UI/Registation.html" class="soap-popupbox">SIGNUP</a></li>
+                                    </ul>
+                                </li>
+                                <li><a ng-hide="username==1" href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
 
-                    </ul>
+                                <li><a href="UI/Registation.html" class="soap-popupbox">SIGNUP</a></li>
 
-                </nav>
+                            </ul>
+                        </ul>
+
+</nav>
             </div>
 
             <div id="travelo-login" class="travelo-login-box travelo-box">
