@@ -288,41 +288,41 @@
                 <div class="container">
                     <h2>Products</h2>
                     <div class="image-carousel style2 flexslider" data-animation="slide" data-item-width="270" data-item-margin="30">
-                        <ul class="slides tour-locations">
-                            <li>
-                               
-                                    <article class="box" ng-repeat="l in InventoryItems">
-                                        <figure>
-                                            <a href="#" class="hover-effect">
-                                                <img ng-src="{{l.ItemImage}}" alt="">
-                                            </a>
-                                        </figure>
-                                        <div class="details">
-                                            <span class="price">${{l.Price}}</span>
-                                            <h4 class="box-title">{{l.ItemName}}</h4>
-                                            <hr>
-                                            <ul class="features check">
-                                                <li>{{l.Code}}</li>
-                                                <li>{{l.Description}}</li>
-                                                <li>{{l.ItemModel}}</li>
-                                                <li>{{l.Features}}</li>
-                                                
-                                            </ul>
-                                            <hr>
-                                            <div class="text-center">
-                                                <div class="time">
-                                                    <i class="soap-icon-clock yellow-color"></i>
-                                                    <span>{{l.PublishDate}}</span>
-                                                </div>
-                                            </div>
-                                            <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
-                                        </div>
-                                    </article>
-                                
+                        <div class="col-md-3  slides tour-locations" ng-repeat="l in InventoryItems">
+                            
 
-</li>
-                           
-                        </ul>
+                                <article class="box">
+                                    <figure>
+                                        <a href="#" class="hover-effect">
+                                            <img ng-src="{{l.ItemImage}}" alt="" width="360" height="150">
+                                        </a>
+                                    </figure>
+                                    <div class="details">
+                                        <span class="price">${{l.Price}}</span>
+                                        <h4 class="box-title">{{l.ItemName}}</h4>
+                                        <hr>
+                                        <ul class="features check">
+                                            <li>{{l.Code}}</li>
+                                            <li>{{l.Description}}</li>
+                                            <li>{{l.ItemModel}}</li>
+                                            <li>{{l.Features}}</li>
+
+                                        </ul>
+                                        <hr>
+                                        <div class="text-center">
+                                            <div class="time">
+                                                <i class="soap-icon-clock yellow-color"></i>
+                                                <span>{{l.PublishDate}}</span>
+                                            </div>
+                                        </div>
+                                        <a href="posandroid.html" class="button btn-small full-width">BOOK NOW</a>
+                                    </div>
+                                </article>
+
+                            
+
+
+                        </div>
                     </div>
                 </div>
             </div>
