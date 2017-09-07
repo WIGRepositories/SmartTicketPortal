@@ -309,31 +309,31 @@
         </header>
         <section id="content" class="slideshow-bg">
 
-            <div id="slideshow">
-                <div class="flexslider">
+            <div id="slideshow" ng-init="GetCarousel()" >
+                <div class="flexslider" ng-repeat="i in carouselImages">
 
                     <ul class="slides">
                         <li>
-                            <div class="slidebg" style="background-image: url('UI/images//img11.jpg');"></div>
+                            <div class="slidebg" style="background-image: url('UI/images//img11.jpg');"><h1 class="page-title">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding">{{i.ImageDesc}}</h2></div>
                         </li>
                         <li>
                             <div class="slidebg" style="background-image: url('ui/images/ambulanc.png');"></div>
                         </li>
                         <li>
-                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"></div>
+                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
                         <li>
-                            <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"></div>
+                            <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
                         <li>
-                            <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"></div>
+                            <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
                         <li>
-                            <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"></div>
+                            <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
                         <!--<li>
-                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"></div>
-                        </li>-->
+                <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"></div>
+            </li>-->
                     </ul>
                 </div>
                 <div class="tp-leftarrow tparrows default  " style="top: 50%; transform: matrix(1, 0, 0, 1, 20, -20); left: 0px;"></div>
@@ -941,7 +941,7 @@
 
                     <article class="box">
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                            <a class="pull-left" href="#" target="_parent"><img alt="image" width="100" height="100" class="img-responsive" ng-src="{{a.Image}}"></a>
+                            <a class="pull-left" href="#" target="_parent"><img alt="image" width="370" height="160" class="img-responsive" ng-src="{{a.Image}}"></a>
                             <figcaption>
                                 <h3 class="caption-title">{{a.AdvertisementTitle}}</h3>
                                 <span>3 activities</span>

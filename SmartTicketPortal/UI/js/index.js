@@ -9,20 +9,24 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
         $scope.username = $localStorage.uname;
     }
 
-    $scope.carouselImages = [{ "ID": 1, "Name": "TRAVEL WITH INTERBUS", "Caption": "Every Journey Matters....", "Path": "UI/Images/promos/11.jpg" }
-        , { "ID": 2, "Name": "Customer satisfaction", "Caption": "The comfort and convienience of travelling with INTERBUS", "Path": "/UI/Images/promos/12.png" }
-        , { "ID": 3, "Name": "Online Ticket Booking", "Caption": "Automated ticketing increases performance and convienience", "Path": "/UI/Images/promos/13.jpg" }
-        , { "ID": 4, "Name": "Hassel free travel", "Caption": "Get online tickets to make the journey hassel free", "Path": "/UI/Images/promos/14.png" }
-        , { "ID": 5, "Name": "Extensive coverage", "Caption": "Wide network taking you to various destinations", "Path": "/UI/Images/promos/2.png" }
-    ];
-    $scope.triptype = "oneway";
+    //$scope.carouselImages = [{ "ID": 1, "Name": "TRAVEL WITH INTERBUS", "Caption": "Every Journey Matters....", "Path": "UI/Images/promos/11.jpg" }
+    //    , { "ID": 2, "Name": "Customer satisfaction", "Caption": "The comfort and convienience of travelling with INTERBUS", "Path": "/UI/Images/promos/12.png" }
+    //    , { "ID": 3, "Name": "Online Ticket Booking", "Caption": "Automated ticketing increases performance and convienience", "Path": "/UI/Images/promos/13.jpg" }
+    //    , { "ID": 4, "Name": "Hassel free travel", "Caption": "Get online tickets to make the journey hassel free", "Path": "/UI/Images/promos/14.png" }
+    //    , { "ID": 5, "Name": "Extensive coverage", "Caption": "Wide network taking you to various destinations", "Path": "/UI/Images/promos/2.png" }
+    //];
+    //$scope.triptype = "oneway";
 
     //$scope.timing = "Now";
 
     //$scope.ChangeTravelType = function (travelTime) {
     //    $scope.timing = (travelTime == 0) ? "Now" : "Later";
     //}
-
+    $scope.GetCarousel = function () {
+        $http.get('/api/Carousel/GetCarousel').then(function (res, data) {
+            $scope.carouselImages = res.data;
+        });
+    }
     $scope.RadioChange = function (s) {
         $scope.triptype = s;
     };

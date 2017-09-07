@@ -1485,6 +1485,7 @@
     <Compile Include="Controllers\BookAVehicleController.cs" />
     <Compile Include="Controllers\bookingController.cs" />
     <Compile Include="Controllers\CancellationController.cs" />
+    <Compile Include="Controllers\CarouselController.cs" />
     <Compile Include="Controllers\ChangePwdController.cs" />
     <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
