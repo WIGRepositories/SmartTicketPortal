@@ -183,15 +183,19 @@
                             </li>
 
                             <li class="menu-item-has-children">
-                                <a href="ui/productsshown.html">Products/Licenses</a>
+                                <a href="ui/productsshown.html">Products</a>
                                 <ul>
-                                    <li><a href="UI/licensepage.html" ng-repeat="l in licenses">{{l.Name}}</a></li>
-                                    <li><a href="UI/Licenses.html">{{l.Name}}</a></li>
+                                    <li ng-repeat="l in licenses">
+                                        
+                                    <a href="UI/licensepage.html">{{l.Name}}</a>
+                                        <!--<a href="UI/Licenses.html" ng-if="l.Name != 'Fleet Owner License'">{{l.Name}}</a>-->
+                                    </li>
+                                    <!--<li><a href="UI/Licenses.html">{{l.Name}}</a></li>
                                     <li><a href="UI/Licenses.html">{{l.Name}}</a></li>
                                     <li><a href="UI/Licenses.html">{{l.Name}}</a></li>
                                     <li><a href="ui/apps.html">{{l.Name}}</a></li>
                                     <li><a href="UI/products.html">{{l.Name}}</a></li>
-                                    <li><a href="UI/cards.html">{{l.Name}}</a></li>
+                                    <li><a href="UI/cards.html">{{l.Name}}</a></li>-->
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
