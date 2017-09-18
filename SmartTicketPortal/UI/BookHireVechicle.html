@@ -1,4 +1,4 @@
-﻿<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+﻿<html >
 <head>
     <!-- Page Title -->
     <title>INTER BUS</title>
@@ -33,22 +33,32 @@
     <!-- Responsive Styles -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- CSS for IE -->
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" type="text/css" href="css/ie.css" />
-    <![endif]-->
+   
+    <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <![endif]
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvjzroTvKlmWDxJn2ZCNvv_12jGA6XadU"></script>
-
-    <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+   
 
     <!--[endif]-->
-
+    <!---------------------------------->
+    <meta charset="utf-8" />
+   
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <!--<link rel="stylesheet" href="style.css" />-->
+    <link href="css/BookHireVechicle.css" rel="stylesheet" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvjzroTvKlmWDxJn2ZCNvv_12jGA6XadU"></script>
+    <!--<script data-require="google-maps@1.0.0" data-semver="1.0.0" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
+    <script data-require="angular.js@1.2.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js" data-semver="1.2.17"></script>
+    <script data-require="lodash-underscore@*" data-semver="2.4.1" src="https://rawgit.com/lodash/lodash/2.4.1/dist/lodash.underscore.min.js"></script>
+    <script data-require="angular-google-maps@*" data-semver="1.1.4" src="https://rawgit.com/nlaplante/angular-google-maps/1.1.4/dist/angular-google-maps.min.js"></script>
+    <!--<script src="app.js"></script>-->
+    <script src="js/BookHireVehicleMap.js"></script>
+    <!----------------------------------->
 </head>
 
 
 
-<body ng-app="myApp" ng-controller="myCtrl">
+<body ng-app="plunker" ng-controller="MainCtrl">
 
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -129,23 +139,39 @@
                                     <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
                                 </ul>
                             </li>
+                            <!--<li class="menu-item-has-children">
+                        <a href="Status_and_Updates.html">Status &amp;Update</a>
+                        <ul>
+                            <li><a href="pages-coming-soon1.html">Plans</a></li>
+                            <li><a href="Status_and_Updates.html">Status</a></li>
+                        </ul>
+                    </li>-->
                             <li class="menu-item-has-children">
-                                <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                <a href="#">online shop</a>
                                 <ul>
-                                    <li><a href="pages-coming-soon1.html">Plans</a></li>
-                                    <li><a href="Status_and_Updates.html">Status</a></li>
+                                    <li><a href="products.html">Products</a></li>
+
                                 </ul>
                             </li>
+                            <!--<li class="menu-item-has-children">
+                        <a href="productsshown.html">Products/Licenses</a>
+                        <ul>
+                            <li><a href="Licenses.html">Advt Licence</a></li>
+                            <li><a href="Licenses.html">APP Licence</a></li>
+                            <li><a href="Licenses.html">BT Licence</a></li>
+                            <li><a href="cards.html">Cards</a></li>
+                            <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                            <li><a href="apps.html">Mobile App</a></li>
+                            <li><a href="products.html">Products</a></li>
+                        </ul>
+                    </li>-->
                             <li class="menu-item-has-children">
-                                <a href="productsshown.html">Products/Licenses</a>
+                                <a href="productsshown.html">Licenses</a>
                                 <ul>
-                                    <li><a href="Licenses.html">Advt Licence</a></li>
-                                    <li><a href="Licenses.html">APP Licence</a></li>
-                                    <li><a href="Licenses.html">BT Licence</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">Advertisement Licence</a></li>
+                                    <li><a href="shortcode-pricing-tables.html">BT POS Licence</a></li>
                                     <li><a href="cards.html">Cards</a></li>
                                     <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                    <li><a href="apps.html">Mobile App</a></li>
-                                    <li><a href="products.html">Products</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
@@ -183,23 +209,39 @@
                                 <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
                             </ul>
                         </li>
+                        <!--<li class="menu-item-has-children">
+                    <a href="Status_and_Updates.html">Status &amp;Update</a>
+                    <ul>
+                        <li><a href="pages-coming-soon1.html">Plans</a></li>
+                        <li><a href="Status_and_Updates.html">Status</a></li>
+                    </ul>
+                </li>-->
                         <li class="menu-item-has-children">
-                            <a href="Status_and_Updates.html">Status &amp;Update</a>
+                            <a href="#">online shop</a>
                             <ul>
-                                <li><a href="pages-coming-soon1.html">Plans</a></li>
-                                <li><a href="Status_and_Updates.html">Status</a></li>
+                                <li><a href="products.html">Products</a></li>
+
                             </ul>
                         </li>
+                        <!--<li class="menu-item-has-children">
+                    <a href="productsshown.html">Products/Licenses</a>
+                    <ul>
+                        <li><a href="Licenses.html">Advt Licence</a></li>
+                        <li><a href="Licenses.html">APP Licence</a></li>
+                        <li><a href="Licenses.html">BT Licence</a></li>
+                        <li><a href="cards.html">Cards</a></li>
+                        <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                        <li><a href="apps.html">Mobile App</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </li>-->
                         <li class="menu-item-has-children">
-                            <a href="productsshown.html">Products/Licenses</a>
+                            <a href="productsshown.html">Licenses</a>
                             <ul>
-                                <li><a href="Licenses.html">Advt Licence</a></li>
-                                <li><a href="Licenses.html">APP Licence</a></li>
-                                <li><a href="Licenses.html">BT Licence</a></li>
+                                <li><a href="shortcode-pricing-tables.html">Advertisement Licence</a></li>
+                                <li><a href="shortcode-pricing-tables.html">BT POS Licence</a></li>
                                 <li><a href="cards.html">Cards</a></li>
                                 <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                <li><a href="apps.html">Mobile App</a></li>
-                                <li><a href="products.html">Products</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
@@ -271,7 +313,7 @@
                     </div>
                 </form>
                 <div class="seperator"></div>
-                <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+                <p>Don't have an account? <a href="Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
             </div>
         </header>
         <div class="page-title-container">
@@ -302,14 +344,19 @@
                     <div class="form-group row">
                         <div class="col-xs-6">
                             <label for="ex1">From</label>
-                            <input class="form-control" id="ex1" type="text" placeholder="Current location">
+                            <input class="form-control" id="origin" type="text" placeholder="Current location" ng-model="directions.origin">
                         </div>
                         <div class="col-xs-6">
                             <label for="ex2">To</label>
-                            <input class="form-control" id="ex2" type="text" placeholder="Enter drop point">
+                            <input class="form-control" id="destination" type="text" placeholder="Enter drop point" ng-model="directions.destination">
+                        </div>
+                        <div class="form-group">
+                            <div class="btn-medium green" style="margin-top:15px;margin-left:130px">
+                                <button class="btn-medium green" ng-click="getDirections()">Get Directions</button>
+                            </div>
                         </div>
 
-                        <button type="submit" class="btn-medium green" style="margin-top:15px;margin-left:130px">Submit</button>
+                        <!--<button type="submit" class="btn-medium green" style="margin-top:15px;margin-left:130px" ng-click="getDirections()">Submit</button>-->
                     </div>
                 </form>
                 <hr>
@@ -357,11 +404,8 @@
                                                         <label for="ex1">Enter Mobile Number</label>
                                                         <input class="form-control input-medium bfh-phone" id="ex1" type="text" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number">
                                                     </div>
-                                                    <!--<div class="col-xs-3">
-                                                        <label for="ex2">To</label>
-                                                        <input class="form-control" id="ex2" type="text">
-                                                    </div>-->
-                                                    <button type="submit" class="btn-medium green" style="margin-top:23px">Submit</button>
+
+                                                    <button type="submit" class="btn-medium green" style="margin-top:30px">Submit</button>
                                                 </div>
                                             </form>
 
@@ -407,69 +451,34 @@
             <div id="full-width-content" class="col-md-8">
 
                 <div class="main">
-                    <div class="large" data-set="status-map">
-                        <div class="moving-source-order">
-                            <div class="status-map-wrapper map-wrapper status-page">
-                                <div class="tab-content">
-
-
-                                    <div style='overflow: hidden; height: 400px; width: 100%;'>
-                                        <div id='gmap_canvas' style='height: 400px; width:100% ;'>
-
-                                        </div>
-                                        <style>
-                                            #gmap_canvas img {
-                                                max-width: none !important;
-                                                background: none !important;
-                                            }
-                                        </style>
+                    <div class=" panel-default">
+                       
+                            <google-map control="map.control" center="map.center" zoom="map.zoom">
+                                <marker coords="marker.center"></marker>
+                            </google-map>
+                            <form class="form-horizontal" role="form">
+                                <!--<div class="form-group">
+                                    <label for="origin" class="col-sm-2 control-label">Origin</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="origin" class="form-control" ng-model="directions.origin" />
                                     </div>
-                                    <a href='https://www.add-map.net/'>BT POS tracking</a>
-                                    <script type='text/javascript' src='js/maps/gmap.js'></script>
-                                    <script type='text/javascript'>
-
-                                        var locations = [
-                                                 ['Bondi Beach', -17.8295, 31.0337, 4],
-                                                 ['Coogee Beach', -17.8295, 31.0358, 5],
-                                                 ['Cronulla Beach', -17.8295, 31.0345, 3],
-                                                 ['Manly Beach', -17.8295, 31.0331, 2],
-                                                 ['Maroubra Beach', -17.8295, 31.0331, 1],
-                                                 ['erragada', -17.457039, 78.433582, 5]
-                                        ];
-
-
-                                        var map = new google.maps.Map(document.getElementById('gmap_canvas'), {
-                                            zoom: 15,
-                                            center: new google.maps.LatLng(-17.8252, 31.0335), //17.8252° S, 31.0335° E
-                                            mapTypeId: google.maps.MapTypeId.ROADMAP
-                                        });
-
-
-                                        var infowindow = new google.maps.InfoWindow();
-
-
-                                        var marker, i;
-
-
-                                        for (i = 0; i < locations.length; i++) {
-                                            marker = new google.maps.Marker({
-                                                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                                                map: map
-                                            });
-
-
-                                            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                                                return function () {
-                                                    infowindow.setContent(locations[i][0]);
-                                                    infowindow.open(map, marker);
-                                                }
-                                            })(marker, i));
-                                        }
-
-                                    </script>
                                 </div>
-                            </div>
-                        </div>
+                                <div class="form-group">
+                                    <label for="destination" class="col-sm-2 control-label">Destination</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" id="destination" class="form-control" ng-model="directions.destination" />
+                                    </div>
+                                </div>-->
+                                <div class="form-group">
+                                    <!--<div class="col-sm-offset-2 col-sm-8">
+                                        <button class="btn btn-primary" ng-click="getDirections()">Get Directions</button>
+                                    </div>-->
+                                </div>
+                            </form>
+
+                            <!--<div id="directionsList" ng-show="directions.showList" class="panel panel-primary"></div>-->
+
+                     
                     </div>
 
                 </div>
@@ -494,10 +503,10 @@
 
     </div>
 
-
-
-
     <!--End Container-->
+    <div>
+
+    </div>
     <footer id="footer" style="background-color: #2d3e52;">
 
         <div class="footer-wrapper">
@@ -658,8 +667,7 @@
     <script src="js/angular.js"></script>
     <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
     <script src="js/ngStorage.js"></script>
-    <script src="js/products.js"></script>
-
+    <!--<script src="js/products.js"></script>-->
     <!--<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js'></script>-->
 
 </body>
