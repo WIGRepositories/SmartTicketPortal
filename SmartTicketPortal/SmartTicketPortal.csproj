@@ -291,6 +291,7 @@
     <Content Include="UI\fonts\NexaBlack.svg" />
     <Content Include="UI\fonts\soap-icons.svg" />
     <Content Include="UI\ForgotPassword.html" />
+    <Content Include="UI\Get-a-Lyft.html" />
     <Content Include="UI\hirevehicle.html" />
     <Content Include="UI\images\404-style1.png" />
     <Content Include="UI\images\Ambulanc.png" />
