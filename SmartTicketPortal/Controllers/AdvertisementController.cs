@@ -25,7 +25,7 @@ namespace SmartTicketPortal.Controllers
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "Getadvertisement";
             cmd.Connection = conn;
-           
+            
             DataSet ds = new DataSet();
             SqlDataAdapter db = new SqlDataAdapter(cmd);
             db.Fill(ds);

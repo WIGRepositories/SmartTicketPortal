@@ -37,7 +37,7 @@
 
    
 </head>
-<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetHourBasePricing();" ng-model="booking">
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetHireVehicle();" ng-model="booking">
 
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -119,12 +119,12 @@
                                 </ul>
                             </li>
                             <!--<li class="menu-item-has-children">
-                        <a href="Status_and_Updates.html">Status &amp;Update</a>
-                        <ul>
-                            <li><a href="pages-coming-soon1.html">Plans</a></li>
-                            <li><a href="Status_and_Updates.html">Status</a></li>
-                        </ul>
-                    </li>-->
+                                <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="pages-coming-soon1.html">Plans</a></li>
+                                    <li><a href="Status_and_Updates.html">Status</a></li>
+                                </ul>
+                            </li>-->
                             <li class="menu-item-has-children">
                                 <a href="#">online shop</a>
                                 <ul>
@@ -133,17 +133,17 @@
                                 </ul>
                             </li>
                             <!--<li class="menu-item-has-children">
-                        <a href="productsshown.html">Products/Licenses</a>
-                        <ul>
-                            <li><a href="Licenses.html">Advt Licence</a></li>
-                            <li><a href="Licenses.html">APP Licence</a></li>
-                            <li><a href="Licenses.html">BT Licence</a></li>
-                            <li><a href="cards.html">Cards</a></li>
-                            <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                            <li><a href="apps.html">Mobile App</a></li>
-                            <li><a href="products.html">Products</a></li>
-                        </ul>
-                    </li>-->
+                                <a href="productsshown.html">Products/Licenses</a>
+                                <ul>
+                                    <li><a href="Licenses.html">Advt Licence</a></li>
+                                    <li><a href="Licenses.html">APP Licence</a></li>
+                                    <li><a href="Licenses.html">BT Licence</a></li>
+                                    <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="apps.html">Mobile App</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                </ul>
+                            </li>-->
                             <li class="menu-item-has-children">
                                 <a href="productsshown.html">Licenses</a>
                                 <ul>
@@ -189,12 +189,12 @@
                             </ul>
                         </li>
                         <!--<li class="menu-item-has-children">
-                    <a href="Status_and_Updates.html">Status &amp;Update</a>
-                    <ul>
-                        <li><a href="pages-coming-soon1.html">Plans</a></li>
-                        <li><a href="Status_and_Updates.html">Status</a></li>
-                    </ul>
-                </li>-->
+                            <a href="Status_and_Updates.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="pages-coming-soon1.html">Plans</a></li>
+                                <li><a href="Status_and_Updates.html">Status</a></li>
+                            </ul>
+                        </li>-->
                         <li class="menu-item-has-children">
                             <a href="#">online shop</a>
                             <ul>
@@ -203,17 +203,17 @@
                             </ul>
                         </li>
                         <!--<li class="menu-item-has-children">
-                    <a href="productsshown.html">Products/Licenses</a>
-                    <ul>
-                        <li><a href="Licenses.html">Advt Licence</a></li>
-                        <li><a href="Licenses.html">APP Licence</a></li>
-                        <li><a href="Licenses.html">BT Licence</a></li>
-                        <li><a href="cards.html">Cards</a></li>
-                        <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                        <li><a href="apps.html">Mobile App</a></li>
-                        <li><a href="products.html">Products</a></li>
-                    </ul>
-                </li>-->
+                            <a href="productsshown.html">Products/Licenses</a>
+                            <ul>
+                                <li><a href="Licenses.html">Advt Licence</a></li>
+                                <li><a href="Licenses.html">APP Licence</a></li>
+                                <li><a href="Licenses.html">BT Licence</a></li>
+                                <li><a href="cards.html">Cards</a></li>
+                                <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                <li><a href="apps.html">Mobile App</a></li>
+                                <li><a href="products.html">Products</a></li>
+                            </ul>
+                        </li>-->
                         <li class="menu-item-has-children">
                             <a href="productsshown.html">Licenses</a>
                             <ul>
@@ -307,7 +307,7 @@
                     <li class="active">Hire vechicle</li>
                 </ul>
             </div>
-        </div>
+        </div >
         <section id="content" class="gray-area">
             <div class="container">
                 <div id="main">
@@ -446,16 +446,16 @@
 
 
                             </div>
-                            <div ng-repeat="b in booking">
+                            <div >
                                 <div class="car-list listing-style3 car">
-                                    <article class="box">
+                                    <article class="box" ng-repeat="v in Vehicles">
                                         <figure class="col-xs-3">
                                             <span><img alt="" src="http://placehold.it/270x160"></span>
                                         </figure>
                                         <div class="details col-xs-9 clearfix">
                                             <div class="col-sm-8">
                                                 <div class="clearfix">
-                                                    <h4 class="box-title">{{b.VehicleModel}}<small>bmw mini</small></h4>
+                                                    <h4 class="box-title">{{v.VehicleTypeId}}<small>{{v.VehicleGroupId}}</small></h4>
                                                     <div class="logo">
                                                         <img src="http://placehold.it/110x25" alt="" />
                                                     </div>
@@ -486,7 +486,7 @@
                                             </div>
                                         </div>
                                     </article>
-                                    <article class="box">
+                                    <!--<article class="box">
                                         <figure class="col-xs-3">
                                             <span><img alt="" src="http://placehold.it/270x160"></span>
                                         </figure>
@@ -713,10 +713,10 @@
                                                 <a href="carbooking.html" class="button btn-small full-width">select</a>
                                             </div>
                                         </div>
-                                    </article>
-                                    
-                                    
-                                                       
+                                    </article>-->
+
+
+
 
                                 </div>
                             </div>

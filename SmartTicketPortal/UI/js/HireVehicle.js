@@ -16,8 +16,18 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         });
     }
- 
+
     $scope.GetHireVehicle = function () {
+
+        $http.get('/api/HireVehicle/GetHireVehicle').then(function (response, req) {
+            $scope.Vehicles = response.data;          
+
+        });       
+    }
+
+
+
+    $scope.GetVehicle = function () {
         if ($scope.S == null) {
             // alert('Please select source.');
 
