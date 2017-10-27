@@ -1683,6 +1683,7 @@
     <Content Include="UI\fonts\soap-icons.eot" />
     <Content Include="UI\fonts\soap-icons.ttf" />
     <Content Include="UI\fonts\soap-icons.woff" />
+    <Content Include="Apks\customer_app_10_25_17.apk" />
     <None Include="Properties\PublishProfiles\TicketPortal.pubxml" />
     <Content Include="web.config" />
     <None Include="UI\APP\app-debug.apk" />
