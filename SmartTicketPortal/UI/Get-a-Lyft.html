@@ -50,9 +50,8 @@
     <script data-require="lodash-underscore@*" data-semver="2.4.1" src="https://rawgit.com/lodash/lodash/2.4.1/dist/lodash.underscore.min.js"></script>
     <script data-require="angular-google-maps@*" data-semver="1.1.4" src="https://rawgit.com/nlaplante/angular-google-maps/1.1.4/dist/angular-google-maps.min.js"></script>
     <!--<script src="app.js"></script>-->
-    <script src="js/BookHireVehicleMap.js"></script>
-    <!----------------------------------->
-</head>
+    <!--<script src="js/BookHireVehicleMap.js"></script>-->
+   </head>
 
 
 
@@ -339,43 +338,75 @@
             <div class="col-md-4" style="padding-top:10px;margin-left:-20px">
 
                 <form>
-                    <div class="form-group row">
-                        <div class="col-xs-6">
-                            <label for="ex1">From</label>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="ex1">Pickup Point</label>
                             <input class="form-control" id="origin" type="text" placeholder="Current location" ng-model="directions.origin">
                         </div>
-                        <div class="col-xs-6">
-                            <label for="ex2">To</label>
+                        </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="ex2">Drop Point</label>
                             <input class="form-control" id="destination" type="text" placeholder="Enter drop point" ng-model="directions.destination">
                         </div>
-                        <div class="form-group">
-                            <div class="btn-medium green" style="margin-top:15px;margin-left:130px">
-                                <button class="btn-medium green" ng-click="getDirections()">Get Directions</button>
-                            </div>
+                        <div class="col-xs-12">
+                            <label for="ex2">Distance</label>
+                            <input class="form-control" id="destination" type="text" placeholder="Enter drop point" ng-model="distText" ng-change="inputcred();">
                         </div>
-
+                        <div class="form-group">
+                            <div class="col-xs-12" style="margin-top:10px">
+                                <div class="btn-medium green" style="margin-left:80px">
+                                    <button class="btn-medium green" ng-click="getDirections()">Check Availability</button>
+                                </div>
+                                </div>
+                            
+                            </div>
+                        
                         <!--<button type="submit" class="btn-medium green" style="margin-top:15px;margin-left:130px" ng-click="getDirections()">Submit</button>-->
                     </div>
                 </form>
                 <hr>
-                <div class="main-and-aside r">
+                <div class="main-and-aside r" ng-show="step==2">
                     <div class="main">
                         <div class="small-medium" data-set="widget"></div>
 
                         <div class="clearfix"></div>
                         <div class="module-grid clearfix">
                             <div>
-                                <h2 class="active">Ammount</h2>
+                                <h2 class="active">Amount</h2>
+                               
+                                    <div class="panel col-xs-12 well">
+                                        <a ng-click="test()">
+                                            <h4 class="panel-title">
+                                                <div class="col-md-4">
+                                                    <img src="images/icon/car_small.png">
 
-                                <div class="panel col-md-10">
-                                    <h4 class="panel-title">
-                                        <a href="#" class="collapsed">Fares <p style="text-align:right;margin-top:-25px;">Rs:150</p></a>
+                                                    1min
+                                                </div>
 
-                                    </h4>
+                                                <div class="col-md-4">car <p>carcarcar</p></div>
+                                                <div class="col-md-4">{{res.Price}} </div>
 
+                                            </h4>
+                                        </a>
+                                    </div>
+                               
+                                <div class="panel col-xs-12 well">
+                                    <a  ng-click="test()">
+                                        <h4 class="panel-title">
+                                            <div class="col-md-4">
+                                                <img src="images/icon/car_small.png">
+
+                                                1min
+                                            </div>
+
+                                            <div class="col-md-4">car <p>carcarcar</p></div>
+                                            <div class="col-md-4">150-200 </div>
+
+                                        </h4>
+                                    </a>
                                 </div>
-
-
+                                
 
                             </div>
 
@@ -383,7 +414,7 @@
                     </div>
 
                 </div>
-                <div class="aside">
+                <div class="aside" ng-show="step==3">
                     <div class="large" data-set="widget">
                         <div class="moving-source-order">
                             <div class="widget-wrapper">
@@ -394,16 +425,17 @@
                                             <h2 class="active">Confirm Booking</h2>
                                         </div>
 
-
+                                        
                                         <div class="toggle-container">
+                                          <div><div class="col-md-6"> car</div> <div class="col-md-6">150-200</div></div>
                                             <form>
                                                 <div class="form-group row">
                                                     <div class="col-xs-6">
                                                         <label for="ex1">Enter Mobile Number</label>
-                                                        <input class="form-control input-medium bfh-phone" id="ex1" type="text" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number">
+                                                        <input class="form-control input-medium bfh-phone" id="ex1" type="text" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number" ng-model="book.CustomerPhoneNo">
                                                     </div>
 
-                                                    <button type="submit" class="btn-medium green" style="margin-top:30px">Submit</button>
+                                                    <button type="submit" class="btn-medium green" style="margin-top:30px" ng-click="SaveNew(book,'I')">Submit</button>
                                                 </div>
                                             </form>
 
@@ -667,7 +699,8 @@
     <script src="js/ngStorage.js"></script>
     <!--<script src="js/products.js"></script>-->
     <!--<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js'></script>-->
-
+    <script src="js/get-a-lyft.js"></script>
+   
 </body>
 
 </html>

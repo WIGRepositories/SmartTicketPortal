@@ -467,6 +467,7 @@
     <Content Include="UI\js\fileupload\ng-file-upload-shim.js" />
     <Content Include="UI\js\fileupload\ng-file-upload.js" />
     <Content Include="UI\js\fileupload\Upload.js" />
+    <Content Include="UI\js\Get-a-lyft.js" />
     <Content Include="UI\js\gmap3.infobox.js" />
     <Content Include="UI\js\gmap3.js" />
     <Content Include="UI\js\gmap3.min.js" />
