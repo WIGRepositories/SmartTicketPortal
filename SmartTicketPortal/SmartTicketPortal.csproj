@@ -467,7 +467,7 @@
     <Content Include="UI\js\fileupload\ng-file-upload-shim.js" />
     <Content Include="UI\js\fileupload\ng-file-upload.js" />
     <Content Include="UI\js\fileupload\Upload.js" />
-    <Content Include="UI\js\Get-a-Lyft.js" />
+    <Content Include="UI\js\Get-a-lyft.js" />
     <Content Include="UI\js\gmap3.infobox.js" />
     <Content Include="UI\js\gmap3.js" />
     <Content Include="UI\js\gmap3.min.js" />
@@ -1504,7 +1504,6 @@
     <Compile Include="Controllers\LicensePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogTraceWriter.cs" />
-    <Compile Include="Controllers\MeteredTaxiController.cs" />
     <Compile Include="Controllers\MOTPverificationController.cs" />
     <Compile Include="Controllers\PassengerController.cs">
       <SubType>Code</SubType>
