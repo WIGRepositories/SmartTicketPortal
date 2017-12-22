@@ -16,73 +16,44 @@ namespace SmartTicketPortal.Controllers
     {
         [HttpPost]
         [Route("api/Contact/ContactsRequst")]
-        public DataTable ContactsRequst(contact Co)
-        {
-            
-            SqlCommand cmd = new SqlCommand();
-            try
-            {
-                            
-
-
-
-                SqlParameter name = new SqlParameter("Name", SqlDbType.VarChar);
-                name.Value = Co.name;
-                cmd.Parameters.Add(name);
-                SqlParameter em = new SqlParameter("email", SqlDbType.VarChar);
-                em.Value = Co.email;
-                cmd.Parameters.Add(em);
-                SqlParameter cat = new SqlParameter("category", SqlDbType.VarChar);
-                cat.Value = Co.category;
-                cmd.Parameters.Add(cat);
-                SqlParameter sub = new SqlParameter("subject", SqlDbType.VarChar);
-                sub.Value = Co.subject;
-                cmd.Parameters.Add(sub);
-                SqlParameter mass = new SqlParameter("message", SqlDbType.VarChar);
-                mass.Value = Co.message;
-                cmd.Parameters.Add(mass);
-
-
-            }
-            catch
-            {
-                Exception ex;
-            }
-            DataTable dt = new DataTable();
-            SqlDataAdapter sd = new SqlDataAdapter(cmd);
-            sd.Fill(dt);
-            #region password otp
-            string potp = dt.ToString();
-            if (potp != null)
-            {
+        public int ContactsRequst(contact Co)
+        {                    
                 try
                 {
                     MailMessage mail = new MailMessage();
                     string emailserver = System.Configuration.ConfigurationManager.AppSettings["emailserver"].ToString();
-
-                    string username = System.Configuration.ConfigurationManager.AppSettings["username"].ToString();
-                    string pwd = System.Configuration.ConfigurationManager.AppSettings["password"].ToString();
+                    string name = Co.name;
+                    string email = Co.email;
+                    string category = Co.category;
+                    string subject = Co.subject;
+                    string message = Co.message;
                     string fromaddress = System.Configuration.ConfigurationManager.AppSettings["fromaddress"].ToString();
+                    string username = System.Configuration.ConfigurationManager.AppSettings["username"].ToString();
+                    string password = System.Configuration.ConfigurationManager.AppSettings["password"].ToString();
                     string port = System.Configuration.ConfigurationManager.AppSettings["port"].ToString();
 
                     SmtpClient SmtpServer = new SmtpClient(emailserver);
 
                     mail.From = new MailAddress(Co.email);
                     mail.To.Add(fromaddress);
-                    mail.Subject = "Contact";
+                    mail.Subject = Co.subject;
                     mail.IsBodyHtml = true;
 
                     string verifcodeMail = @"<table>
                                                         <tr>
                                                             <td>
-                                                                <h2>Thank you for registering with Smart Ticket</h2>
+                                                                <h2>Thank you for Contacting Smart Ticket Portal</h2>
                                                                 <table width=\""760\"" align=\""center\"">
                                                                     <tbody style='background-color:#F0F8FF;'>
                                                                         <tr>
                                                                             <td style=\""font-family:'Zurich BT',Arial,Helvetica,sans-serif;font-size:15px;text-align:left;line-height:normal;background-color:#F0F8FF;\"" >
 <div style='padding:10px;border:#0000FF solid 2px;'>    <br /><br />
                                                                              
-                                                       Your email OTP is:<h3>" + potp + @" </h3>
+                                                       Your Name is:<h3>" + name + @"</h3>
+                                                       Your Email is:<h3>" + email + @"</h3>
+                                                       Your Subject is:<h3>" + subject + @"</h3>   
+                                                       Your Category is:<h3>" + category + @"</h3>                                                     
+                                                       Your Message is:<h3>" + message + @"</h3>
 
                                                         If you didn't make this request, <a href='http://154.120.237.198:52800'>click here</a> to cancel.
 
@@ -109,22 +80,21 @@ namespace SmartTicketPortal.Controllers
                     SmtpServer.Port = Convert.ToInt32(port);
                     SmtpServer.UseDefaultCredentials = false;
 
-                    SmtpServer.Credentials = new System.Net.NetworkCredential(username, pwd);
+                    SmtpServer.Credentials = new System.Net.NetworkCredential(username,password);
                     SmtpServer.EnableSsl = true;
                     //SmtpServer.TargetName = "STARTTLS/smtp.gmail.com";
                     SmtpServer.Send(mail);
-                    // Status = 1;
+                    return 1;
 
                 }
                 catch (Exception ex)
                 {
                     //throw ex;
+                    return 0;
                 }
-               
-            #endregion password otp
-               
-            }
-            return dt;
+
+                return 1;  
         }
+        
     }
 }
