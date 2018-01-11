@@ -503,7 +503,7 @@ namespace Paysmart.Models
         public int Src_Id { get; set; }
         public int Des_Id { get; set; }
     }
-    public class ResetPwd
+    public class ResetPwd 
     {
         public string Password { get; set; }
 
@@ -629,6 +629,27 @@ namespace Paysmart.Models
         public string DriverComments { get; set; }
         public string distance { get; set; }
     }
-  
+     public class Complaints
+    {
+         public string flag { get; set; }
+        public string PhoneNumber { get; set; }
+
+        public string EmailId { get; set; }
+         public string Description { get; set; }
+         public string TicketNo { get; set; }
+         public string Name { get; set; }
+         public string Category { get; set; }
+         public string Subject { get; set; }
+        
+
+    }
+  public class contact
+  {
+      public string name { get; set; }
+      public string email { get; set; }
+      public string category { get; set; }
+      public string subject { get; set; }
+      public string message { get; set; }
+  }
 }
 

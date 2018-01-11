@@ -1,8 +1,4 @@
-/*
- * Title:   Travelo - Travel, Tour Booking HTML5 Template - Contact Javascript file
- * Author:  http://themeforest.net/user/soaptheme
- */
-var app = angular.module('myApp', ['ngStorage'])
+﻿var app = angular.module('myApp', ['ngStorage'])
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.selectedOp = 0;
@@ -95,86 +91,73 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         window.location.href = "../index.html";
     }
-    $scope.send = function (con, flag) {
-       
-        if (con.name == null) {
-            alert('Please enter Name.');
+    $scope.saveNew = function (comp, flag) {
+
+        if (comp.Yourname == null) {
+            alert('Please Enter Yourname');
             return;
         }
-        if (con.email == null) {
-            alert('Please enter email.');
+       // if ($scope.imageSrc == null) {
+          //  alert('Please Enter Image');
+          //  return;
+       // }
+        //if (comp.Title == null) {
+           // alert('Please Enter Title');
+           // return;
+       // }
+
+       // if (comp.Description == null) {
+          //  alert('Please Enter Description');
+          //  return;
+      //  }
+        if (comp.mobilenumber == null) {
+            alert('Please Enter mobilenumber');
             return;
         }
-        if (con.subject == null) {
-            alert('Please enter subject.');
+        //if (adv.AdvertismentExpiredDate == null) {
+        //    alert('Please Enter AdvertismentExpiredDate');
+        //    return;
+        //}
+        if (comp.YourEmail == null) {
+            alert('Please Enter YourEmail');
             return;
         }
-        if (con.message == null) {
-            alert('Please enter message.');
+        if (comp.masage == null) {
+            alert('Please Enter masage');
             return;
         }
-        var Contactus = {
-                      
-            name: con.name,
-            email: con.email,
-            category: con.category,
-            subject: con.subject,
-            message: con.message,
-            flag: 'I',
 
 
+        var Compalaints = {
+            Id: -1,
+            Name: comp.Yourname,
+           
+            PhoneNumber: comp.mobilenumber,
+            EmailId: comp.YourEmail,
+            Description: comp.masage,
+            TicketNo: comp.bookingnumber,
+            Category: comp.AdvertismentDate,
+            Subject: comp.subject,
+            flag: "I"
         }
+
         var req = {
-            url: '/api/Contact/ContactsRequst',
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            data: Contactus
+            url: '/api/Complaints/ComplaintsPortal',
+            data: Compalaints
         }
-
         $http(req).then(function (response) {
 
-            alert("Your Request Successfull!");
+            alert("Saved successfully!");
 
             $scope.Group = null;
 
         }, function (errres) {
             var errdata = errres.data;
-            var errmssg = "Your Details Are Incorrect";
+            var errmssg = "your Details Are Incorrect";
             errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
-            $scope.showDialog(errmssg);
+            alert(errmssg);
         });
-
-        $scope.clearFleetOwnerRequest1 = function () {
-            $scope.FleetOwnerRequest1 = null;
-        };
-    }
-});
-tjq(document).ready(function($) {
-    $("form.contact-form").submit(function(e) {
-        e.preventDefault();
-        var obj = $(this);
-        if (obj.hasClass("disabled")) {
-            return false;
-        }
-        obj.addClass("disabled");
-        $.ajax({
-            url: obj.attr("action"),
-            type: 'post',
-            dataType: 'html',
-            data: obj.serialize(),
-            success: function(r) {
-                var msgobj = obj.find(".alert");
-                if (r.indexOf("Success") >= 0) {
-                    msgobj.removeClass("alert-error");
-                    msgobj.addClass("alert-success");
-                } else {
-                    msgobj.removeClass("alert-success");
-                    msgobj.addClass("alert-error");
-                }
-                msgobj.text(r);
-                msgobj.fadeIn();
-                obj.removeClass("disabled");
-            }
-        });
-    });
+        $scope.currGroup = null;
+    };
 });

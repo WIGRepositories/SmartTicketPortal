@@ -326,6 +326,8 @@
     
        
         </div>
+   
+
     <section id="content">
         <div class="container">
             <div id="main">
@@ -369,46 +371,46 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Your Name</label>
-                                        <input type="text" name="name" class="input-text full-width">
+                                        <input type="text" name="name" class="input-text full-width" ng-model="con.name">
                                     </div>
                                     <div class="form-group">
                                         <label>Your Email</label>
-                                        <input type="text" name="email" class="input-text full-width">
+                                        <input type="text" name="email" class="input-text full-width" ng-model="con.email">
                                     </div>
                                     <div>
                                         <label>Category</label>
                                         
-                                        <select class="input-text full-width" ng-model="seat.Age">
+                                        <select class="input-text full-width" ng-model="con.category">
                                             <option value="" selected>Select</option>
-                                            <option value="21">Suggestion</option>
-                                            <option value="22">Complaint</option>
-                                            <option value="23">Booking issue</option>
-                                            <option value="24">cancellation issue</option>
-                                            <option value="25">Scheduling issue</option>
-                                            <option value="26">Card issue</option>
-                                            <option value="27">Print issue</option>
-                                            <option value="28">License renewal issue</option>
-                                            <option value="29">Payment related issue</option>
-                                            <option value="30">Refund issue</option>
-                                            <option value="31">Others</option>
+                                            <option value="Suggestion">Suggestion</option>
+                                            <option value="Complaint">Complaint</option>
+                                            <option value="Booking issue">Booking issue</option>
+                                            <option value="Cancellation issue">Cancellation issue</option>
+                                            <option value="Scheduling issue">Scheduling issue</option>
+                                            <option value="Card issue">Card issue</option>
+                                            <option value="Print issue">Print issue</option>
+                                            <option value="License renewal issue">License renewal issue</option>
+                                            <option value="Payment related issue">Payment related issue</option>
+                                            <option value="Refund issue">Refund issue</option>
+                                            <option value="Others">Others</option>
                                         </select>
                                         
                                         </div>
                                     <div class="form-group">
                                         <label>Subject</label>
-                                        <input type="text" name="subject" class="input-text full-width">
+                                        <input type="text" name="subject" class="input-text full-width" ng-model="con.subject">
                                     </div>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="form-group">
                                         <label>Your Message</label>
-                                        <textarea name="message" rows="11" class="input-text full-width" placeholder="write message here"></textarea>
+                                        <textarea name="message" rows="11" class="input-text full-width" placeholder="write message here" ng-model="con.message"></textarea>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-sms-offset-6 col-sm-offset-6 col-md-offset-8 col-lg-offset-9">
-                                <button type="submit" class="btn-medium full-width">SEND MESSAGE</button>
+                                <button type="submit" class="btn-medium full-width" ng-click="send(con,'I')">SEND MESSAGE</button>
                             </div>
                         </form>
                     </div>
@@ -563,7 +565,8 @@
         <script src="js/angular.js"></script>
         <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
         <script src="js/ngStorage.js"></script>
-    <script src="js/products.js"></script>
+    <!--<script src="js/products.js"></script>-->
+    <script src="js/contact.js"></script>
     <script src="js/maps/gmap.js"></script>
     <script type="text/javascript">
         tjq(".travelo-google-map").gmap3({
