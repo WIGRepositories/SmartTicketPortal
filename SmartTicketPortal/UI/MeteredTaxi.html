@@ -1,4 +1,4 @@
-﻿<html lang="en" ng-app="myApp" ng-controller="mapCtrl">
+﻿<html ng-app="myApp">
 <head>
     <!-- Page Title -->
     <title>INTER BUS</title>
@@ -33,18 +33,13 @@
     <!-- Responsive Styles -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- CSS for IE -->
-    [if lte IE 9]>
+    <!--[if lte IE 9]>-->
     <link rel="stylesheet" type="text/css" href="css/ie.css" />
-    <![endif]
+    <!--<![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvjzroTvKlmWDxJn2ZCNvv_12jGA6XadU"></script>
-    <script data-require="angular.js@1.2.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js" data-semver="1.2.17"></script>
-    <script data-require="lodash-underscore@*" data-semver="2.4.1" src="https://rawgit.com/lodash/lodash/2.4.1/dist/lodash.underscore.min.js"></script>
-    <script data-require="angular-google-maps@*" data-semver="1.1.4" src="https://rawgit.com/nlaplante/angular-google-maps/1.1.4/dist/angular-google-maps.min.js"></script>
-    <script src="http://jvandemo.github.io/angularjs-google-maps/dist/angularjs-google-maps.js"></script>
-    <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-
+    <!--mapp-->
+  
+    <!--map-->
     <!--[endif]-->
 
     <style>
@@ -81,7 +76,7 @@
 
 
 
-<body>
+<body ng-controller="mapCtrl">
 
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -367,11 +362,54 @@
                     <div class="form-group row">
                         <div class="col-xs-6">
                             <label for="ex1">From</label>
-                            <input class="form-control" id="ex1" type="text" placeholder="Current location" ng-model="directions.origin">
+                            <!--<input class="form-control" id="ex1" type="text" placeholder="Current location" ng-model="directions.origin">-->
+
+                            <input vs-google-autocomplete
+                                   vs-autocomplete-validator
+                                   ng-model="pickupPoint.place.name"
+                                   vs-place="pickupPoint.place"
+                                   vs-place-id="pickupPoint.components.placeId"
+                                   vs-street-number="pickupPoint.components.streetNumber"
+                                   vs-street="pickupPoint.components.street"
+                                   vs-city="pickupPoint.components.city"
+                                   vs-state="pickupPoint.components.state"
+                                   vs-country-short="pickupPoint.components.countryCode"
+                                   vs-country="pickupPoint.components.country"
+                                   vs-district="pickupPoint.components.district"
+                                   vs-post-code="pickupPoint.components.postCode"
+                                   vs-latitude="pickupPoint.components.location.lat"
+                                   vs-longitude="pickupPoint.components.location.long"
+                                   type="text"
+                                   name="pickupPoint"
+                                   id="pickupPoint"
+                                   class="form-control"
+                                   placeholder="Enter any address" value="{{pickupPoint.name}}" />
+
                         </div>
                         <div class="col-xs-6">
                             <label for="ex2">To</label>
-                            <input class="form-control" id="ex2" type="text" placeholder="Enter drop point" ng-model="directions.destination">
+                            <!--<input class="form-control" id="ex2" type="text" placeholder="Enter drop point" ng-model="directions.destination">-->
+
+                            <input vs-google-autocomplete
+                                   vs-autocomplete-validator
+                                   ng-model="dropPoint.place.name"
+                                   vs-place="dropPoint.place"
+                                   vs-place-id="dropPoint.components.placeId"
+                                   vs-street-number="dropPoint.components.streetNumber"
+                                   vs-street="dropPoint.components.street"
+                                   vs-city="dropPoint.components.city"
+                                   vs-state="dropPoint.components.state"
+                                   vs-country-short="dropPoint.components.countryCode"
+                                   vs-country="dropPoint.components.country"
+                                   vs-district="dropPoint.components.district"
+                                   vs-post-code="dropPoint.components.postCode"
+                                   vs-latitude="dropPoint.components.location.lat"
+                                   vs-longitude="dropPoint.components.location.long"
+                                   type="text"
+                                   name="dropPoint"
+                                   id="dropPoint"
+                                   class="form-control"
+                                   placeholder="Enter any address" value="{{dropPoint.name}}" />
                         </div>
 
                         <button type="submit" class="btn-medium green" style="margin-top:15px;margin-left:130px" ng-click="getDirections()">Submit</button>
@@ -419,8 +457,8 @@
                                             <form>
                                                 <div class="form-group row">
                                                     <div class="col-xs-6">
-                                                        <label for="ex1">Enter Mobile Number</label>
-                                                        <input class="form-control input-medium bfh-phone" id="ex1" type="text" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number">
+                                                        <label for="ex13">Enter Mobile Number</label>
+                                                        <input class="form-control input-medium bfh-phone" id="ex13" type="text" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number">
                                                     </div>
                                                     <!--<div class="col-xs-3">
                                                         <label for="ex2">To</label>
@@ -438,8 +476,8 @@
                                                 <form>
                                                     <div class="form-group row">
                                                         <div class="col-xs-6">
-                                                            <label for="ex1">Enter OTP</label>
-                                                            <input class="form-control" id="ex1" type="text" placeholder="OTP">
+                                                            <label for="ex12">Enter OTP</label>
+                                                            <input class="form-control" id="ex12" type="text" placeholder="OTP">
                                                         </div>
 
                                                         <button type="submit" class="btn-medium green" style="margin-top:23px">Submit</button>
@@ -468,6 +506,7 @@
                     </div>
                 </div>
             </div>
+            <!--map start-->
             <div id="full-width-content" class="col-md-6">
 
                 <div class="main">
@@ -489,7 +528,7 @@
                     </div>
 
                 </div>
-
+                <!--map end-->
                 <div class="col-md-6">
 
                 </div>
@@ -669,12 +708,21 @@
 
     <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 
-
-    <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvjzroTvKlmWDxJn2ZCNvv_12jGA6XadU&libraries=places&sensor=false"></script>
+
+    <script data-require="lodash-underscore@*" data-semver="2.4.1" src="https://rawgit.com/lodash/lodash/2.4.1/dist/lodash.underscore.min.js"></script>
+    <script data-require="angular-google-maps@*" data-semver="1.1.4" src="https://rawgit.com/nlaplante/angular-google-maps/1.1.4/dist/angular-google-maps.min.js"></script>
+    <script src="js/maps/vs-google-autocomplete.js"></script>
+
+    <!-- validator for autocomplete -->
+    <script src="js/maps/vs-autocomplete-validator.js"></script>
+    
+    <!---->
     <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
     <script src="js/ngStorage.js"></script>
-    <script src="js/products.js"></script>
+
     <script src="js/meteredtaxi.js"></script>
     <!--<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js'></script>-->
 

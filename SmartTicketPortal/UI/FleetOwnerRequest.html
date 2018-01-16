@@ -362,304 +362,310 @@
                 </ul>
             </div>
         </div>
-        <section id="content" class="gray-area" style="padding-left:200px">
-            <div class="container">
-                <div class="row" ng-show="registeredUseId != 0">
-                    <div id="main" class="col-sms-6 col-sm-8 col-md-9">
-                        <div class="booking-section travelo-box">
+       
+       
+                    <section id="content" class="gray-area" >
+                        <div class="container">
+                            <div class=" col-md-1">
+                                </div>
+                            <div class="row" ng-show="registeredUseId != 0">
+                                <div id="main" class="col-sms-6 col-sm-8 col-md-9">
+                                    <div class="booking-section travelo-box">
 
-                            <form class="booking-form">
-                                <div class="person-information">
-                                    <h1>Fleet Owner Request</h1>
-                                    <div class="form-group row">
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>first name*</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="first name" ng-model="FleetOwnerRequest1.FirstName" />
-                                        </div>
+                                        <form class="booking-form">
+                                            <div class="person-information">
+                                                <h1>Fleet Owner Request</h1>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>first name*</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="first name" ng-model="FleetOwnerRequest1.FirstName" />
+                                                    </div>
 
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>middle name</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="middle name" ng-model="FleetOwnerRequest1.MiddleName" />
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>last name*</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="last name" ng-model="FleetOwnerRequest1.LastName" />
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>EmailId*</label>
-                                            <input type="email" class="input-text full-width" value="" placeholder="EmailId" ng-model="FleetOwnerRequest1.EmailAddress" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Contact No:*</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="Contact No" ng-model="FleetOwnerRequest1.PhoneNo" />
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Alternate No:</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="Alternate No" ng-model="FleetOwnerRequest1.AltPhoneNo" />
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label for="selGender" class="control-label">Gender: </label>
-                                            <div>
-                                                <select id="selGender" class="selector full-width" ng-model="FleetOwnerRequest1.Gender">
-                                                    <option value="" selected>Select</option>
-                                                    <option value="1">Male</option>
-                                                    <option value="2">Female</option>
-                                                    <option value="3">Others</option>
-                                                </select>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>middle name</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="middle name" ng-model="FleetOwnerRequest1.MiddleName" />
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>last name*</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="last name" ng-model="FleetOwnerRequest1.LastName" />
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>EmailId*</label>
+                                                        <input type="email" class="input-text full-width" value="" placeholder="EmailId" ng-model="FleetOwnerRequest1.EmailAddress" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Contact No:*</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="Contact No" ng-model="FleetOwnerRequest1.PhoneNo" />
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Alternate No:</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="Alternate No" ng-model="FleetOwnerRequest1.AltPhoneNo" />
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="selGender" class="control-label">Gender: </label>
+                                                        <div>
+                                                            <select id="selGender" class="selector full-width" ng-model="FleetOwnerRequest1.Gender">
+                                                                <option value="" selected>Select</option>
+                                                                <option value="1">Male</option>
+                                                                <option value="2">Female</option>
+                                                                <option value="3">Others</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label for="inputLastName" class="control-label">Addres</label>
+                                                        <textarea rows="2" style="width:90%" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea>
+                                                    </div>
+
+                                                </div>
+                                                <h1>Company Details</h1>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Name*</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="Company Name" ng-model="FleetOwnerRequest1.CompanyName" />
+                                                    </div>
+
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Email</label>
+                                                        <input type="email" class="input-text full-width" value="" placeholder="Company Email" ng-model="FleetOwnerRequest1.CmpEmailAddress" />
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Contat Number*</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="Office contat number" ng-model="FleetOwnerRequest1.CmpPhoneNo" />
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Alternate Number</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="Office contat number" ng-model="FleetOwnerRequest1.CmpAltPhoneNo" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Title*</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.CmpTitle" />
+                                                    </div>
+
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Caption</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.CmpCaption" />
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="control-label">Fleet Size</label>
+                                                        <div>
+                                                            <select class="selector full-width" ng-model="FleetOwnerRequest1.FleetSize">
+                                                                <option value="">select fleet size</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Staff size:</label>
+                                                        <div>
+                                                            <select class="selector full-width" ng-model="FleetOwnerRequest1.StaffSize">
+                                                                <option value="">select Staff size</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Country:</label>
+                                                        <div>
+                                                            <select class="selector full-width" ng-model="FleetOwnerRequest1.Country">
+                                                                <option value="">select Country</option>
+                                                                <option value="245">Zimbabwe</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>State/Province:</label>
+                                                        <div>
+                                                            <select class="selector full-width" ng-model="FleetOwnerRequest1.state">
+                                                                <option value="">select State/Province</option>
+                                                                <option value="1">Bulawayo</option>
+                                                                <option value="2">Harare</option>
+                                                                <option value="3">Manicaland</option>
+                                                                <option value="4">Mashonaland Central</option>
+                                                                <option value="5">Mashonaland East</option>
+                                                                <option value="6">Mashonaland West</option>
+                                                                <option value="7">Masvingo</option>
+                                                                <option value="8">Matabeleland North</option>
+                                                                <option value="9">Matabeleland South</option>
+                                                                <option value="10">Midlands</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Zipcode:</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.ZipCode" />
+                                                    </div>
+
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label>Fax:</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.CmpFax" />
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group row">
+
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label for="inputLastName" class="control-label">Addres</label>
+                                                        <textarea rows="2" style="width:90%" class="form-control" ng-model="FleetOwnerRequest1.CmpAddress"></textarea>
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <label for="inputLastName" class="control-label">Alternate Addres</label>
+                                                        <textarea rows="2" style="width:90%" class="form-control" ng-model="FleetOwnerRequest1.CmpAltAddress"></textarea>
+                                                    </div>
+
+                                                </div>
+                                                <h1>General details</h1>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-3 col-md-4">
+                                                        <label>Current system in use.:</label>
+                                                        <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.CurrentSystemInUse" />
+                                                    </div>
+
+                                                    <div class="col-sm-3 col-md-4">
+                                                        <label>how did you hear about us</label>
+                                                        <div>
+                                                            <select class="selector full-width" ng-model="FleetOwnerRequest1.howdidyouhearaboutus">
+                                                                <option value="">Select</option>
+                                                                <option value="Friends">Friends</option>
+                                                                <option value="Paper Advertisement">Paper Advertisement</option>
+                                                                <option value="Social Media">Social Media</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3 col-md-6">
+                                                        <div>
+                                                            <label>
+                                                                <input id="agreement" type="checkbox" ng-model="FleetOwnerRequest1.SendNewProductsEmails"> Send New Products Emails:<a href="#"><span class="skin-color"></span></a>.
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <div>
+                                                            <label>
+                                                                <input id="agreement" type="checkbox" ng-model="FleetOwnerRequest1.Agreetotermsandconditions"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group row" style="padding-left:100px">
+                                                    <div class="col-sm-6 col-md-5">
+                                                        <button type="submit" class="full-width btn-large" ng-click="save(FleetOwnerRequest1, 'I')">Submit</button>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-5">
+                                                        <button type="submit" class="full-width btn-large">Reset</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label for="inputLastName" class="control-label">Addres</label>
-                                            <textarea rows="2" style="width:90%" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea>
-                                        </div>
-
-                                    </div>
-                                    <h1>Company Details</h1>
-                                    <div class="form-group row">
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Name*</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="Company Name" ng-model="FleetOwnerRequest1.CompanyName" />
-                                        </div>
-
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Email</label>
-                                            <input type="email" class="input-text full-width" value="" placeholder="Company Email" ng-model="FleetOwnerRequest1.CmpEmailAddress" />
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Contat Number*</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="Office contat number" ng-model="FleetOwnerRequest1.CmpPhoneNo" />
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Alternate Number</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="Office contat number" ng-model="FleetOwnerRequest1.CmpAltPhoneNo" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Title*</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.CmpTitle" />
-                                        </div>
-
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Caption</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.CmpCaption" />
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label class="control-label">Fleet Size</label>
-                                            <div>
-                                                <select class="selector full-width" ng-model="FleetOwnerRequest1.FleetSize">
-                                                    <option value="">select fleet size</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                    <option value="10">10</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Staff size:</label>
-                                            <div>
-                                                <select class="selector full-width" ng-model="FleetOwnerRequest1.StaffSize">
-                                                    <option value="">select Staff size</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                    <option value="10">10</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Country:</label>
-                                            <div>
-                                                <select class="selector full-width" ng-model="FleetOwnerRequest1.Country">
-                                                    <option value="">select Country</option>
-                                                    <option value="245">Zimbabwe</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>State/Province:</label>
-                                            <div>
-                                                <select class="selector full-width" ng-model="FleetOwnerRequest1.state">
-                                                    <option value="">select State/Province</option>
-                                                    <option value="1">Bulawayo</option>
-                                                    <option value="2">Harare</option>
-                                                    <option value="3">Manicaland</option>
-                                                    <option value="4">Mashonaland Central</option>
-                                                    <option value="5">Mashonaland East</option>
-                                                    <option value="6">Mashonaland West</option>
-                                                    <option value="7">Masvingo</option>
-                                                    <option value="8">Matabeleland North</option>
-                                                    <option value="9">Matabeleland South</option>
-                                                    <option value="10">Midlands</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Zipcode:</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.ZipCode" />
-                                        </div>
-
-                                        <div class="col-sm-3 col-md-3">
-                                            <label>Fax:</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.CmpFax" />
-                                        </div>
-
-                                    </div>
-                                    <div class="form-group row">
-
-                                        <div class="col-sm-3 col-md-3">
-                                            <label for="inputLastName" class="control-label">Addres</label>
-                                            <textarea rows="2" style="width:90%" class="form-control" ng-model="FleetOwnerRequest1.CmpAddress"></textarea>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3">
-                                            <label for="inputLastName" class="control-label">Alternate Addres</label>
-                                            <textarea rows="2" style="width:90%" class="form-control" ng-model="FleetOwnerRequest1.CmpAltAddress"></textarea>
-                                        </div>
-
-                                    </div>
-                                    <h1>General details</h1>
-                                    <div class="form-group row">
-                                        <div class="col-sm-3 col-md-4">
-                                            <label>Current system in use.:</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="FleetOwnerRequest1.CurrentSystemInUse" />
-                                        </div>
-
-                                        <div class="col-sm-3 col-md-4">
-                                            <label>how did you hear about us</label>
-                                            <div>
-                                                <select class="selector full-width" ng-model="FleetOwnerRequest1.howdidyouhearaboutus">
-                                                    <option value="">Select</option>
-                                                    <option value="Friends">Friends</option>
-                                                    <option value="Paper Advertisement">Paper Advertisement</option>
-                                                    <option value="Social Media">Social Media</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3 col-md-6">
-                                           <div>
-                                                <label>
-                                                    <input id="agreement" type="checkbox" ng-model="FleetOwnerRequest1.SendNewProductsEmails"> Send New Products Emails:<a href="#"><span class="skin-color"></span></a>.
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 col-md-6">
-                                            <div>
-                                                <label>
-                                                    <input id="agreement" type="checkbox" ng-model="FleetOwnerRequest1.Agreetotermsandconditions"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="form-group row" style="padding-left:100px">
-                                        <div class="col-sm-6 col-md-5">
-                                            <button type="submit" class="full-width btn-large" ng-click="save(FleetOwnerRequest1, 'I')">Submit</button>
-                                        </div>
-                                        <div class="col-sm-6 col-md-5">
-                                            <button type="submit" class="full-width btn-large">Reset</button>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
 
-                </div>
-                <!--<div class="container" style="margin-top:60px;min-height:380px;font-size:medium" ng-show="registeredUseId != 0">
-                    <div class="container" style="margin-top:60px;min-height:380px;font-size:medium" >
-                    <div class="row">
-                        <h2 style="text-align:center">Verify Email Address</h2>
+                            </div>
+                            <!--<div class="container" style="margin-top:60px;min-height:380px;font-size:medium" ng-show="registeredUseId != 0">
+                        <div class="container" style="margin-top:60px;min-height:380px;font-size:medium" >
+                        <div class="row">
+                            <h2 style="text-align:center">Verify Email Address</h2>
 
 
-                        <div class="col-lg-7 col-lg-offset-2">
-                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                            <div class="col-lg-7 col-lg-offset-2">
+                                <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
 
-                                <tr>
-                                    <td valign="top" style="padding-left:15px;padding-right:15px;">
-
-
-                                        <div class="col-lg-12">
-                                            <h2>Enter verification code </h2>
-                                            <div class="content">
-                                                <div class="cancinfo">Please check your email and enter the email verification code</div>
-                                                <font style="padding-top: 10px;color:red" ng-show="codeVerified == 0">
-                                                    <h5>
-                                                        Invalid code. Please re-enter to verify.
-                                                    </h5>
-                                                </font>
-                                                <div class="row" style="padding-top:15px;padding-bottom:15px">
+                                    <tr>
+                                        <td valign="top" style="padding-left:15px;padding-right:15px;">
 
 
-                                                    <div class="col-md-10">
-                                                        <div class="form-group">
-                                                            <label for="inputFirstName" class="col-md-4 control-label">Verificaion code:</label>
-                                                            <div class="col-md-7" style="text-align:left"><input id="inputFirstName" type="text" placeholder="E-mail verification code" class="form-control" ng-model="emailAddrCode" /></div>
+                                            <div class="col-lg-12">
+                                                <h2>Enter verification code </h2>
+                                                <div class="content">
+                                                    <div class="cancinfo">Please check your email and enter the email verification code</div>
+                                                    <font style="padding-top: 10px;color:red" ng-show="codeVerified == 0">
+                                                        <h5>
+                                                            Invalid code. Please re-enter to verify.
+                                                        </h5>
+                                                    </font>
+                                                    <div class="row" style="padding-top:15px;padding-bottom:15px">
+
+
+                                                        <div class="col-md-10">
+                                                            <div class="form-group">
+                                                                <label for="inputFirstName" class="col-md-4 control-label">Verificaion code:</label>
+                                                                <div class="col-md-7" style="text-align:left"><input id="inputFirstName" type="text" placeholder="E-mail verification code" class="form-control" ng-model="emailAddrCode" /></div>
+                                                            </div>
+
                                                         </div>
+                                                        <button class="btn btn-info pull-right" ng-click="VerifyEmailAddress();">
+                                                            Submit
+                                                            &nbsp;<i class="fa fa-chevron-circle-right"></i>
+                                                        </button>
 
                                                     </div>
-                                                    <button class="btn btn-info pull-right" ng-click="VerifyEmailAddress();">
-                                                        Submit
-                                                        &nbsp;<i class="fa fa-chevron-circle-right"></i>
-                                                    </button>
+                                                    <font style="padding-top: 10px;">
+                                                        <h5>
+                                                            Note:You will not be able to receive e-tickets and other updates from interbus if the email id is not verified.
+                                                            <br />  Did not receive the code/resend verification code? please <a href="Fleetownerrequest.html" style="color:red">
+                                                                click here
+                                                            </a> to re-send the code
+                                                        </h5>
+                                                    </font>
+
+
+
+                                                    <div class="form-group mbn">
+
+                                                        <a href="../index.html" class="btn btn-warning">
+                                                            <i class="fa fa-chevron-circle-left"></i>&nbsp;
+                                                            Later
+                                                        </a>
+
+                                                    </div>
 
                                                 </div>
-                                                <font style="padding-top: 10px;">
-                                                    <h5>
-                                                        Note:You will not be able to receive e-tickets and other updates from interbus if the email id is not verified.
-                                                        <br />  Did not receive the code/resend verification code? please <a href="Fleetownerrequest.html" style="color:red">
-                                                            click here
-                                                        </a> to re-send the code
-                                                    </h5>
-                                                </font>
-
-
-
-                                                <div class="form-group mbn">
-
-                                                    <a href="../index.html" class="btn btn-warning">
-                                                        <i class="fa fa-chevron-circle-left"></i>&nbsp;
-                                                        Later
-                                                    </a>
-
-                                                </div>
-
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
 
-                            </table>
+                                </table>
+
+                            </div>
+
+
+
 
                         </div>
+                    </div>-->
 
-
-
-
-                    </div>
-                </div>-->
-
-            </div>
-        </section>
+                        </div>
+                    </section>
+                
+      
 
     </div>
 
