@@ -119,7 +119,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             email: con.email,
             category: con.category,
             subject: con.subject,
-            massage: con.message,
+            message: con.message,
             flag: 'I',
 
 
@@ -127,13 +127,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         var req = {
             url: '/api/Contact/ContactsRequst',
             method: 'POST',
-            
+            headers: { 'Content-Type': 'application/json' },
             data: Contactus
         }
 
         $http(req).then(function (response) {
 
-            alert("Saved successfully!");
+            alert("Your Request Successfull!");
 
             $scope.Group = null;
 

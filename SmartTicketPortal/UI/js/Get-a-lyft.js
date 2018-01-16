@@ -1,6 +1,6 @@
 ﻿var app = angular.module('plunker', ['google-maps']);
 
-app.controller('MainCtrl', function ($scope, $document ) {
+app.controller('MainCtrl', function ($scope, $document,$http) {
     // map object
     $scope.map = {
         control: {},
@@ -18,83 +18,7 @@ app.controller('MainCtrl', function ($scope, $document ) {
             longitude: 78.4867
         }
     }
-    //countries
-    $scope.GetCountry = function () {
 
-        $http.get('/api/Country/GetCountry?active=1').then(function (response, req) {
-            $scope.Countries = response.data;
-
-        });
-    }
-
-    $scope.Signin = function () {
-
-        var u = $scope.UserName;
-        var p = $scope.Password
-
-        if (u == null) {
-            $scope.showDialog('Please enter username');
-            return;
-        }
-
-        if (p == null) {
-            $scope.showDialog('Please enter password');
-            return;
-        }
-        var inputcred = { LoginInfo: u, Passkey: p }
-
-        var req = {
-            method: 'POST',
-            url: '/api/ValidateCredentials/ValidateCredentials',
-            data: inputcred
-        }
-
-        $http(req).then(function (res) {
-
-            if (res.data.length == 0) {
-                alert('invalid credentials');
-            }
-            else {
-                //if the user has role, then get the details and save in session
-                $localStorage.uname = res.data[0].FirstName;
-                $scope.username = $localStorage.uname;
-                $localStorage.userdetails = res.data;
-                //  window.location.href = "UI/BookedTicketHistory.html";
-                //$uibModal.close();
-                if ($scope.selectedOp == 1) {
-                    window.location.href = "UI/BookedTicketHistory.html";
-                }
-                else {
-                    window.location.href = "UI/UserProfile.html";
-                }
-                //switch ($scope.SelectedOp) {
-                //    case 1:
-                //        window.location.href = "UI/BookedTicketHistory.html";
-                //        break;                    
-                //    case 2:
-                //        window.location.href = "UI/CancelTicket.html";
-                //        break;
-                //    case 3:
-                //        window.location.href = "UI/Feedback.html";
-                //        break;
-                //    case 4:
-                //        window.location.href = "UserProfile.html";
-                //        break;
-                //    default:
-                //        window.location.href = "UserProfile.html";
-                //        break;
-                //        break;
-                //}
-
-            }
-        });
-    }
-
-    $scope.SignOutUser = function () {
-        $localStorage.uname = null;
-        $scope.username = null;
-        $localStorage.userdetails = null;
-    }
     // instantiate google map objects for directions
     var directionsDisplay = new google.maps.DirectionsRenderer();
     var directionsService = new google.maps.DirectionsService();
@@ -118,11 +42,94 @@ app.controller('MainCtrl', function ($scope, $document ) {
             if (status === google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
                 directionsDisplay.setMap($scope.map.control.getGMap());
+
+                $scope.distval = response.routes[0].legs[0].distance.value / 1000;
+                $scope.distText = $scope.distval + " KM";
                 //directionsDisplay.setPanel(document.getElementById('directionsList'));
                 //$scope.directions.showList = true;
             } else {
                 alert('Google route unsuccesfull!');
             }
+            $scope.SetTotal();
+        });
+        $scope.step = 2;
+    }
+    
+
+    $scope.step = 1;
+    $scope.test = function () {
+        $scope.step = 3
+    };
+    $scope.SetTotal = function () {
+
+        distance: $scope.distText
+
+        var dist = {
+            distance: $scope.distText,
+            packageId:1
+        }
+
+        //$scope.total = eval($scope.unitprice) * eval($scope.distval);
+        var req = {
+            method: 'POST',
+            url: '/api/BookAVehicle/CalculatePrice',
+            data: dist
+        }
+        $http(req).then(function (response) {
+            var res = response.data;
         });
     }
+
+    //var inputcred = { distance: $scope.distText }
+
+    $scope.SaveNew = function (book) {
+        //alert();
+
+
+        var vdpc = {
+            Id: -1,
+            Src: $scope.directions.origin,
+            Dest: $scope.directions.destination,
+            SrcLatitude: $scope.srcLat,
+            SrcLongitude: $scope.srcLon,
+            DestLatitude: $scope.destLat,
+            DestLongitude: $scope.destLon,
+            packageId: 1,
+            CustomerPhoneNo: book.CustomerPhoneNo,
+            BookingStatus: $scope.BookingStatus,
+            BookingChannel: $scope.BookingChannel,
+            //PricingTypeId: directions.pricing,
+            Pricing: $scope.pricing,
+            distance: $scope.distText,
+            UnitPrice: $scope.unitprice,
+            Amount: $scope.Price,
+            flag: 'I'
+        }
+
+        var req = {
+            method: 'POST',
+            url: '/api/BookAVehicle/SaveBookingDetails',
+            data: vdpc
+        }
+
+        $http(req).then(function (response) {
+
+            //alert("Booking successful!");
+            $scope.Group = null;
+
+        }, function (errres) {
+            var errdata = errres.data;
+            var errmssg = "";
+            errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
+            $scope.showDialog(errmssg);
+        });
+    }
+   
+    
+    //$http(req).then(function (res) {
+
+    //    if (res.data.length == 0) {
+    //        alert('invalid credentials');
+    //    }
+    //});
 });
