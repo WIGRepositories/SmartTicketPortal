@@ -495,6 +495,7 @@
     <Content Include="UI\images\tour\home\logo.png" />
     <Content Include="UI\images\travelo-html-demo.jpg" />
     <Content Include="UI\images\travelo_process.png" />
+    <Content Include="UI\js\Ambulance.js" />
     <Content Include="UI\js\angular-animate.js" />
     <Content Include="UI\js\angular.js" />
     <Content Include="UI\js\BookHireVehicleMap.js" />
@@ -564,6 +565,7 @@
     <Content Include="UI\js\ngStorage.js" />
     <Content Include="UI\js\pace.min.js" />
     <Content Include="UI\js\page-loading.js" />
+    <Content Include="UI\js\ParcelService.js" />
     <Content Include="UI\js\Products.js" />
     <Content Include="UI\js\Refund.js" />
     <Content Include="UI\js\RegisterDriver.js" />
@@ -588,6 +590,7 @@
     <Content Include="UI\MeteredTaxi.html" />
     <Content Include="UI\MyTicket.html" />
     <Content Include="UI\pages-coming-soon1.html" />
+    <Content Include="UI\ParcelService.html" />
     <Content Include="UI\posandroid.html" />
     <Content Include="UI\products.html" />
     <Content Include="UI\Productsshown.html" />
