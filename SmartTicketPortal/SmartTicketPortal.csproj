@@ -555,6 +555,8 @@
     <Content Include="UI\js\Login.js" />
     <Content Include="UI\js\main.js" />
     <Content Include="UI\js\maps\gmap.js" />
+    <Content Include="UI\js\maps\vs-autocomplete-validator.js" />
+    <Content Include="UI\js\maps\vs-google-autocomplete.js" />
     <Content Include="UI\js\MeteredTaxi.js" />
     <Content Include="UI\js\modernizr.2.7.1.min.js" />
     <Content Include="UI\js\moment.js" />
