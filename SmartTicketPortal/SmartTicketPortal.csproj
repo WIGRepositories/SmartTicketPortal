@@ -500,6 +500,7 @@
     <Content Include="UI\js\BookHireVehicleMap.js" />
     <Content Include="UI\js\booking.js" />
     <Content Include="UI\js\BookingHistory.js" />
+    <Content Include="UI\js\BookTowing.js" />
     <Content Include="UI\js\bootstrap.js" />
     <Content Include="UI\js\bootstrap.min.js" />
     <Content Include="UI\js\bxslider.min.js" />
