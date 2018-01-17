@@ -120,7 +120,16 @@ app.controller('mapCtrl', function ($scope, $http) {
 
         });
     }
-
+    $scope.SetTotal = function () {
+        $scope.total = eval($scope.unitprice) * eval($scope.distval);
+    }
+    //-----------------Hidestart-------------------
+    $scope.IsVisible = false;
+    $scope.ShowHide = function () {
+        //If DIV is visible it will be hidden and vice versa.
+        $scope.IsVisible = $scope.IsVisible ? false : true;
+    }
+    //-----------------Hideend-------------------
     //$http.get('http://localhost:1476/api/Tracking/GetLatLongHistory').
     //    success(function (data) {
 

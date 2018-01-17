@@ -76,7 +76,7 @@
 
 
 <body ng-controller="mapCtrl">
-    {{6+6}}
+
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
             <div class="topnav hidden-xs">
@@ -411,7 +411,7 @@
                                    placeholder="Enter any address" value="{{dropPoint.name}}" />
                         </div>
 
-                        <button type="submit" class="btn-medium green" style="margin-top:15px;margin-left:130px" ng-click="getDirections()">Submit</button>
+                        <button type="submit" class="btn-medium green" style="margin-top:15px;margin-left:130px" ng-click="getDirections()" >Submit</button>
                     </div>
                 </form>
                 <hr>
@@ -457,13 +457,13 @@
                                                 <div class="form-group row">
                                                     <div class="col-xs-6">
                                                         <label for="ex13">Enter Mobile Number</label>
-                                                        <input class="form-control input-medium bfh-phone" id="ex13" type="text" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number">
+                                                        <input class="form-control input-medium bfh-phone" id="ex13" type="text" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number" >
                                                     </div>
                                                     <!--<div class="col-xs-3">
                                                         <label for="ex2">To</label>
                                                         <input class="form-control" id="ex2" type="text">
                                                     </div>-->
-                                                    <button type="submit" class="btn-medium green" style="margin-top:23px">Submit</button>
+                                                    <button type="submit" class="btn-medium green" style="margin-top:23px" value="Show Hide DIV" ng-click="ShowHide()">Submit</button>
                                                 </div>
                                             </form>
 
@@ -471,7 +471,7 @@
 
 
 
-                                            <div class="panel">
+                                            <div class="panel" ng-show="IsVisible">
                                                 <form>
                                                     <div class="form-group row">
                                                         <div class="col-xs-6">

@@ -1576,6 +1576,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\PasswordverificationController.cs" />
+    <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="Controllers\RegisterDriverController.cs" />
     <Compile Include="Controllers\RegisterUserController.cs" />
     <Compile Include="Controllers\ResetPwdController.cs" />
