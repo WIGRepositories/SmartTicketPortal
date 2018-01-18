@@ -39,7 +39,7 @@
     <!-- Responsive Styles -->
     <link rel="stylesheet" href="css/responsive.css">
 
-   
+
     <style>
         section#content {
             min-height: 700px;
@@ -173,12 +173,12 @@
                                 </ul>
                             </li>
                             <!--<li class="menu-item-has-children">
-                        <a href="Status_and_Updates.html">Status &amp;Update</a>
-                        <ul>
-                            <li><a href="pages-coming-soon1.html">Plans</a></li>
-                            <li><a href="Status_and_Updates.html">Status</a></li>
-                        </ul>
-                    </li>-->
+                                <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="pages-coming-soon1.html">Plans</a></li>
+                                    <li><a href="Status_and_Updates.html">Status</a></li>
+                                </ul>
+                            </li>-->
                             <li class="menu-item-has-children">
                                 <a href="#">online shop</a>
                                 <ul>
@@ -187,17 +187,17 @@
                                 </ul>
                             </li>
                             <!--<li class="menu-item-has-children">
-                        <a href="productsshown.html">Products/Licenses</a>
-                        <ul>
-                            <li><a href="Licenses.html">Advt Licence</a></li>
-                            <li><a href="Licenses.html">APP Licence</a></li>
-                            <li><a href="Licenses.html">BT Licence</a></li>
-                            <li><a href="cards.html">Cards</a></li>
-                            <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                            <li><a href="apps.html">Mobile App</a></li>
-                            <li><a href="products.html">Products</a></li>
-                        </ul>
-                    </li>-->
+                                <a href="productsshown.html">Products/Licenses</a>
+                                <ul>
+                                    <li><a href="Licenses.html">Advt Licence</a></li>
+                                    <li><a href="Licenses.html">APP Licence</a></li>
+                                    <li><a href="Licenses.html">BT Licence</a></li>
+                                    <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="apps.html">Mobile App</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                </ul>
+                            </li>-->
                             <li class="menu-item-has-children">
                                 <a href="productsshown.html">Licenses</a>
                                 <ul>
@@ -243,12 +243,12 @@
                             </ul>
                         </li>
                         <!--<li class="menu-item-has-children">
-                    <a href="Status_and_Updates.html">Status &amp;Update</a>
-                    <ul>
-                        <li><a href="pages-coming-soon1.html">Plans</a></li>
-                        <li><a href="Status_and_Updates.html">Status</a></li>
-                    </ul>
-                </li>-->
+                            <a href="Status_and_Updates.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="pages-coming-soon1.html">Plans</a></li>
+                                <li><a href="Status_and_Updates.html">Status</a></li>
+                            </ul>
+                        </li>-->
                         <li class="menu-item-has-children">
                             <a href="#">online shop</a>
                             <ul>
@@ -257,17 +257,17 @@
                             </ul>
                         </li>
                         <!--<li class="menu-item-has-children">
-                    <a href="productsshown.html">Products/Licenses</a>
-                    <ul>
-                        <li><a href="Licenses.html">Advt Licence</a></li>
-                        <li><a href="Licenses.html">APP Licence</a></li>
-                        <li><a href="Licenses.html">BT Licence</a></li>
-                        <li><a href="cards.html">Cards</a></li>
-                        <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                        <li><a href="apps.html">Mobile App</a></li>
-                        <li><a href="products.html">Products</a></li>
-                    </ul>
-                </li>-->
+                            <a href="productsshown.html">Products/Licenses</a>
+                            <ul>
+                                <li><a href="Licenses.html">Advt Licence</a></li>
+                                <li><a href="Licenses.html">APP Licence</a></li>
+                                <li><a href="Licenses.html">BT Licence</a></li>
+                                <li><a href="cards.html">Cards</a></li>
+                                <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                <li><a href="apps.html">Mobile App</a></li>
+                                <li><a href="products.html">Products</a></li>
+                            </ul>
+                        </li>-->
                         <li class="menu-item-has-children">
                             <a href="productsshown.html">Licenses</a>
                             <ul>
@@ -353,7 +353,7 @@
 
 
     <div class="page-title-container">
-        <div class="container" >
+        <div class="container">
             <div class="page-title pull-left" style="padding-right:0px">
                 <h1 class="entry-title">Bus Search</h1>
             </div>
@@ -370,10 +370,76 @@
                 <font style="color: white;" size="4">  {{src.Name}} - {{dest.Name}} </font>
             </div>
             <div class="col-md-4">
-                
+
             </div>
+        </div>
+    </div>
+
+    <div class="container" ng-init="testClick();" style="margin-top:10px">
+        <div class=" col-md-12">
+            <div class="col-sm-6">
+                <font class="soap-icon-calendar" style="color: black;" size="5">  {{src.Name}} - {{dest.Name}} </font>
+                <br>Onword:12-12-2007;Return:12-12-2007
+            </div>
+            <div class="col-sm-3">
+                <font style="color: black;" size="3">Oneway Journey</font>
+            </div>
+            <div class="col-sm-3">
+
+                <button type="button btn-large" ng-click="ShowHide()">Modify search</button>
+
+            </div>
+        </div>
+        <div class=" col-md-12 " style="margin-top:5px" ng-show="IsVisible">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="src">
+                        <option value="">Select Source</option>
+                    </select>
                 </div>
-   </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="dest">
+                        <option value="">Select Destination</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-xs-2">
+                <div class="datepicker-wrap">
+                    <input type="text" name="date_to" class="input-text full-width" placeholder="Departing On" />
+                </div>
+            </div>
+
+            <div class="col-xs-2">
+                <div class="datepicker-wrap">
+                    <input type="text" name="date_to" class="input-text full-width" placeholder="Return(Optional) " />
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                <div class="row">
+                    <!--<div class="col-xs-4">
+                        <div class="selector">
+                            <select class="full-width">
+                                <option value="1">Way</option>
+                                <option value="2">one Way</option>
+                                <option value="3">two Way</option>
+
+                            </select>
+                        </div>
+                    </div>-->
+
+                    <div class="col-xs-4">
+
+                        <button type="button btn-large" ng-click="GetServices();">Search Bus</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row" style="margin-top:5px;padding-right:0px">
 
         <div ng-show="services.length != 0" style=" width: 100%; z-index: 1; background-color: white;">
@@ -405,16 +471,13 @@
                             <font style="color:white;" size="4">  </font>
                         </div>
                     </div>-->
-
-
-                    <!--<div class="col-md-3" style="padding:15px;text-align:center">-->
-
-                        <!--<div class="col-md-6">
-                            <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#AddReturnDetails" data-toggle="modal">
-                                <font style="color:white;">+Return Journey</font>
-                            </div>
-                        </div>-->
-                        <!--<div class="col-md-6">
+                <!--<div class="col-md-3" style="padding:15px;text-align:center">-->
+                <!--<div class="col-md-6">
+                    <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#AddReturnDetails" data-toggle="modal">
+                        <font style="color:white;">+Return Journey</font>
+                    </div>
+                </div>-->
+                <!--<div class="col-md-6">
                             <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#ModifyJourneydetails" data-toggle="modal" ng-if="triptype == 'oneway'">
                                 <font style="color:white;">Modify</font>
                             </div>
@@ -423,12 +486,12 @@
 
 
                 </div>-->
-               
+
 
 
             </div>
-           
-            <div style="width: 100%; z-index: 1; background-color: white;padding-top:100px">
+
+            <div style="width: 100%; z-index: 1; background-color: white;padding-top:10px">
 
                 <div class="col-md-12" ng-repeat="b in services">
                     <table class="col-md-12" style="border:solid 1px;padding-top:30px">
@@ -477,7 +540,7 @@
                             <td style="text-align:center"></td>
                         </tr>
                     </table>
-                    
+
                     <div class="col-md-12" id="t_{{$index}}" style="display:none;text-align:center;padding:20px">
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
@@ -558,197 +621,123 @@
                 </div>
 
             </div>
-        </div>  
-        <div class="container">
-            <div class=" col-md-12">
-                <div class="col-sm-6">
-                    <font class="soap-icon-calendar" style="color: black;" size="5">  {{src.Name}} - {{dest.Name}} </font>
-                    <br>Onword:12-12-2007;Return:12-12-2007
-                </div>
-                <div class="col-sm-3">
-                    <font style="color: black;" size="3">Oneway Journey</font>
-                </div>
-                <div class="col-sm-3">
-
-                    <button type="button btn-large" ng-click="ShowHide()" >Modify search</button>
-
-                </div>
-            </div>
-            <div class=" col-md-12 " style="margin-top:5px" ng-show="IsVisible">
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
-                            <option value="">Select Source</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
-                            <option value="">Select Destination</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-xs-2">
-                    <div class="datepicker-wrap">
-                        <input type="text" name="date_to" class="input-text full-width" placeholder="Departing On" />
-                    </div>
-                </div>
-
-                <div class="col-xs-2">
-                    <div class="datepicker-wrap">
-                        <input type="text" name="date_to" class="input-text full-width" placeholder="Return(Optional) " />
-                    </div>
-                </div>
-
-                <div class="form-group col-md-4">
-                    <div class="row">
-                        <!--<div class="col-xs-4">
-                            <div class="selector">
-                                <select class="full-width">
-                                    <option value="1">Way</option>
-                                    <option value="2">one Way</option>
-                                    <option value="3">two Way</option>
-
-                                </select>
-                            </div>
-                        </div>-->
-
-                        <div class="col-xs-4">
-
-                            <button type="button btn-large" ng-click="GetServices();">Search Bus</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
-            <!--<div class="col-md-3" style="padding-top:20px;">
+
+        <!--<div class="col-md-3" style="padding-top:20px;">
 
             <font style="color:white;">No services available. Please refine the search.</font>
         </div>-->
-
-        
-
-
-            <div class="row" style="margin-top:80px;min-height:500px;" ng-show="services.length == 0">
-                <div class="row">
-                    <div class="container boxed-layout">
-                        <div class="page-title-container " style="background-color: #01b7f2; padding-bottom: 20px;">
+        <!--<div class="row" style="margin-top:80px;min-height:500px;" ng-show="services.length == 0">
+            <div class="row">
+                <div class="container boxed-layout">
+                    <div class="page-title-container " style="background-color: #01b7f2; padding-bottom: 20px;">
 
 
 
-                            <div class="col-md-3" style="padding-top:20px;">
+                        <div class="col-md-3" style="padding-top:20px;">
 
-                                <font style="color:white;">No services available. Please refine the search.</font>
-                            </div>
-
-
-
+                            <font style="color:white;">No services available. Please refine the search.</font>
                         </div>
 
 
 
-                       
-
-
-                        <div class="panel panel-default ">
-                            <div class="panel-heading ">
-                                Edit Search options
-                            </div>
-
-
-                            <div class="panel-body ">
-                                <div class="col-lg-6">
-                                    <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                        <div class="panel-heading" style="background-color: #01b7f2; text-align: center; color: white; ">Plan a journey</div>
-                                        <div class="panel-body form-actions text-right pal" style="background-color: white; " ng-init="testClick();">
-
-                                            <div class="row">
-
-                                                <div class="form-group col-lg-10" style="padding-left:60px">
-                                                    <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
-                                                        <option value="">Select Source</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-
-                                                <div class="form-group col-lg-10" style="padding-left:60px">
-                                                    <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
-                                                        <option value="">Select Destination</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div style="text-align:left;padding-left:60px">
-                                                    <p>
-
-                                                        <b><font color="black"> Leaving:</font></b>
-
-                                                        <input id="currTime" value="Now" type="radio" name="timing" ng-model="timing" checked ng-change="ChangeTravelType('0');" /> <font color="black">
-                                                            Now
-                                                        </font>
-                                                        <input id="dtTime" value="Later" type="radio" name="timing" ng-model="timing" ng-change="ChangeTravelType('1');" /> <font color="black"> Change Time</font>
-
-                                                    </p>
-
-                                                    <div ng-hide="timing == 'Now'" style="display:none">
-
-                                                        <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
-                                                        <!--<input type="text" name="timepicker" class="timepicker" />-->
-                                                    </div>
-                                                    <br />
-                                                    <div>
-                                                        <b><font color="black">Travel Type:</font></b>
-                                                        <input value="oneway" type="radio" name="tt" ng-change="RadioChange('oneway')" ng-model="triptype" checked /> <font color="black">
-                                                            One way
-                                                        </font>
-                                                        <input value="twoway" type="radio" name="tt" ng-change="RadioChange('twoway')" ng-model="triptype" /><font color="black"> Two way</font>
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <!--<div class="row">
-                                            <div class="form-group pull-left">
-                                                <br />
-                                                <a href="UI/traveloptions.html"><font color="blue"> <u>Travel options & accessibility</u></font></a>
-                                            </div>
-                                        </div>-->
-
-                                            <div class="row" style="padding-top:15px;padding-left:60px">
-                                                <div class="form-group pull-left col-lg-10">
-                                                    <input type="button" ng-click="GetServices();" class="btn btn-blue panel-heading" value="Plan my journey" style="width: 100%; background-color: #01b7f2; color: white;" />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="vertical-button-container">
-                                        <a href="UI/Construction.html" class="plain-button">Stations, stops &amp; piers</a>
-                                        <a href="UI/Construction.html" class="plain-button">Timetables</a>
-                                        <a href="UI/Construction.html" class="plain-button">Help &amp; contacts</a>
-                                        <a href="UI/Construction.html" class="plain-button">Shop for Products online</a>
-                                        <a href="UI/Construction.html" class="plain-button">Transport accessibility</a>
-                                        <a href="UI/Construction.html" class="plain-button">Social media &amp; email updates</a>
-                                        <a href="UI/Construction.html" class="plain-button">Interbus Digital Blog</a>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </div>
+
+
+
+
+
+
+                    <div class="panel panel-default ">
+                        <div class="panel-heading ">
+                            Edit Search options
+                        </div>
+
+
+                        <div class="panel-body ">
+                            <div class="col-lg-6">
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                    <div class="panel-heading" style="background-color: #01b7f2; text-align: center; color: white; ">Plan a journey</div>
+                                    <div class="panel-body form-actions text-right pal" style="background-color: white; " ng-init="testClick();">
+
+                                        <div class="row">
+
+                                            <div class="form-group col-lg-10" style="padding-left:60px">
+                                                <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                    <option value="">Select Source</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="form-group col-lg-10" style="padding-left:60px">
+                                                <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                    <option value="">Select Destination</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div style="text-align:left;padding-left:60px">
+                                                <p>
+
+                                                    <b><font color="black"> Leaving:</font></b>
+
+                                                    <input id="currTime" value="Now" type="radio" name="timing" ng-model="timing" checked ng-change="ChangeTravelType('0');" /> <font color="black">
+                                                        Now
+                                                    </font>
+                                                    <input id="dtTime" value="Later" type="radio" name="timing" ng-model="timing" ng-change="ChangeTravelType('1');" /> <font color="black"> Change Time</font>
+
+                                                </p>
+
+                                                <div ng-hide="timing == 'Now'" style="display:none">
+
+                                                    <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
+                                                    <!--<input type="text" name="timepicker" class="timepicker" />-->
+    </div>
+    <br />
+    <!--<div>
+        <b><font color="black">Travel Type:</font></b>
+        <input value="oneway" type="radio" name="tt" ng-change="RadioChange('oneway')" ng-model="triptype" checked /> <font color="black">
+            One way
+        </font>
+        <input value="twoway" type="radio" name="tt" ng-change="RadioChange('twoway')" ng-model="triptype" /><font color="black"> Two way</font>
+
+    </div>-->
+    <!--<div class="row">
+        <div class="form-group pull-left">
+            <br />
+            <a href="UI/traveloptions.html"><font color="blue"> <u>Travel options & accessibility</u></font></a>
         </div>
+    </div>-->
+
+    <div class="row" style="padding-top:15px;padding-left:60px" ng-show="ShowClose">
+        <div class="form-group pull-left col-lg-10">
+            <input type="button" ng-click="GetServices();" class="btn btn-blue panel-heading" value="Plan my journey" style="width: 100%; background-color: #01b7f2; color: white;" />
+        </div>
+    </div>
+
+    <!--<div class="col-lg-6">
+        <div class="vertical-button-container">
+            <a href="UI/Construction.html" class="plain-button">Stations, stops &amp; piers</a>
+            <a href="UI/Construction.html" class="plain-button">Timetables</a>
+            <a href="UI/Construction.html" class="plain-button">Help &amp; contacts</a>
+            <a href="UI/Construction.html" class="plain-button">Shop for Products online</a>
+            <a href="UI/Construction.html" class="plain-button">Transport accessibility</a>
+            <a href="UI/Construction.html" class="plain-button">Social media &amp; email updates</a>
+            <a href="UI/Construction.html" class="plain-button">Interbus Digital Blog</a>
+        </div>
+
+
+    </div>-->
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
 
     <br />
@@ -946,10 +935,10 @@
                             <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
                             <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
                             <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
-                            
-                           
-                            
-                           
+
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -972,7 +961,7 @@
         </div>
 
     </footer>
- 
+
     <!-- Javascript -->
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.noconflict.js"></script>
@@ -1026,7 +1015,7 @@
         });
     </script>-->
 
-  
+
 
 </body>
 </html>
