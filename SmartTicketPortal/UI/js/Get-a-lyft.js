@@ -18,6 +18,12 @@ app.controller('mapCtrl', function ($scope, $http) {
     //    },
     //    zoom: 16
     //};
+
+    $scope.CalculatePrice = function () {
+        $http.get('/api/Pricing/CalculatePrice?distance='+$scope.distval+'&packageId=1').then(function (res, data) {
+            $scope.pricing = res.data;
+        });
+    }
     var mapOptions = {
         zoom: 16,
         center: new google.maps.LatLng(17.3850, 78.4867),
@@ -119,9 +125,11 @@ app.controller('mapCtrl', function ($scope, $http) {
             }
 
         });
+        $scope.CalculatePrice();
     }
     $scope.SetTotal = function () {
         $scope.total = eval($scope.unitprice) * eval($scope.distval);
+        
     }
    
    
