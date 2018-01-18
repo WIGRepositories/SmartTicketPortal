@@ -7715,11 +7715,11 @@ ul.menu.mini li:hover a, ul.menu.mini li.active a {
 
 /* 3.3. Page Title ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .page-title-container {
-  height: 56px;
+  height: 50px;
   background: #2d3e52;
 }
 .page-title-container .page-title .entry-title {
-  line-height: 56px;
+  line-height: 50px;
   color: #fff;
   margin: 0;
 }
@@ -7728,7 +7728,7 @@ ul.menu.mini li:hover a, ul.menu.mini li.active a {
 }
 .page-title-container .breadcrumbs li {
   float: left;
-  line-height: 56px;
+  line-height: 50px;
   display: inline;
   margin-left: 5px;
   font-size: 0.8333em;

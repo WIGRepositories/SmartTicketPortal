@@ -508,5 +508,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         var ticketno = 'T' + components.join("");
         return ticketno;
     }
+    //-----------------Hidestart-------------------
+    $scope.IsVisible = false;
+    $scope.ShowHide = function () {
+        //If DIV is visible it will be hidden and vice versa.
+        $scope.IsVisible = $scope.IsVisible ? false : true;
+    }
+    //-----------------Hideend-------------------
 
 });
