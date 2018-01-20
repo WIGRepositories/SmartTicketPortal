@@ -37,24 +37,24 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
 
 
     $scope.GetServices = function () {
-        if ($scope.S == null) {
+        if ($scope.src == null) {
             alert('Please select source.');
             return;
         }
 
-        if ($scope.D == null) {
+        if ($scope.dest == null) {
             alert('Please select destination.');
             return;
         }
 
-        $localStorage.src = $scope.S;
-        $localStorage.dest = $scope.D;
+        $localStorage.src = $scope.src;
+        $localStorage.dest = $scope.dest;
 
         //$rootscope.src = $scope.RS;
         //$rootscope.dest = $scope.RD;
         $localStorage.timing = ($scope.timing == 'Now') ? Date() : $scope.timing;
 
-        $localStorage.triptype = $scope.triptype;
+        //$localStorage.triptype = $scope.triptype;
          $scope.GetAvailableServices();
 
         $scope.services1 = [
@@ -209,7 +209,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         $scope.destId = $localStorage.dest.Id;
         $scope.srcStage = $localStorage.src.name;
         $scope.destStage = $localStorage.dest.name;
-        $scope.triptype = $localStorage.triptype;
+        //$scope.triptype = $localStorage.triptype;
 
 
         $http.get('/api/TicketBooking/GetAvailableServices?srcId=' + $scope.srcId + '&destId=' + $scope.destId).then(function (response, req) {
@@ -508,5 +508,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         var ticketno = 'T' + components.join("");
         return ticketno;
     }
+    //-----------------Hidestart-------------------
+    $scope.IsVisible = false;
+    $scope.ShowHide = function () {
+        //If DIV is visible it will be hidden and vice versa.
+        $scope.IsVisible = $scope.IsVisible ? false : true;
+    }
+    //-----------------Hideend-------------------
 
 });
