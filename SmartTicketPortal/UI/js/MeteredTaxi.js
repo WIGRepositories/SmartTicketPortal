@@ -120,6 +120,9 @@ app.controller('mapCtrl', function ($scope, $http) {
 
         });
     }
+    $scope.SetTotal = function () {
+        $scope.total = eval($scope.unitprice) * eval($scope.distval);
+    }
     //-----------------Hidestart-------------------
     $scope.IsVisible = false;
     $scope.ShowHide = function () {
