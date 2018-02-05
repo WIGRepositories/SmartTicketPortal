@@ -376,6 +376,7 @@
     <Content Include="UI\images\icon\feedback.png" />
     <Content Include="UI\images\icon\flags\au.png" />
     <Content Include="UI\images\icon\flags\en-us.png" />
+    <Content Include="UI\images\icon\Hire.png" />
     <Content Include="UI\images\icon\hire_vehicle.png" />
     <Content Include="UI\images\icon\hover-effect.png" />
     <Content Include="UI\images\icon\icon-check.png" />
