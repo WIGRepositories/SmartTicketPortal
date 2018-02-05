@@ -45,7 +45,7 @@
       <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
 </head>
-<body ng-app="myApp" ng-controller="myCtrl">
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetStops()">
 
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -127,12 +127,12 @@
                                 </ul>
                             </li>
                             <!--<li class="menu-item-has-children">
-                        <a href="Status_and_Updates.html">Status &amp;Update</a>
-                        <ul>
-                            <li><a href="pages-coming-soon1.html">Plans</a></li>
-                            <li><a href="Status_and_Updates.html">Status</a></li>
-                        </ul>
-                    </li>-->
+                                <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                <ul>
+                                    <li><a href="pages-coming-soon1.html">Plans</a></li>
+                                    <li><a href="Status_and_Updates.html">Status</a></li>
+                                </ul>
+                            </li>-->
                             <li class="menu-item-has-children">
                                 <a href="#">online shop</a>
                                 <ul>
@@ -141,17 +141,17 @@
                                 </ul>
                             </li>
                             <!--<li class="menu-item-has-children">
-                        <a href="productsshown.html">Products/Licenses</a>
-                        <ul>
-                            <li><a href="Licenses.html">Advt Licence</a></li>
-                            <li><a href="Licenses.html">APP Licence</a></li>
-                            <li><a href="Licenses.html">BT Licence</a></li>
-                            <li><a href="cards.html">Cards</a></li>
-                            <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                            <li><a href="apps.html">Mobile App</a></li>
-                            <li><a href="products.html">Products</a></li>
-                        </ul>
-                    </li>-->
+                                <a href="productsshown.html">Products/Licenses</a>
+                                <ul>
+                                    <li><a href="Licenses.html">Advt Licence</a></li>
+                                    <li><a href="Licenses.html">APP Licence</a></li>
+                                    <li><a href="Licenses.html">BT Licence</a></li>
+                                    <li><a href="cards.html">Cards</a></li>
+                                    <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="apps.html">Mobile App</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                </ul>
+                            </li>-->
                             <li class="menu-item-has-children">
                                 <a href="productsshown.html">Licenses</a>
                                 <ul>
@@ -197,12 +197,12 @@
                             </ul>
                         </li>
                         <!--<li class="menu-item-has-children">
-                    <a href="Status_and_Updates.html">Status &amp;Update</a>
-                    <ul>
-                        <li><a href="pages-coming-soon1.html">Plans</a></li>
-                        <li><a href="Status_and_Updates.html">Status</a></li>
-                    </ul>
-                </li>-->
+                            <a href="Status_and_Updates.html">Status &amp;Update</a>
+                            <ul>
+                                <li><a href="pages-coming-soon1.html">Plans</a></li>
+                                <li><a href="Status_and_Updates.html">Status</a></li>
+                            </ul>
+                        </li>-->
                         <li class="menu-item-has-children">
                             <a href="#">online shop</a>
                             <ul>
@@ -211,17 +211,17 @@
                             </ul>
                         </li>
                         <!--<li class="menu-item-has-children">
-                    <a href="productsshown.html">Products/Licenses</a>
-                    <ul>
-                        <li><a href="Licenses.html">Advt Licence</a></li>
-                        <li><a href="Licenses.html">APP Licence</a></li>
-                        <li><a href="Licenses.html">BT Licence</a></li>
-                        <li><a href="cards.html">Cards</a></li>
-                        <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                        <li><a href="apps.html">Mobile App</a></li>
-                        <li><a href="products.html">Products</a></li>
-                    </ul>
-                </li>-->
+                            <a href="productsshown.html">Products/Licenses</a>
+                            <ul>
+                                <li><a href="Licenses.html">Advt Licence</a></li>
+                                <li><a href="Licenses.html">APP Licence</a></li>
+                                <li><a href="Licenses.html">BT Licence</a></li>
+                                <li><a href="cards.html">Cards</a></li>
+                                <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                <li><a href="apps.html">Mobile App</a></li>
+                                <li><a href="products.html">Products</a></li>
+                            </ul>
+                        </li>-->
                         <li class="menu-item-has-children">
                             <a href="productsshown.html">Licenses</a>
                             <ul>
@@ -327,19 +327,30 @@
                                     <div class="form-group row">
                                         <div class="col-sm-6 col-md-3">
                                             <label>Pickup piont</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
+                                            <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                <option value="">Select Source</option>
+                                            </select>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <label>Dropping point</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
+                                            <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                <option value="">Select Destination</option>
+                                            </select>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <label>Date</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
+                                            <div class="datepicker-wrap">
+                                                <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
+                                            </div>
                                         </div>
-                                        <div class="col-sm-6 col-md-3">
+                                        <!--<div class="col-sm-2 col-md-2">
                                             <label>time</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
+                                            <input type="time" class="input-text full-width" value="" placeholder="" />
+                                        </div>-->
+                                        <div class="col-sm-2 col-md-3">
+
+                                            <button style="margin-top:20px;" type="button" ng-click="GetServices();">Modify</button>
+
                                         </div>
                                     </div>
                                     <!--<div class="form-group row">
