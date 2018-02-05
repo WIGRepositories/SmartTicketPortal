@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <!-- Page Title -->
-    <title>INTER BUS</title>
+   <title>Tel One</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
 
    
 </head>
-<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetHireVehicle();" ng-model="booking">
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetStops()"  ng-model="booking">
 
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -90,7 +90,7 @@
 
                 <div class="container">
                     <h1 class="logo navbar-brand">
-                        <a href="../index.html" title="InterBus - home">
+                        <a href="../index.html" title="Tel One - home">
                             <img src="images/logo.png" alt="InterBus HTML5 Template" />
                         </a>
                     </h1>
@@ -307,7 +307,7 @@
                     <li class="active">Hire vechicle</li>
                 </ul>
             </div>
-        </div >
+        </div>
         <section id="content" class="gray-area">
             <div class="container">
                 <div id="main">
@@ -446,11 +446,11 @@
 
 
                             </div>
-                            <div >
+                            <div>
                                 <div class="car-list listing-style3 car">
                                     <article class="box" ng-repeat="v in Vehicles">
                                         <figure class="col-xs-3">
-                                            <span><img alt="" src="http://placehold.it/270x160"></span>
+                                            <span><img alt="" src="{{v.Photo}}"></span>
                                         </figure>
                                         <div class="details col-xs-9 clearfix">
                                             <div class="col-sm-8">
@@ -481,7 +481,7 @@
                                                 </dl>
                                             </div>
                                             <div class="action col-xs-6 col-sm-2">
-                                                <span class="price"><small>Price</small>${{b.Price}}</span>
+                                                <span class="price"><small>Price</small>${{v.Amount}}</span>
                                                 <a href="carbooking.html" class="button btn-small full-width">select</a>
                                             </div>
                                         </div>
@@ -720,7 +720,7 @@
 
                                 </div>
                             </div>
-                            <a href="#" class="button uppercase full-width btn-large">load more listings</a>
+                            <a href="#" class="button uppercase full-width btn-large" ng-click="GetHireVehicle();">load more listings</a>
                         </div>
 
                     </div>
@@ -824,7 +824,7 @@
         <div class="bottom gray-area">
             <div class="container">
                 <div class="logo pull-left">
-                    <a href="../index.html" title="InterBus - home">
+                    <a href="../index.html" title="Tel One - home">
                         <img src="images/logo.png" alt="InterBus HTML5 Template" />
                     </a>
                 </div>
@@ -832,7 +832,7 @@
                     <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
                 </div>
                 <div class="copyright pull-right">
-                    <p>&copy; 2017 Interbus</p>
+                    <p>&copy; 2017 Tel One</p>
                 </div>
             </div>
         </div>

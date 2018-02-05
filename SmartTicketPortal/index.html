@@ -2,7 +2,7 @@
 <html>
  <head>
     <!-- Page Title -->
-    <title>INTER BUS</title>
+    <title>Tel One</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -95,7 +95,7 @@
           
     </style>
 </head>
-<body ng-app="myApp" ng-controller="myCtrl" ng-model="advertisement" ng-init="GetStops();">
+<body ng-app="myApp" ng-controller="myCtrl" ng-model="advertisement" ng-init="GetCarousel()">
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
             <div class="topnav hidden-xs">
@@ -148,7 +148,7 @@
 
                 <div class="container">
                     <h1 class="logo navbar-brand">
-                        <a href="" title="Travelo - home">
+                        <a href="" title="Tel One - home">
                             <img src="UI/images/logo.png" alt="Travelo HTML5 Template" />
                         </a>
                     </h1>
@@ -344,27 +344,28 @@
         </header>
         <section id="content" class="slideshow-bg">
 
-            <div id="slideshow" ng-init="GetCarousel()" >
-                <div class="flexslider" >
+            <div id="slideshow">
+                <div class="flexslider">
 
-                    <ul class="slides" ng-repeat="i in carouselImages">
-                        <li>
-                            <div class="slidebg" style="background-image: url('{{i.Image}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding" style="color:orange">{{i.ImageDesc}}</h2></div>
+                    <ul class="slides">
+                        <li ng-repeat="i in carouselImages">
+
+                            <div class="slidebg" style="background-image: url('{{i.Image}}');"><img ng-src="{{i.Image}}" /><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding" style="color:orange">{{i.ImageDesc}}</h2></div>
                         </li>
                         <!--<li>
                             <div class="slidebg" style="background-image: url('{{i.Image}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding">{{i.ImageDesc}}</h2></div>
                             
-                        </li>
+                    </li>-->
                         <li>
                             <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
-                        <li>
+                        <!--<li>
                             <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
-                        </li>
-                        <li>
+                    </li>-->
+                        <!--<li>
                             <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
-                        </li>
-                        <li>
+                    </li>-->
+                        <!--<li>
                             <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>-->
                         <!--<li>
@@ -376,6 +377,7 @@
 
             </div>
                 </div>
+
             <div class="container">
                 <div id="main">
                     <h1 class="page-title">Travel with us in Comfort!</h1>
@@ -422,7 +424,7 @@
                                             </div>
                                             <div class="col-md-2" style="font-size: 1.500em; font-weight: bold; ">
                                                 <a href="ui/hirevehicle.html">
-                                                    <img src="ui/images/icon/hire_vehicle.png" style="margin-left:20px" />
+                                                    <img src="ui/images/icon/hire.png" style="margin-left:20px" />
                                                     <p>Hire Vehicle</p>
                                                 </a>
                                             </div>
@@ -919,23 +921,23 @@
                             </figcaption>
                         </figure>
                         <!--<div class="details">
-                <div class="detail">
-                    <span class="price"><small>FROM</small>$30</span>
-                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                </div>
-                <div class="detail">
-                    <span class="price"><small>FROM</small>$120</span>
-                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                </div>
-                <div class="detail">
-                    <span class="price"><small>FROM</small>$360</span>
-                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                </div>
-            </div>-->
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$30</span>
+                                <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$120</span>
+                                <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$360</span>
+                                <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                            </div>
+                        </div>-->
 
                     </article>
                 </div>
-               
+
             </div>
 
             <h2 style="color:orange;">Featured Holiday Activities</h2>
@@ -1116,8 +1118,8 @@
                             <div class="details text-center">
                                 <h4 class="box-title">Europe</h4>
                                 <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                    <span style="width: 80%;" class="five-stars"></span>
+                                <div data-placement="bottom" data-toggle="tooltip" title="3 stars" class="five-stars-container">
+                                    <span style="width: 60%;" class="five-stars"></span>
                                 </div>
                                 <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
                                 <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
@@ -1238,7 +1240,7 @@
                     <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
                 </div>
                 <div class="copyright pull-right">
-                    <p>&copy; 2017 Interbus</p>
+                    <p>&copy; 2017 Tel One</p>
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.GetHireVehicle = function () {
 
-        $http.get('/api/HireVehicle/GetHireVehicle').then(function (response, req) {
+        $http.get('/api/HireVehicle/GetHireVehicle?srcId=1&destId=1').then(function (response, req) {
             $scope.Vehicles = response.data;          
 
         });       
