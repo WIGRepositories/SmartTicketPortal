@@ -6,12 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Configuration;
 
 namespace SmartTicketPortal.Controllers
 {
     public class AdvertisementController : ApiController
     {
         [HttpGet]
+        [Route("api/Advertisement/GetAdvertisment")]
         public DataTable GetAdvertisment()
         {
             DataTable Tbl = new DataTable();
@@ -34,5 +36,26 @@ namespace SmartTicketPortal.Controllers
             return Tbl;
 
         }
-    }
+    
+
+     public DataTable GetActivityLog()
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "GetActivityLog";
+
+            SqlDataAdapter db = new SqlDataAdapter(cmd);
+            DataTable tbl = new DataTable();
+
+            db.Fill(tbl);
+
+            return tbl;
+
+        }
+}
+
 }

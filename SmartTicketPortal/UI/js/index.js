@@ -57,6 +57,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
             $scope.advertisement = response.data;
         });
     }
+    $scope.GetActivityLog = function () {
+
+        $http.get('/api/Advertisement/GetActivityLog').then(function (response, req) {
+            $scope.logimages = response.data;
+        });
+    }
     $scope.GetServices = function () {
         if ($scope.S == null) {
             // alert('Please select source.');

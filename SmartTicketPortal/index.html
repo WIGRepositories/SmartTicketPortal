@@ -95,7 +95,7 @@
           
     </style>
 </head>
-<body ng-app="myApp" ng-controller="myCtrl" ng-model="advertisement" ng-init="GetCarousel()">
+<body ng-app="myApp" ng-controller="myCtrl" ng-model="advertisement" ng-init="GetStops()">
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
             <div class="topnav hidden-xs">
@@ -342,13 +342,13 @@
             </div>
 
         </header>
-        <section id="content" class="slideshow-bg">
+        <section id="content" class="slideshow-bg" ng-init="GetCarousel()">
 
             <div id="slideshow">
-                <div class="flexslider">
+                <div class="flexslider" ng-repeat="i in carouselImages">
 
                     <ul class="slides">
-                        <li ng-repeat="i in carouselImages">
+                        <li>
 
                             <div class="slidebg" style="background-image: url('{{i.Image}}');"><img ng-src="{{i.Image}}" /><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding" style="color:orange">{{i.ImageDesc}}</h2></div>
                         </li>
@@ -910,13 +910,13 @@
         <div class=" section container ">
             <!--<div style=" padding-top: 20px; padding-bottom: 40px;">-->
             <h2 style="color:orange;">Inter Bus Applications</h2>
-            <div class="row image-box style5">
-                <div class="col-sm-3">
+            <div class="row image-box style5" ng-init="GetActivityLog()">
+                <div class="col-sm-3" ng-repeat="l in logimages">
                     <article class="box">
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                            <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                            <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="{{l.Image}}"></a>
                             <figcaption>
-                                <h3 class="caption-title">Recharge Chihuta Card</h3>
+                                <h3 class="caption-title">{{l.Title}}</h3>
                                 <span>3 activities</span>
                             </figcaption>
                         </figure>
@@ -937,45 +937,7 @@
 
                     </article>
                 </div>
-                <div class="col-sm-3">
-                    <article class="box">
-                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                            <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
-                            <figcaption>
-                                <h3 class="caption-title">Download Smart Tickets App</h3>
-                                <span>3 activities</span>
-                            </figcaption>
-                        </figure>
 
-
-                    </article>
-                </div>
-                <div class="col-sm-3">
-                    <article class="box">
-                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                            <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
-                            <figcaption>
-                                <h3 class="caption-title">Check In</h3>
-                                <span>3 activities</span>
-                            </figcaption>
-                        </figure>
-
-
-                    </article>
-                </div>
-                    <div class="col-sm-3">
-                    <article class="box">
-                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                            <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
-                            <figcaption>
-                                <h3 class="caption-title">Inquiries</h3>
-                                <span>3 activities</span>
-                            </figcaption>
-                        </figure>
-
-
-                    </article>
-                </div>
             </div>
 
             <h2 style="color:orange;">Featured Holiday Activities</h2>
@@ -983,7 +945,7 @@
                 <div class="col-sm-3" ng-repeat="a in advertisement">
 
                     <article class="box">
-                        <img ng-src="{{a.Image}}" alt="image" style="height:150px;width:270px">
+                        <img ng-src="{{a.Image}}" alt="image" width="370px" height="100px">
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
                             <a class="pull-left" href="#" target="_parent"></a>
                             <figcaption>
