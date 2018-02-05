@@ -83,12 +83,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
         if ($scope.SD == null) {
             // alert('Please select source.');
 
-            $scope.showDialog('Please select source.');
+            alert('Please select source.');
             return;
         }
 
         if ($scope.DS == null) {
-            $scope.showDialog('Please select destination.');
+            alert('Please select destination.');
             return;
         }
 

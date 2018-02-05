@@ -95,7 +95,7 @@
           
     </style>
 </head>
-<body ng-app="myApp" ng-controller="myCtrl" ng-model="advertisement" ng-init="GetStops();">
+<body ng-app="myApp" ng-controller="myCtrl" ng-model="advertisement" ng-init="GetCarousel()">
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
             <div class="topnav hidden-xs">
@@ -344,27 +344,28 @@
         </header>
         <section id="content" class="slideshow-bg">
 
-            <div id="slideshow" ng-init="GetCarousel()" >
-                <div class="flexslider" >
+            <div id="slideshow">
+                <div class="flexslider">
 
-                    <ul class="slides" ng-repeat="i in carouselImages">
-                        <li>
-                            <div class="slidebg" style="background-image: url('{{i.Image}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding" style="color:orange">{{i.ImageDesc}}</h2></div>
+                    <ul class="slides">
+                        <li ng-repeat="i in carouselImages">
+
+                            <div class="slidebg" style="background-image: url('{{i.Image}}');"><img ng-src="{{i.Image}}" /><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding" style="color:orange">{{i.ImageDesc}}</h2></div>
                         </li>
                         <!--<li>
                             <div class="slidebg" style="background-image: url('{{i.Image}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding">{{i.ImageDesc}}</h2></div>
                             
-                        </li>
+                    </li>-->
                         <li>
                             <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
-                        <li>
+                        <!--<li>
                             <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
-                        </li>
-                        <li>
+                    </li>-->
+                        <!--<li>
                             <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
-                        </li>
-                        <li>
+                    </li>-->
+                        <!--<li>
                             <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>-->
                         <!--<li>
@@ -376,6 +377,7 @@
 
             </div>
                 </div>
+
             <div class="container">
                 <div id="main">
                     <h1 class="page-title">Travel with us in Comfort!</h1>
@@ -961,7 +963,7 @@
 
                     </article>
                 </div>
-                <div class="col-sm-3" >
+                    <div class="col-sm-3">
                     <article class="box">
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
                             <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
