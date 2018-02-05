@@ -13,7 +13,7 @@ namespace SmartTicketPortal.Controllers
     {
         [HttpGet]
         [Route("api/HireVehicle/GetHireVehicle")]
-        public DataTable GetHireVehicle()
+        public DataTable GetHireVehicle(int srcId,int destId)
         {
             DataTable Tbl = new DataTable();
 
@@ -26,6 +26,9 @@ namespace SmartTicketPortal.Controllers
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "GetHireVehicle";
             cmd.Connection = conn;
+
+            cmd.Parameters.Add("@srcId", SqlDbType.Int).Value = srcId;
+            cmd.Parameters.Add("@destId", SqlDbType.Int).Value = destId;
             
             DataSet ds = new DataSet();
             SqlDataAdapter db = new SqlDataAdapter(cmd);
