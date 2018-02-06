@@ -1,1044 +1,1047 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <!-- Page Title -->
-   <title>Tel One</title>
+﻿
+        <!DOCTYPE HTML>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <!-- Page Title -->
+            <title>Tel One</title>
 
-    <!-- Meta Tags -->
-    <meta charset="utf-8">
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="InterBus, Tour Booking HTML5 Template">
-    <meta name="author" content="SoapTheme">
+            <!-- Meta Tags -->
+            <meta charset="utf-8">
+            <meta name="keywords" content="HTML5 Template" />
+            <meta name="description" content="InterBus, Tour Booking HTML5 Template">
+            <meta name="author" content="SoapTheme">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Theme Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/animate.min.css">
+            <!-- Theme Styles -->
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/font-awesome.min.css">
+            <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="css/animate.min.css">
 
-    <!-- Current Page Styles -->
-    <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+            <!-- Current Page Styles -->
+            <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
 
 
-    <!-- Main Style -->
-    <link id="main-style" rel="stylesheet" href="css/style.css">
+            <!-- Main Style -->
+            <link id="main-style" rel="stylesheet" href="css/style.css">
 
-    <!-- Updated Styles -->
-    <link rel="stylesheet" href="css/updates.css">
+            <!-- Updated Styles -->
+            <link rel="stylesheet" href="css/updates.css">
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/custom.css">
+            <!-- Custom Styles -->
+            <link rel="stylesheet" href="css/custom.css">
 
-    <!-- Responsive Styles -->
-    <link rel="stylesheet" href="css/responsive.css">
+            <!-- Responsive Styles -->
+            <link rel="stylesheet" href="css/responsive.css">
 
-    <!-- CSS for IE -->
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" type="text/css" href="css/ie.css" />
-    <![endif]-->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
-</head>
-<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetStops()">
+            <!-- CSS for IE -->
+            <!--[if lte IE 9]>
+                <link rel="stylesheet" type="text/css" href="css/ie.css" />
+            <![endif]-->
+            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+              <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+              <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <![endif]-->
+        </head>
+        <body ng-app="myApp" ng-controller="myCtrl" ng-init="GetStops()">
 
-    <div id="page-wrapper">
-        <header id="header" class="navbar-static-top">
-            <div class="topnav hidden-xs">
-                <div class="container">
-                    <ul class="quick-menu pull-left">
-                        <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
-                        <li class="ribbon">
-                            <a href="#">Countries</a>
-                            <ul class="menu mini">
-                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
-                                <li>
-                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+            <div id="page-wrapper">
+                <header id="header" class="navbar-static-top">
+                    <div class="topnav hidden-xs">
+                        <div class="container">
+                            <ul class="quick-menu pull-left">
+                                <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
+                                <li class="ribbon">
+                                    <a href="#">Countries</a>
+                                    <ul class="menu mini">
+                                        <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                        <li>
+                                            <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                        </li>
+
+                                    </ul>
                                 </li>
-
                             </ul>
-                        </li>
-                    </ul>
-                    <ul class="quick-menu pull-right">
-                        <li class="ribbon">
-                            <a ng-hide="username == null" href="#">Hello, {{username}}</a>
-                            <ul class="menu mini uppercase">
+                            <ul class="quick-menu pull-right">
+                                <li class="ribbon">
+                                    <a ng-hide="username == null" href="#">Hello, {{username}}</a>
+                                    <ul class="menu mini uppercase">
 
-                                <li><a href="UserProfile.html" class="location-reload">Profile</a></li>
-                                <li><a href="BookedTicketHistory.html" class="location-reload">Bookings</a></li>
-                                <li><a href="Cancellation.html" class="location-reload">cancellation</a></li>
-                                <li><a href="UserProfile.html" class="location-reload">card</a></li>
-                                <li><a href="UserProfile.html" class="location-reload">app</a></li>
-                                <li><a href="Refund.html" class="location-reload">refund</a></li>
-                                <li><a href="UserProfile.html" class="location-reload"> ewallet</a></li>
-                                <li><a href="UserProfile.html" class="location-reload"> feedback/enquery</a></li>
-                                <li><a href="UserProfile.html" class="location-reload">settings</a></li>
-                                <li><a href="#" ng-click="SignOutUser();">signout</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
-
-                        <li><a href="Registation.html" class="">SIGNUP</a></li>
-
-                    </ul>
-
-                </div>
-            </div>
-
-            <div class="main-header">
-
-                <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
-                    Mobile Menu Toggle
-                </a>
-
-                <div class="container">
-                    <h1 class="logo navbar-brand">
-                        <a href="../index.html" title="Tel One - home">
-                            <img src="images/logo.png" alt="InterBus HTML5 Template" />
-                        </a>
-                    </h1>
-
-                    <nav id="main-menu" role="navigation">
-                        <ul class="menu">
-                            <li class="menu-item-has-children">
-                                <a href="../index.html">Home</a>
-
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="ui/fares_and_payments.html">Fares/Payments</a>
-                                <ul>
-                                    <li><a href="Fares_and_payments.html">Check Fares</a></li>
-                                    <li><a href="pages-coming-soon1.html">Recharge</a></li>
-                                    <li><a href="refund.html">Refund</a></li>
-                                    <li><a href="pages-coming-soon1.html">Renewals</a></li>
-                                    <li><a href="shedules.html">Schedules</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="Cancellation.html">Cancel/Modify</a>
-                                <ul>
-                                    <li><a href="cancellation.html">Cancel Journey</a></li>
-                                    <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
-                                </ul>
-                            </li>
-                            <!--<li class="menu-item-has-children">
-                                <a href="Status_and_Updates.html">Status &amp;Update</a>
-                                <ul>
-                                    <li><a href="pages-coming-soon1.html">Plans</a></li>
-                                    <li><a href="Status_and_Updates.html">Status</a></li>
-                                </ul>
-                            </li>-->
-                            <li class="menu-item-has-children">
-                                <a href="#">online shop</a>
-                                <ul>
-                                    <li><a href="products.html">Products</a></li>
-
-                                </ul>
-                            </li>
-                            <!--<li class="menu-item-has-children">
-                                <a href="productsshown.html">Products/Licenses</a>
-                                <ul>
-                                    <li><a href="Licenses.html">Advt Licence</a></li>
-                                    <li><a href="Licenses.html">APP Licence</a></li>
-                                    <li><a href="Licenses.html">BT Licence</a></li>
-                                    <li><a href="cards.html">Cards</a></li>
-                                    <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                    <li><a href="apps.html">Mobile App</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                </ul>
-                            </li>-->
-                            <li class="menu-item-has-children">
-                                <a href="productsshown.html">Licenses</a>
-                                <ul>
-                                    <li><a href="shortcode-pricing-tables.html">Advertisement Licence</a></li>
-                                    <li><a href="shortcode-pricing-tables.html">BT POS Licence</a></li>
-                                    <li><a href="cards.html">Cards</a></li>
-                                    <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="AboutUs.html">About us</a>
-                                <ul>
-                                    <li><a href="complants.html">complants</a></li>
-                                    <li><a href="ContactUs.html">contacts</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </nav>
-                </div>
-
-                <nav id="mobile-menu-01" class="mobile-menu collapse">
-                    <ul id="mobile-primary-menu" class="menu">
-                        <li class="menu-item-has-children">
-                            <a href="../index.html">Home</a>
-
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="ui/fares_and_payments.html">Fares/Payments</a>
-                            <ul>
-                                <li><a href="Fares_and_payments.html">Check Fares</a></li>
-                                <li><a href="pages-coming-soon1.html">Recharge</a></li>
-                                <li><a href="refund.html">Refund</a></li>
-                                <li><a href="pages-coming-soon1.html">Renewals</a></li>
-                                <li><a href="shedules.html">Schedules</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="Cancellation.html">Cancel/Modify</a>
-                            <ul>
-                                <li><a href="cancellation.html">Cancel Journey</a></li>
-                                <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
-                            </ul>
-                        </li>
-                        <!--<li class="menu-item-has-children">
-                            <a href="Status_and_Updates.html">Status &amp;Update</a>
-                            <ul>
-                                <li><a href="pages-coming-soon1.html">Plans</a></li>
-                                <li><a href="Status_and_Updates.html">Status</a></li>
-                            </ul>
-                        </li>-->
-                        <li class="menu-item-has-children">
-                            <a href="#">online shop</a>
-                            <ul>
-                                <li><a href="products.html">Products</a></li>
-
-                            </ul>
-                        </li>
-                        <!--<li class="menu-item-has-children">
-                            <a href="productsshown.html">Products/Licenses</a>
-                            <ul>
-                                <li><a href="Licenses.html">Advt Licence</a></li>
-                                <li><a href="Licenses.html">APP Licence</a></li>
-                                <li><a href="Licenses.html">BT Licence</a></li>
-                                <li><a href="cards.html">Cards</a></li>
-                                <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                                <li><a href="apps.html">Mobile App</a></li>
-                                <li><a href="products.html">Products</a></li>
-                            </ul>
-                        </li>-->
-                        <li class="menu-item-has-children">
-                            <a href="productsshown.html">Licenses</a>
-                            <ul>
-                                <li><a href="shortcode-pricing-tables.html">Advertisement Licence</a></li>
-                                <li><a href="shortcode-pricing-tables.html">BT POS Licence</a></li>
-                                <li><a href="cards.html">Cards</a></li>
-                                <li><a href="licensepage.html">Fleet Owner Licence</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="AboutUs.html">About us</a>
-                            <ul>
-                                <li><a href="complants.html">complants</a></li>
-                                <li><a href="ContactUs.html">contacts</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-
-                    <ul class="mobile-topnav container">
-                        <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
-                        <li class="ribbon">
-                            <a href="#">Countries</a>
-                            <ul class="menu mini">
-                                <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
-                                <li>
-                                    <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                        <li><a href="UserProfile.html" class="location-reload">Profile</a></li>
+                                        <li><a href="BookedTicketHistory.html" class="location-reload">Bookings</a></li>
+                                        <li><a href="Cancellation.html" class="location-reload">cancellation</a></li>
+                                        <li><a href="UserProfile.html" class="location-reload">card</a></li>
+                                        <li><a href="UserProfile.html" class="location-reload">app</a></li>
+                                        <li><a href="Refund.html" class="location-reload">refund</a></li>
+                                        <li><a href="UserProfile.html" class="location-reload"> ewallet</a></li>
+                                        <li><a href="UserProfile.html" class="location-reload"> feedback/enquery</a></li>
+                                        <li><a href="UserProfile.html" class="location-reload">settings</a></li>
+                                        <li><a href="#" ng-click="SignOutUser();">signout</a></li>
+                                    </ul>
                                 </li>
+                                <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+
+                                <li><a href="Registation.html" class="">SIGNUP</a></li>
 
                             </ul>
-                        </li>
-                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
-                        <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
-                        <li class="ribbon currency menu-color-skin">
-                            <a href="#">USD</a>
-                            <ul class="menu mini">
-                                <li><a href="#" title="AUD">AUD</a></li>
-                                <li><a href="#" title="BRL">BRL</a></li>
-                                <li class="active"><a href="#" title="USD">USD</a></li>
-                                <li><a href="#" title="CAD">CAD</a></li>
-                                <li><a href="#" title="CHF">CHF</a></li>
-                                <li><a href="#" title="CNY">CNY</a></li>
-                                <li><a href="#" title="CZK">CZK</a></li>
-                                <li><a href="#" title="DKK">DKK</a></li>
-                                <li><a href="#" title="EUR">EUR</a></li>
-                                <li><a href="#" title="GBP">GBP</a></li>
-                                <li><a href="#" title="HKD">HKD</a></li>
-                                <li><a href="#" title="HUF">HUF</a></li>
-                                <li><a href="#" title="IDR">IDR</a></li>
-                            </ul>
-                        </li>
-                    </ul>
 
-                </nav>
-            </div>
-            <div id="travelo-login" class="travelo-login-box travelo-box">
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="input-text full-width" placeholder="Email / UserName" ng-model="UserName">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
-                    </div>
-                    <div class="form-group">
-                        <button ng-click="Signin()" class="btn btn-success">
-                            Log In
-                        </button>
-                    </div>
-                    <div class="form-group">
-                        <a href="#" class="forgot-password pull-right">Forgot password?</a>
-                        <div class="checkbox checkbox-inline">
-                            <label>
-                                <input type="checkbox"> Remember me
-                            </label>
                         </div>
                     </div>
-                </form>
-                <div class="seperator"></div>
-                <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
-            </div>
-        </header>
-        <div class="page-title-container">
-            <div class="container">
-                <div class="page-title pull-left">
-                    <h2 class="entry-title">Car Booking</h2>
+
+                    <div class="main-header">
+
+                        <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                            Mobile Menu Toggle
+                        </a>
+
+                        <div class="container">
+                            <h1 class="logo navbar-brand">
+                                <a href="../index.html" title="Tel One - home">
+                                    <img src="images/logo.png" alt="InterBus HTML5 Template" />
+                                </a>
+                            </h1>
+
+                            <nav id="main-menu" role="navigation">
+                                <ul class="menu">
+                                    <li class="menu-item-has-children">
+                                        <a href="../index.html">Home</a>
+
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="ui/fares_and_payments.html">Fares/Payments</a>
+                                        <ul>
+                                            <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                            <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                            <li><a href="refund.html">Refund</a></li>
+                                            <li><a href="pages-coming-soon1.html">Renewals</a></li>
+                                            <li><a href="shedules.html">Schedules</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="Cancellation.html">Cancel/Modify</a>
+                                        <ul>
+                                            <li><a href="cancellation.html">Cancel Journey</a></li>
+                                            <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
+                                        </ul>
+                                    </li>
+                                    <!--<li class="menu-item-has-children">
+                                        <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                        <ul>
+                                            <li><a href="pages-coming-soon1.html">Plans</a></li>
+                                            <li><a href="Status_and_Updates.html">Status</a></li>
+                                        </ul>
+                                    </li>-->
+                                    <li class="menu-item-has-children">
+                                        <a href="#">online shop</a>
+                                        <ul>
+                                            <li><a href="products.html">Products</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <!--<li class="menu-item-has-children">
+                                        <a href="productsshown.html">Products/Licenses</a>
+                                        <ul>
+                                            <li><a href="Licenses.html">Advt Licence</a></li>
+                                            <li><a href="Licenses.html">APP Licence</a></li>
+                                            <li><a href="Licenses.html">BT Licence</a></li>
+                                            <li><a href="cards.html">Cards</a></li>
+                                            <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                            <li><a href="apps.html">Mobile App</a></li>
+                                            <li><a href="products.html">Products</a></li>
+                                        </ul>
+                                    </li>-->
+                                    <li class="menu-item-has-children">
+                                        <a href="productsshown.html">Licenses</a>
+                                        <ul>
+                                            <li><a href="shortcode-pricing-tables.html">Advertisement Licence</a></li>
+                                            <li><a href="shortcode-pricing-tables.html">BT POS Licence</a></li>
+                                            <li><a href="cards.html">Cards</a></li>
+                                            <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="AboutUs.html">About us</a>
+                                        <ul>
+                                            <li><a href="complants.html">complants</a></li>
+                                            <li><a href="ContactUs.html">contacts</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <nav id="mobile-menu-01" class="mobile-menu collapse">
+                            <ul id="mobile-primary-menu" class="menu">
+                                <li class="menu-item-has-children">
+                                    <a href="../index.html">Home</a>
+
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="ui/fares_and_payments.html">Fares/Payments</a>
+                                    <ul>
+                                        <li><a href="Fares_and_payments.html">Check Fares</a></li>
+                                        <li><a href="pages-coming-soon1.html">Recharge</a></li>
+                                        <li><a href="refund.html">Refund</a></li>
+                                        <li><a href="pages-coming-soon1.html">Renewals</a></li>
+                                        <li><a href="shedules.html">Schedules</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="Cancellation.html">Cancel/Modify</a>
+                                    <ul>
+                                        <li><a href="cancellation.html">Cancel Journey</a></li>
+                                        <li><a href="cancellation.html">Cancel/Modify Ticket</a></li>
+                                    </ul>
+                                </li>
+                                <!--<li class="menu-item-has-children">
+                                    <a href="Status_and_Updates.html">Status &amp;Update</a>
+                                    <ul>
+                                        <li><a href="pages-coming-soon1.html">Plans</a></li>
+                                        <li><a href="Status_and_Updates.html">Status</a></li>
+                                    </ul>
+                                </li>-->
+                                <li class="menu-item-has-children">
+                                    <a href="#">online shop</a>
+                                    <ul>
+                                        <li><a href="products.html">Products</a></li>
+
+                                    </ul>
+                                </li>
+                                <!--<li class="menu-item-has-children">
+                                    <a href="productsshown.html">Products/Licenses</a>
+                                    <ul>
+                                        <li><a href="Licenses.html">Advt Licence</a></li>
+                                        <li><a href="Licenses.html">APP Licence</a></li>
+                                        <li><a href="Licenses.html">BT Licence</a></li>
+                                        <li><a href="cards.html">Cards</a></li>
+                                        <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                        <li><a href="apps.html">Mobile App</a></li>
+                                        <li><a href="products.html">Products</a></li>
+                                    </ul>
+                                </li>-->
+                                <li class="menu-item-has-children">
+                                    <a href="productsshown.html">Licenses</a>
+                                    <ul>
+                                        <li><a href="shortcode-pricing-tables.html">Advertisement Licence</a></li>
+                                        <li><a href="shortcode-pricing-tables.html">BT POS Licence</a></li>
+                                        <li><a href="cards.html">Cards</a></li>
+                                        <li><a href="licensepage.html">Fleet Owner Licence</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="AboutUs.html">About us</a>
+                                    <ul>
+                                        <li><a href="complants.html">complants</a></li>
+                                        <li><a href="ContactUs.html">contacts</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                            <ul class="mobile-topnav container">
+                                <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
+                                <li class="ribbon">
+                                    <a href="#">Countries</a>
+                                    <ul class="menu mini">
+                                        <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                        <li>
+                                            <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                                <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
+                                <li class="ribbon currency menu-color-skin">
+                                    <a href="#">USD</a>
+                                    <ul class="menu mini">
+                                        <li><a href="#" title="AUD">AUD</a></li>
+                                        <li><a href="#" title="BRL">BRL</a></li>
+                                        <li class="active"><a href="#" title="USD">USD</a></li>
+                                        <li><a href="#" title="CAD">CAD</a></li>
+                                        <li><a href="#" title="CHF">CHF</a></li>
+                                        <li><a href="#" title="CNY">CNY</a></li>
+                                        <li><a href="#" title="CZK">CZK</a></li>
+                                        <li><a href="#" title="DKK">DKK</a></li>
+                                        <li><a href="#" title="EUR">EUR</a></li>
+                                        <li><a href="#" title="GBP">GBP</a></li>
+                                        <li><a href="#" title="HKD">HKD</a></li>
+                                        <li><a href="#" title="HUF">HUF</a></li>
+                                        <li><a href="#" title="IDR">IDR</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                    <div id="travelo-login" class="travelo-login-box travelo-box">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="input-text full-width" placeholder="Email / UserName" ng-model="UserName">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="input-text full-width" placeholder="password" ng-model="Password">
+                            </div>
+                            <div class="form-group">
+                                <button ng-click="Signin()" class="btn btn-success">
+                                    Log In
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <a href="#" class="forgot-password pull-right">Forgot password?</a>
+                                <div class="checkbox checkbox-inline">
+                                    <label>
+                                        <input type="checkbox"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="seperator"></div>
+                        <p>Don't have an account? <a href="UI/Registration.html" class="goto-signup soap-popupbox">Sign up</a></p>
+                    </div>
+                </header>
+                <div class="page-title-container">
+                    <div class="container">
+                        <div class="page-title pull-left">
+                            <h2 class="entry-title">Car Booking</h2>
+                        </div>
+                        <ul class="breadcrumbs pull-right">
+                            <li><a href="../index.html">HOME</a></li>
+                            <li><a href="hirevehicle.html">Hire Vehicle</a></li>
+                            <li class="active">Car Booking</li>
+                        </ul>
+                    </div>
                 </div>
-                <ul class="breadcrumbs pull-right">
-                    <li><a href="../index.html">HOME</a></li>
-                    <li><a href="hirevehicle.html">Hire Vehicle</a></li>
-                    <li class="active">Car Booking</li>
-                </ul>
-            </div>
-        </div>
-        <section id="content" class="gray-area">
-            <div class="container">
-                <div class="row">
-                    <div id="main" class="col-sms-6 col-sm-8 col-md-9">
-                        <div class="booking-section travelo-box">
+                <section id="content" class="gray-area">
+                    <div class="container">
+                        <div class="row">
+                            <div id="main" class="col-sms-6 col-sm-8 col-md-9">
+                                <div class="booking-section travelo-box">
 
-                            <form class="booking-form">
-                                <div class="person-information">
-                                    <h2>Car Booking information</h2>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 col-md-3">
-                                            <label>Pickup piont</label>
-                                            <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
-                                                <option value="">Select Source</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3">
-                                            <label>Dropping point</label>
-                                            <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
-                                                <option value="">Select Destination</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3">
-                                            <label>Date</label>
-                                            <div class="datepicker-wrap">
-                                                <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
-                                            </div>
-                                        </div>
-                                        <!--<div class="col-sm-2 col-md-2">
-                                            <label>time</label>
-                                            <input type="time" class="input-text full-width" value="" placeholder="" />
-                                        </div>-->
-                                        <div class="col-sm-2 col-md-3">
-
-                                            <a href="hirevehicle.html" style="margin-top:25px;" data-dismiss="modal" class="btn btn-primary">Modify</a>
-
-                                        </div>
-                                    </div>
-                                    <!--<div class="form-group row">
-                                        <div class="col-sm-6 col-md-2">
-                                            <label>Date</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
-                                        </div>
-                                        <div class="col-sm-6 col-md-2">
-                                            <label>time</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Country code</label>
-                                            <div class="selector">
-                                                <select class="full-width">
-                                                    <option>United Kingdom (+44)</option>
-                                                    <option>United States (+1)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Phone number</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> I want to receive <span class="skin-color">Interbus</span> promotional offers in the future
-                                            </label>
-                                        </div>
-                                    </div>-->
-                                </div>
-                                <hr />
-                                <div class="person-information" ng-model="book">
-                                    <h2>Your Personal Information</h2>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>first name</label>
-                                            <input type="text" class="input-text full-width" placeholder="" ng-model="book.firstname" />
-                                        </div>
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>last name</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.lastname" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>email address</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.Email" />
-                                        </div>
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Verify E-mail Address</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.Email" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Country code</label>
-                                            <div class="selector">
-                                                <select class="full-width">
-                                                    <option>United Kingdom (+44)</option>
-                                                    <option>United States (+1)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Phone number</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.Mobilenumber" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> I want to receive <span class="skin-color">Interbus</span> promotional offers in the future
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                    </div>
-                                </div>
-                                <hr />
-                                <!--<div class="card-information">
-                                    <h2>Your Card Information</h2>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Credit Card Type</label>
-                                            <div class="selector">
-                                                <select class="full-width">
-                                                    <option>select a card</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Card holder name</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Card number</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
-                                        </div>
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Card identification number</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-6 col-md-5">
-                                            <label>Expiration Date</label>
-                                            <div class="constant-column-2">
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option>month</option>
+                                    <form class="booking-form">
+                                        <div class="person-information">
+                                            <h2>Car Booking information</h2>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-md-3">
+                                                    <label>Pickup piont</label>
+                                                    <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                        <option value="">Select Source</option>
                                                     </select>
                                                 </div>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option>year</option>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <label>Dropping point</label>
+                                                    <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                        <option value="">Select Destination</option>
                                                     </select>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <label>Date</label>
+                                                    <div class="datepicker-wrap">
+                                                        <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-sm-2 col-md-2">
+                                                    <label>time</label>
+                                                    <input type="time" class="input-text full-width" value="" placeholder="" />
+                                                </div>-->
+                                                <div class="col-sm-2 col-md-3">
+
+                                                    <button style="margin-top:20px;" type="button" ng-click="GetServices();">Modify</button>
+
+                                                </div>
+                                            </div>
+                                            <!--<div class="form-group row">
+                                                <div class="col-sm-6 col-md-2">
+                                                    <label>Date</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                                <div class="col-sm-6 col-md-2">
+                                                    <label>time</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Country code</label>
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option>United Kingdom (+44)</option>
+                                                            <option>United States (+1)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Phone number</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox"> I want to receive <span class="skin-color">Interbus</span> promotional offers in the future
+                                                    </label>
+                                                </div>
+                                            </div>-->
+                                        </div>
+                                        <hr />
+                                        <div class="person-information">
+                                            <h2>Your Personal Information</h2>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>first name</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>last name</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>email address</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Verify E-mail Address</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Country code</label>
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option>United Kingdom (+44)</option>
+                                                            <option>United States (+1)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Phone number</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox"> I want to receive <span class="skin-color">Interbus</span> promotional offers in the future
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 col-md-12">
+                                                    <button type="submit" class="full-width btn-large" ng-click="ShowHide()">CONFIRM BOOKING</button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-3 col-md-2">
-                                            <label>CVV code</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
-                                        </div>
-                                    </div>
-                                </div>-->
-                                <!--<div class="row" style="margin-top:0px;background-color:aliceblue">
-
-                                    <div class="col-lg-12">
-                                        <h3>Payment options</h3>
-                                        <div class="tabbable tabs-left " style="margin-top:0px;background-color:aliceblue;">
-                                            <ul id="myTab2" class="nav nav-tabs ">
-
-                                                <li><a href="#debtcard" data-toggle="tab">Debt card</a></li>
-                                                <li class="active"><a href="#creditcard" data-toggle="tab">Credit card</a></li>
-                                                <li><a href="#netbanking" data-toggle="tab">Net banking</a></li>
-                                                <li><a href="#paypal" data-toggle="tab">Paypal</a></li>
-                                            </ul>
-                                            <div id="myTabContent2" class="tab-content" style="background-color: aliceblue">
-                                                <div id="paypal" class="tab-pane fade in active">
-                                                    <div class="form-group"><input id="inputNameCard" type="text" value="Test User" placeholder="Name on card" class="form-control" /></div>
-                                                    <div class="row">
-                                                        <div class="col-md-9">
-                                                            <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" placeholder="Card number" class="form-control" /></div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group"><input id="inputCVV2" type="text" value="874" placeholder="CVV2" class="form-control" /></div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-11">
-                                                            <div class="col-md-2">
-                                                                <div class="form-group"><label class="pts">Expiration date:</label></div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <select class="form-control">
-                                                                        <option>11</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <div class="form-group"><label class="pts">Expiration Year:</label></div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <select class="form-control">
-                                                                        <option>2018</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div id="debtcard" class="tab-pane fade">
-                                                    <div class="form-group"><input id="inputNameCard" type="text" value="Test User" placeholder="Name on card" class="form-control" /></div>
-                                                    <div class="row">
-                                                        <div class="col-md-9">
-                                                            <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" placeholder="Card number" class="form-control" /></div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group"><input id="inputCVV2" type="text" value="874" placeholder="CVV2" class="form-control" /></div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-11">
-                                                            <div class="col-md-2">
-                                                                <div class="form-group"><label class="pts">Expiration date:</label></div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <select class="form-control">
-                                                                        <option>11</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <div class="form-group"><label class="pts">Expiration Year:</label></div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <select class="form-control">
-                                                                        <option>2018</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                        <hr />
+                                        <!--<div class="card-information">
+                                            <h2>Your Card Information</h2>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Credit Card Type</label>
+                                                    <div class="selector">
+                                                        <select class="full-width">
+                                                            <option>select a card</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                <div id="creditcard" class="tab-pane fade">
-                                                    <div class="form-group"><input id="inputNameCard" type="text" value="Test User" placeholder="Name on card" class="form-control" /></div>
-                                                    <div class="row">
-                                                        <div class="col-md-9">
-                                                            <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" placeholder="Card number" class="form-control" /></div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group"><input id="inputCVV2" type="text" value="874" placeholder="CVV2" class="form-control" /></div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-11">
-                                                            <div class="col-md-2">
-                                                                <div class="form-group"><label class="pts">Expiration date:</label></div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <select class="form-control">
-                                                                        <option>11</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <div class="form-group"><label class="pts">Expiration Year:</label></div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <select class="form-control">
-                                                                        <option>2018</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Card holder name</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
                                                 </div>
-                                                <div id="netbanking" class="tab-pane fade">
-
-                                                    <div class="row">
-
-                                                        <div class="col-md-9">
-
-                                                            <select class="form-control col-md-8">
-                                                                <option value="" selected>----select Bank----</option>
-                                                                <option value="21">Bank1</option>
-                                                                <option value="22">Bank12</option>
-                                                                <option value="23">Bank13</option>
-                                                                <option value="24">Bank14</option>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Card number</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Card identification number</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 col-md-5">
+                                                    <label>Expiration Date</label>
+                                                    <div class="constant-column-2">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option>month</option>
                                                             </select>
                                                         </div>
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option>year</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 col-md-2">
+                                                    <label>CVV code</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                        </div>-->
+                                        <!--<div class="row" style="margin-top:0px;background-color:aliceblue">
 
-                                                        <div class="col-md-3">
-                                                            <button class="btn btn-primary" ng-click="GoToNetbanking();">Submit</button>
+                                            <div class="col-lg-12">
+                                                <h3>Payment options</h3>
+                                                <div class="tabbable tabs-left " style="margin-top:0px;background-color:aliceblue;">
+                                                    <ul id="myTab2" class="nav nav-tabs ">
 
+                                                        <li><a href="#debtcard" data-toggle="tab">Debt card</a></li>
+                                                        <li class="active"><a href="#creditcard" data-toggle="tab">Credit card</a></li>
+                                                        <li><a href="#netbanking" data-toggle="tab">Net banking</a></li>
+                                                        <li><a href="#paypal" data-toggle="tab">Paypal</a></li>
+                                                    </ul>
+                                                    <div id="myTabContent2" class="tab-content" style="background-color: aliceblue">
+                                                        <div id="paypal" class="tab-pane fade in active">
+                                                            <div class="form-group"><input id="inputNameCard" type="text" value="Test User" placeholder="Name on card" class="form-control" /></div>
+                                                            <div class="row">
+                                                                <div class="col-md-9">
+                                                                    <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" placeholder="Card number" class="form-control" /></div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group"><input id="inputCVV2" type="text" value="874" placeholder="CVV2" class="form-control" /></div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-11">
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group"><label class="pts">Expiration date:</label></div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <select class="form-control">
+                                                                                <option>11</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <select class="form-control">
+                                                                                <option>2018</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div id="debtcard" class="tab-pane fade">
+                                                            <div class="form-group"><input id="inputNameCard" type="text" value="Test User" placeholder="Name on card" class="form-control" /></div>
+                                                            <div class="row">
+                                                                <div class="col-md-9">
+                                                                    <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" placeholder="Card number" class="form-control" /></div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group"><input id="inputCVV2" type="text" value="874" placeholder="CVV2" class="form-control" /></div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-11">
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group"><label class="pts">Expiration date:</label></div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <select class="form-control">
+                                                                                <option>11</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <select class="form-control">
+                                                                                <option>2018</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="creditcard" class="tab-pane fade">
+                                                            <div class="form-group"><input id="inputNameCard" type="text" value="Test User" placeholder="Name on card" class="form-control" /></div>
+                                                            <div class="row">
+                                                                <div class="col-md-9">
+                                                                    <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" placeholder="Card number" class="form-control" /></div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group"><input id="inputCVV2" type="text" value="874" placeholder="CVV2" class="form-control" /></div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-11">
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group"><label class="pts">Expiration date:</label></div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <select class="form-control">
+                                                                                <option>11</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <select class="form-control">
+                                                                                <option>2018</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="netbanking" class="tab-pane fade">
+
+                                                            <div class="row">
+
+                                                                <div class="col-md-9">
+
+                                                                    <select class="form-control col-md-8">
+                                                                        <option value="" selected>----select Bank----</option>
+                                                                        <option value="21">Bank1</option>
+                                                                        <option value="22">Bank12</option>
+                                                                        <option value="23">Bank13</option>
+                                                                        <option value="24">Bank14</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="col-md-3">
+                                                                    <button class="btn btn-primary" ng-click="GoToNetbanking();">Submit</button>
+
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="text-right pal">
+                                                <button class="btn btn-primary" ng-click="ProceedToPayment();">Make payment</button>
+
+                                            </div>
+                                        </div>-->
+
+
+                                        <section id="content" class="gray-area" style="padding-top:0px" ng-show="IsVisible">
+                                            <h3>Payment options</h3>
+                                            <div class="container">
+                                                <div id="main" style="width:820px">
+                                                    <div class="tab-container full-width-style arrow-left dashboard">
+                                                        <ul class="tabs">
+                                                            <li class="active"><a data-toggle="tab" href="#Debitcard" style="height:50px;"><!--<i class="soap-icon-anchor"></i>-->Debit card</a></li>
+                                                            <li class=""><a data-toggle="tab" href="#Creditcard" style="height:50px"><!--<i class="soap-icon-user circle"></i>-->Credit card</a></li>
+                                                            <li class=""><a data-toggle="tab" href="#Netbanking" style="height:50px"><!--<i class="soap-icon-businessbag circle"></i>-->Net banking</a></li>
+                                                            <li class=""><a data-toggle="tab" href="#Paypal" style="height:50px"><!--<i class="soap-icon-wishlist circle"></i>-->Paypal</a></li>
+
+                                                        </ul>
+                                                        <div class="tab-content">
+                                                            <div id="Debitcard" class="tab-pane fade in active">
+                                                                <div class=" col-md-12">
+                                                                    <label>Card Holder Name</label>
+                                                                    <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
+                                                                </div>
+
+                                                                <div class="row col-md-12">
+                                                                    <div class=" col-md-9">
+                                                                        <label>Card Number</label>
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="Card number" />
+                                                                    </div>
+                                                                    <div class=" col-md-3">
+                                                                        <label>CVV</label>
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="CVV" />
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-11">
+                                                                        <div class="col-md-2">
+                                                                            <div class="input-text full-width"><label class="pts">Expiration Month:</label></div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <select class="input-text full-width">
+                                                                                    <option>11</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-2">
+                                                                            <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <select class="input-text full-width">
+                                                                                    <option>2018</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="Creditcard" class="tab-pane fade">
+                                                                <div class=" col-md-12">
+                                                                    <label>Card Holder Name</label>
+                                                                    <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
+                                                                </div>
+
+                                                                <div class="row col-md-12">
+                                                                    <div class=" col-md-9">
+                                                                        <label>Card Number</label>
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="Card number" />
+                                                                    </div>
+                                                                    <div class=" col-md-3">
+                                                                        <label>CVV</label>
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="CVV" />
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-11">
+                                                                        <div class="col-md-2">
+                                                                            <div class="input-text full-width"><label class="pts">Expiration Month:</label></div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <select class="input-text full-width">
+                                                                                    <option>11</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-2">
+                                                                            <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <select class="input-text full-width">
+                                                                                    <option>2018</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="Netbanking" class="tab-pane fade">
+                                                                <div class="row">
+
+                                                                    <div class="col-md-9">
+
+                                                                        <select class="input-text full-width col-md-8">
+                                                                            <option value="" selected>----select Bank----</option>
+                                                                            <option value="21">Bank1</option>
+                                                                            <option value="22">Bank12</option>
+                                                                            <option value="23">Bank13</option>
+                                                                            <option value="24">Bank14</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-md-3">
+                                                                        <button class="btn-large" ng-click="GoToNetbanking();">Submit</button>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div id="Paypal" class="tab-pane fade">
+                                                                <div class=" col-md-12">
+                                                                    <label>Card Holder Name</label>
+                                                                    <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
+                                                                </div>
+
+                                                                <div class="row col-md-12">
+                                                                    <div class=" col-md-9">
+                                                                        <label>Card Number</label>
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="Card number" />
+                                                                    </div>
+                                                                    <div class=" col-md-3">
+                                                                        <label>CVV</label>
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="CVV" />
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-11">
+                                                                        <div class="col-md-2">
+                                                                            <div class="input-text full-width"><label class="pts">Expiration Month:</label></div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <select class="input-text full-width">
+                                                                                    <option>11</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-2">
+                                                                            <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <select class="input-text full-width">
+                                                                                    <option>2018</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="text-center " style="padding-bottom:7px;padding-top:0px">
+                                                                <button class=" btn-large" ng-click="ProceedToPayment();">Make payment</button>
+
+                                                            </div>
+                                        </section>
+                                        <!--<hr>-->
+                                        <!--<div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
+                                                </label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="text-right pal">
-                                        <button class="btn btn-primary" ng-click="ProceedToPayment();">Make payment</button>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 col-md-5">
+                                                <button type="submit" class="full-width btn-large"><a href="pages-coming-soon1.html">CONFIRM BOOKING</a></button>
+                                            </div>
+                                        </div>-->
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="sidebar col-sms-6 col-sm-4 col-md-3">
+                                <div class="booking-details travelo-box">
+                                    <h4>Booking Details</h4>
+                                    <article class="car-detail">
+                                        <figure class="clearfix">
+                                            <a title="" href="car-detailed.html" class="middle-block"><img class="middle-item" alt="" src="http://placehold.it/75x75"></a>
+                                            <div class="travel-title">
+                                                <h5 class="box-title">BMW Mini<small>Economy car</small></h5>
+                                                <a href="car-detailed.html" class="button">EDIT</a>
+                                            </div>
+                                        </figure>
+                                        <div class="details">
+                                            <div class="icon-box style11 full-width">
+                                                <div class="icon-wrapper">
+                                                    <i class="soap-icon-departure"></i>
+                                                </div>
+                                                <dl class="details">
+                                                    <dt class="skin-color">Date</dt>
+                                                    <dd>Nov 14, 2013 to nov 15.2013</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="icon-box style11 full-width">
+                                                <div class="icon-wrapper">
+                                                    <i class="soap-icon-departure"></i>
+                                                </div>
+                                                <dl class="details">
+                                                    <dt class="skin-color">Time</dt>
+                                                    <dd>11:00 AM to 11:00am</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="icon-box style11 full-width">
+                                                <div class="icon-wrapper">
+                                                    <i class="soap-icon-departure"></i>
+                                                </div>
+                                                <dl class="details">
+                                                    <dt class="skin-color">Location</dt>
+                                                    <dd>London city to paris orly airport</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
 
-                                    </div>
-                                </div>-->
+                                    </article>
 
+                                    <h4>Other Details</h4>
+                                    <dl class="other-details">
+                                        <dt class="feature">Mileage included:</dt>
+                                        <dd class="value">3,000 miles</dd>
+                                        <dt class="feature">Damage Protection:</dt>
+                                        <dd class="value">$0.00 USD</dd>
+                                        <dt class="feature">Per day price:</dt>
+                                        <dd class="value">$45.39</dd>
+                                        <dt class="feature">taxes and fees:</dt>
+                                        <dd class="value">$155.61</dd>
+                                        <dt class="total-price">Total Price</dt>
+                                        <dd class="total-price-value">$201.00</dd>
+                                    </dl>
+                                    <div class="text-center " style="padding-bottom:7px;padding-top:0px">
+                                        <button class=" btn-large" ng-click="ProceedToPayment();">Make payment</button>
 
-                                <section id="content" class="gray-area" style="padding-top:0px" ng-show="IsVisible">
-                                    <h3>Payment options</h3>
-                                    <div class="container">
-                                        <div id="main" style="width:820px">
-                                            <div class="tab-container full-width-style arrow-left dashboard">
-                                                <ul class="tabs">
-                                                    <li class="active"><a data-toggle="tab" href="#Debitcard" style="height:50px;"><!--<i class="soap-icon-anchor"></i>-->Debit card</a></li>
-                                                    <li class=""><a data-toggle="tab" href="#Creditcard" style="height:50px"><!--<i class="soap-icon-user circle"></i>-->Credit card</a></li>
-                                                    <li class=""><a data-toggle="tab" href="#Netbanking" style="height:50px"><!--<i class="soap-icon-businessbag circle"></i>-->Net banking</a></li>
-                                                    <li class=""><a data-toggle="tab" href="#Paypal" style="height:50px"><!--<i class="soap-icon-wishlist circle"></i>-->Paypal</a></li>
-
-                                                </ul>
-                                                <div class="tab-content">
-                                                    <div id="Debitcard" class="tab-pane fade in active">
-                                                        <div class=" col-md-12">
-                                                            <label>Card Holder Name</label>
-                                                            <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
-                                                        </div>
-
-                                                        <div class="row col-md-12">
-                                                            <div class=" col-md-9">
-                                                                <label>Card Number</label>
-                                                                <input type="text" class="input-text full-width" value="" placeholder="Card number" />
-                                                            </div>
-                                                            <div class=" col-md-3">
-                                                                <label>CVV</label>
-                                                                <input type="text" class="input-text full-width" value="" placeholder="CVV" />
-                                                            </div>
-
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-md-11">
-                                                                <div class="col-md-2">
-                                                                    <div class="input-text full-width"><label class="pts">Expiration Month:</label></div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <div class="form-group">
-                                                                        <select class="input-text full-width">
-                                                                            <option>11</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-2">
-                                                                    <div class="form-group"><label class="pts">Expiration Year:</label></div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <div class="form-group">
-                                                                        <select class="input-text full-width">
-                                                                            <option>2018</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="Creditcard" class="tab-pane fade">
-                                                        <div class=" col-md-12">
-                                                            <label>Card Holder Name</label>
-                                                            <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
-                                                        </div>
-
-                                                        <div class="row col-md-12">
-                                                            <div class=" col-md-9">
-                                                                <label>Card Number</label>
-                                                                <input type="text" class="input-text full-width" value="" placeholder="Card number" />
-                                                            </div>
-                                                            <div class=" col-md-3">
-                                                                <label>CVV</label>
-                                                                <input type="text" class="input-text full-width" value="" placeholder="CVV" />
-                                                            </div>
-
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-md-11">
-                                                                <div class="col-md-2">
-                                                                    <div class="input-text full-width"><label class="pts">Expiration Month:</label></div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <div class="form-group">
-                                                                        <select class="input-text full-width">
-                                                                            <option>11</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-2">
-                                                                    <div class="form-group"><label class="pts">Expiration Year:</label></div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <div class="form-group">
-                                                                        <select class="input-text full-width">
-                                                                            <option>2018</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="Netbanking" class="tab-pane fade">
-                                                        <div class="row">
-
-                                                            <div class="col-md-9">
-
-                                                                <select class="input-text full-width col-md-8">
-                                                                    <option value="" selected>----select Bank----</option>
-                                                                    <option value="21">Bank1</option>
-                                                                    <option value="22">Bank12</option>
-                                                                    <option value="23">Bank13</option>
-                                                                    <option value="24">Bank14</option>
-                                                                </select>
-                                                            </div>
-
-                                                            <div class="col-md-3">
-                                                                <button class="btn-large" ng-click="GoToNetbanking();">Submit</button>
-
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div id="Paypal" class="tab-pane fade">
-                                                        <div class=" col-md-12">
-                                                            <label>Card Holder Name</label>
-                                                            <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
-                                                        </div>
-
-                                                        <div class="row col-md-12">
-                                                            <div class=" col-md-9">
-                                                                <label>Card Number</label>
-                                                                <input type="text" class="input-text full-width" value="" placeholder="Card number" />
-                                                            </div>
-                                                            <div class=" col-md-3">
-                                                                <label>CVV</label>
-                                                                <input type="text" class="input-text full-width" value="" placeholder="CVV" />
-                                                            </div>
-
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-md-11">
-                                                                <div class="col-md-2">
-                                                                    <div class="input-text full-width"><label class="pts">Expiration Month:</label></div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <div class="form-group">
-                                                                        <select class="input-text full-width">
-                                                                            <option>11</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-2">
-                                                                    <div class="form-group"><label class="pts">Expiration Year:</label></div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <div class="form-group">
-                                                                        <select class="input-text full-width">
-                                                                            <option>2018</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-center " style="padding-bottom:7px;padding-top:0px">
-                                                        <button class=" btn-large" ng-click="ProceedToPayment();">Make payment</button>
-
-                                                    </div>
-                                </section>
-                                <!--<hr>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
-                                        </label>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 col-md-5">
-                                        <button type="submit" class="full-width btn-large"><a href="pages-coming-soon1.html">CONFIRM BOOKING</a></button>
-                                    </div>
+
+
+                                <!--<div class="travelo-box contact-box">
+                                    <h4>Need Travelo Help?</h4>
+                                    <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+                                    <address class="contact-details">
+                                        <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                        <br>
+                                        <a class="contact-email" href="#">help@travelo.com</a>
+                                    </address>
                                 </div>-->
-                            </form>
-                        </div>
-                    </div>
-                    <div class="sidebar col-sms-6 col-sm-4 col-md-3">
-                        <div class="booking-details travelo-box">
-                            <h4>Booking Details</h4>
-                            <article class="car-detail" ng-init="GetHireVehicle()">
-                                <figure class="clearfix" ng-repeat="v in Vehicles">
-                                    <a title="" href="car-detailed.html" class="middle-block"><img class="middle-item" alt="" src="{{v.Photo}}"></a>
-                                    <div class="travel-title">
-                                        <h5 class="box-title">{{v.RegistrationNo}}<small></small>{{v.VehicleGroup}}</h5>
-                                        <a href="car-detailed.html" class="button">EDIT</a>
-                                    </div>
-                                </figure>
-                                <div class="details" ng-repeat="v in Vehicles">
-                                    <div class="icon-box style11 full-width">
-                                        <div class="icon-wrapper">
-                                            <i class="soap-icon-departure"></i>
-                                        </div>
-                                        <dl class="details">
-                                            <dt class="skin-color">Date</dt>
-                                            <dd>{{v.PickupTime}}</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="icon-box style11 full-width">
-                                        <div class="icon-wrapper">
-                                            <i class="soap-icon-departure"></i>
-                                        </div>
-                                        <dl class="details">
-                                            <dt class="skin-color">Time</dt>
-                                            <dd>11:00 AM to 11:00am</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="icon-box style11 full-width">
-                                        <div class="icon-wrapper">
-                                            <i class="soap-icon-departure"></i>
-                                        </div>
-                                        <dl class="details">
-                                            <dt class="skin-color">Location</dt>
-                                            <dd>London city to paris orly airport</dd>
-                                        </dl>
-                                    </div>
-                                </div>
-
-                            </article>
-
-                            <h4>Other Details</h4>
-                            <dl class="other-details" ng-repeat="v in Vehicles">
-                                <dt class="feature">Mileage included:</dt>
-                                <dd class="value">3,000 miles</dd>
-                                <dt class="feature">Damage Protection:</dt>
-                                <dd class="value">$0.00 USD</dd>
-                                <dt class="feature">Per day price:</dt>
-                                <dd class="value">$45.39</dd>
-                                <dt class="feature">taxes and fees:</dt>
-                                <dd class="value">$155.61</dd>
-                                <dt class="total-price">Total Price</dt>
-                                <dd class="total-price-value">{{v.Amount}}</dd>
-                            </dl>
-                            <div class="text-center " style="padding-bottom:7px;padding-top:0px">
-                                <button class=" btn-large" ng-click="ProceedToPayment();">Make payment</button>
-
                             </div>
                         </div>
 
-
-                        <!--<div class="travelo-box contact-box">
-                            <h4>Need Travelo Help?</h4>
-                            <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
-                            <address class="contact-details">
-                                <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
-                                <br>
-                                <a class="contact-email" href="#">help@travelo.com</a>
-                            </address>
-                        </div>-->
                     </div>
-                </div>
+                </section>
 
-            </div>
-        </section>
+                <footer id="footer" style="background-color: #2d3e52;">
 
-        <footer id="footer" style="background-color: #2d3e52;">
+                    <div class="footer-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3">
+                                    <h2 style="color:white">Discover</h2>
+                                    <ul class="discover triangle hover row">
+                                        <li class="col-xs-6"><a href="#">contacts</a></li>
+                                        <li class="col-xs-6"><a href="#">About</a></li>
+                                        <li class="col-xs-6"><a href="#">Careers</a></li>
+                                        <li class="col-xs-6"><a href="#">Safety</a></li>
+                                        <li class="active col-xs-6"><a href="#">security</a></li>
+                                        <li class="col-xs-6"><a href="#">Transparency</a></li>
+                                        <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
+                                        <li class="col-xs-6"><a href="#">Gift Shop</a></li>
+                                        <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
+                                        <li class="col-xs-6"><a href="#">Help</a></li>
+                                        <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
+                                        <li class="col-xs-6"><a href="#">Media</a></li>
+                                        <li class="col-xs-6"><a href="#">Business</a></li>
+                                        <li class="col-xs-6"><a href="#">commercial</a></li>
 
-            <div class="footer-wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3">
-                            <h2 style="color:white">Discover</h2>
-                            <ul class="discover triangle hover row">
-                                <li class="col-xs-6"><a href="#">contacts</a></li>
-                                <li class="col-xs-6"><a href="#">About</a></li>
-                                <li class="col-xs-6"><a href="#">Careers</a></li>
-                                <li class="col-xs-6"><a href="#">Safety</a></li>
-                                <li class="active col-xs-6"><a href="#">security</a></li>
-                                <li class="col-xs-6"><a href="#">Transparency</a></li>
-                                <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
-                                <li class="col-xs-6"><a href="#">Gift Shop</a></li>
-                                <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
-                                <li class="col-xs-6"><a href="#">Help</a></li>
-                                <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
-                                <li class="col-xs-6"><a href="#">Media</a></li>
-                                <li class="col-xs-6"><a href="#">Business</a></li>
-                                <li class="col-xs-6"><a href="#">commercial</a></li>
+                                        <li class="col-xs-6"><a href="#">Schools</a></li>
+                                        <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
+                                        <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
+                                        <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
+                                        <li class="col-xs-6"><a href="#">Urban planning</a></li>
+                                        <li class="col-xs-6"><a href="#">construction</a></li>
+                                        <li class="col-xs-6"><a href="#">Information for...</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <h2 style="color:white">Interbus News</h2>
+                                    <ul class="travel-news">
+                                        <li>
+                                            <div class="thumb">
+                                                <a href="#">
+                                                    <img src="images/img1.jpg" alt="" width="63" height="63" />
+                                                </a>
+                                            </div>
+                                            <div class="description">
+                                                <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                                <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
+                                                <span class="date">25 Sep, 2013</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="thumb">
+                                                <a href="#">
+                                                    <img src="images/img11.jpg" alt="" width="63" height="63" />
+                                                </a>
+                                            </div>
+                                            <div class="description">
+                                                <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                                <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
+                                                <span class="date">24 Sep, 2013</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <h2 style="color:white">Mailing List</h2>
+                                    <p>Sign up for our mailing list to get latest updates and offers.</p>
+                                    <br />
+                                    <div class="icon-check">
+                                        <input type="text" class="input-text full-width" placeholder="your email" />
+                                    </div>
+                                    <br />
+                                    <span style="color:white">We respect your privacy</span>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <h2 style="color:white">About Interbus</h2>
+                                    <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
+                                    <br />
+                                    <address class="contact-details">
+                                        <span class="contact-phone" style="color:white"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                                        <br />
+                                        <a href="#" class="contact-email">help@interbus.com</a>
+                                    </address>
+                                    <ul class="social-icons clearfix" style="padding-left:25px">
+                                        <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                        <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                                        <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
 
-                                <li class="col-xs-6"><a href="#">Schools</a></li>
-                                <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
-                                <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
-                                <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
-                                <li class="col-xs-6"><a href="#">Urban planning</a></li>
-                                <li class="col-xs-6"><a href="#">construction</a></li>
-                                <li class="col-xs-6"><a href="#">Information for...</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <h2 style="color:white">Interbus News</h2>
-                            <ul class="travel-news">
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="images/img1.jpg" alt="" width="63" height="63" />
-                                        </a>
-                                    </div>
-                                    <div class="description">
-                                        <h5 class="s-title"><a href="#">Amazing Places</a></h5>
-                                        <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
-                                        <span class="date">25 Sep, 2013</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="images/img11.jpg" alt="" width="63" height="63" />
-                                        </a>
-                                    </div>
-                                    <div class="description">
-                                        <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
-                                        <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
-                                        <span class="date">24 Sep, 2013</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <h2 style="color:white">Mailing List</h2>
-                            <p>Sign up for our mailing list to get latest updates and offers.</p>
-                            <br />
-                            <div class="icon-check">
-                                <input type="text" class="input-text full-width" placeholder="your email" />
+
+
+
+                                    </ul>
+                                </div>
                             </div>
-                            <br />
-                            <span style="color:white">We respect your privacy</span>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <h2 style="color:white">About Interbus</h2>
-                            <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
-                            <br />
-                            <address class="contact-details">
-                                <span class="contact-phone" style="color:white"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
-                                <br />
-                                <a href="#" class="contact-email">help@interbus.com</a>
-                            </address>
-                            <ul class="social-icons clearfix" style="padding-left:25px">
-                                <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
-                                <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
-                                <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
-
-
-
-
-                            </ul>
                         </div>
                     </div>
-                </div>
+                    <div class="bottom gray-area">
+                        <div class="container">
+                            <div class="logo pull-left">
+                                <a href="../index.html" title="Tel One - home">
+                                    <img src="images/logo.png" alt="InterBus HTML5 Template" />
+                                </a>
+                            </div>
+                            <div class="pull-right">
+                                <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                            </div>
+                            <div class="copyright pull-right">
+                                <p>&copy; 2017 Tel One</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </footer>
             </div>
-            <div class="bottom gray-area">
-                <div class="container">
-                    <div class="logo pull-left">
-                        <a href="../index.html" title="Tel One - home">
-                            <img src="images/logo.png" alt="InterBus HTML5 Template" />
-                        </a>
-                    </div>
-                    <div class="pull-right">
-                        <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
-                    </div>
-                    <div class="copyright pull-right">
-                        <p>&copy; 2017 Tel One</p>
-                    </div>
-                </div>
-            </div>
 
-        </footer>
-    </div>
+            <!-- Javascript -->
+            <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+            <script type="text/javascript" src="js/jquery.noconflict.js"></script>
+            <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+            <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+            <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
+            <script type="text/javascript" src="js/jquery.placeholder.js"></script>
 
-    <!-- Javascript -->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.noconflict.js"></script>
-    <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
-    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+            <!-- Twitter Bootstrap -->
+            <script type="text/javascript" src="js/bootstrap.js"></script>
 
-    <!-- Twitter Bootstrap -->
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+            <!-- load revolution slider scripts -->
+            <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.tools.min.js"></script>
+            <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
 
-    <!-- load revolution slider scripts -->
-    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+            <!-- load BXSlider scripts -->
+            <script type="text/javascript" src="components/jquery.bxslider/jquery.bxslider.min.js"></script>
 
-    <!-- load BXSlider scripts -->
-    <script type="text/javascript" src="components/jquery.bxslider/jquery.bxslider.min.js"></script>
+            <!-- parallax -->
+            <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
 
-    <!-- parallax -->
-    <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+            <!-- waypoint -->
+            <script type="text/javascript" src="js/waypoints.min.js"></script>
 
-    <!-- waypoint -->
-    <script type="text/javascript" src="js/waypoints.min.js"></script>
-
-    <!-- load page Javascript -->
-    <script type="text/javascript" src="js/theme-scripts.js"></script>
-    <script src="js/angular.js"></script>
-    <script src="js/ngStorage.js"></script>
-    <script src="js/products.js"></script>
-</body>
-</html>
+            <!-- load page Javascript -->
+            <script type="text/javascript" src="js/theme-scripts.js"></script>
+            <script src="js/angular.js"></script>
+            <script src="js/ngStorage.js"></script>
+            <script src="js/products.js"></script>
+        </body>
+    </html>
