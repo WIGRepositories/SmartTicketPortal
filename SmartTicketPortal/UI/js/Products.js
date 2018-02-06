@@ -105,4 +105,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         window.location.href = "../index.html";
     }
+    //-----------------Hidestart-------------------
+    $scope.IsVisible = false;
+    $scope.ShowHide = function () {
+        //If DIV is visible it will be hidden and vice versa.
+        $scope.IsVisible = $scope.IsVisible ? false : true;
+    }
+    //-----------------Hideend-------------------
 });
