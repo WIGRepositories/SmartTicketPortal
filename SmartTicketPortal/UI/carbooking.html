@@ -349,7 +349,7 @@
                                         </div>-->
                                         <div class="col-sm-2 col-md-3">
 
-                                            <button style="margin-top:20px;" type="button" ng-click="GetServices();">Modify</button>
+                                            <a href="hirevehicle.html" style="margin-top:25px;" data-dismiss="modal" class="btn btn-primary">Modify</a>
 
                                         </div>
                                     </div>
@@ -387,26 +387,26 @@
                                     </div>-->
                                 </div>
                                 <hr />
-                                <div class="person-information">
+                                <div class="person-information" ng-model="book">
                                     <h2>Your Personal Information</h2>
                                     <div class="form-group row">
                                         <div class="col-sm-6 col-md-5">
                                             <label>first name</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
+                                            <input type="text" class="input-text full-width" placeholder="" ng-model="book.firstname" />
                                         </div>
                                         <div class="col-sm-6 col-md-5">
                                             <label>last name</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.lastname" />
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-6 col-md-5">
                                             <label>email address</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.Email" />
                                         </div>
                                         <div class="col-sm-6 col-md-5">
                                             <label>Verify E-mail Address</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.Email" />
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -421,7 +421,7 @@
                                         </div>
                                         <div class="col-sm-6 col-md-5">
                                             <label>Phone number</label>
-                                            <input type="text" class="input-text full-width" value="" placeholder="" />
+                                            <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.Mobilenumber" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -431,10 +431,8 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-12 col-md-12">
-                                            <button type="submit" class="full-width btn-large" ng-click="ShowHide()"><a href="#">CONFIRM BOOKING</a></button>
-                                        </div>
+
+                                </div>
                                     </div>
                                 </div>
                                 <hr />
@@ -826,22 +824,22 @@
                     <div class="sidebar col-sms-6 col-sm-4 col-md-3">
                         <div class="booking-details travelo-box">
                             <h4>Booking Details</h4>
-                            <article class="car-detail">
-                                <figure class="clearfix">
-                                    <a title="" href="car-detailed.html" class="middle-block"><img class="middle-item" alt="" src="http://placehold.it/75x75"></a>
+                            <article class="car-detail" ng-init="GetHireVehicle()">
+                                <figure class="clearfix" ng-repeat="v in Vehicles">
+                                    <a title="" href="car-detailed.html" class="middle-block"><img class="middle-item" alt="" src="{{v.Photo}}"></a>
                                     <div class="travel-title">
-                                        <h5 class="box-title">BMW Mini<small>Economy car</small></h5>
+                                        <h5 class="box-title">{{v.RegistrationNo}}<small></small>{{v.VehicleGroup}}</h5>
                                         <a href="car-detailed.html" class="button">EDIT</a>
                                     </div>
                                 </figure>
-                                <div class="details">
+                                <div class="details" ng-repeat="v in Vehicles">
                                     <div class="icon-box style11 full-width">
                                         <div class="icon-wrapper">
                                             <i class="soap-icon-departure"></i>
                                         </div>
                                         <dl class="details">
                                             <dt class="skin-color">Date</dt>
-                                            <dd>Nov 14, 2013 to nov 15.2013</dd>
+                                            <dd>{{v.PickupTime}}</dd>
                                         </dl>
                                     </div>
                                     <div class="icon-box style11 full-width">
@@ -867,7 +865,7 @@
                             </article>
 
                             <h4>Other Details</h4>
-                            <dl class="other-details">
+                            <dl class="other-details" ng-repeat="v in Vehicles">
                                 <dt class="feature">Mileage included:</dt>
                                 <dd class="value">3,000 miles</dd>
                                 <dt class="feature">Damage Protection:</dt>
@@ -877,7 +875,7 @@
                                 <dt class="feature">taxes and fees:</dt>
                                 <dd class="value">$155.61</dd>
                                 <dt class="total-price">Total Price</dt>
-                                <dd class="total-price-value">$201.00</dd>
+                                <dd class="total-price-value">{{v.Amount}}</dd>
                             </dl>
                             <div class="text-center " style="padding-bottom:7px;padding-top:0px">
                                 <button class=" btn-large" ng-click="ProceedToPayment();">Make payment</button>

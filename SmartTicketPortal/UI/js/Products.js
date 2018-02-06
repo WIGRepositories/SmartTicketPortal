@@ -14,6 +14,14 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         });
     }
+
+    $scope.GetHireVehicle = function () {
+
+        $http.get('/api/HireVehicle/GetHireVehicle?srcId=1&destId=1').then(function (response, req) {
+            $scope.Vehicles = response.data;
+
+        });
+    }
     $scope.GetStops = function () {
 
         $http.get('/api/Stops/GetStops').then(function (response, req) {
@@ -105,11 +113,65 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         window.location.href = "../index.html";
     }
-    //-----------------Hidestart-------------------
-    $scope.IsVisible = false;
-    $scope.ShowHide = function () {
-        //If DIV is visible it will be hidden and vice versa.
-        $scope.IsVisible = $scope.IsVisible ? false : true;
-    }
-    //-----------------Hideend-------------------
+
+    $scope.SaveNew = function (app, flag) {
+
+        if (app.Username == null) {
+            alert('Please Enter Username');
+            return;
+        }
+
+        if (app.Firstname == null) {
+            alert('Please Enter Firstname');
+            return;
+        }
+        if (app.lastname == null) {
+            alert('Please Enter lastname');
+            return;
+        }
+        if (app.Email == null) {
+            alert('Please Enter Email');
+            return;
+        }
+        if (app.Mobilenumber == null) {
+            alert('Please Enter Mobilenumber');
+            return;
+        }
+
+        var app = {
+
+            flag: 'I',
+            Id: -1,
+            Username: app.Username,
+            Firstname: app.Firstname,
+            lastname: app.lastname,
+            Email: app.Email,
+            Mobilenumber: app.Mobilenumber,
+            Photo: $scope.imageSrc,
+            Altemail: app.Altemail,
+            Gender: app.Gender.Id,
+            Status: app.Status.Id
+
+        }
+
+        var req = {
+            method: 'POST',
+            url: '/api/RegisterUser/Appusers',
+            data: app
+        }
+        $http(req).then(function (response) {
+
+            alert("Saved successfully!");
+            $scope.GetUsers();
+            $scope.Group = null;
+            //$scope.GetVehcileMaster('VID=1');
+            //window.location.href = "vehicleDetails.html?VID=1";
+        }, function (errres) {
+            var errdata = errres.data;
+            var errmssg = "Your Details Are Incorrect";
+            errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
+            alert(errmssg);
+        });
+        $scope.currGroup = null;
+    };
 });
