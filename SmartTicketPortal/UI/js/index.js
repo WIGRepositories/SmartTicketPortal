@@ -22,33 +22,33 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
     //$scope.ChangeTravelType = function (travelTime) {
     //    $scope.timing = (travelTime == 0) ? "Now" : "Later";
     //}
-    //$scope.GetCarousel = function () {
-    //    $http.get('/api/Carousel/GetCarousel').then(function (res, data) {
-    //        $scope.carouselImages = res.data;
-    //    });
-    //}
+    $scope.GetCarousel = function () {
+        $http.get('/api/Carousel/GetCarousel').then(function (res, data) {
+            $scope.carouselImages = res.data;
+        });
+    }
 
     var INTERVAL = 1000;
      //  slides = (
-    $scope.GetCarousel = function () {
-      //  $http.get('/api/Carousel/GetCarousel').then(function (res, data) {
-            //   $scope.slides = res.data;
+    //$scope.GetCarousel = function () {
+    //    $http.get('/api/Carousel/GetCarousel').then(function (res, data) {
+    //           $scope.slides = res.data;
 
-            slides = [
-
-
-           { id: "image00", src: "UI/images//img4.jpg", title: 'Our love', subtitle: 'will prove everyone wrong!' },
-           { id: "image01", src: "UI/images//img4.jpg", title: 'Can you feel', subtitle: 'the love tonight!' },
-           { id: "image02", src: "UI/images//img4.jpg", title: 'You are the wind', subtitle: 'beneath my wings' }          
-            ];
-
-       // });
+    //       // slides = [
 
 
-            loadSlides();
+    //       //{ id: "image00", src: "http://localhost:3121/ui/images/img4.jpg", title: 'Our love', subtitle: 'will prove everyone wrong!' },
+    //       //{ id: "image01", src: "http://localhost:3121/ui/images/img4.jpg", title: 'Can you feel', subtitle: 'the love tonight!' },
+    //       //{ id: "image02", src: "http://localhost:3121/ui/images/img4.jpg", title: 'You are the wind', subtitle: 'beneath my wings' }
+    //       // ];
 
-        }
+    //   });
 
+    //    loadSlides();
+        
+
+    //    }
+    
            //{ id: "image00", src: "./images/image00.jpg", title: 'Our love', subtitle: 'will prove everyone wrong!' },
            //{ id: "image01", src: "./images/image01.jpg", title: 'Can you feel', subtitle: 'the love tonight!' },
            //{ id: "image02", src: "./images/image02.jpg", title: 'You are the wind', subtitle: 'beneath my wings' },
@@ -80,6 +80,17 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
     function loadSlides() {
         QueueService.loadManifest(slides);
     }
+
+    $scope.progress = 0;
+    $scope.loaded = false;
+    $scope.currentIndex = 0;
+    $scope.currentAnimation = 'slide-left-animation';
+
+    $scope.setCurrentSlideIndex = setCurrentSlideIndex;
+    $scope.isCurrentSlideIndex = isCurrentSlideIndex;
+    $scope.setCurrentAnimation = setCurrentAnimation;
+    $scope.isCurrentAnimation = isCurrentAnimation;
+
     $scope.RadioChange = function (s) {
         $scope.triptype = s;
     };
@@ -113,7 +124,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
     $scope.GetActivityLog = function () {
 
         $http.get('/api/Advertisement/GetActivityLog').then(function (response, req) {
-            $scope.logimages = response.data;
+            $scope.activityimages = response.data;
         });
     }
     $scope.GetServices = function () {

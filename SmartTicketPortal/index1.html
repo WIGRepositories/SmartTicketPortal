@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Page Title -->
+    <title>Tel One</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="InterBus, Tour Booking HTML5 Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="UI/image/x-icon">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="UI/css/bootstrap.min.css">
+    <link rel="stylesheet" href="UI/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="UI/css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="UI/components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="UI/components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="UI/components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="UI/components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="UI/css/style.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="UI/css/updates.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="UI/css/custom.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="UI/css/responsive.css">
+
+    <style>
+        section#content {
+            min-height: 700px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #main {
+            padding-top: 250px;
+        }
+
+        .page-title, .page-description {
+            color: #fff;
+        }
+
+        .page-title {
+            font-size: 4.1667em;
+            font-weight: bold;
+        }
+
+        .page-description {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+
+        .featured {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            z-index: 9;
+            margin-bottom: 0;
+            text-align: right;
+        }
+
+            .featured figure a {
+                border: 2px solid #fff;
+            }
+
+            .featured .details {
+                margin-right: 10px;
+            }
+
+                .featured .details > * {
+                    color: #fff;
+                    line-height: 1.25em;
+                    margin: 0;
+                    font-weight: bold;
+                    text-shadow: 2px -2px rgba(0, 0, 0, 0.2);
+                }
+
+        .tp-leftarrow .tp-rightarrow {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" ng-model="carouselImages" ng-init="GetCarousel()">
+
+
+    <div class="carousel" id="slider" style="margin-left: 20px;">
+
+        <label class="labelSecurity">Incident Photos</label><br />
+
+        <div class="carousel-inner">
+            <div class="item" ng-class="{active:!$index}" ng-repeat="slide in carouselImages">
+                <img src="{{slide.Image}}" class="img-responsive">
+            </div>
+        </div>
+
+        <a class="carousel-control right" href="#slider" data-slide="next"></a>
+
+    </div>
+
+
+
+    <footer id="footer" style="background-color: white;">
+
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <h2>Discover</h2>
+                        <ul class="discover triangle hover row">
+                            <li class="col-xs-6"><a href="#">contacts</a></li>
+                            <li class="col-xs-6"><a href="#">About</a></li>
+                            <li class="col-xs-6"><a href="#">Careers</a></li>
+                            <li class="col-xs-6"><a href="#">Safety</a></li>
+                            <li class="active col-xs-6"><a href="#">security</a></li>
+                            <li class="col-xs-6"><a href="#">Transparency</a></li>
+                            <!--<li class="col-xs-6"><a href="#">reports</a></li>-->
+                            <li class="col-xs-6"><a href="#">Gift Shop</a></li>
+                            <!--<li class="col-xs-6"><a href="#">Email updates</a></li>-->
+                            <li class="col-xs-6"><a href="#">Help</a></li>
+                            <!--<li class="col-xs-6"><a href="#">Other languages</a></li>-->
+                            <li class="col-xs-6"><a href="#">Media</a></li>
+                            <li class="col-xs-6"><a href="#">Business</a></li>
+                            <li class="col-xs-6"><a href="#">commercial</a></li>
+
+                            <li class="col-xs-6"><a href="#">Schools</a></li>
+                            <!--<li class="col-xs-6"><a href="#">young people</a></li>-->
+                            <li class="col-xs-6"><a href="#">Get Support online 24/7</a></li>
+                            <li class="col-xs-6"><a href="#">Deliveries in Zimbabwe</a></li>
+                            <li class="col-xs-6"><a href="#">Urban planning</a></li>
+                            <li class="col-xs-6"><a href="#">construction</a></li>
+                            <li class="col-xs-6"><a href="#">Information for...</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <h2>Interbus News</h2>
+                        <ul class="travel-news">
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="ui/images/img1.jpg" alt="" width="63" height="63" />
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                    <p>The company’s services offers online services to transport providers to buy ticketing, advertising licenses and allows the passengers to book tickets online.INTERBUS</p>
+                                    <span class="date">25 Sep, 2013</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="ui/images/img11.jpg" alt="" width="63" height="63" />
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                    <p>Be it the management, the sales, services, the ground staff or the crew focus on performance and customer satisfaction.</p>
+                                    <span class="date">24 Sep, 2013</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <h2>Mailing List</h2>
+                        <p>Sign up for our mailing list to get latest updates and offers.</p>
+                        <br />
+                        <div class="icon-check">
+                            <input type="text" class="input-text full-width" placeholder="your email" />
+                        </div>
+                        <br />
+                        <span>We respect your privacy</span>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <h2>About Interbus</h2>
+                        <p>INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare. Its unique features enhanced the operational efficiency and performance for the transport providers and streamlined the travel tickets booking across industry. INTERBUS is one of the most recognized and reputed brands in Harare, Zimbabwe.</p>
+                        <br />
+                        <address class="contact-details">
+                            <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                            <br />
+                            <a href="#" class="contact-email">help@interbus.com</a>
+                        </address>
+                        <ul class="social-icons clearfix" style="padding-left:25px">
+                            <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                            <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                            <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom gray-area">
+            <div class="container">
+                <div class="logo pull-left">
+                    <a href="index.html" title="Tel One - home">
+                        <img src="UI/images/logo.png" alt="Travelo HTML5 Template" />
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                </div>
+                <div class="copyright pull-right">
+                    <p>&copy; 2017 Tel One</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="UI/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="UI/js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="UI/js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="UI/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="UI/js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="UI/js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="UI/js/bootstrap.js"></script>
+
+    <!-- load revolution slider scripts -->
+    <script type="text/javascript" src="UI/components/revolution_slider/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="UI/components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- Flex Slider -->
+    <script type="text/javascript" src="UI/components/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- load BXSlider scripts -->
+    <script type="text/javascript" src="UI/components/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="UI/js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="UI/js/waypoints.min.js"></script>
+
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="UI/js/theme-scripts.js"></script>
+    <script type="text/javascript" src="UI/js/scripts.js"></script>
+    <script src="UI/js/angular.js"></script>
+    <script src="UI/js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="UI/js/ngStorage.js"></script>
+    <script src="UI/js/fileupload/angular-file-upload.js"></script>
+    <script src="UI/js/fileupload/angular-file-upload-shim.js"></script>
+
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular-animate.min.js"></script>
+    <script src="http://code.createjs.com/preloadjs-0.4.1.min.js"></script>
+
+    <script src="UI/js/index.js"></script>
+    <script src="UI/js/fileupload/Upload.js"></script>
+
+    <script type="text/javascript">
+        tjq(".flexslider").flexslider({
+            animation: "fade",
+            controlNav: false,
+            animationLoop: true,
+            directionNav: false,
+            slideshow: true,
+            slideshowSpeed: 1000
+        });
+    </script>
+</body>
+
+</html>
