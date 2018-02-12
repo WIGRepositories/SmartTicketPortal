@@ -360,31 +360,31 @@
                                 <img src="{{i.Image}}" /><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1>
                                 <h2 class="page-description col-md-6 no-float no-padding" style="color:orange">{{i.ImageDesc}}</h2>
                             </div>
-                        </li>
-                        <!--<li>
-                            <div class="slidebg" style="background-image: url('{{UI/images/img4.jpg}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding">{{i.ImageDesc}}</h2></div>
-
-                        </li>
-                        <li>
-                        <div class="slidebg" style="background-image: url('{{UI/images/img4.jpg}}');"><img ng-src="{{slide.Image}}" /></div>
-                        <img ng-src="{{slide.Image}}" />
                         </li>-->
+                        <!--<li>
+                    <div class="slidebg" style="background-image: url('{{i.Image}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding">{{i.ImageDesc}}</h2></div>
+
+            </li>-->
+                        <<!--li ng-repeat="slide in carouselImages">
+                            <div class="slidebg" style="background-image: url('{{slide.Image}}');"><img ng-src="{{slide.Image}}" /></div>
+                            <img ng-src="{{slide.Image}}" />
+                        </li>
 
                         <li>
-                                <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
-                            </li>
-                            <li>
-                        <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
-                </li>
-                            <li>
-                        <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
-                </li>
+                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>
+                        <li>
+                    <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
+            </li>
+                        <li>
+                    <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
+            </li>
                         <!--<li>
-                    <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
-                </li>-->
+                <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
+            </li>-->
                         <!--<li>
-                    <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"></div>
-                </li>-->
+                <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"></div>
+            </li>-->
                     </ul>
                     <div class="tp-leftarrow tparrows default  " style="top: 50%; transform: matrix(1, 0, 0, 1, 20, -20); left: 0px;"></div>
                     <div class="tp-rightarrow tparrows default  " style="top: 50%; transform: matrix(1, 0, 0, 1, -60, -20); left: 100%;"></div>
@@ -940,19 +940,19 @@
                             </figcaption>
                         </figure>
                         <!--<div class="details">
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$30</span>
-                            <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                        </div>
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$120</span>
-                            <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                        </div>
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$360</span>
-                            <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                        </div>
-                    </div>-->
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$30</span>
+                                <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$120</span>
+                                <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                            </div>
+                            <div class="detail">
+                                <span class="price"><small>FROM</small>$360</span>
+                                <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                            </div>
+                        </div>-->
 
                     </article>
                 </div>
@@ -964,7 +964,7 @@
                 <div class="col-sm-3" ng-repeat="a in advertisement">
 
                     <article class="box">
-                        <img ng-src="{{a.Image}}" alt="image" width="370px" height="100px">
+                        <img ng-src="{{a.Image}}" alt="image" style="height:150px;width:270px"  >
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
                             <a class="pull-left" href="#" target="_parent"></a>
                             <figcaption>
@@ -990,83 +990,83 @@
                     </article>
                 </div>
                 <!--<div class="col-sm-3">
-                <article class="box">
-                    <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                        <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
-                        <figcaption>
-                            <h3 class="caption-title">Singapore</h3>
-                            <span>3 activities</span>
-                        </figcaption>
-                    </figure>
-                    <div class="details">
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$30</span>
-                            <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                        </div>
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$120</span>
-                            <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                        </div>
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$360</span>
-                            <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                        </div>
+            <article class="box">
+                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                    <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                    <figcaption>
+                        <h3 class="caption-title">Singapore</h3>
+                        <span>3 activities</span>
+                    </figcaption>
+                </figure>
+                <div class="details">
+                    <div class="detail">
+                        <span class="price"><small>FROM</small>$30</span>
+                        <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
                     </div>
-
-                </article>
-            </div>
-            <div class="col-sm-3">
-                <article class="box">
-                    <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                        <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
-                        <figcaption>
-                            <h3 class="caption-title">Singapore</h3>
-                            <span>3 activities</span>
-                        </figcaption>
-                    </figure>
-                    <div class="details">
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$30</span>
-                            <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                        </div>
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$120</span>
-                            <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                        </div>
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$360</span>
-                            <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                        </div>
+                    <div class="detail">
+                        <span class="price"><small>FROM</small>$120</span>
+                        <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
                     </div>
-
-                </article>
-            </div>
-            <div class="col-sm-3">
-                <article class="box">
-                    <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                        <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
-                        <figcaption>
-                            <h3 class="caption-title">Singapore</h3>
-                            <span>3 activities</span>
-                        </figcaption>
-                    </figure>
-                    <div class="details">
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$30</span>
-                            <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                        </div>
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$120</span>
-                            <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                        </div>
-                        <div class="detail">
-                            <span class="price"><small>FROM</small>$360</span>
-                            <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                        </div>
+                    <div class="detail">
+                        <span class="price"><small>FROM</small>$360</span>
+                        <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
                     </div>
+                </div>
 
-                </article>
-            </div>-->
+            </article>
+        </div>
+        <div class="col-sm-3">
+            <article class="box">
+                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                    <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                    <figcaption>
+                        <h3 class="caption-title">Singapore</h3>
+                        <span>3 activities</span>
+                    </figcaption>
+                </figure>
+                <div class="details">
+                    <div class="detail">
+                        <span class="price"><small>FROM</small>$30</span>
+                        <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                    </div>
+                    <div class="detail">
+                        <span class="price"><small>FROM</small>$120</span>
+                        <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                    </div>
+                    <div class="detail">
+                        <span class="price"><small>FROM</small>$360</span>
+                        <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+        <div class="col-sm-3">
+            <article class="box">
+                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                    <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                    <figcaption>
+                        <h3 class="caption-title">Singapore</h3>
+                        <span>3 activities</span>
+                    </figcaption>
+                </figure>
+                <div class="details">
+                    <div class="detail">
+                        <span class="price"><small>FROM</small>$30</span>
+                        <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                    </div>
+                    <div class="detail">
+                        <span class="price"><small>FROM</small>$120</span>
+                        <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                    </div>
+                    <div class="detail">
+                        <span class="price"><small>FROM</small>$360</span>
+                        <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                    </div>
+                </div>
+
+            </article>
+        </div>-->
             </div>
         </div>
     </div>
