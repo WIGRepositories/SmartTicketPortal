@@ -98,7 +98,7 @@
 <body ng-app="myApp" ng-controller="myCtrl" ng-model="advertisement" ng-init="GetStops()">
     <img ng-show="loaded" bg-image class="fullBg" ng-repeat="slide in slides"
          ng-if="isCurrentSlideIndex($index)"
-         ng-src="{{slide.src}}"/>
+         ng-src="{{slide.src}}" />
 
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -260,14 +260,14 @@
                                 <li><a href="UI/Status_and_Updates.html">Status</a></li>
                                 <li><a href="#">My Ticket</a></li>
                             </ul>
-                        </li>-->     
+                        </li>-->
                         <li class="menu-item-has-children">
                             <a href="#">online shop</a>
                             <ul>
                                 <li><a href="ui/products.html">Products</a></li>
-                              
+
                             </ul>
-                        </li>                     
+                        </li>
                         <!--<li class="menu-item-has-children">
                             <a href="ui/productsshown.html" >Products</a>
                             <ul>
@@ -296,26 +296,26 @@
                                 <li><a href="UI/licensepage.html">Fleet Owner Licence</a></li>
                             </ul>
                         </li>
-                            <ul class="mobile-topnav container">
-                                <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
-                                <li class="ribbon">
-                                    <a href="#">Countries</a>
-                                    <ul class="menu mini">
-                                        <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
-                                        <li>
-                                            <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
-                                        </li>
+                        <ul class="mobile-topnav container">
+                            <li><a ng-hide="username == null" href="UserProfile.html">MY ACCOUNT</a></li>
+                            <li class="ribbon">
+                                <a href="#">Countries</a>
+                                <ul class="menu mini">
+                                    <!--<li><a href="#" title="Dansk">Dansk</a></li>-->
+                                    <li>
+                                        <select ng-options="cc.Name for cc in Countries track by cc.Id" ng-model="ctry" ng-init="GetCountry()" style="width:80%"></select>
+                                    </li>
 
-                                    </ul>
-                                </li>
-                                <li><a ng-hide="username==1" href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                                </ul>
+                            </li>
+                            <li><a ng-hide="username==1" href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
 
-                                <li><a href="UI/Registation.html" class="soap-popupbox">SIGNUP</a></li>
+                            <li><a href="UI/Registation.html" class="soap-popupbox">SIGNUP</a></li>
 
-                            </ul>
                         </ul>
+                    </ul>
 
-</nav>
+                </nav>
             </div>
 
             <div id="travelo-login" class="travelo-login-box travelo-box">
@@ -355,36 +355,37 @@
                         <li ng-repeat="i in carouselImages">
                             <div class="slidebg">
                                 <!--<img ng-show="loaded" bg-image class="fullBg" ng-repeat="slide in slides"
-            ng-if="isCurrentSlideIndex($index)"
-            ng-src="{{slide.Image}}">-->
+                                ng-if="isCurrentSlideIndex($index)"
+                                ng-src="{{slide.Image}}">-->
                                 <img src="{{i.Image}}" /><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1>
                                 <h2 class="page-description col-md-6 no-float no-padding" style="color:orange">{{i.ImageDesc}}</h2>
                             </div>
                         </li>-->
                         <!--<li>
-                    <div class="slidebg" style="background-image: url('{{i.Image}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding">{{i.ImageDesc}}</h2></div>
+                                <div class="slidebg" style="background-image: url('{{i.Image}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding">{{i.ImageDesc}}</h2></div>
 
-            </li>-->
-                        <<!--li ng-repeat="slide in carouselImages">
-                            <div class="slidebg" style="background-image: url('{{slide.Image}}');"><img ng-src="{{slide.Image}}" /></div>
-                            <img ng-src="{{slide.Image}}" />
-                        </li>
+                        </li>-->
+                        <
+                        <!--li ng-repeat="slide in carouselImages">
+                                        <div class="slidebg" style="background-image: url('{{slide.Image}}');"><img ng-src="{{slide.Image}}" /></div>
+                                        <img ng-src="{{slide.Image}}" />
+                                    </li>
 
-                        <li>
-                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
+                                    <li>
+                                        <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
+                                    </li>
+                                    <li>
+                                <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
-                        <li>
-                    <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
-            </li>
-                        <li>
-                    <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
-            </li>
+                                    <li>
+                                <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>
+                                    <!--<li>
+                            <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>-->
                         <!--<li>
-                <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
-            </li>-->
-                        <!--<li>
-                <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"></div>
-            </li>-->
+                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"></div>
+                        </li>-->
                     </ul>
                     <div class="tp-leftarrow tparrows default  " style="top: 50%; transform: matrix(1, 0, 0, 1, 20, -20); left: 0px;"></div>
                     <div class="tp-rightarrow tparrows default  " style="top: 50%; transform: matrix(1, 0, 0, 1, -60, -20); left: 100%;"></div>
@@ -534,249 +535,249 @@
                                     </form>
                                 </div>
                                 <!--<div class="tab-pane fade" id="flights-tab">
-                                <form action="UI/hirevehicle.html">
-                                    <h4 class="title">Hire Vichcle</h4>
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
-                                                    <option value="">Select Source</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
-                                                    <option value="">Select Destination</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <div class="col-xs-6">
-                                                    <div class="datepicker-wrap">
-                                                        <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
-                                                    </div>
+                                    <form action="UI/hirevehicle.html">
+                                        <h4 class="title">Hire Vichcle</h4>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                        <option value="">Select Source</option>
+                                                    </select>
                                                 </div>
-                                                <div class="col-xs-6">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="1">anytime</option>
-                                                            <option value="2">morning</option>
-                                                        </select>
-                                                    </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                        <option value="">Select Destination</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <div class="col-xs-3">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="">Adults</option>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-3">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="">Kids</option>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
+                                            <div class="col-md-4">
                                                 <div class="form-group row">
-
-                                                    <div class="col-xs-6 pull-right">
-                                                        <button class="full-width">SERACH NOW</button>
+                                                    <div class="col-xs-6">
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="1">anytime</option>
+                                                                <option value="2">morning</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
 
                                             </div>
 
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Adults</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Kids</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+
+                                                        <div class="col-xs-6 pull-right">
+                                                            <button class="full-width">SERACH NOW</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
-                            </div>-->
+                                    </form>
+                                </div>-->
                                 <!--<div class="tab-pane fade" id="flight-and-hotel-tab">
-                                <form action="UI/pages-coming-soon1.html">
-                                    <h4 class="title">Where do you want to go?</h4>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <input type="text" class="input-text full-width" placeholder="Leaving From (city, distirct or specific airpot)" />
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="input-text full-width" placeholder="Going To (city, distirct or specific airpot)" />
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <div class="col-xs-6">
-                                                    <div class="datepicker-wrap">
-                                                        <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
-                                                    </div>
+                                    <form action="UI/pages-coming-soon1.html">
+                                        <h4 class="title">Where do you want to go?</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <input type="text" class="input-text full-width" placeholder="Leaving From (city, distirct or specific airpot)" />
                                                 </div>
-                                                <div class="col-xs-6">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="1">anytime</option>
-                                                            <option value="2">morning</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-xs-6">
-                                                    <div class="datepicker-wrap">
-                                                        <input type="text" name="date_to" class="input-text full-width" placeholder="Arriving On" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="1">anytime</option>
-                                                            <option value="2">morning</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <div class="col-xs-3">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="">Adults</option>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-3">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="">Kids</option>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    <input type="text" class="input-text full-width" placeholder="Promo Code" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-xs-3">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="">Infants</option>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6 pull-right">
-                                                    <button class="full-width">SERACH NOW</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>-->
-                                <!--<div class="tab-pane fade" id="mated-taxi">
-                                <form action="UI/hirevehicle.html">
-                                    <h4 class="title">Metered Taxi</h4>
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
-                                                    <option value="">Select Source</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
-                                                    <option value="">Select Destination</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <div class="col-xs-6">
-                                                    <div class="datepicker-wrap">
-                                                        <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="1">anytime</option>
-                                                            <option value="2">morning</option>
-                                                        </select>
-                                                    </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="input-text full-width" placeholder="Going To (city, distirct or specific airpot)" />
                                                 </div>
                                             </div>
 
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <div class="col-xs-3">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="">Adults</option>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-6">
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-xs-3">
-                                                    <div class="selector">
-                                                        <select class="full-width">
-                                                            <option value="">Kids</option>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>
+                                                    <div class="col-xs-6">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="1">anytime</option>
+                                                                <option value="2">morning</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
+                                                    <div class="col-xs-6">
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" name="date_to" class="input-text full-width" placeholder="Arriving On" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="1">anytime</option>
+                                                                <option value="2">morning</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Adults</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Kids</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="input-text full-width" placeholder="Promo Code" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Infants</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                     <div class="col-xs-6 pull-right">
                                                         <button class="full-width">SERACH NOW</button>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>-->
+                                <!--<div class="tab-pane fade" id="mated-taxi">
+                                    <form action="UI/hirevehicle.html">
+                                        <h4 class="title">Metered Taxi</h4>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                        <option value="">Select Source</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                        <option value="">Select Destination</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-6">
+                                                        <div class="datepicker-wrap">
+                                                            <input type="text" name="date_from" class="input-text full-width" placeholder="Departing On" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="1">anytime</option>
+                                                                <option value="2">morning</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                             </div>
 
+                                            <div class="col-md-4">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Adults</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <div class="selector">
+                                                            <select class="full-width">
+                                                                <option value="">Kids</option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+
+                                                        <div class="col-xs-6 pull-right">
+                                                            <button class="full-width">SERACH NOW</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
-                            </div>-->
+                                    </form>
+                                </div>-->
                                 <div class="tab-pane fade" id="cars-tab">
                                     <form action="UI/pages-coming-soon1.html">
                                         <h4 class="title">Recharge/Renewal</h4>
@@ -922,225 +923,177 @@
             </div>
         </section>
 
-    <div style="background-color:white;">
+        <div style="background-color:white;">
 
-        <div class=" section container" ng-init="GetActivityLog()">
-            <!--<div style=" padding-top: 20px; padding-bottom: 40px;">-->
-            <h2 style="color:orange;">Inter Bus Applications</h2>
-            <div class="row image-box style5">
-                <div class="col-sm-3" ng-repeat="m in activityimages">
-                    <article class="box">
-                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                            <a title="" href="ui/pages-coming-soon1.html">
-                            <img ng-src="{{m.Image}}" width="370" height="160" alt="" />
-                            </a>
-                            <figcaption>
-                                <h3 class="caption-title">{{l.Title}}</h3>
-                                <span>3 activities</span>
-                            </figcaption>
-                        </figure>
-                        <!--<div class="details">
-                            <div class="detail">
-                                <span class="price"><small>FROM</small>$30</span>
-                                <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                            </div>
-                            <div class="detail">
-                                <span class="price"><small>FROM</small>$120</span>
-                                <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                            </div>
-                            <div class="detail">
-                                <span class="price"><small>FROM</small>$360</span>
-                                <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                            </div>
-                        </div>-->
+            <div class=" section container" ng-init="GetActivityLog()">
+                <!--<div style=" padding-top: 20px; padding-bottom: 40px;">-->
+                <h2 style="color:orange;">Inter Bus Applications</h2>
+                <div class="row image-box style5">
+                    <div class="col-sm-3" ng-repeat="m in activityimages">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="ui/pages-coming-soon1.html">
+                                    <img ng-src="{{m.Image}}" width="370" height="160" alt="" />
+                                </a>
+                                <figcaption>
+                                    <h3 class="caption-title">{{l.Title}}</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <!--<div class="details">
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$30</span>
+                                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$120</span>
+                                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$360</span>
+                                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                                </div>
+                            </div>-->
 
-                    </article>
+                        </article>
+                    </div>
+
                 </div>
 
+                <h2 style="color:orange;">Featured Holiday Activities</h2>
+                <div class="row image-box style5" ng-init="GetAdvertisment()">
+                    <div class="col-sm-3" ng-repeat="a in advertisement">
+
+                        <article class="box">
+                            <img ng-src="{{a.Image}}" alt="image" style="height:150px;width:270px">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a class="pull-left" href="#" target="_parent"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">{{a.AdvertisementTitle}}</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <div class="details">
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>${{a.Price}}</span>
+                                    <h4 class="box-title"><a href="#">{{a.Description}}</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <!--<span class="price"><small>FROM</small>$120</span>-->
+                                    <h4 class="box-title"><a href="#">{{a.Clarification}}</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <!--<span class="price"><small>FROM</small>$360</span>-->
+                                    <h4 class="box-title"><a href="#">{{a.Conclusion}}</a></h4>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+                    <!--<div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Singapore</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <div class="details">
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$30</span>
+                                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$120</span>
+                                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$360</span>
+                                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Singapore</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <div class="details">
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$30</span>
+                                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$120</span>
+                                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$360</span>
+                                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
+                                <figcaption>
+                                    <h3 class="caption-title">Singapore</h3>
+                                    <span>3 activities</span>
+                                </figcaption>
+                            </figure>
+                            <div class="details">
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$30</span>
+                                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$120</span>
+                                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                                </div>
+                                <div class="detail">
+                                    <span class="price"><small>FROM</small>$360</span>
+                                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>-->
+                </div>
             </div>
-
-            <h2 style="color:orange;">Featured Holiday Activities</h2>
-            <div class="row image-box style5" ng-init="GetAdvertisment()">
-                <div class="col-sm-3" ng-repeat="a in advertisement">
-
-                    <article class="box">
-                        <img ng-src="{{a.Image}}" alt="image" style="height:150px;width:270px"  >
-                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                            <a class="pull-left" href="#" target="_parent"></a>
-                            <figcaption>
-                                <h3 class="caption-title">{{a.AdvertisementTitle}}</h3>
-                                <span>3 activities</span>
-                            </figcaption>
-                        </figure>
-                        <div class="details">
-                            <div class="detail">
-                                <span class="price"><small>FROM</small>${{a.Price}}</span>
-                                <h4 class="box-title"><a href="#">{{a.Description}}</a></h4>
-                            </div>
-                            <div class="detail">
-                                <!--<span class="price"><small>FROM</small>$120</span>-->
-                                <h4 class="box-title"><a href="#">{{a.Clarification}}</a></h4>
-                            </div>
-                            <div class="detail">
-                                <!--<span class="price"><small>FROM</small>$360</span>-->
-                                <h4 class="box-title"><a href="#">{{a.Conclusion}}</a></h4>
-                            </div>
-                        </div>
-
-                    </article>
-                </div>
-                <!--<div class="col-sm-3">
-            <article class="box">
-                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                    <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
-                    <figcaption>
-                        <h3 class="caption-title">Singapore</h3>
-                        <span>3 activities</span>
-                    </figcaption>
-                </figure>
-                <div class="details">
-                    <div class="detail">
-                        <span class="price"><small>FROM</small>$30</span>
-                        <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                    </div>
-                    <div class="detail">
-                        <span class="price"><small>FROM</small>$120</span>
-                        <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                    </div>
-                    <div class="detail">
-                        <span class="price"><small>FROM</small>$360</span>
-                        <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                    </div>
-                </div>
-
-            </article>
         </div>
-        <div class="col-sm-3">
-            <article class="box">
-                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                    <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
-                    <figcaption>
-                        <h3 class="caption-title">Singapore</h3>
-                        <span>3 activities</span>
-                    </figcaption>
-                </figure>
-                <div class="details">
-                    <div class="detail">
-                        <span class="price"><small>FROM</small>$30</span>
-                        <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                    </div>
-                    <div class="detail">
-                        <span class="price"><small>FROM</small>$120</span>
-                        <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                    </div>
-                    <div class="detail">
-                        <span class="price"><small>FROM</small>$360</span>
-                        <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                    </div>
-                </div>
-
-            </article>
-        </div>
-        <div class="col-sm-3">
-            <article class="box">
-                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                    <a title="" href="#"><img width="370" height="160" alt="" src="UI/images/img2.jpg"></a>
-                    <figcaption>
-                        <h3 class="caption-title">Singapore</h3>
-                        <span>3 activities</span>
-                    </figcaption>
-                </figure>
-                <div class="details">
-                    <div class="detail">
-                        <span class="price"><small>FROM</small>$30</span>
-                        <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                    </div>
-                    <div class="detail">
-                        <span class="price"><small>FROM</small>$120</span>
-                        <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                    </div>
-                    <div class="detail">
-                        <span class="price"><small>FROM</small>$360</span>
-                        <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                    </div>
-                </div>
-
-            </article>
-        </div>-->
-            </div>
-        </div>
-    </div>
     </div>
 
 
     <div style="background-color: #96989b;">
 
-        <!--<div class=; " global-map-area mobile-section parallax" data-stellar-background-ratio="0.5">-->
+        <!--<div class=; " global-map-area mobile-section parallax" da  ta-stellar-background-ratio="0.5">-->
         <div class="container">
-            <div class=" section container ">
+            <div class=" section container">
                 <!--<div style=" padding-top: 10px; padding-bottom: 40px;">-->
-                <h2 style="color:orange;">Popular <i>Cruise</i> Deals</h2>
-                <div class="row image-box style3">
-                    <div class="col-sms-6 col-sm-6 col-md-3">
+                <h2 style="color:orange;">Popular <i>Advertisment</i> Deals</h2>
+                <div class="row image-box style3" ng-init="GetDeals()" >
+                    <div class="col-sms-6 col-sm-6 col-md-3" ng-repeat="d in advertisementDeals">
                         <article class="box">
                             <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
+                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img src="{{d.Image}}" width="270" height="160" alt="Image" /></a>
                             </figure>
                             <div class="details text-center">
-                                <h4 class="box-title">Greece</h4>
-                                <p class="offers-content">(15 deal offers)</p>
+                                <h4 class="box-title">{{d.AdvertisementTitle}}</h4>
+                                <p class="offers-content">{{d.Dealsoffer}}</p>
                                 <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
                                     <span style="width: 80%;" class="five-stars"></span>
                                 </div>
-                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
-                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
-                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Singapore</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                    <span style="width: 80%;" class="five-stars"></span>
-                                </div>
-                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
-                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
-                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Malaysia</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                    <span style="width: 80%;" class="five-stars"></span>
-                                </div>
-                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
-                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
-                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Europe</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="3 stars" class="five-stars-container">
-                                    <span style="width: 60%;" class="five-stars"></span>
-                                </div>
-                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
+                                <p class="description">{{d.Description}}</p>
                                 <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
                             </div>
                         </article>
@@ -1301,10 +1254,10 @@
     <script src="UI/js/fileupload/angular-file-upload.js"></script>
     <script src="UI/js/fileupload/angular-file-upload-shim.js"></script>
 
- 
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular-animate.min.js"></script>    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular-animate.min.js"></script>
     <script src="http://code.createjs.com/preloadjs-0.4.1.min.js"></script>
 
     <script src="UI/js/index.js"></script>
