@@ -15,6 +15,34 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         });
     }
 
+    var parseLocation = function (location) {
+        var pairs = location.substring(1).split("&");
+        var obj = {};
+        var pair;
+        var i;
+
+        for (i in pairs) {
+            if (pairs[i] === "") continue;
+
+            pair = pairs[i].split("=");
+            obj[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+        }
+
+        return obj;
+    };
+
+    $scope.GetItems = function () {
+
+        //$scope.InventoryItems = null;
+        //$scope.selectedInventoryItems = parseLocation(window.location.search)['Id'];
+
+        $http.get('/api/Inventory/GetItems?pid=2').then(function (response, req) {
+            $scope.Items = response.data;
+            //  $scope.getselectval();
+
+        });
+    } 
+
     $scope.GetHireVehicle = function () {
 
         $http.get('/api/HireVehicle/GetHireVehicle?srcId=1&destId=1').then(function (response, req) {
@@ -158,7 +186,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         }
         $http(req).then(function (response) {
 
-            alert("Saved successfully!");
+            alert("Your Booking is successfull!");
             //$scope.GetUsers();
             $scope.Group = null;
             //$scope.GetVehcileMaster('VID=1');
