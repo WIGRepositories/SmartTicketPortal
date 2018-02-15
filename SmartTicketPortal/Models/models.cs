@@ -666,7 +666,7 @@ namespace Paysmart.Models
       public string Mobilenumber { get; set; }
       
       public string Holdername { get; set; }
-      public string Cardno { get; set; }
+      public string Cardnumber { get; set; }
       
       public string ExpMonth { get; set; }
       public string ExpYear { get; set; }

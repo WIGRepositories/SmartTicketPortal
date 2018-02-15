@@ -111,7 +111,7 @@ namespace SmartTicketPortal.Controllers
                 cmd.Parameters.Add(dd);
 
                 SqlParameter bc = new SqlParameter("@Cardno", SqlDbType.VarChar, 50);
-                bc.Value = b.Cardno;
+                bc.Value = b.Cardnumber;
                 cmd.Parameters.Add(bc);
 
                 SqlParameter a = new SqlParameter("@ExpMonth", SqlDbType.VarChar);
