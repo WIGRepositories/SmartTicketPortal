@@ -137,8 +137,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
             flag: 'I',
             Id: -1,
-            Source: $scope.S.Name,
-            destination:$scope.D.Name,
+            Source: $scope.S.Id,
+            destination:$scope.D.Id,
             Firstname: book.firstname,
             lastname: book.lastname,
             Email: book.email,
@@ -159,7 +159,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $http(req).then(function (response) {
 
             alert("Saved successfully!");
-            $scope.GetUsers();
+            //$scope.GetUsers();
             $scope.Group = null;
             //$scope.GetVehcileMaster('VID=1');
             //window.location.href = "vehicleDetails.html?VID=1";

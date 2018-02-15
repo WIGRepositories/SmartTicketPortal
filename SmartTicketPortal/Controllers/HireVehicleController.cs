@@ -7,9 +7,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Text;
+
+
+
 using System.Web.Http.Tracing;
 using Paysmart.Models;
-
 namespace SmartTicketPortal.Controllers
 {
     public class HireVehicleController : ApiController
@@ -41,8 +43,8 @@ namespace SmartTicketPortal.Controllers
             return Tbl;
 
         }
-
-        [HttpPost]
+    
+      
         [Route("api/HireVehicle/SaveBookingDetails")]
         public DataTable SaveBookingDetails(hirevehicle b)
         {
@@ -68,7 +70,7 @@ namespace SmartTicketPortal.Controllers
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "PSInsUpdVehicleBookingDetails";
+                cmd.CommandText = "InsUpdDelPortalUsers";
 
                 cmd.Connection = conn;
 
@@ -108,7 +110,7 @@ namespace SmartTicketPortal.Controllers
                 dd.Value = b.Holdername;
                 cmd.Parameters.Add(dd);
 
-                SqlParameter bc = new SqlParameter("@Cardnumber", SqlDbType.VarChar, 50);
+                SqlParameter bc = new SqlParameter("@Cardno", SqlDbType.VarChar, 50);
                 bc.Value = b.Cardnumber;
                 cmd.Parameters.Add(bc);
 
@@ -206,8 +208,8 @@ namespace SmartTicketPortal.Controllers
             catch (Exception ex)
             {
                 traceWriter.Trace(Request, "0", TraceLevel.Error, "{0}", "SaveBookingDetails...." + ex.Message.ToString());
-                //throw ex;
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message));
+                throw ex;
+                //throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message));
             }
             finally
             {
@@ -217,5 +219,6 @@ namespace SmartTicketPortal.Controllers
             }
             return dt;
         }
+
     }
 }

@@ -652,7 +652,7 @@ namespace Paysmart.Models
       public string message { get; set; }
   }
 
-  public class hirevehicle
+     public class hirevehicle
   {
       public string Source { get; set; }
       public string destination { get; set; }
@@ -671,5 +671,6 @@ namespace Paysmart.Models
       public string ExpMonth { get; set; }
       public string ExpYear { get; set; }
   }
+
 }
 
