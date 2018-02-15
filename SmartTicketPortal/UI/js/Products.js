@@ -114,26 +114,21 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         window.location.href = "../index.html";
     }
 
-    $scope.SaveNew = function (app, flag) {
+    $scope.SaveNew = function (book, flag) {
 
-        if (app.Username == null) {
-            alert('Please Enter Username');
-            return;
-        }
-
-        if (app.Firstname == null) {
+        if (book.firstname == null) {
             alert('Please Enter Firstname');
             return;
         }
-        if (app.lastname == null) {
+        if (book.lastname == null) {
             alert('Please Enter lastname');
             return;
         }
-        if (app.Email == null) {
+        if (book.email == null) {
             alert('Please Enter Email');
             return;
         }
-        if (app.Mobilenumber == null) {
+        if (book.mobilenumber == null) {
             alert('Please Enter Mobilenumber');
             return;
         }
@@ -142,21 +137,23 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
             flag: 'I',
             Id: -1,
-            Username: app.Username,
-            Firstname: app.Firstname,
-            lastname: app.lastname,
-            Email: app.Email,
-            Mobilenumber: app.Mobilenumber,
-            Photo: $scope.imageSrc,
-            Altemail: app.Altemail,
-            Gender: app.Gender.Id,
-            Status: app.Status.Id
+            Source: $scope.S.Name,
+            destination:$scope.D.Name,
+            Firstname: book.firstname,
+            lastname: book.lastname,
+            Email: book.email,
+            Mobilenumber: book.mobilenumber,
+            Holdername: book.Holdername,
+            Cardnumber: book.cardnumber,
+            CVV: book.cvv,
+            ExpMonth:book.expmonth,
+            ExpYear: book.expyear
 
         }
 
         var req = {
             method: 'POST',
-            url: '/api/RegisterUser/Appusers',
+            url: '/api/HireVehicle/SaveBookingDetails',
             data: app
         }
         $http(req).then(function (response) {
@@ -179,6 +176,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.ShowHide = function () {
         //If DIV is visible it will be hidden and vice versa.
         $scope.IsVisible = $scope.IsVisible ? false : true;
+
     }
     //-----------------Hideend-------------------
 });

@@ -349,9 +349,12 @@
                                                     <input type="time" class="input-text full-width" value="" placeholder="" />
                                                 </div>-->
                                                 <div class="col-sm-2 col-md-3">
-
-                                                    <button style="margin-top:20px;" type="button" ng-click="GetServices();">Modify</button>
-
+                                                    <a href="hirevehicle.html">
+                                                        <button style="margin-top:20px;" type="button" ng-click="GetServices();">
+                                                            Modify
+                                                        </button>
+                                                    </a>
+                                                   
                                                 </div>
                                             </div>
                                             <!--<div class="form-group row">
@@ -393,21 +396,21 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-6 col-md-5">
                                                     <label>first name</label>
-                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.firstname"/>
                                                 </div>
                                                 <div class="col-sm-6 col-md-5">
                                                     <label>last name</label>
-                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.lastname" />
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-6 col-md-5">
                                                     <label>email address</label>
-                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.email" />
                                                 </div>
                                                 <div class="col-sm-6 col-md-5">
                                                     <label>Verify E-mail Address</label>
-                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.email1" />
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -422,7 +425,7 @@
                                                 </div>
                                                 <div class="col-sm-6 col-md-5">
                                                     <label>Phone number</label>
-                                                    <input type="text" class="input-text full-width" value="" placeholder="" />
+                                                    <input type="text" class="input-text full-width" value="" placeholder="" ng-model="book.mobilenumber" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -656,17 +659,17 @@
                                                             <div id="Debitcard" class="tab-pane fade in active">
                                                                 <div class=" col-md-12">
                                                                     <label>Card Holder Name</label>
-                                                                    <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
+                                                                    <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" ng-model="book.Holdername"/>
                                                                 </div>
 
                                                                 <div class="row col-md-12">
                                                                     <div class=" col-md-9">
                                                                         <label>Card Number</label>
-                                                                        <input type="text" class="input-text full-width" value="" placeholder="Card number" />
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="Card number" ng-model="book.cardnumber" />
                                                                     </div>
                                                                     <div class=" col-md-3">
                                                                         <label>CVV</label>
-                                                                        <input type="text" class="input-text full-width" value="" placeholder="CVV" />
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="CVV" ng-model="book.cvv" />
                                                                     </div>
 
                                                                 </div>
@@ -678,8 +681,8 @@
                                                                         </div>
                                                                         <div class="col-md-4">
                                                                             <div class="form-group">
-                                                                                <select class="input-text full-width">
-                                                                                    <option>11</option>
+                                                                                <select class="input-text full-width" ng-model="book.expmonth">
+                                                                                    <option value="1">11</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -688,8 +691,8 @@
                                                                         </div>
                                                                         <div class="col-md-4">
                                                                             <div class="form-group">
-                                                                                <select class="input-text full-width">
-                                                                                    <option>2018</option>
+                                                                                <select class="input-text full-width" ng-model="book.expyear">
+                                                                                    <option value="1">2018</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -699,17 +702,17 @@
                                                             <div id="Creditcard" class="tab-pane fade">
                                                                 <div class=" col-md-12">
                                                                     <label>Card Holder Name</label>
-                                                                    <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
+                                                                    <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" ng-model="book.Holdername" />
                                                                 </div>
 
                                                                 <div class="row col-md-12">
                                                                     <div class=" col-md-9">
                                                                         <label>Card Number</label>
-                                                                        <input type="text" class="input-text full-width" value="" placeholder="Card number" />
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="Card number" ng-model="book.cardnumber" />
                                                                     </div>
                                                                     <div class=" col-md-3">
                                                                         <label>CVV</label>
-                                                                        <input type="text" class="input-text full-width" value="" placeholder="CVV" />
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="CVV" ng-model="book.cvv" />
                                                                     </div>
 
                                                                 </div>
@@ -721,8 +724,8 @@
                                                                         </div>
                                                                         <div class="col-md-4">
                                                                             <div class="form-group">
-                                                                                <select class="input-text full-width">
-                                                                                    <option>11</option>
+                                                                                <select class="input-text full-width" ng-model="book.expmonth">
+                                                                                    <option value="1">11</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -731,8 +734,8 @@
                                                                         </div>
                                                                         <div class="col-md-4">
                                                                             <div class="form-group">
-                                                                                <select class="input-text full-width">
-                                                                                    <option>2018</option>
+                                                                                <select class="input-text full-width" ng-model="book.expyear">
+                                                                                    <option value="1">2018</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -763,17 +766,17 @@
                                                             <div id="Paypal" class="tab-pane fade">
                                                                 <div class=" col-md-12">
                                                                     <label>Card Holder Name</label>
-                                                                    <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" />
+                                                                    <input type="text" class="input-text full-width" value="" placeholder="Card Holder Name" ng-model="book.Holdername" />
                                                                 </div>
 
                                                                 <div class="row col-md-12">
                                                                     <div class=" col-md-9">
                                                                         <label>Card Number</label>
-                                                                        <input type="text" class="input-text full-width" value="" placeholder="Card number" />
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="Card number" ng-model="book.cardnumber" />
                                                                     </div>
                                                                     <div class=" col-md-3">
                                                                         <label>CVV</label>
-                                                                        <input type="text" class="input-text full-width" value="" placeholder="CVV" />
+                                                                        <input type="text" class="input-text full-width" value="" placeholder="CVV" ng-model="book.cvv" />
                                                                     </div>
 
                                                                 </div>
@@ -785,8 +788,8 @@
                                                                         </div>
                                                                         <div class="col-md-4">
                                                                             <div class="form-group">
-                                                                                <select class="input-text full-width">
-                                                                                    <option>11</option>
+                                                                                <select class="input-text full-width" ng-model="book.expyear">
+                                                                                    <option value="1">11</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -795,8 +798,8 @@
                                                                         </div>
                                                                         <div class="col-md-4">
                                                                             <div class="form-group">
-                                                                                <select class="input-text full-width">
-                                                                                    <option>2018</option>
+                                                                                <select class="input-text full-width" ng-model="book.expyear">
+                                                                                    <option value="1">2018</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -804,7 +807,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="text-center " style="padding-bottom:7px;padding-top:0px">
-                                                                <button class=" btn-large" ng-click="SaveNew();">Make payment</button>
+                                                                <button class=" btn-large" ng-click="SaveNew(book,'I');">Make payment</button>
 
                                                             </div>
                                         </section>
@@ -825,13 +828,13 @@
                                 </div>
                             </div>
                             <div class="sidebar col-sms-6 col-sm-4 col-md-3">
-                                <div class="booking-details travelo-box">
+                                <div class="booking-details travelo-box" ng-init="GetHireVehicle()">
                                     <h4>Booking Details</h4>
-                                    <article class="car-detail">
+                                    <article class="car-detail" ng-repeat="v in Vehicles">
                                         <figure class="clearfix">
-                                            <a title="" href="car-detailed.html" class="middle-block"><img class="middle-item" alt="" src="http://placehold.it/75x75"></a>
+                                            <a title="" href="car-detailed.html" class="middle-block"><img class="middle-item" alt="" src="{{v.Photo}}"></a>
                                             <div class="travel-title">
-                                                <h5 class="box-title">BMW Mini<small>Economy car</small></h5>
+                                                <h5 class="box-title">{{v.VehicleTypeId}}<small></small>{{v.RegistrationNo}}</h5>
                                                 <a href="car-detailed.html" class="button">EDIT</a>
                                             </div>
                                         </figure>
@@ -868,7 +871,7 @@
                                     </article>
 
                                     <h4>Other Details</h4>
-                                    <dl class="other-details">
+                                    <dl class="other-details" ng-repeat="v in Vehicles">
                                         <dt class="feature">Mileage included:</dt>
                                         <dd class="value">3,000 miles</dd>
                                         <dt class="feature">Damage Protection:</dt>
@@ -878,10 +881,10 @@
                                         <dt class="feature">taxes and fees:</dt>
                                         <dd class="value">$155.61</dd>
                                         <dt class="total-price">Total Price</dt>
-                                        <dd class="total-price-value">$201.00</dd>
+                                        <dd class="total-price-value">{{v.Amount}}</dd>
                                     </dl>
                                     <div class="text-center " style="padding-bottom:7px;padding-top:0px">
-                                        <button class=" btn-large" ng-click="ProceedToPayment();">Make payment</button>
+                                        <button class=" btn-large" ng-click="ProceedToPayment(book,'I');">Make payment</button>
 
                                     </div>
                                 </div>
