@@ -651,5 +651,26 @@ namespace Paysmart.Models
       public string subject { get; set; }
       public string message { get; set; }
   }
+
+     public class hirevehicle
+  {
+      public string Source { get; set; }
+      public string destination { get; set; }
+      public string source { get; set; }
+      public string flag { get; set; }
+      public int Id { get; set; }
+      public string Username { get; set; }
+      public string Firstname { get; set; }
+      public string lastname { get; set; }
+      public string Email { get; set; }
+      public string Mobilenumber { get; set; }
+      
+      public string Holdername { get; set; }
+      public string Cardno { get; set; }
+      
+      public string ExpMonth { get; set; }
+      public string ExpYear { get; set; }
+  }
+
 }
 
