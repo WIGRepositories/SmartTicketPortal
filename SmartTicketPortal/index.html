@@ -923,14 +923,15 @@
             <!--<div style=" padding-top: 20px; padding-bottom: 40px;">-->
             <h2 style="color:orange;">Inter Bus Applications</h2>
             <div class="row image-box style5" ng-init="GetActivityLog()">
-                <div class="col-sm-3" ng-repeat="l in logimages">
+                <div class="col-sm-3" ng-repeat="l in activityimages">
                     <article class="box">
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
                             <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="{{l.Image}}"></a>
                             <figcaption>
                                 <h3 class="caption-title">{{l.Title}}</h3>
-                                <li>Rating:{{a.Rating}}
-                                
+                                <li>
+                                    Rating:{{a.Rating}}
+
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
@@ -941,25 +942,26 @@
                             </figcaption>
                         </figure>
                         <!--<div class="details">
-                            <div class="detail">
-                                <span class="price"><small>FROM</small>$30</span>
-                                <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
-                            </div>
-                            <div class="detail">
-                                <span class="price"><small>FROM</small>$120</span>
-                                <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
-                            </div>
-                            <div class="detail">
-                                <span class="price"><small>FROM</small>$360</span>
-                                <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
-                            </div>
-                        </div>-->
+                <div class="detail">
+                    <span class="price"><small>FROM</small>$30</span>
+                    <h4 class="box-title"><a href="#">Jurong Bird Park Admission</a></h4>
+                </div>
+                <div class="detail">
+                    <span class="price"><small>FROM</small>$120</span>
+                    <h4 class="box-title"><a href="#">Night Safari Adventure</a></h4>
+                </div>
+                <div class="detail">
+                    <span class="price"><small>FROM</small>$360</span>
+                    <h4 class="box-title"><a href="#">Jungle Breakfast with Wildlife</a></h4>
+                </div>
+            </div>-->
 
                     </article>
                 </div>
 
             </div>
-
+            </div>
+            </div>
             <h2 style="color:orange;">Featured Holiday Activities</h2>
             <div class="row image-box style5" ng-init="GetAdvertisment()">
                 <div class="col-sm-3" ng-repeat="a in advertisement">
