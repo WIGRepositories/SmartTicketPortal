@@ -27,6 +27,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
             $scope.carouselImages = res.data;
         });
     }
+    $scope.GetDeals = function () {
+        $http.get('/api/AdvertismentDeals/GetAdvertismentDeal').then(function (response, req) {
+            $scope.advertisementDeals = response.data;
+        });
+    }
 
     var INTERVAL = 1000;
      //  slides = (
