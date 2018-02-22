@@ -12,6 +12,9 @@ namespace SmartTicketPortal.Controllers
 {
     public class LicensePageController : ApiController
     {
+
+       
+
         [HttpGet]
         [Route("api/LicensePage/GetLicense")]
         public DataSet GetLicense(int LicenseCatId)
@@ -121,5 +124,7 @@ namespace SmartTicketPortal.Controllers
             return Tbl;
 
         }
+
+       
     }
 }

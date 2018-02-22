@@ -331,9 +331,9 @@
 
                 </h4>
 
-                <input type="text" ng-model="txt">
+                <input type="text" ng-model="lcode">
 
-                <button ng-click="ValidateLicenseCode(txt);" class="btn btn-primary">Renew</button>
+                <button ng-click="ValidateLicenseCode(lcode);" class="btn btn-primary">Renew</button>
 
                 <!--<a href="Fleetownerrequest.html" style="color:red">
                     click here
@@ -394,12 +394,12 @@
     <section id="content" class="gray-area">
         <div class="container shortcode">
 
-            <div class="row block">
+            <div class="row block" ng-hide="ValidateLicenseCode == 0">
                 <div class="col-sm-6 col-md-3" ng-repeat="Lt in License.Table" ng-model="selType">
                     <div class="pricing-table white box">
                         <div class="header clearfix">
                             <i class="soap-icon-user circle green-color"></i>
-                            <h4 class="box-title">{{Lt.LicenseType}}<small></small></h4>
+                            <h4 class="box-title">{{Lt.LicenseTypeId}}<small></small></h4>
                             <span ng-repeat="p in License.Table2 | filter:{ LicenseId: Lt.Id }" class="price"><small>monthly</small>${{p.UnitPrice}}</span>
                         </div>
                         <p class="description">
@@ -418,7 +418,28 @@
             </div>
 
 
+            <div class="row block" ng-init="ValidateLicenseCode()" ng-hide="ValidateLicenseCode == 1">
+                <div class="col-sm-6 col-md-3" ng-repeat="l in License">
+                    <div class="pricing-table white box">
+                        <div class="header clearfix">
+                            <i class="soap-icon-user circle green-color"></i>
+                            <h4 class="box-title">{{l.LicenseType}}<small></small></h4>
+                            <span class="price"><small>monthly</small>${{l.UnitPrice}}</span>
+                        </div>
+                        <p class="description">
+                            Basic plan everyday onetrip oneway
+                        </p>
+                        <ul class="check-square features">
+                            <li>{{l.Label}}</li>
+                            <li>{{l.Value}}</li>
+                            <li>{{l.FeatureType}}</li>
+                        </ul>
 
+                        <button class="btn-small uppercase full-width" id="buy" type="button" data-target="#Modal-header-Secondary" data-toggle="modal" ng-click="SetLicensedetails(License, Lt);">Buy Now</button>
+                    </div>
+                </div>
+
+            </div>
 
 
         </div>

@@ -426,7 +426,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <div style="margin-bottom:10px">
-                                                    <input type="radio" name=address id="address1" checked /><label for="address1">Permanent Address</label>
+                                                    <input type="radio" name=address id="address1" /><label for="address1">Permanent Address</label>
                                                 </div>
                                                 <textarea rows="3" placeholder="Permanent Address" class="form-control"></textarea>
                                             </div>
@@ -510,10 +510,10 @@
                     </form>
                 </div>
 
-                <div class="col-md-4" style="margin-left:20px" ng-model="ld">
+                <div class="col-md-4" style="margin-left:20px" ng-init="getcheckdetails();">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="panel panel-blue">
+                            <div class="panel panel-blue" ng-model="ld">
                                 <div class="panel-heading"><h3 class="panel-title text-center">Order Summary</h3></div>
                                 <div class="panel-body pan">
                                     <table style="width:100%;">
@@ -522,14 +522,18 @@
                                                 <th colspan="2" style="text-align:center"><h4>PRODUCT</h4></th>
                                             </tr>
                                             <tr>
-                                                <td style="width: 50%;padding-left:5px"><label class="form-group">{{ld.LicenseType}}  <span> x1</span></label></td>
-                                                <td> <label class="form-group">$ {{ld.amt}}</label>  </td>
+                                                <td style="width: 50%;padding-left:5px"><label class="form-group"><span>LicenseType</span></label></td>
+                                                <td> <label class="form-group">{{ld.LicenseType}}</label>  </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 50%;padding-left:5px"><label class="form-group"><span> Amount</span></label></td>
+                                                <td> <label class="form-group">$ {{c.Amount}}</label>  </td>
                                             </tr>
 
 
                                             <tr>
                                                 <td style="width: 50%;padding-left:5px"><label class="form-group">Shipping </label></td>
-                                                <td><label class="form-group">Free Shipping </label></td>
+                                                <td><label class="form-group">{{ld.Address}}</label></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 50%;padding-left:5px"><label class="form-group">Tax </label></td>
@@ -541,7 +545,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="width: 50%;padding-left:5px"><label class="form-group">Order Total </label></td>
-                                                <td><label class="form-group">$ {{ld.amt}}</label></td>
+                                                <td><label class="form-group">$ {{c.Amount}}</label></td>
                                             </tr>
                                         </tbody>
                                     </table>

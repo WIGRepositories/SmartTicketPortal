@@ -20,7 +20,7 @@ app.controller('mapCtrl', function ($scope, $http) {
     //};
 
     $scope.CalculatePrice = function () {
-        $http.get('/api/Pricing/CalculatePrice?distance='+$scope.distval+'&packageId=1').then(function (res, data) {
+        $http.get('/api/Pricing/CalculatePrice?distance=' + $scope.distval + '&packageId=1').then(function (res, data) {
             $scope.pricing = res.data;
         });
     }
@@ -129,16 +129,16 @@ app.controller('mapCtrl', function ($scope, $http) {
     }
     $scope.SetTotal = function () {
         $scope.total = eval($scope.unitprice) * eval($scope.distval);
-        
+
     }
-   
-   
-      //-----------------Hidestart-------------------
-        $scope.IsVisible = false;
-        $scope.ShowHide = function () {
-            //If DIV is visible it will be hidden and vice versa.
-            $scope.IsVisible = $scope.IsVisible ? false : true;
-        }
+
+
+    //-----------------Hidestart-------------------
+    $scope.IsVisible = false;
+    $scope.ShowHide = function () {
+        //If DIV is visible it will be hidden and vice versa.
+        $scope.IsVisible = $scope.IsVisible ? false : true;
+    }
     //-----------------Hideend-------------------
 
 
@@ -169,4 +169,29 @@ app.controller('mapCtrl', function ($scope, $http) {
     //    $scope.markers.push(marker);
     //};
 
+
+    $scope.booking = function (book) {
+        var lyft = {
+            Mobilenumber: book.Mobilenumber
+        }
+        var req = {
+            method: 'POST',
+            url: '/api/GetaLyft/GetaLyftOtpgeneration',
+            data: lyft
+        }
+        $http(req).then(function (response) {
+
+            alert("Your Booking is successfull!");
+            //$scope.GetUsers();
+           // $scope.Group = null;
+            //$scope.GetVehcileMaster('VID=1');
+            //window.location.href = "vehicleDetails.html?VID=1";
+        }, function (errres) {
+            var errdata = errres.data;
+            var errmssg = "Your Details Are Incorrect";
+            errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
+            alert(errmssg);
+        });
+        $scope.currGroup = null;
+    };
 });

@@ -84,7 +84,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         //    return;
         //}
         //$http.get('/api/LicensePage/GetLicense?LicenseCatId=' + $scope.licenseCatId.Id).then(function (response, req)
-        $http.get('/api/LicensePage/GetLicense?LicenseCatId=8').then(function (response, req)
+        $http.get('/api/LicensePage/GetLicense?LicenseCatId=31').then(function (response, req)
         {
             $scope.License = response.data;
             if ($scope.License == null) {
@@ -109,9 +109,54 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
     $scope.showBuyBtn = 0;
     $scope.showRenewBtn = 0;
 
+    //$scope.ValidateLicenseCode = function (lcode) {
+    //    var code = {
+    //        licensecode: $scope.lcode
+    //    }
+    //    var req = {
+    //        method: 'POST',
+    //        url: '/api/LicensePage/SaveLicence',
+    //        data: License
+    //    }
+    //    $http(req).then(function (response) {
+    //        alert(response.data);
+    //        window.location.href = "Cartdetails.html";
+    //    });
+
+    //};
     $scope.ValidateLicenseCode = function (lcode) {
 
-    }
+        if (lcode == null) {
+
+            //$scope.showVDialog('please enter valid fleet owner code or contact administrator.');
+            return false;
+        }
+        else {
+
+            $http.get('/api/fleetownerlicense/validatefleetowner?fleetownercode=' + lcode).then(function (response, req) {
+                $scope.foLicenseDetails = response.data;
+                if ($scope.foLicenseDetails.Table2[0].result == 0) {
+                    $scope.showVDialog('Invalid Fleet Owner Code');
+                }
+                else {
+                    $http.get('/api/UserLicenses/getFleetLicenses?fleetcode=' + lcode).then(function (response, req) {
+                        $scope.License = response.data;
+                        if ($scope.License == null) {
+                            alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
+                            return;
+                        }
+                    })
+                    //$localStorage.foLicenseDetails = $scope.foLicenseDetails;
+                    //$scope.saveUserLicense(License, Lid);
+                   // window.location.href = "Cartdetails.html";
+
+                }
+            });
+        }
+
+
+
+    };
 
     $scope.ValidateFOCode = function (code, License, Lid) {
 
@@ -125,7 +170,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             $http.get('/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.foLicenseDetails = response.data;
                 if ($scope.foLicenseDetails.Table2[0].result == 0) {
-                    alert('invalid fleet owner code');
+                    $scope.showVDialog('invalid fleet owner code');
                 }
                 else {
                     $localStorage.foLicenseDetails = $scope.foLicenseDetails;

@@ -14,6 +14,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         var ulD = $localStorage.UselicensePymtRecord[0];
         $('#Modal-header-new').modal('show');
 
+
         var UserLicensePymtTransactions = {
             TransId: ulD.TransId,
             GatewayTransId: '-1',
@@ -207,7 +208,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
 
         $scope.c = $localStorage.focheckoutDetails[0];
         $scope.ld = $localStorage.selLicense;
-        $scope.ld.amt = $localStorage.UselicensePymtRecord[0].Amount;
+        $scope.ld.amt = $localStorage.UselicensePymtRecord.Amount[0];
 
         //$http.get('/api/Checkout/getcheckdetails').then(function (response, req) {
         //    $scope.check = response.data;
@@ -230,6 +231,9 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             }
         });
     }
+
+    
+
     $scope.Signin = function () {
 
         var u = $scope.UserName;

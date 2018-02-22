@@ -323,6 +323,26 @@ namespace SmartTicketPortal.Models
         public decimal Price { get; set; }
 
     }
+
+    public class LicensePayments
+    {
+        public DateTime expiryOn { get; set; }
+
+        public int Id { get; set; }
+
+        public string licenseFor { get; set; }
+
+        public int licenseId { get; set; }
+
+        public string licenseType { get; set; }
+
+        public DateTime paidon { get; set; }
+
+        public DateTime renewedon { get; set; }
+
+        public string transId { get; set; }
+
+    }
 }
 
 
@@ -671,6 +691,14 @@ namespace Paysmart.Models
       public string ExpMonth { get; set; }
       public string ExpYear { get; set; }
   }
+
+     public class getalyft
+     {
+         public int Mobilenumber { get; set; }
+        
+     }
+
+     
 
 }
 

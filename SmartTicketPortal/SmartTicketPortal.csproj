@@ -1567,6 +1567,7 @@
     <Compile Include="Controllers\FaqsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\ForgotpasswordController.cs" />
+    <Compile Include="Controllers\GetaLyftController.cs" />
     <Compile Include="Controllers\HireVehicleController.cs" />
     <Compile Include="Controllers\HourBasedPricingController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
