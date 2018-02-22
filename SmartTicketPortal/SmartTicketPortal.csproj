@@ -1552,6 +1552,7 @@
     <Compile Include="App_Start\Trace.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdvertisementController.cs" />
+    <Compile Include="Controllers\AdvertismentDealsController.cs" />
     <Compile Include="Controllers\AvailableSeatsController.cs" />
     <Compile Include="Controllers\BookAVehicleController.cs" />
     <Compile Include="Controllers\bookingController.cs" />

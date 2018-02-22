@@ -923,13 +923,14 @@
             <!--<div style=" padding-top: 20px; padding-bottom: 40px;">-->
             <h2 style="color:orange;">Inter Bus Applications</h2>
             <div class="row image-box style5" ng-init="GetActivityLog()">
-                <div class="col-sm-3" ng-repeat="l in logimages">
+                <div class="col-sm-3" ng-repeat="l in activityimages">
                     <article class="box">
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
                             <a title="" href="ui/pages-coming-soon1.html"><img width="370" height="160" alt="" src="{{l.Image}}"></a>
                             <figcaption>
                                 <h3 class="caption-title">{{l.Title}}</h3>
-                                <li>Rating:{{a.Rating}}
+                                <li>
+                                    Rating:{{a.Rating}}
                                 
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
@@ -959,7 +960,8 @@
                 </div>
 
             </div>
-
+            </div>
+            </div>
             <h2 style="color:orange;">Featured Holiday Activities</h2>
             <div class="row image-box style5" ng-init="GetAdvertisment()">
                 <div class="col-sm-3" ng-repeat="a in advertisement">
@@ -1076,72 +1078,24 @@
 
     <div style="background-color: #96989b;">
 
-        <!--<div class=; " global-map-area mobile-section parallax" data-stellar-background-ratio="0.5">-->
+        <!--<div class=; " global-map-area mobile-section parallax" da  ta-stellar-background-ratio="0.5">-->
         <div class="container">
-            <div class=" section container ">
+            <div class=" section container">
                 <!--<div style=" padding-top: 10px; padding-bottom: 40px;">-->
-                <h2 style="color:orange;">Popular <i>Cruise</i> Deals</h2>
-                <div class="row image-box style3">
-                    <div class="col-sms-6 col-sm-6 col-md-3">
+                <h2 style="color:orange;">Popular <i>Advertisment</i> Deals</h2>
+                <div class="row image-box style3" ng-init="GetDeals()" >
+                    <div class="col-sms-6 col-sm-6 col-md-3" ng-repeat="d in advertisementDeals">
                         <article class="box">
                             <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
+                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img ng-src="{{d.Image}}" width="270" height="160" alt="Image" /></a>
                             </figure>
                             <div class="details text-center">
-                                <h4 class="box-title">Greece</h4>
-                                <p class="offers-content">(15 deal offers)</p>
+                                <h4 class="box-title">{{d.AdvertisementTitle}}</h4>
+                                <p class="offers-content">{{d.Dealsoffer}}</p>
                                 <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
                                     <span style="width: 80%;" class="five-stars"></span>
                                 </div>
-                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
-                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
-                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Singapore</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                    <span style="width: 80%;" class="five-stars"></span>
-                                </div>
-                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
-                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
-                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Malaysia</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                    <span style="width: 80%;" class="five-stars"></span>
-                                </div>
-                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
-                                <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
-                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="UI/images/img3.jpg"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Europe</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="3 stars" class="five-stars-container">
-                                    <span style="width: 60%;" class="five-stars"></span>
-                                </div>
-                                <p class="description">INTERBUS is the largest ticketing service provider for Inter-City bus transportation, serving more than 10 transport providers covering nearly 40 destinations with about 425 schedules daily across Harare.</p>
+                                <p class="description">{{d.Description}}</p>
                                 <a class="button" href="ui/pages-coming-soon1.html">SEE ALL</a>
                             </div>
                         </article>
