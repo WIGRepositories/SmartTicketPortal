@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="UI/components/flexslider/flexslider.css" media="screen" />
 
     <!-- Main Style -->
+     <!--<link href="UI/css/style-dark-blue.css" rel="stylesheet" />-->
     <link id="main-style" rel="stylesheet" href="UI/css/style.css">
 
     <!-- Updated Styles -->
@@ -348,6 +349,15 @@
                 <div class="flexslider" >
 
                     <ul class="slides">
+                        <li>
+                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>
+                        <li>
+                            <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>
+                        <li>
+                            <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>
                         <li ng-repeat="slide in carouselImages">                           
                             <div class="slidebg">
                                 <img ng-src="{{slide.Image}}" /><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1>
@@ -363,15 +373,7 @@
                             <img ng-src="{{slide.Image}}" />
                         </li>
 
-                        <li>
-                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
-                        </li>
-                        <li>
-                    <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
-            </li>
-                        <li>
-                    <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
-            </li>
+                       
                         <!--<li>
                 <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
             </li>-->
@@ -1107,7 +1109,7 @@
 
 
 
-    <footer id="footer" style="background-color: white;">
+    <footer id="footer" style="background-color: #2d3e52;">
 
         <div class="footer-wrapper">
             <div class="container">
