@@ -211,6 +211,7 @@
                                     <li><a href="UI/shortcode-pricing-tables.html">BT POS Licence</a></li>
                                     <li><a href="UI/cards.html">Cards</a></li>
                                     <li><a href="UI/licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="UI/Renewal.html">Fleet Owner Renewal Licence</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
@@ -348,6 +349,15 @@
                 <div class="flexslider" >
 
                     <ul class="slides">
+                        <li>
+                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>
+                        <li>
+                            <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>
+                        <li>
+                            <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>
                         <li ng-repeat="slide in carouselImages">                           
                             <div class="slidebg">
                                 <img ng-src="{{slide.Image}}" /><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1>
@@ -363,15 +373,7 @@
                             <img ng-src="{{slide.Image}}" />
                         </li>
 
-                        <li>
-                            <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
-                        </li>
-                        <li>
-                    <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
-            </li>
-                        <li>
-                    <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
-            </li>
+                     
                         <!--<li>
                 <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
             </li>-->
@@ -922,7 +924,7 @@
         <div class=" section container ">
             <!--<div style=" padding-top: 20px; padding-bottom: 40px;">-->
             <h2 style="color:orange;">Inter Bus Applications</h2>
-            <div class="row image-box style5" ng-init="GetActivityLog()">
+            <div class="row image-box style5" >
                 <div class="col-sm-3" ng-repeat="l in activityimages">
                     <article class="box">
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">

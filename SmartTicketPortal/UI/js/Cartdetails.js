@@ -74,8 +74,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         //now go to checkout page     
 
         var userlicense = {                
-                   
-                   ULId: ul[0].Id,
+                   ULId: $scope.selLicense.Id, 
                    CreatedOn:null,
                    Amount: eval($scope.qty) * eval($scope.selLicensePrice.UnitPrice),
                    UnitPrice: $scope.selLicensePrice.UnitPrice,
@@ -84,7 +83,6 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
                    IsRenewal:0,//ch.IsRenewal,
                    Units:$scope.qty,
                    insupddelflag: 'I'
-
         }
         $scope.Signin = function () {
 

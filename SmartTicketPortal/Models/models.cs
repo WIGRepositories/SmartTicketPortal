@@ -5,6 +5,23 @@ using System.Web;
 
 namespace SmartTicketPortal.Models
 {
+
+    public class ULPTrasaction {
+        public int Id { get; set; }
+        public string TransId { set; get; }
+        public string GatewayTransId { set; get; }
+        public DateTime? TransDate { set; get; }
+        public int ULPymtId { set; get; }
+        public string Desc { set; get; }
+        public Decimal Tax { set; get; }
+        public Decimal Discount { set; get; }
+        public int PymtTypeId { set; get; }
+        public string Amount { set; get; }
+        public int StatusId { set; get; }
+        //public string LicensePymtTransId { set; get; }
+        public string insupddelflag { set; get; }
+
+    }
     public class WebsiteUserInfo
     {
         public string FirstName { set; get; }
