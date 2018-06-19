@@ -38,24 +38,24 @@ namespace SmartTicketPortal.Controllers
         }
     
 
-     public DataTable GetActivityLog()
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+     //public DataTable GetActivityLog()
+     //   {
+     //       SqlConnection conn = new SqlConnection();
+     //       conn.ConnectionString = ConfigurationManager.ConnectionStrings["btposdb"].ToString();
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "GetActivityLog";
+     //       SqlCommand cmd = new SqlCommand();
+     //       cmd.Connection = conn;
+     //       cmd.CommandType = CommandType.StoredProcedure;
+     //       cmd.CommandText = "GetActivityLog";
 
-            SqlDataAdapter db = new SqlDataAdapter(cmd);
-            DataTable tbl = new DataTable();
+     //       SqlDataAdapter db = new SqlDataAdapter(cmd);
+     //       DataTable tbl = new DataTable();
 
-            db.Fill(tbl);
+     //       db.Fill(tbl);
 
-            return tbl;
+     //       return tbl;
 
-        }
+     //   }
 }
 
 }

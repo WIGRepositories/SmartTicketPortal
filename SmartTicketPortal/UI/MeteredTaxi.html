@@ -75,7 +75,7 @@
 
 
 
-<body ng-controller="mapCtrl">
+<body ng-controller="mapCtrl" ng-init="GetConfigData()">
 
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -410,12 +410,17 @@
                                    class="form-control"
                                    placeholder="Enter any address" value="{{dropPoint.name}}" />
                         </div>
+                        <!--<div class="col-xs-12">
+                    <label for="ex2">Distance</label>
+                    <input class="form-control" id="destination" type="text" placeholder="Enter drop point" ng-model="distance.value" ng-change="inputcred();">
+                </div>-->
 
-                        <button type="submit" class="btn-medium green" style="margin-top:15px;margin-left:130px" ng-click="getDirections()">Submit</button>
+                        <button type="submit" class="btn-medium green" style="margin-top:15px;margin-left:220px" ng-click="getDirections()">Submit</button>
                     </div>
                 </form>
                 <hr>
-                <div class="main-and-aside r">
+
+                <div class="main-and-aside r" ng-show="distval!=null">
                     <div class="main">
                         <div class="small-medium" data-set="widget"></div>
 
@@ -426,12 +431,13 @@
 
                                 <div class="panel col-md-10">
                                     <h4 class="panel-title">
-                                        <a href="#" class="collapsed">Distance <p style="text-align:right;margin-top:-25px;">{{distval}}</p></a>
-                                        <a href="#" class="collapsed">Fares <p style="text-align:right;margin-top:-10px;">Rs:150</p></a>
+                                        <a href="#" class="collapsed">Distance <div style="text-align:right;margin-top:-25px;">{{distval}}</div></a><br>
+                                        <a href="#" class="collapsed" style="margin-top:10px">Fares <div style="text-align:right;" ng-repeat="p in pricing">{{p.Price}}</div></a>
 
                                     </h4>
 
                                 </div>
+
 
 
                             </div>
@@ -440,7 +446,7 @@
                     </div>
 
                 </div>
-                <div class="aside">
+                <div class="aside" ng-show="distval!=null">
                     <div class="large" data-set="widget">
                         <div class="moving-source-order">
                             <div class="widget-wrapper">
@@ -454,16 +460,17 @@
 
                                         <div class="toggle-container">
                                             <form>
-                                                <div class="form-group row">
+                                                <div class="form-group row" ng-model="book">
                                                     <div class="col-xs-6">
                                                         <label for="ex13">Enter Mobile Number</label>
-                                                        <input class="form-control input-medium bfh-phone" id="ex13" type="text" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number">
+                                                        <input class="form-control input-medium bfh-phone" id="ex13" type="text" data-format="+1 (ddd) ddd-dddd" placeholder="Enter Mobile Number" ng-model="book.Mobilenumber">
                                                     </div>
                                                     <!--<div class="col-xs-3">
-                                                        <label for="ex2">To</label>
-                                                        <input class="form-control" id="ex2" type="text">
-                                                    </div>-->
-                                                    <button type="submit" class="btn-medium green" style="margin-top:23px" value="Show Hide DIV" ng-click="ShowHide()">Submit</button>
+                                                <label for="ex2">To</label>
+                                                <input class="form-control" id="ex2" type="text">
+                                            </div>-->
+                                                    <button type="submit" class="btn-medium green" style="margin-top:23px" value="Show Hide DIV" ng-click="booking(book)">Submit</button>
+
                                                 </div>
                                             </form>
 
@@ -471,7 +478,7 @@
 
 
 
-                                            <div class="panel" ng-show="IsVisible">
+                                            <div class="panel" ng-show="bdetails!=null">
                                                 <form>
                                                     <div class="form-group row">
                                                         <div class="col-xs-6">
@@ -479,11 +486,28 @@
                                                             <input class="form-control" id="ex12" type="text" placeholder="OTP">
                                                         </div>
 
-                                                        <button type="submit" class="btn-medium green" style="margin-top:23px" >Submit</button>
+                                                        <button type="submit" class="btn-medium green" style="margin-top:23px" ng-click="Motpverifying()">Submit</button>
                                                     </div>
                                                 </form>
 
                                             </div>
+                                            <div class="panel">
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <div class="col-xs-6">
+                                                            <label for="ex12">Payment Type</label>
+
+                                                            <select class="form-control" ng-options="ct.Name for ct in initdata.Table2 track by ct.Id" ng-model="ct" ng-change="GetMaster()">
+                                                                <option value="">Select</option>
+                                                            </select>
+
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+
+
                                             <div class="panel">
 
 
@@ -508,7 +532,7 @@
             <!--map start-->
             <div id="full-width-content" class="col-md-6">
 
-                <div class="main">
+                <div class="main well">
                     <div class="large" data-set="status-map">
                         <div class="moving-source-order">
                             <div class="status-map-wrapper map-wrapper status-page">
