@@ -456,7 +456,21 @@
                                             <div class="controls"> </div>
                                             <h2 class="active">Confirm Booking</h2>
                                         </div>
+                                        <div class="panel">
+                                            <form>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-6">
+                                                        <label for="ex12">Payment Type</label>
 
+                                                        <select class="form-control" ng-options="ct.Name for ct in initdata.Table2 track by ct.Id" ng-model="ct">
+                                                            <option value="">Select</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
 
                                         <div class="toggle-container">
                                             <form>
@@ -491,21 +505,9 @@
                                                 </form>
 
                                             </div>
-                                            <div class="panel">
-                                                <form>
-                                                    <div class="form-group row">
-                                                        <div class="col-xs-6">
-                                                            <label for="ex12">Payment Type</label>
 
-                                                            <select class="form-control" ng-options="ct.Name for ct in initdata.Table2 track by ct.Id" ng-model="ct" ng-change="GetMaster()">
-                                                                <option value="">Select</option>
-                                                            </select>
 
-                                                        </div>
 
-                                                    </div>
-                                                </form>
-                                            </div>
 
 
                                             <div class="panel">
@@ -528,6 +530,8 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
             <!--map start-->
             <div id="full-width-content" class="col-md-6">
