@@ -258,7 +258,7 @@ app.controller('mapCtrl', function ($scope, $http) {
             //$scope.GetUsers();
             // $scope.Group = null;
             //$scope.GetVehcileMaster('VID=1');
-            window.location.href = "CheckOut.html";
+            window.location.href = "Cartdetails.html";
         }, function (errres) {
             var errdata = errres.data;
             var errmssg = "Your Details Are Incorrect";
