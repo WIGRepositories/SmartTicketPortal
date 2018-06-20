@@ -129,7 +129,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         }).success(function (data, status, headers, config) {
             $localStorage.focheckoutDetails = data.Table;
             $localStorage.UselicensePymtRecord = data.Table1;
-            //window.location.href = "/UI/CheckOut.html";
+            window.location.href = "/UI/CheckOut.html";
 
         }).error(function (ata, status, headers, config) {
             alert(ata);
