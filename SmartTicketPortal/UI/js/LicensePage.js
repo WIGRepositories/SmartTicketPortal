@@ -221,7 +221,6 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
     $scope.saveUserLicense = function (License, Lid) {
 
         var userlicense = {
-
             UserId: $localStorage.foLicenseDetails.Table[0].userid,
             FOId: $localStorage.foLicenseDetails.Table[0].foid,
             FOCode: $localStorage.foLicenseDetails.Table[0].FleetOwnerCode,
