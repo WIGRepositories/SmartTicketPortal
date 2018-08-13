@@ -12,8 +12,6 @@ namespace SmartTicketPortal.Controllers
     public class AdvertismentDealsController : ApiController
     {
 
-        [HttpGet]
-        [Route("api/AdvertismentDeals/GetAdvertismentDeal")]
         public DataTable GetAdvertismentDeal()
         {
             DataTable Tbl = new DataTable();

@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="UI/components/flexslider/flexslider.css" media="screen" />
 
     <!-- Main Style -->
+     <!--<link href="UI/css/style-dark-blue.css" rel="stylesheet" />-->
     <link id="main-style" rel="stylesheet" href="UI/css/style.css">
 
     <!-- Updated Styles -->
@@ -211,6 +212,7 @@
                                     <li><a href="UI/shortcode-pricing-tables.html">BT POS Licence</a></li>
                                     <li><a href="UI/cards.html">Cards</a></li>
                                     <li><a href="UI/licensepage.html">Fleet Owner Licence</a></li>
+                                    <li><a href="UI/Renewal.html">Fleet Owner Renewal Licence</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
@@ -348,30 +350,43 @@
                 <div class="flexslider" >
 
                     <ul class="slides">
-                        <li ng-repeat="slide in carouselImages">                           
-                            <div class="slidebg">
-                                <img ng-src="{{slide.Image}}" /><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1>
-                                <h2 class="page-description col-md-6 no-float no-padding" style="color:orange">{{i.ImageDesc}}</h2>
-                            </div>
+                        <!--<li>
+                            <div class="slidebg" style="background-image: url('UI/images//images.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>-->
+                        <!--<li>
+                            <div class="slidebg" style="background-image: url('UI/images//bus-header-2.png');"><img ng-src="{{i.Image}}" /></div>
+                        </li>-->
+                        <li>
+                            <div class="slidebg" style="background-image: url('UI/images//heavy-duty-towing.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
                         <li>
-                    <div class="slidebg" style="background-image: url('{{i.Image}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding">{{i.ImageDesc}}</h2></div>
-
-            </li>
-                        <li ng-repeat="slide in carouselImages">
-                            <div class="slidebg" style="background-image: url('{{slide.Image}}');"><img ng-src="{{slide.Image}}" /></div>
-                            <img ng-src="{{slide.Image}}" />
+                            <div class="slidebg" style="background-image: url('UI/images//meru_img6.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
-
                         <li>
                             <div class="slidebg" style="background-image: url('UI/images//img5.jpg');"><img ng-src="{{i.Image}}" /></div>
                         </li>
                         <li>
-                    <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
-            </li>
-                        <li>
-                    <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
-            </li>
+                            <div class="slidebg" style="background-image: url('UI/images//img7.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>
+                        <!--<li>
+                            <div class="slidebg" style="background-image: url('ui/images/breakdown2.jpg');"><img ng-src="{{i.Image}}" /></div>
+                        </li>-->
+                        <!--<li ng-repeat="slide in carouselImages">                           
+                            <div class="slidebg">
+                                <img ng-src="{{slide.Image}}" /><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1>
+                                <h2 class="page-description col-md-6 no-float no-padding" style="color:orange">{{i.ImageDesc}}</h2>
+                            </div>
+                        </li>-->
+                        <!--<li>
+                    <div class="slidebg" style="background-image: url('{{i.Image}}');"><h1 class="page-title" style="color:orange">{{i.ImageCaption}}</h1><h2 class="page-description col-md-6 no-float no-padding">{{i.ImageDesc}}</h2></div>
+
+            </li>-->
+                        <!--<li ng-repeat="slide in carouselImages">
+                            <div class="slidebg" style="background-image: url('{{slide.Image}}');"><img ng-src="{{slide.Image}}" /></div>
+                            <img ng-src="{{slide.Image}}" />
+                        </li>-->
+
+                     
                         <!--<li>
                 <div class="slidebg" style="background-image: url('UI/images//img4.jpg');"><img ng-src="{{i.Image}}" /></div>
             </li>-->
@@ -922,7 +937,7 @@
         <div class=" section container ">
             <!--<div style=" padding-top: 20px; padding-bottom: 40px;">-->
             <h2 style="color:orange;">Inter Bus Applications</h2>
-            <div class="row image-box style5" ng-init="GetActivityLog()">
+            <div class="row image-box style5" >
                 <div class="col-sm-3" ng-repeat="l in activityimages">
                     <article class="box">
                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
@@ -1087,7 +1102,7 @@
                     <div class="col-sms-6 col-sm-6 col-md-3" ng-repeat="d in advertisementDeals">
                         <article class="box">
                             <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img ng-src="{{d.Image}}" width="270" height="160" alt="Image" /></a>
+                                <a href="UI/ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img ng-src="{{d.Image}}" style="height:150px;width:270px" alt="Image" /></a>
                             </figure>
                             <div class="details text-center">
                                 <h4 class="box-title">{{d.AdvertisementTitle}}</h4>
@@ -1107,7 +1122,7 @@
 
 
 
-    <footer id="footer" style="background-color: white;">
+    <footer id="footer" style="background-color: #2d3e52;">
 
         <div class="footer-wrapper">
             <div class="container">

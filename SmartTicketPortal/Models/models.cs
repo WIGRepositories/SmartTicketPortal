@@ -5,6 +5,23 @@ using System.Web;
 
 namespace SmartTicketPortal.Models
 {
+
+    public class ULPTrasaction {
+        public int Id { get; set; }
+        public string TransId { set; get; }
+        public string GatewayTransId { set; get; }
+        public DateTime? TransDate { set; get; }
+        public int ULPymtId { set; get; }
+        public string Desc { set; get; }
+        public Decimal Tax { set; get; }
+        public Decimal Discount { set; get; }
+        public int PymtTypeId { set; get; }
+        public string Amount { set; get; }
+        public int StatusId { set; get; }
+        //public string LicensePymtTransId { set; get; }
+        public string insupddelflag { set; get; }
+
+    }
     public class WebsiteUserInfo
     {
         public string FirstName { set; get; }
@@ -698,7 +715,71 @@ namespace Paysmart.Models
         
      }
 
-     
+    public class POBooking
+    {
+        public string flag { get; set; }
+        public int Id { get; set; }
+        public string Src { get; set; }
+        public string Dest { get; set; }
+        public decimal SrcLat { get; set; }
+        public decimal SrcLong { get; set; }
+        public decimal DestLat { get; set; }
+        public decimal DestLong { get; set; }
+        public string BookingType { get; set; }
+        public decimal Pricing { get; set; }
+        public int PackageId { get; set; }
+        public string MobileNumber { get; set; }
+        public string Mobileotp { get; set; }
+
+        public decimal Distance { get; set; }
+        public int VehicleGroupId { get; set; }
+        public int vehicleTypeId { get; set; }
+        public int PaymentTypeId { get; set; }
+      
+
+    }
+
+
+    public class ConfigData
+    {
+        public int includeStatus { get; set; }
+        public int includeCategories { get; set; }
+        public int includeLicenseCategories { get; set; }
+        public int includeVehicleGroup { get; set; }
+        public int includeGender { get; set; }
+        public int includeFrequency { get; set; }
+        public int includePricingType { get; set; }
+        public int includeTransactionType { get; set; }
+        public int includeApplicability { get; set; }
+        public int includeFeeCategory { get; set; }
+        public int includeTransChargeType { get; set; }
+        public int includeVehicleType { get; set; }
+        public int includeVehicleModel { get; set; }
+        public int includeVehicleMake { get; set; }
+        public int includeDocumentType { get; set; }
+        public int includePaymentType { get; set; }
+        public int includeMiscellaneousTypes { get; set; }
+        public int includeCardCategories { get; set; }
+        public int includeCardTypes { get; set; }
+        public int includeVehicleLayoutType { get; set; }
+        public int includeLicenseFeatures { get; set; }
+        public int includeCardModels { get; set; }
+        public int includeCards { get; set; }
+        public int includeTransactions { get; set; }
+        public int includeCountry { get; set; }
+        public int includeActiveCountry { get; set; }
+        public int includeFleetOwner { get; set; }
+        public int includeUserType { get; set; }
+        public int includeAuthType { get; set; }
+        public int includeState { get; set; }
+
+        public int includePackageNames { get; set; }
+
+        public int includePackageTypeName { get; set; }
+    }
+
+
+
 
 }
 

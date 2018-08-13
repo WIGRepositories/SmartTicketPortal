@@ -38,95 +38,68 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             //  alert('Saved successfully');           
             $localStorage.UselicensePymtTranRecord = UserLicensePymtTransactions;
 
+            //var result = data[0].result;
+            //if (result == 'Failed') {
+            //    alert('Oops! sorry! Payment could not be processed. Please try again! \n\nbelow are the details of the failure:\n' + data[0].detail + '\n\n if problem continues to persist please contact interbus administrator.')
+            //    return;
+            //}
+            $localStorage.GatewayTransId = data[0].GatewayTransId;
+            //do the post payment updates
+
+            //  alert('Saved successfully');
+            var dd=$localStorage.focheckoutDetails[0]
+            var fo = $localStorage.foLicenseDetails
+            /*******prepare post license confirm details *******/
+            if (ulD.IsRenewal==1) {
+            var ULConfirmDetails = {
+                TransId: ulD.TransId,
+                GatewayTransId: $localStorage.GatewayTransId,
+                itemId: 1,
+                ULPymtId: ulD.Id,
+                ULId: ulD.ULId,
+                IsRenewal: ulD.IsRenewal,
+                Amount: ulD.Amount,
+                Units: ulD.Units,
+                POSUnits: $localStorage.noOfBTPOSUnits,
+                insupddelflag: 'I',
+                userId: fo.Table[0].userid,
+                foId: fo.Table[0].foid,
+                address: 'Harare, zimbabwe'
+            }
+            }
+        else{
+        var ULConfirmDetails = {
+            TransId: ulD.TransId,
+            GatewayTransId: $localStorage.GatewayTransId,
+            itemId: 1,
+            ULPymtId: ulD.Id,
+            ULId: ulD.ULId,
+            IsRenewal:  0,
+            Amount: ulD.Amount,
+            Units: ulD.Units,
+            POSUnits: $localStorage.noOfBTPOSUnits,
+            insupddelflag: 'I',
+            userId: fo.Table[0].userid,
+            foId: fo.Table[0].foid, 
+            address: 'Harare, zimbabwe'
+        }
+    
+    }
+           
+
             $http({
-                url: '/api/Payments/MakePayment?amt=' + ulD.Amount,
-                // url: '/api/Payments/325435',
-                method: 'GET'
+               url: '/api/UserLicenses/SaveULConfirmDetails',
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                data: ULConfirmDetails,
+
             }).success(function (data, status, headers, config) {
-
-                var result = data[0].result;
-                if (result == 'Failed') {
-                    alert('Oops! sorry! Payment could not be processed. Please try again! \n\nbelow are the details of the failure:\n' + data[0].detail + '\n\n if problem continues to persist please contact interbus administrator.')
-                    return;
-                }
-                $localStorage.GatewayTransId = data[0].detail;
-                //do the post payment updates
-
-                //  alert('Saved successfully');
-
-                var fo = $localStorage.foLicenseDetails
-                /*******prepare post license confirm details *******/
-                var ULConfirmDetails = {
-                    TransId: ulD.TransId,
-                    GatewayTransId: $localStorage.GatewayTransId,
-                    itemId: 1,
-                    ULPymtId: ulD.Id,
-                    ULId: ulD.ULId,
-                    IsRenewal: (ulD.IsRenewal != null || ulD.IsRenewal!=0) ? ulD.IsRenewal : 0,
-                    Amount: ulD.Amount,
-                    Units: ulD.Units,
-                    POSUnits: $localStorage.noOfBTPOSUnits,
-                    insupddelflag: 'I',
-                    userId: fo.Table[0].userid,
-                    foId: fo.Table[0].foid,
-                    address: 'Harare, zimbabwe'
-                }
-
-                $http({
-                    url: '/api/UserLicenses/SaveULConfirmDetails',
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    data: ULConfirmDetails,
-
-                }).success(function (data, status, headers, config) {
-                    // alert('Saved successfully');
-                    $localStorage.ULConfirmDetails = ULConfirmDetails;
-                    $localStorage.ULConfirmDetailsRes = data;
-                    window.location.href = "LicenseConfirmation.html";
-                    //$scope.ShowConfirmationMssg(data);
-                    //   $('#Modal-header-new').modal('hide');
-                });
-            }).error(function (ata, status, headers, config) {
-                alert(ata);
-
-                //    $localStorage.GatewayTransId = 'TEST123';
-                //    //do the post payment updates
-
-                //    var fo = $localStorage.foLicenseDetails
-                //    /*******prepare post license confirm details *******/
-                //    var ULConfirmDetails = {
-                //        TransId: ulD.TransId,
-                //        GatewayTransId: $localStorage.GatewayTransId,
-                //        itemId: 1,
-                //        ULPymtId: ulD.Id,
-                //        ULId: ulD.ULId,
-                //        IsRenewal: 0,
-                //        Amount: ulD.Amount,
-                //        Units: ulD.Units,
-                //        insupddelflag: 'I',
-                //        userId: fo.Table[0].userid,
-                //        foId: fo.Table[0].foid,
-                //        address: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
-                //    }
-
-                //    $http({
-                //        url: '/api/UserLicenses/SaveULConfirmDetails',
-                //        method: 'POST',
-                //        headers: { 'Content-Type': 'application/json' },
-                //        data: ULConfirmDetails,
-
-                //    }).success(function (data, status, headers, config) {
-                //        alert('Saved successfully');
-                //        $localStorage.ULConfirmDetails = ULConfirmDetails;
-                //        $localStorage.ULConfirmDetailsRes = data;
-                //        $scope.ShowConfirmationMssg(data);
-                //    //  $('#Modal-header-new').modal('hide');
-                //});
-
-
-            }).error(function (ata, status, headers, config) {
-                alert(ata);
-                //insert the failed transaction details
+                // alert('Saved successfully');
+                $localStorage.ULConfirmDetails = ULConfirmDetails;
+                $localStorage.ULConfirmDetailsRes = data;
+                window.location.href = "LicenseConfirmation.html";
+                //$scope.ShowConfirmationMssg(data);
+                //   $('#Modal-header-new').modal('hide');
             });
         })
             .error(function (ata, status, headers, config) {

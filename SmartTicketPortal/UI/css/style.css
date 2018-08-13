@@ -140,6 +140,9 @@ html {
   font-size: 16px;
   min-height: 100%;
 }
+/*-----------------------------*/
+/*total body color change this place*/
+/*-----------------------------*/
 
 body {
   font: 75%/150% "Lato", Arial, Helvetica, sans-serif;
@@ -10867,7 +10870,7 @@ button.ui-button::-moz-focus-inner {
   /* menu position */
 }
 #footer .footer-wrapper {
-  padding: 80px 0;
+  padding: 20px 0;
 }
 #footer .footer-wrapper > .container > .row > div {
   margin-top: 20px;

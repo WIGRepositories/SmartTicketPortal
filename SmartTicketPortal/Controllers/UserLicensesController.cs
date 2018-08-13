@@ -380,16 +380,24 @@ namespace SmartTicketPortal.Controllers
 
 
                 int status;
-                if (Tbl != null && Tbl.Rows.Count > 0)
-                {
-                    #region send email with details
 
+                #region Mobile OTP
+                string lcode = Tbl.Rows[0]["licenseCode"].ToString();
+                string rcode = Tbl.Rows[0]["TransId"].ToString();
+                string username1 = Tbl.Rows[0]["username"].ToString();
+                string shipOrder = Tbl.Rows[0]["shipOrder"].ToString();
+                string expiryon = Tbl.Rows[0]["expiryon"].ToString();
+                string startdate = Tbl.Rows[0]["startdate"].ToString();
+                string emailid = Tbl.Rows[0]["emailid"].ToString();
+
+                if (lcode != null)
+                {
                     try
                     {
                         MailMessage mail = new MailMessage();
                         string emailserver = System.Configuration.ConfigurationManager.AppSettings["emailserver"].ToString();
 
-                        string eusername = System.Configuration.ConfigurationManager.AppSettings["username"].ToString();
+                        string username = System.Configuration.ConfigurationManager.AppSettings["username"].ToString();
                         string pwd = System.Configuration.ConfigurationManager.AppSettings["password"].ToString();
                         string fromaddress = System.Configuration.ConfigurationManager.AppSettings["fromaddress"].ToString();
                         string port = System.Configuration.ConfigurationManager.AppSettings["port"].ToString();
@@ -397,48 +405,36 @@ namespace SmartTicketPortal.Controllers
                         SmtpClient SmtpServer = new SmtpClient(emailserver);
 
                         mail.From = new MailAddress(fromaddress);
-                        mail.To.Add(Tbl.Rows[0]["emailid"].ToString());
-                        mail.Subject = "INTERBUS Fleet Owner License confirmation";
+                        mail.To.Add(emailid);
+                        mail.Subject = "Driver registration - Mobile OTP";
                         mail.IsBodyHtml = true;
 
                         string verifcodeMail = @"<table>
-                                                        <tr>
-                                                            <td>
-                                                                <h2>Your license payment is processed successfully!</h2>
-                                                                <table width=\""760\"" align=\""center\"">
-                                                                    <tbody style='background-color:#F0F8FF;'>
-                                                                        <tr>
-                                                                            <td style=\""font-family:'Zurich BT',Arial,Helvetica,sans-serif;font-size:15px;text-align:left;line-height:normal;background-color:#F0F8FF;\"" >
-                                                                                <div style='padding:10px;border:#0000FF solid 2px;'>                                                                                
-                                                                                <h3>Congratulations!!</h3>
+                                                            <tr>
+                                                                <td>
+                                                                    <h2>Thank you for registering with PaySmart APP</h2>
+                                                                    <table width=\""760\"" align=\""center\"">
+                                                                        <tbody style='background-color:#F0F8FF;'>
+                                                                            <h3>Congratulations!!</h3>
                                                                                 <h4>Your license payment is processed successfully and below are the details</h4>
                                                                                 <h3>Fleet Owner License Details</h3> 
 																				Your payment transaction Id:<b> " + ulconfirm.TransId + @"</b>
 																			    <br />
-																				Your license code is:<b> " + Tbl.Rows[0]["licenseCode"].ToString() + @"</b>
+																				Your license code is:<b> " + lcode + @"</b>
 																			    <br />
-																				License Activated on  : <b>" + Tbl.Rows[0]["startdate"].ToString() + @"</b>
+																				License Activated on  : <b>" + startdate + @"</b>
 																				 <br />
-																				License Expiry on     :<b> " + Tbl.Rows[0]["expiryon"].ToString() + @"</b>
+																				License Expiry on     :<b> " + expiryon + @"</b>
 																				<br />																				
-																				No.of BTPOS units to be shipped: <b>" + Tbl.Rows[0]["noofunits"].ToString() + @"</b>
-																				<br />
-                                                                                Shipping order for BT POS units:<b> " + Tbl.Rows[0]["shipOrder"].ToString() + @"	</b>										
+											Your Smart Ticket dashboard login user name            : <b>" + username1 + @"</b>
 																				 <br />
-																				Your Smart Ticket dashboard login user name            : <b>" + Tbl.Rows[0]["username"].ToString() + @"</b>
-																				 <br />
-																				 Your Smart Ticket dashboard login one time password is   : <b>" + Tbl.Rows[0]["username"].ToString() + @"</b>
+											Your Smart Ticket dashboard login one time password is   : <b>" + username1 + @"</b>
 																				<br />
 																				<h5>Please contact interbus admin for any further information!</h5>
-																				
 																				<center><h3> Happy ticketing!</h3></center>
-																				
-		
 																				For any queries/concerns please contact INTERBUS adminitrator - admin@interbus.com
-
                                                                                 <br/>
                                                                                 <br/>             
-                                                                       
                                                                                 Warm regards,<br>
                                                                                 INTERBUS Customer Service Team<br/><br />
 																				</div>
@@ -450,7 +446,8 @@ namespace SmartTicketPortal.Controllers
                                                             </td>
                                                         </tr>
 
-                                                    </table>";
+                                                                       
+                                                        </table>";
 
 
                         mail.Body = verifcodeMail;
@@ -459,28 +456,20 @@ namespace SmartTicketPortal.Controllers
                         SmtpServer.Port = Convert.ToInt32(port);
                         SmtpServer.UseDefaultCredentials = false;
 
-                        SmtpServer.Credentials = new System.Net.NetworkCredential(eusername, pwd);
-                        string enablessl = string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["EnableSsl"]) ? "false" : System.Configuration.ConfigurationManager.AppSettings["EnableSsl"].ToString();
-                        string TargetName = string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["TargetName"]) ? "" : System.Configuration.ConfigurationManager.AppSettings["TargetName"].ToString();
-
-                        SmtpServer.EnableSsl = Convert.ToBoolean(enablessl);
-                        //user these setting for sending using gmail server
-                        //SmtpServer.EnableSsl = true;
-                        if (TargetName != "")
-                            SmtpServer.TargetName = TargetName;
+                        SmtpServer.Credentials = new System.Net.NetworkCredential(username, pwd);
+                        SmtpServer.EnableSsl = true;
+                        //SmtpServer.TargetName = "STARTTLS/smtp.gmail.com";
                         SmtpServer.Send(mail);
-                        status = 1;
+
                     }
                     catch (Exception ex)
                     {
-                        //throw ex;
-                        status = -1;
+                        //traceWriter.Trace(Request, "0", TraceLevel.Error, "{0}", "Register driver Email otp failed...." + ex.Message);
+                        throw ex;
                     }
-
-                    //update if email is sent
-
-                    #endregion send email with details
                 }
+                #endregion Mobile OTP
+
 
                 return Tbl;
             }

@@ -141,23 +141,20 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
                 else {
                     $http.get('/api/UserLicenses/getFleetLicenses?fleetcode=' + lcode).then(function (response, req) {
                         $scope.License = response.data;
+                        $scope.lLicense = response.data;
                         if ($scope.License == null) {
                             alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
                             return;
                         }
                     })
                     //$localStorage.foLicenseDetails = $scope.foLicenseDetails;
-                    //$scope.saveUserLicense(License, Lid);
-                   // window.location.href = "Cartdetails.html";
+                    //$scope.saveUserLicense($scope.License);
+                    //window.location.href = "Cartdetails.html";
 
                 }
             });
         }
-
-
-
     };
-
     $scope.ValidateFOCode = function (code, License, Lid) {
 
         if (code == null) {
@@ -166,7 +163,6 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             return false;
         }
         else {
-
             $http.get('/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.foLicenseDetails = response.data;
                 if ($scope.foLicenseDetails.Table2[0].result == 0) {
@@ -175,15 +171,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
                 else {
                     $localStorage.foLicenseDetails = $scope.foLicenseDetails;
                     $scope.saveUserLicense(License, Lid);
-                  
                 }
             });
         }
-
-       
-
     };
-
     $scope.buy = true;
     $scope.Renew = true;
     $scope.ShowHide = function () {
@@ -191,38 +182,23 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         $scope.buy = $scope.buy ? false : true;
         $scope.Renew = $scope.Renew ? false : true;
     }
-
-
     $scope.licenseId = '';
     $scope.ShowHide = function () {
         //If DIV is hidden it will be visible and vice versa.
         $scope.licenseId = $scope.licenseId ? true : false;
-
-
     }
-
     $scope.SetLicensedetails = function (License, Lid) {
-
-
         $localStorage.License = License;
         $localStorage.LicenseTypeId = Lid.Id;
         $localStorage.SelLic = Lid;
-
-
-       
         $localStorage.Isrenewal = 0;
-
-
-
     };
-
     $scope.GoToConfirmation1 = function (code, License, Lid) {
 
         $localStorage.Isrenewal = 1;
         $scope.UselicenseRecord = $localStorage.foLicenseDetails.Table1;
 
     };
-
     $scope.save = function (LicenseTypeId, code) {
 
         var License = {
@@ -242,11 +218,9 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
 
         //
     };
-
     $scope.saveUserLicense = function (License, Lid) {
 
         var userlicense = {
-
             UserId: $localStorage.foLicenseDetails.Table[0].userid,
             FOId: $localStorage.foLicenseDetails.Table[0].foid,
             FOCode: $localStorage.foLicenseDetails.Table[0].FleetOwnerCode,
@@ -258,9 +232,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             LastUpdatedOn: $localStorage.LastUpdatedOn,
             StatusId: 1,//$localStorage.StatusId,
             RenewFreqTypeId: $localStorage.SelLic.RenewFreqTypeId,
-           
             insupddelflag: 'I'
-
         }
         var req = {
             method: 'POST',
@@ -282,7 +254,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         window.location.href = "../index.html";
     }
 
-  
+    //-----------------Hidestart-------------------
+    $scope.IsVisible = false;
+    $scope.ShowHide = function () {
+        //If DIV is visible it will be hidden and vice versa.
+        $scope.IsVisible = $scope.IsVisible ? false : true;
+    }
+    //-----------------Hideend-------------------
 
     $scope.showVDialog = function (message) {
 
@@ -297,7 +275,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             }
         });
     }
-
+    //-----------------Hidestart-------------------
+    $scope.IsVisible = false;
+    $scope.ShowHide = function () {
+        //If DIV is visible it will be hidden and vice versa.
+        $scope.IsVisible = $scope.IsVisible ? false : true;
+    }
+    //-----------------Hideend-------------------
 });
 
 app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg) {
