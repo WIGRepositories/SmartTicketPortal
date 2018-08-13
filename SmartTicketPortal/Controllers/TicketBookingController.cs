@@ -18,6 +18,7 @@ namespace SmartTicketPortal.Controllers
     public class TicketBookingController : ApiController
     {
         [HttpGet]
+        [Route("api/TicketBooking/GetAvailableServices")]
         public DataTable GetAvailableServices(int srcId, int destId)
         {
             DataTable Tbl = new DataTable();
