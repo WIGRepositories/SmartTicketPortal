@@ -491,10 +491,9 @@
                                                     <div class="col-sm-3 col-md-3">
                                                         <label>Country:</label>
                                                         <div>
-                                                            <select class="selector full-width" ng-model="FleetOwnerRequest1.Country">
-                                                                <option value="">select Country</option>
-                                                                <option value="245">Zimbabwe</option>
-                                                            </select>
+                                                            <select class="selector full-width" ng-options="C.Name for C in Country track by C.Id" ng-model="FleetOwnerRequest1.Country">
+                                                                <option value="">Select Country</option>
+                                                            </select>                                                            
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3 col-md-3">

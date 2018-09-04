@@ -226,6 +226,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
         $scope.username = $localStorage.uname;
     }
 
+    $scope.GetCountry = function () {
+        $http.get('/api/Country/GetCountry?active=1').then(function (response, req) {
+            $scope.Country = response.data;
+        });
+    }
 
 
     $scope.save = function (FleetOwnerRequest1, flag) {
@@ -271,7 +276,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
             CmpCaption: FleetOwnerRequest1.CmpCaption,
             FleetSize: FleetOwnerRequest1.FleetSize,
             StaffSize: FleetOwnerRequest1.StaffSize,
-            Country: FleetOwnerRequest1.Country,
+            Country: FleetOwnerRequest1.Country.Id,
             state: FleetOwnerRequest1.state,
 
             Code: $scope.GetUID(),

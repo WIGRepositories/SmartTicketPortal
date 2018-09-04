@@ -406,13 +406,13 @@ namespace SmartTicketPortal.Controllers
 
                         mail.From = new MailAddress(fromaddress);
                         mail.To.Add(emailid);
-                        mail.Subject = "Driver registration - Mobile OTP";
+                        mail.Subject = "License Buying - Confirmation";
                         mail.IsBodyHtml = true;
 
                         string verifcodeMail = @"<table>
                                                             <tr>
                                                                 <td>
-                                                                    <h2>Thank you for registering with PaySmart APP</h2>
+                                                                    <h2>Thank you for registering with PaySmart Portal</h2>
                                                                     <table width=\""760\"" align=\""center\"">
                                                                         <tbody style='background-color:#F0F8FF;'>
                                                                             <h3>Congratulations!!</h3>

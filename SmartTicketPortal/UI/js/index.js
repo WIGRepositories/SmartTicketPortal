@@ -22,11 +22,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
     //$scope.ChangeTravelType = function (travelTime) {
     //    $scope.timing = (travelTime == 0) ? "Now" : "Later";
     //}
-    $scope.GetCarousel = function () {
-        $http.get('/api/Carousel/GetCarousel').then(function (res, data) {
-            $scope.carouselImages = res.data;
-        });
-    }
+    //$scope.GetCarousel = function () {
+    //    $http.get('/api/Carousel/GetCarousel').then(function (res, data) {
+    //        $scope.carouselImages = res.data;
+    //    });
+    //}
     $scope.GetDeals = function () {
         $http.get('/api/AdvertismentDeals/GetAdvertismentDeal').then(function (response, req) {
             $scope.advertisementDeals = response.data;
